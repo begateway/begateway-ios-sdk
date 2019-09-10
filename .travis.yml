@@ -1,0 +1,14 @@
+os: ios
+osx_image: xcode10.3
+language: swift
+branches:
+  only:
+    - master
+cache: cocoapods
+podfile: Example/Podfile
+before_install:
+ - gem uninstall cocoapods -a 
+ - gem install cocoapods -v ‘1.7.5’
+ - pod install --project-directory=Example
+script:
+- pod lib lint

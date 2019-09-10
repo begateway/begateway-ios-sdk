@@ -1,0 +1,1251 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D1C65D1996033428DFA33534971CE2B /* Pods-begateway_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0730DF5227F88441FE347699820A1C08 /* Pods-begateway_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		13EE63D7E19EADF52909CCD89105E4C2 /* BGEncryptedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCFEF310468BA34EA48761F003F7A9E /* BGEncryptedMessage.swift */; };
+		19470441A05B8FCB225E90BDD39ABBC8 /* BGMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31047CC8B6DE7DC23CAF1D98A586FCF8 /* BGMessage.swift */; };
+		2017D588B6EA3388E3312BD5E7908595 /* Pods-begateway_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7177BDB7CE6749457A631BFE466052ED /* Pods-begateway_Tests-dummy.m */; };
+		2C1AAD47FCC7425DA4A99CF0F6AF4C82 /* BGCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD025EF47D2F497FB9919460094E1BD1 /* BGCardType.swift */; };
+		2CF696CF104E04B84E435E550042164A /* BGPublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02050CD3A74350866AD31AA96A75CDB /* BGPublicKey.swift */; };
+		5AE6B8B10848268EB1FE106A62B41C91 /* BGPaymentSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A37A8EC4F9CC89DFB463CBFCF45133B /* BGPaymentSettings.swift */; };
+		6209E9E7DFF86C6548693F216BA415C2 /* BGStyleSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C01290336FCEC0945EF56270CB398C /* BGStyleSettings.swift */; };
+		656373720EF4EF8E94BAA47F53E0FD73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0537674118F909E1B2AFD9940729FD /* Foundation.framework */; };
+		67BAB2F334C0433E3A69BA3CCCB2DDD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0537674118F909E1B2AFD9940729FD /* Foundation.framework */; };
+		6BB1A6994843554EA549AFCEF18B62D3 /* BGAsn1Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361CE95546842E3D648A5E6847C88DF5 /* BGAsn1Parser.swift */; };
+		774A2BE746EFFF18EF21303214A09537 /* begateway.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2C90EC31B20060BCA74F6E3ED26C5D4 /* begateway.bundle */; };
+		7C8F22B95B11420C840CF5C01C8FA387 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0537674118F909E1B2AFD9940729FD /* Foundation.framework */; };
+		8873CB44F40E4970E85DD54444D95957 /* BGKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD23258F392EF340DF8BA03CABEBAC /* BGKey.swift */; };
+		8914FE39489D45AAF6448215193A4C59 /* BGSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF4FFF238796C69E52FBFD80B9D5F1 /* BGSignature.swift */; };
+		8D1936C3B54D89A279ED06F895C0E821 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40C6FBEEEFA5DEBF6E6E83512D4F03EE /* Security.framework */; };
+		8EDB4401BBDA3990A410AB0AA3163CEA /* Pods-begateway_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C445A48076D8D17CA62DEBBB263AF2 /* Pods-begateway_Example-dummy.m */; };
+		946B862F8D0623B9211C8BFA3EF5B8E9 /* NSData+SHA.h in Headers */ = {isa = PBXBuildFile; fileRef = 42673A90FAEF97C3DB63E9E2F594FD87 /* NSData+SHA.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A02C09D42323FE560062B71B /* BGEncyption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C09D32323FE560062B71B /* BGEncyption.swift */; };
+		A02C09DE2324032C0062B71B /* BGPaymentModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C09DD2324032B0062B71B /* BGPaymentModule.swift */; };
+		A02C09E02324033E0062B71B /* BGCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C09DF2324033E0062B71B /* BGCardViewController.swift */; };
+		A02C09E2232422830062B71B /* BGCardViewColorsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C09E1232422830062B71B /* BGCardViewColorsSettings.swift */; };
+		A0A34945232442FC0076E4FD /* RTLMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34928232442FB0076E4FD /* RTLMask.swift */; };
+		A0A34946232442FC0076E4FD /* MaskedTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3492A232442FC0076E4FD /* MaskedTextViewDelegate.swift */; };
+		A0A34947232442FC0076E4FD /* MaskedTextInputListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3492B232442FC0076E4FD /* MaskedTextInputListener.swift */; };
+		A0A34948232442FC0076E4FD /* UITextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3492C232442FC0076E4FD /* UITextInput.swift */; };
+		A0A34949232442FC0076E4FD /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3492D232442FC0076E4FD /* UITextField.swift */; };
+		A0A3494A232442FC0076E4FD /* MaskedTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3492E232442FC0076E4FD /* MaskedTextFieldDelegate.swift */; };
+		A0A3494B232442FC0076E4FD /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3492F232442FC0076E4FD /* UITextView.swift */; };
+		A0A3494C232442FC0076E4FD /* Mask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34930232442FC0076E4FD /* Mask.swift */; };
+		A0A3494E232442FC0076E4FD /* CharacterSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34933232442FC0076E4FD /* CharacterSet.swift */; };
+		A0A3494F232442FC0076E4FD /* CaretStringIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34934232442FC0076E4FD /* CaretStringIterator.swift */; };
+		A0A34950232442FC0076E4FD /* AffinityCalculationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34935232442FC0076E4FD /* AffinityCalculationStrategy.swift */; };
+		A0A34951232442FC0076E4FD /* RTLCaretStringIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34936232442FC0076E4FD /* RTLCaretStringIterator.swift */; };
+		A0A34952232442FC0076E4FD /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34937232442FC0076E4FD /* Compiler.swift */; };
+		A0A34953232442FC0076E4FD /* FormatSanitizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34938232442FC0076E4FD /* FormatSanitizer.swift */; };
+		A0A34954232442FC0076E4FD /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34939232442FC0076E4FD /* String.swift */; };
+		A0A34955232442FC0076E4FD /* Next.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3493B232442FC0076E4FD /* Next.swift */; };
+		A0A34956232442FC0076E4FD /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3493C232442FC0076E4FD /* State.swift */; };
+		A0A34957232442FC0076E4FD /* Notation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3493D232442FC0076E4FD /* Notation.swift */; };
+		A0A34958232442FC0076E4FD /* ValueState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3493F232442FC0076E4FD /* ValueState.swift */; };
+		A0A34959232442FC0076E4FD /* EOLState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34940232442FC0076E4FD /* EOLState.swift */; };
+		A0A3495A232442FC0076E4FD /* FixedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34941232442FC0076E4FD /* FixedState.swift */; };
+		A0A3495B232442FC0076E4FD /* OptionalValueState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34942232442FC0076E4FD /* OptionalValueState.swift */; };
+		A0A3495C232442FC0076E4FD /* FreeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34943232442FC0076E4FD /* FreeState.swift */; };
+		A0A3495D232442FC0076E4FD /* CaretString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34944232442FC0076E4FD /* CaretString.swift */; };
+		A0A3495E2325282C0076E4FD /* bgresources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11D9E5F2CA2B0E9741715407E98C524D /* bgresources.xcassets */; };
+		A0A349602325473C0076E4FD /* MonthYearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3495F2325473C0076E4FD /* MonthYearPickerView.swift */; };
+		A0A34965232559790076E4FD /* BGCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34964232559790076E4FD /* BGCard.swift */; };
+		A0A3496B2325BE560076E4FD /* BGOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3496A2325BE560076E4FD /* BGOrder.swift */; };
+		A0A3496E2325C3180076E4FD /* BGErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3496D2325C3180076E4FD /* BGErrors.swift */; };
+		A0A349702325C44F0076E4FD /* BGCheckoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3496F2325C44F0076E4FD /* BGCheckoutRequest.swift */; };
+		A0A349722325C5D60076E4FD /* BGPaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A349712325C5D60076E4FD /* BGPaymentMethod.swift */; };
+		A0A349742325C8F70076E4FD /* BGCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A349732325C8F70076E4FD /* BGCustomer.swift */; };
+		A0A349762325C9FF0076E4FD /* BGCheckoutSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A349752325C9FF0076E4FD /* BGCheckoutSettings.swift */; };
+		A0A349792325D0170076E4FD /* BGLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A349782325D0170076E4FD /* BGLoader.swift */; };
+		A0A3497B2325D5A70076E4FD /* BGCheckoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3497A2325D5A70076E4FD /* BGCheckoutResponse.swift */; };
+		A0A3497D2325E5040076E4FD /* BGPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3497C2325E5040076E4FD /* BGPaymentRequest.swift */; };
+		A0A3497F2325E50F0076E4FD /* BGPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3497E2325E50F0076E4FD /* BGPayment.swift */; };
+		A0A349812326743C0076E4FD /* BGPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A349802326743C0076E4FD /* BGPaymentResponse.swift */; };
+		A0A34983232674440076E4FD /* BGPaymentResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34982232674440076E4FD /* BGPaymentResponseObject.swift */; };
+		A0A8D9742326B278004818A2 /* BG3dSecVerificationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A8D9732326B278004818A2 /* BG3dSecVerificationObject.swift */; };
+		A0A8D9762326CB9D004818A2 /* BGWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A8D9752326CB9D004818A2 /* BGWebViewController.swift */; };
+		A0A8D9782326DCEC004818A2 /* BGStatusListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A8D9772326DCEC004818A2 /* BGStatusListener.swift */; };
+		A0A8D99A232837A6004818A2 /* BGTokenizedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A8D999232837A6004818A2 /* BGTokenizedCard.swift */; };
+		A0A8D99C23283835004818A2 /* BGTokenizedCardPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A8D99B23283835004818A2 /* BGTokenizedCardPayment.swift */; };
+		A0A8D9A223285B20004818A2 /* BGCardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A8D9A123285B20004818A2 /* BGCardInfo.swift */; };
+		A75DDBF812A5FDEA8B7712965A3E913A /* BGClearMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53290C647E09C347D008AB3670498F90 /* BGClearMessage.swift */; };
+		B3D93A0629BA5564ED1D0E1D6C16895A /* BGRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2018ED2CBFFC93611E1F6E531E980 /* BGRSA.swift */; };
+		BE782DB570D96FB89BE04698122662F9 /* NSData+SHA.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C6774C2DAA3620FE4A95A91F5FD3A /* NSData+SHA.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		DB56EAC5FB00B7E4781276BF6DE1A5CF /* BGRSAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEA02225F7A627B3F35F8EC55FB44C9 /* BGRSAError.swift */; };
+		E609226BB642B4F23CCAC312725D9FFD /* BGPrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6FE3E389B2F5C7597E54BDEC96B4B /* BGPrivateKey.swift */; };
+		EC31012E111D7C4C94E9D28C7C0F4DE3 /* begateway-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 99314838E6F32CE015A6DEC7179E77DA /* begateway-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F34FADB8ACB833236640ADCB3DB4DC48 /* Pods-begateway_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EE6BEF33145B7E38991D8119B88A2522 /* Pods-begateway_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F5129B1DADF139E9A94B1340BD431439 /* begateway.h in Headers */ = {isa = PBXBuildFile; fileRef = 1565C08B4322B8679D9766E3A21A317D /* begateway.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FDA3F71FF2ACF4BCCA9196B35801FE0E /* begateway-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A2184003749CF935AB74CF139B6646 /* begateway-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		872EBA51523263C53D1F483E4E6ECBC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 472E3246EE061399061E95A7DD305CE4;
+			remoteInfo = "begateway-begateway";
+		};
+		CABB14C389D4136374DD0F03B6B7C6FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 218E033E6015E89D2C684E196B15CBF0;
+			remoteInfo = begateway;
+		};
+		D633021E3866FDD83EF35D51980E61A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 573A6F813499EF0A0C9DD2D484F72F9A;
+			remoteInfo = "Pods-begateway_Example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03C445A48076D8D17CA62DEBBB263AF2 /* Pods-begateway_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-begateway_Example-dummy.m"; sourceTree = "<group>"; };
+		0730DF5227F88441FE347699820A1C08 /* Pods-begateway_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-begateway_Tests-umbrella.h"; sourceTree = "<group>"; };
+		07828B8E6DDCEE67ACA9F60C9B13CA0D /* Pods-begateway_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-begateway_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0BEA02225F7A627B3F35F8EC55FB44C9 /* BGRSAError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGRSAError.swift; sourceTree = "<group>"; };
+		0D8A3EC04110D2C1554ED5C9C74AEEBF /* begateway.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = begateway.modulemap; sourceTree = "<group>"; };
+		0FCE14E890038FE51870ED34CBFB264A /* Pods-begateway_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-begateway_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		11B8A553F2C9D26885D759D9D4D012C5 /* Pods_begateway_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_begateway_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11D9E5F2CA2B0E9741715407E98C524D /* bgresources.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = bgresources.xcassets; path = begateway/Assets/bgresources.xcassets; sourceTree = "<group>"; };
+		14F2689CE38DDE3AEBBE868038E95C50 /* Pods_begateway_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_begateway_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1565C08B4322B8679D9766E3A21A317D /* begateway.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = begateway.h; sourceTree = "<group>"; };
+		16057CFA785BAB31DD50553D71376787 /* ResourceBundle-begateway-begateway-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-begateway-begateway-Info.plist"; sourceTree = "<group>"; };
+		168F476AE6E63CEE573C1312ABBD9183 /* Pods-begateway_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-begateway_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		174E727E044F6024C4A9DDDA2D68DAEF /* Pods-begateway_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-begateway_Example-frameworks.sh"; sourceTree = "<group>"; };
+		18AC5BA283FE6DA5FE9AB316EC89ADC2 /* Pods-begateway_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-begateway_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		19C01290336FCEC0945EF56270CB398C /* BGStyleSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGStyleSettings.swift; sourceTree = "<group>"; };
+		1FE87DFBD98E84BBC6B0CA11BCA8911E /* begateway-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "begateway-Info.plist"; sourceTree = "<group>"; };
+		31047CC8B6DE7DC23CAF1D98A586FCF8 /* BGMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGMessage.swift; sourceTree = "<group>"; };
+		32EDB046A629E11361DFD06E1DEE07AE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		338232C2E3B14502FE3BEB4DF038E1FF /* Pods-begateway_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-begateway_Tests.modulemap"; sourceTree = "<group>"; };
+		361CE95546842E3D648A5E6847C88DF5 /* BGAsn1Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGAsn1Parser.swift; sourceTree = "<group>"; };
+		3A2EF2E5E33FACC7AC891FB1123CD851 /* Pods-begateway_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-begateway_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		3DCFEF310468BA34EA48761F003F7A9E /* BGEncryptedMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGEncryptedMessage.swift; sourceTree = "<group>"; };
+		3EE2018ED2CBFFC93611E1F6E531E980 /* BGRSA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGRSA.swift; sourceTree = "<group>"; };
+		40C6FBEEEFA5DEBF6E6E83512D4F03EE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		42673A90FAEF97C3DB63E9E2F594FD87 /* NSData+SHA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSData+SHA.h"; sourceTree = "<group>"; };
+		44CD23258F392EF340DF8BA03CABEBAC /* BGKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGKey.swift; sourceTree = "<group>"; };
+		47AE2EE356269DB22D1EA07829CDF5BB /* begateway.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = begateway.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		53290C647E09C347D008AB3670498F90 /* BGClearMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGClearMessage.swift; sourceTree = "<group>"; };
+		54B4150BE1258490235D7A4C48D384A4 /* Pods-begateway_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-begateway_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		6C8F00203A39BD4845434F7827F76F39 /* Pods-begateway_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-begateway_Example.modulemap"; sourceTree = "<group>"; };
+		7177BDB7CE6749457A631BFE466052ED /* Pods-begateway_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-begateway_Tests-dummy.m"; sourceTree = "<group>"; };
+		771EE9796225981AE3EF7D947BEA6C7D /* Pods-begateway_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-begateway_Tests-Info.plist"; sourceTree = "<group>"; };
+		86EA3C166E22014BBE82E77B3AFA2B14 /* Pods-begateway_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-begateway_Example.release.xcconfig"; sourceTree = "<group>"; };
+		8CCF4FFF238796C69E52FBFD80B9D5F1 /* BGSignature.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGSignature.swift; sourceTree = "<group>"; };
+		92518DED7E4EB7372D3FBFB3EB3B55B9 /* Pods-begateway_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-begateway_Example-Info.plist"; sourceTree = "<group>"; };
+		92F6FE3E389B2F5C7597E54BDEC96B4B /* BGPrivateKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGPrivateKey.swift; sourceTree = "<group>"; };
+		9695F2B49EA25EFCAC27B07319280783 /* begateway.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = begateway.xcconfig; sourceTree = "<group>"; };
+		99314838E6F32CE015A6DEC7179E77DA /* begateway-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "begateway-umbrella.h"; sourceTree = "<group>"; };
+		9A37A8EC4F9CC89DFB463CBFCF45133B /* BGPaymentSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGPaymentSettings.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A02C09D32323FE560062B71B /* BGEncyption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGEncyption.swift; sourceTree = "<group>"; };
+		A02C09DD2324032B0062B71B /* BGPaymentModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BGPaymentModule.swift; path = begateway/Classes/BGPaymentModule.swift; sourceTree = "<group>"; };
+		A02C09DF2324033E0062B71B /* BGCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGCardViewController.swift; sourceTree = "<group>"; };
+		A02C09E1232422830062B71B /* BGCardViewColorsSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGCardViewColorsSettings.swift; sourceTree = "<group>"; };
+		A0A34928232442FB0076E4FD /* RTLMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTLMask.swift; sourceTree = "<group>"; };
+		A0A3492A232442FC0076E4FD /* MaskedTextViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskedTextViewDelegate.swift; sourceTree = "<group>"; };
+		A0A3492B232442FC0076E4FD /* MaskedTextInputListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskedTextInputListener.swift; sourceTree = "<group>"; };
+		A0A3492C232442FC0076E4FD /* UITextInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextInput.swift; sourceTree = "<group>"; };
+		A0A3492D232442FC0076E4FD /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		A0A3492E232442FC0076E4FD /* MaskedTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskedTextFieldDelegate.swift; sourceTree = "<group>"; };
+		A0A3492F232442FC0076E4FD /* UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		A0A34930232442FC0076E4FD /* Mask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mask.swift; sourceTree = "<group>"; };
+		A0A34933232442FC0076E4FD /* CharacterSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSet.swift; sourceTree = "<group>"; };
+		A0A34934232442FC0076E4FD /* CaretStringIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaretStringIterator.swift; sourceTree = "<group>"; };
+		A0A34935232442FC0076E4FD /* AffinityCalculationStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AffinityCalculationStrategy.swift; sourceTree = "<group>"; };
+		A0A34936232442FC0076E4FD /* RTLCaretStringIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTLCaretStringIterator.swift; sourceTree = "<group>"; };
+		A0A34937232442FC0076E4FD /* Compiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compiler.swift; sourceTree = "<group>"; };
+		A0A34938232442FC0076E4FD /* FormatSanitizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatSanitizer.swift; sourceTree = "<group>"; };
+		A0A34939232442FC0076E4FD /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		A0A3493B232442FC0076E4FD /* Next.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Next.swift; sourceTree = "<group>"; };
+		A0A3493C232442FC0076E4FD /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		A0A3493D232442FC0076E4FD /* Notation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notation.swift; sourceTree = "<group>"; };
+		A0A3493F232442FC0076E4FD /* ValueState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueState.swift; sourceTree = "<group>"; };
+		A0A34940232442FC0076E4FD /* EOLState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EOLState.swift; sourceTree = "<group>"; };
+		A0A34941232442FC0076E4FD /* FixedState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedState.swift; sourceTree = "<group>"; };
+		A0A34942232442FC0076E4FD /* OptionalValueState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalValueState.swift; sourceTree = "<group>"; };
+		A0A34943232442FC0076E4FD /* FreeState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeState.swift; sourceTree = "<group>"; };
+		A0A34944232442FC0076E4FD /* CaretString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaretString.swift; sourceTree = "<group>"; };
+		A0A3495F2325473C0076E4FD /* MonthYearPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthYearPickerView.swift; sourceTree = "<group>"; };
+		A0A34964232559790076E4FD /* BGCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGCard.swift; sourceTree = "<group>"; };
+		A0A3496A2325BE560076E4FD /* BGOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGOrder.swift; sourceTree = "<group>"; };
+		A0A3496D2325C3180076E4FD /* BGErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGErrors.swift; sourceTree = "<group>"; };
+		A0A3496F2325C44F0076E4FD /* BGCheckoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGCheckoutRequest.swift; sourceTree = "<group>"; };
+		A0A349712325C5D60076E4FD /* BGPaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPaymentMethod.swift; sourceTree = "<group>"; };
+		A0A349732325C8F70076E4FD /* BGCustomer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGCustomer.swift; sourceTree = "<group>"; };
+		A0A349752325C9FF0076E4FD /* BGCheckoutSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGCheckoutSettings.swift; sourceTree = "<group>"; };
+		A0A349782325D0170076E4FD /* BGLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGLoader.swift; sourceTree = "<group>"; };
+		A0A3497A2325D5A70076E4FD /* BGCheckoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGCheckoutResponse.swift; sourceTree = "<group>"; };
+		A0A3497C2325E5040076E4FD /* BGPaymentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPaymentRequest.swift; sourceTree = "<group>"; };
+		A0A3497E2325E50F0076E4FD /* BGPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPayment.swift; sourceTree = "<group>"; };
+		A0A349802326743C0076E4FD /* BGPaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPaymentResponse.swift; sourceTree = "<group>"; };
+		A0A34982232674440076E4FD /* BGPaymentResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPaymentResponseObject.swift; sourceTree = "<group>"; };
+		A0A8D9732326B278004818A2 /* BG3dSecVerificationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BG3dSecVerificationObject.swift; sourceTree = "<group>"; };
+		A0A8D9752326CB9D004818A2 /* BGWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGWebViewController.swift; sourceTree = "<group>"; };
+		A0A8D9772326DCEC004818A2 /* BGStatusListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGStatusListener.swift; sourceTree = "<group>"; };
+		A0A8D999232837A6004818A2 /* BGTokenizedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGTokenizedCard.swift; sourceTree = "<group>"; };
+		A0A8D99B23283835004818A2 /* BGTokenizedCardPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGTokenizedCardPayment.swift; sourceTree = "<group>"; };
+		A0A8D9A123285B20004818A2 /* BGCardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGCardInfo.swift; sourceTree = "<group>"; };
+		A6E2BA47BBFE94D337387F3A0603E1F6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		AD025EF47D2F497FB9919460094E1BD1 /* BGCardType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGCardType.swift; sourceTree = "<group>"; };
+		B1DC437D02C8BA7482AF912010EAA022 /* Pods-begateway_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-begateway_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		BC075C2FE57AE8FFA8AF81450F049D52 /* begateway-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "begateway-prefix.pch"; sourceTree = "<group>"; };
+		C12C6774C2DAA3620FE4A95A91F5FD3A /* NSData+SHA.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSData+SHA.m"; sourceTree = "<group>"; };
+		C8D31663211938B9C52951EFB6857CFD /* begateway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = begateway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D02050CD3A74350866AD31AA96A75CDB /* BGPublicKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGPublicKey.swift; sourceTree = "<group>"; };
+		D2C90EC31B20060BCA74F6E3ED26C5D4 /* begateway.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = begateway.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7A2184003749CF935AB74CF139B6646 /* begateway-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "begateway-dummy.m"; sourceTree = "<group>"; };
+		EE6BEF33145B7E38991D8119B88A2522 /* Pods-begateway_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-begateway_Example-umbrella.h"; sourceTree = "<group>"; };
+		EF0537674118F909E1B2AFD9940729FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3002221D102BD9D2F84507C5151B0FD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				656373720EF4EF8E94BAA47F53E0FD73 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		788F5E9F7218C1E13EBB79C1F942F252 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B53EDE5F7AB65B6F2C56A586BB1C0424 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67BAB2F334C0433E3A69BA3CCCB2DDD3 /* Foundation.framework in Frameworks */,
+				8D1936C3B54D89A279ED06F895C0E821 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B96DD6FF3BF6914F05E2D54A0B9DA23F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C8F22B95B11420C840CF5C01C8FA387 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F46768C48866410902DE0B67E54DFC8 /* Pods-begateway_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				338232C2E3B14502FE3BEB4DF038E1FF /* Pods-begateway_Tests.modulemap */,
+				07828B8E6DDCEE67ACA9F60C9B13CA0D /* Pods-begateway_Tests-acknowledgements.markdown */,
+				3A2EF2E5E33FACC7AC891FB1123CD851 /* Pods-begateway_Tests-acknowledgements.plist */,
+				7177BDB7CE6749457A631BFE466052ED /* Pods-begateway_Tests-dummy.m */,
+				771EE9796225981AE3EF7D947BEA6C7D /* Pods-begateway_Tests-Info.plist */,
+				0730DF5227F88441FE347699820A1C08 /* Pods-begateway_Tests-umbrella.h */,
+				0FCE14E890038FE51870ED34CBFB264A /* Pods-begateway_Tests.debug.xcconfig */,
+				54B4150BE1258490235D7A4C48D384A4 /* Pods-begateway_Tests.release.xcconfig */,
+			);
+			name = "Pods-begateway_Tests";
+			path = "Target Support Files/Pods-begateway_Tests";
+			sourceTree = "<group>";
+		};
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B475D44F9DE8B3EB70D1C14FDE147B9 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2F67B43CEF35E689A9704CD036DC55FD /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AD025EF47D2F497FB9919460094E1BD1 /* BGCardType.swift */,
+				9A37A8EC4F9CC89DFB463CBFCF45133B /* BGPaymentSettings.swift */,
+				19C01290336FCEC0945EF56270CB398C /* BGStyleSettings.swift */,
+				A02C09E1232422830062B71B /* BGCardViewColorsSettings.swift */,
+			);
+			name = Settings;
+			path = begateway/Classes/Settings;
+			sourceTree = "<group>";
+		};
+		32EA5C701821A49C41E055CFE006D576 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2C90EC31B20060BCA74F6E3ED26C5D4 /* begateway.bundle */,
+				C8D31663211938B9C52951EFB6857CFD /* begateway.framework */,
+				14F2689CE38DDE3AEBBE868038E95C50 /* Pods_begateway_Example.framework */,
+				11B8A553F2C9D26885D759D9D4D012C5 /* Pods_begateway_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		34794F9545CA4F05ECEB7EFA050165A7 /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				361CE95546842E3D648A5E6847C88DF5 /* BGAsn1Parser.swift */,
+				A02C09D32323FE560062B71B /* BGEncyption.swift */,
+				53290C647E09C347D008AB3670498F90 /* BGClearMessage.swift */,
+				3DCFEF310468BA34EA48761F003F7A9E /* BGEncryptedMessage.swift */,
+				44CD23258F392EF340DF8BA03CABEBAC /* BGKey.swift */,
+				31047CC8B6DE7DC23CAF1D98A586FCF8 /* BGMessage.swift */,
+				92F6FE3E389B2F5C7597E54BDEC96B4B /* BGPrivateKey.swift */,
+				D02050CD3A74350866AD31AA96A75CDB /* BGPublicKey.swift */,
+				3EE2018ED2CBFFC93611E1F6E531E980 /* BGRSA.swift */,
+				0BEA02225F7A627B3F35F8EC55FB44C9 /* BGRSAError.swift */,
+				8CCF4FFF238796C69E52FBFD80B9D5F1 /* BGSignature.swift */,
+				1565C08B4322B8679D9766E3A21A317D /* begateway.h */,
+				42673A90FAEF97C3DB63E9E2F594FD87 /* NSData+SHA.h */,
+				C12C6774C2DAA3620FE4A95A91F5FD3A /* NSData+SHA.m */,
+			);
+			name = Encryption;
+			path = begateway/Classes/Encryption;
+			sourceTree = "<group>";
+		};
+		4B68937DA383A876608A0CC63F13F263 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				47AE2EE356269DB22D1EA07829CDF5BB /* begateway.podspec */,
+				A6E2BA47BBFE94D337387F3A0603E1F6 /* LICENSE */,
+				32EDB046A629E11361DFD06E1DEE07AE /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		4C5D4A177CAA8A33044FC2F11B913E9E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D8A3EC04110D2C1554ED5C9C74AEEBF /* begateway.modulemap */,
+				9695F2B49EA25EFCAC27B07319280783 /* begateway.xcconfig */,
+				E7A2184003749CF935AB74CF139B6646 /* begateway-dummy.m */,
+				1FE87DFBD98E84BBC6B0CA11BCA8911E /* begateway-Info.plist */,
+				BC075C2FE57AE8FFA8AF81450F049D52 /* begateway-prefix.pch */,
+				99314838E6F32CE015A6DEC7179E77DA /* begateway-umbrella.h */,
+				16057CFA785BAB31DD50553D71376787 /* ResourceBundle-begateway-begateway-Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/begateway";
+			sourceTree = "<group>";
+		};
+		557499F881EE48DF2D13D36B3FF759D5 /* Pods-begateway_Example */ = {
+			isa = PBXGroup;
+			children = (
+				6C8F00203A39BD4845434F7827F76F39 /* Pods-begateway_Example.modulemap */,
+				18AC5BA283FE6DA5FE9AB316EC89ADC2 /* Pods-begateway_Example-acknowledgements.markdown */,
+				B1DC437D02C8BA7482AF912010EAA022 /* Pods-begateway_Example-acknowledgements.plist */,
+				03C445A48076D8D17CA62DEBBB263AF2 /* Pods-begateway_Example-dummy.m */,
+				174E727E044F6024C4A9DDDA2D68DAEF /* Pods-begateway_Example-frameworks.sh */,
+				92518DED7E4EB7372D3FBFB3EB3B55B9 /* Pods-begateway_Example-Info.plist */,
+				EE6BEF33145B7E38991D8119B88A2522 /* Pods-begateway_Example-umbrella.h */,
+				168F476AE6E63CEE573C1312ABBD9183 /* Pods-begateway_Example.debug.xcconfig */,
+				86EA3C166E22014BBE82E77B3AFA2B14 /* Pods-begateway_Example.release.xcconfig */,
+			);
+			name = "Pods-begateway_Example";
+			path = "Target Support Files/Pods-begateway_Example";
+			sourceTree = "<group>";
+		};
+		6B475D44F9DE8B3EB70D1C14FDE147B9 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				EF0537674118F909E1B2AFD9940729FD /* Foundation.framework */,
+				40C6FBEEEFA5DEBF6E6E83512D4F03EE /* Security.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		940F4E93DD4BF715D4745BE8BCD7209D /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				557499F881EE48DF2D13D36B3FF759D5 /* Pods-begateway_Example */,
+				0F46768C48866410902DE0B67E54DFC8 /* Pods-begateway_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		9525733A5737E407F1F2AEF2904EF45C /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A29C2525381866B07BBC0C09F9E62F3F /* begateway */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		A02C09DB2324031D0062B71B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A02C09DC2324031D0062B71B /* CardView */,
+			);
+			name = Views;
+			path = begateway/Classes/Views;
+			sourceTree = "<group>";
+		};
+		A02C09DC2324031D0062B71B /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				A0A8D9752326CB9D004818A2 /* BGWebViewController.swift */,
+				A02C09DF2324033E0062B71B /* BGCardViewController.swift */,
+				A0A3495F2325473C0076E4FD /* MonthYearPickerView.swift */,
+			);
+			path = CardView;
+			sourceTree = "<group>";
+		};
+		A0A34927232442C80076E4FD /* InputMask */ = {
+			isa = PBXGroup;
+			children = (
+				A0A34932232442FC0076E4FD /* Helper */,
+				A0A34930232442FC0076E4FD /* Mask.swift */,
+				A0A3493A232442FC0076E4FD /* Model */,
+				A0A34928232442FB0076E4FD /* RTLMask.swift */,
+				A0A34929232442FC0076E4FD /* View */,
+			);
+			name = InputMask;
+			path = begateway/Classes/InputMask;
+			sourceTree = "<group>";
+		};
+		A0A34929232442FC0076E4FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0A3492A232442FC0076E4FD /* MaskedTextViewDelegate.swift */,
+				A0A3492B232442FC0076E4FD /* MaskedTextInputListener.swift */,
+				A0A3492C232442FC0076E4FD /* UITextInput.swift */,
+				A0A3492D232442FC0076E4FD /* UITextField.swift */,
+				A0A3492E232442FC0076E4FD /* MaskedTextFieldDelegate.swift */,
+				A0A3492F232442FC0076E4FD /* UITextView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A0A34932232442FC0076E4FD /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A0A34933232442FC0076E4FD /* CharacterSet.swift */,
+				A0A34934232442FC0076E4FD /* CaretStringIterator.swift */,
+				A0A34935232442FC0076E4FD /* AffinityCalculationStrategy.swift */,
+				A0A34936232442FC0076E4FD /* RTLCaretStringIterator.swift */,
+				A0A34937232442FC0076E4FD /* Compiler.swift */,
+				A0A34938232442FC0076E4FD /* FormatSanitizer.swift */,
+				A0A34939232442FC0076E4FD /* String.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		A0A3493A232442FC0076E4FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A0A3493B232442FC0076E4FD /* Next.swift */,
+				A0A3493C232442FC0076E4FD /* State.swift */,
+				A0A3493D232442FC0076E4FD /* Notation.swift */,
+				A0A3493E232442FC0076E4FD /* State */,
+				A0A34944232442FC0076E4FD /* CaretString.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A0A3493E232442FC0076E4FD /* State */ = {
+			isa = PBXGroup;
+			children = (
+				A0A3493F232442FC0076E4FD /* ValueState.swift */,
+				A0A34940232442FC0076E4FD /* EOLState.swift */,
+				A0A34941232442FC0076E4FD /* FixedState.swift */,
+				A0A34942232442FC0076E4FD /* OptionalValueState.swift */,
+				A0A34943232442FC0076E4FD /* FreeState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		A0A34962232559640076E4FD /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				A0A349772325CFAA0076E4FD /* ServerWork */,
+				A0A3496C2325C30F0076E4FD /* Errors */,
+				A0A349632325596B0076E4FD /* Entities */,
+			);
+			name = Flow;
+			path = begateway/Classes/Flow;
+			sourceTree = "<group>";
+		};
+		A0A349632325596B0076E4FD /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A0A3497C2325E5040076E4FD /* BGPaymentRequest.swift */,
+				A0A3497E2325E50F0076E4FD /* BGPayment.swift */,
+				A0A349802326743C0076E4FD /* BGPaymentResponse.swift */,
+				A0A34982232674440076E4FD /* BGPaymentResponseObject.swift */,
+				A0A8D9732326B278004818A2 /* BG3dSecVerificationObject.swift */,
+				A0A3496F2325C44F0076E4FD /* BGCheckoutRequest.swift */,
+				A0A349712325C5D60076E4FD /* BGPaymentMethod.swift */,
+				A0A34964232559790076E4FD /* BGCard.swift */,
+				A0A3496A2325BE560076E4FD /* BGOrder.swift */,
+				A0A349732325C8F70076E4FD /* BGCustomer.swift */,
+				A0A349752325C9FF0076E4FD /* BGCheckoutSettings.swift */,
+				A0A3497A2325D5A70076E4FD /* BGCheckoutResponse.swift */,
+				A0A8D9772326DCEC004818A2 /* BGStatusListener.swift */,
+				A0A8D999232837A6004818A2 /* BGTokenizedCard.swift */,
+				A0A8D99B23283835004818A2 /* BGTokenizedCardPayment.swift */,
+				A0A8D9A123285B20004818A2 /* BGCardInfo.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		A0A3496C2325C30F0076E4FD /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				A0A3496D2325C3180076E4FD /* BGErrors.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		A0A349772325CFAA0076E4FD /* ServerWork */ = {
+			isa = PBXGroup;
+			children = (
+				A0A349782325D0170076E4FD /* BGLoader.swift */,
+			);
+			path = ServerWork;
+			sourceTree = "<group>";
+		};
+		A29C2525381866B07BBC0C09F9E62F3F /* begateway */ = {
+			isa = PBXGroup;
+			children = (
+				A0A34962232559640076E4FD /* Flow */,
+				A0A34927232442C80076E4FD /* InputMask */,
+				A02C09DB2324031D0062B71B /* Views */,
+				A02C09DD2324032B0062B71B /* BGPaymentModule.swift */,
+				34794F9545CA4F05ECEB7EFA050165A7 /* Encryption */,
+				2F67B43CEF35E689A9704CD036DC55FD /* Settings */,
+				4B68937DA383A876608A0CC63F13F263 /* Pod */,
+				D449A0E1822A9A2D454C39CE5182901B /* Resources */,
+				4C5D4A177CAA8A33044FC2F11B913E9E /* Support Files */,
+			);
+			name = begateway;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				9525733A5737E407F1F2AEF2904EF45C /* Development Pods */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				32EA5C701821A49C41E055CFE006D576 /* Products */,
+				940F4E93DD4BF715D4745BE8BCD7209D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D449A0E1822A9A2D454C39CE5182901B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				11D9E5F2CA2B0E9741715407E98C524D /* bgresources.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		063AF461264CCA395F713BAA46A5E8B7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC31012E111D7C4C94E9D28C7C0F4DE3 /* begateway-umbrella.h in Headers */,
+				F5129B1DADF139E9A94B1340BD431439 /* begateway.h in Headers */,
+				946B862F8D0623B9211C8BFA3EF5B8E9 /* NSData+SHA.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37EC8D89F0AEC85126DDBB69A4FE0EB2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D1C65D1996033428DFA33534971CE2B /* Pods-begateway_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94DC4721DF088363996608561BF241C5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F34FADB8ACB833236640ADCB3DB4DC48 /* Pods-begateway_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		218E033E6015E89D2C684E196B15CBF0 /* begateway */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2044FC36FD791BD8BC55FBF4C7864CF5 /* Build configuration list for PBXNativeTarget "begateway" */;
+			buildPhases = (
+				063AF461264CCA395F713BAA46A5E8B7 /* Headers */,
+				E8436A230F689B9115F163623DE68D3E /* Sources */,
+				B53EDE5F7AB65B6F2C56A586BB1C0424 /* Frameworks */,
+				F3ECA6E72B6BBD70AF729F0476E0291F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				98DB7B6D0ADFC4950BA630D333CF6413 /* PBXTargetDependency */,
+			);
+			name = begateway;
+			productName = begateway;
+			productReference = C8D31663211938B9C52951EFB6857CFD /* begateway.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		472E3246EE061399061E95A7DD305CE4 /* begateway-begateway */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89BECE28A284B4A5B6A537E95A4345FB /* Build configuration list for PBXNativeTarget "begateway-begateway" */;
+			buildPhases = (
+				8C58E83BC6E9618DB746CF30F2AA2B26 /* Sources */,
+				788F5E9F7218C1E13EBB79C1F942F252 /* Frameworks */,
+				371CB345489B78E1297C849634EEEB09 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "begateway-begateway";
+			productName = "begateway-begateway";
+			productReference = D2C90EC31B20060BCA74F6E3ED26C5D4 /* begateway.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		573A6F813499EF0A0C9DD2D484F72F9A /* Pods-begateway_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0540F779FA7409961433E0B15AC578D /* Build configuration list for PBXNativeTarget "Pods-begateway_Example" */;
+			buildPhases = (
+				94DC4721DF088363996608561BF241C5 /* Headers */,
+				0BD141A5DB33BF9728A72349A30600E1 /* Sources */,
+				B96DD6FF3BF6914F05E2D54A0B9DA23F /* Frameworks */,
+				F6B8A90433E9965BF35479812CA3EB7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04D9FB93E93FB12E9B5B9566ED2994F0 /* PBXTargetDependency */,
+			);
+			name = "Pods-begateway_Example";
+			productName = "Pods-begateway_Example";
+			productReference = 14F2689CE38DDE3AEBBE868038E95C50 /* Pods_begateway_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AE168A93FFE1E310A56E6E170AA96D58 /* Pods-begateway_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55F6D06EC4D83B7CF9A579AE6FFB32A3 /* Build configuration list for PBXNativeTarget "Pods-begateway_Tests" */;
+			buildPhases = (
+				37EC8D89F0AEC85126DDBB69A4FE0EB2 /* Headers */,
+				1B649853077595965AE94B2505179DC8 /* Sources */,
+				3002221D102BD9D2F84507C5151B0FD9 /* Frameworks */,
+				20D2C48AD55679584F1A9E2297DAF233 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2895F67FCCD4F0D6C54AE4E39EBF4C97 /* PBXTargetDependency */,
+			);
+			name = "Pods-begateway_Tests";
+			productName = "Pods-begateway_Tests";
+			productReference = 11B8A553F2C9D26885D759D9D4D012C5 /* Pods_begateway_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 32EA5C701821A49C41E055CFE006D576 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				218E033E6015E89D2C684E196B15CBF0 /* begateway */,
+				472E3246EE061399061E95A7DD305CE4 /* begateway-begateway */,
+				573A6F813499EF0A0C9DD2D484F72F9A /* Pods-begateway_Example */,
+				AE168A93FFE1E310A56E6E170AA96D58 /* Pods-begateway_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20D2C48AD55679584F1A9E2297DAF233 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		371CB345489B78E1297C849634EEEB09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3ECA6E72B6BBD70AF729F0476E0291F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0A3495E2325282C0076E4FD /* bgresources.xcassets in Resources */,
+				774A2BE746EFFF18EF21303214A09537 /* begateway.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6B8A90433E9965BF35479812CA3EB7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0BD141A5DB33BF9728A72349A30600E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EDB4401BBDA3990A410AB0AA3163CEA /* Pods-begateway_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B649853077595965AE94B2505179DC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2017D588B6EA3388E3312BD5E7908595 /* Pods-begateway_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C58E83BC6E9618DB746CF30F2AA2B26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8436A230F689B9115F163623DE68D3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0A8D9782326DCEC004818A2 /* BGStatusListener.swift in Sources */,
+				A0A3495B232442FC0076E4FD /* OptionalValueState.swift in Sources */,
+				A0A34957232442FC0076E4FD /* Notation.swift in Sources */,
+				A0A3495D232442FC0076E4FD /* CaretString.swift in Sources */,
+				A0A34958232442FC0076E4FD /* ValueState.swift in Sources */,
+				A0A34950232442FC0076E4FD /* AffinityCalculationStrategy.swift in Sources */,
+				A0A349792325D0170076E4FD /* BGLoader.swift in Sources */,
+				A0A3494F232442FC0076E4FD /* CaretStringIterator.swift in Sources */,
+				A0A34948232442FC0076E4FD /* UITextInput.swift in Sources */,
+				A0A3497B2325D5A70076E4FD /* BGCheckoutResponse.swift in Sources */,
+				A0A349762325C9FF0076E4FD /* BGCheckoutSettings.swift in Sources */,
+				A0A3494A232442FC0076E4FD /* MaskedTextFieldDelegate.swift in Sources */,
+				A0A34952232442FC0076E4FD /* Compiler.swift in Sources */,
+				FDA3F71FF2ACF4BCCA9196B35801FE0E /* begateway-dummy.m in Sources */,
+				A0A8D9A223285B20004818A2 /* BGCardInfo.swift in Sources */,
+				A0A34983232674440076E4FD /* BGPaymentResponseObject.swift in Sources */,
+				A0A34965232559790076E4FD /* BGCard.swift in Sources */,
+				A02C09DE2324032C0062B71B /* BGPaymentModule.swift in Sources */,
+				6BB1A6994843554EA549AFCEF18B62D3 /* BGAsn1Parser.swift in Sources */,
+				A0A349722325C5D60076E4FD /* BGPaymentMethod.swift in Sources */,
+				A0A3495C232442FC0076E4FD /* FreeState.swift in Sources */,
+				2C1AAD47FCC7425DA4A99CF0F6AF4C82 /* BGCardType.swift in Sources */,
+				A0A3497F2325E50F0076E4FD /* BGPayment.swift in Sources */,
+				A0A34946232442FC0076E4FD /* MaskedTextViewDelegate.swift in Sources */,
+				A0A3495A232442FC0076E4FD /* FixedState.swift in Sources */,
+				A0A3497D2325E5040076E4FD /* BGPaymentRequest.swift in Sources */,
+				A75DDBF812A5FDEA8B7712965A3E913A /* BGClearMessage.swift in Sources */,
+				13EE63D7E19EADF52909CCD89105E4C2 /* BGEncryptedMessage.swift in Sources */,
+				8873CB44F40E4970E85DD54444D95957 /* BGKey.swift in Sources */,
+				A0A34947232442FC0076E4FD /* MaskedTextInputListener.swift in Sources */,
+				A0A3496B2325BE560076E4FD /* BGOrder.swift in Sources */,
+				A0A34954232442FC0076E4FD /* String.swift in Sources */,
+				A0A3494C232442FC0076E4FD /* Mask.swift in Sources */,
+				19470441A05B8FCB225E90BDD39ABBC8 /* BGMessage.swift in Sources */,
+				A0A8D9762326CB9D004818A2 /* BGWebViewController.swift in Sources */,
+				A0A34949232442FC0076E4FD /* UITextField.swift in Sources */,
+				A0A349702325C44F0076E4FD /* BGCheckoutRequest.swift in Sources */,
+				A02C09D42323FE560062B71B /* BGEncyption.swift in Sources */,
+				A02C09E02324033E0062B71B /* BGCardViewController.swift in Sources */,
+				A0A34945232442FC0076E4FD /* RTLMask.swift in Sources */,
+				A02C09E2232422830062B71B /* BGCardViewColorsSettings.swift in Sources */,
+				A0A3494E232442FC0076E4FD /* CharacterSet.swift in Sources */,
+				A0A34956232442FC0076E4FD /* State.swift in Sources */,
+				A0A349742325C8F70076E4FD /* BGCustomer.swift in Sources */,
+				A0A349812326743C0076E4FD /* BGPaymentResponse.swift in Sources */,
+				A0A3496E2325C3180076E4FD /* BGErrors.swift in Sources */,
+				5AE6B8B10848268EB1FE106A62B41C91 /* BGPaymentSettings.swift in Sources */,
+				E609226BB642B4F23CCAC312725D9FFD /* BGPrivateKey.swift in Sources */,
+				A0A3494B232442FC0076E4FD /* UITextView.swift in Sources */,
+				2CF696CF104E04B84E435E550042164A /* BGPublicKey.swift in Sources */,
+				B3D93A0629BA5564ED1D0E1D6C16895A /* BGRSA.swift in Sources */,
+				A0A34955232442FC0076E4FD /* Next.swift in Sources */,
+				A0A34959232442FC0076E4FD /* EOLState.swift in Sources */,
+				A0A8D99A232837A6004818A2 /* BGTokenizedCard.swift in Sources */,
+				A0A8D99C23283835004818A2 /* BGTokenizedCardPayment.swift in Sources */,
+				DB56EAC5FB00B7E4781276BF6DE1A5CF /* BGRSAError.swift in Sources */,
+				8914FE39489D45AAF6448215193A4C59 /* BGSignature.swift in Sources */,
+				6209E9E7DFF86C6548693F216BA415C2 /* BGStyleSettings.swift in Sources */,
+				A0A8D9742326B278004818A2 /* BG3dSecVerificationObject.swift in Sources */,
+				A0A349602325473C0076E4FD /* MonthYearPickerView.swift in Sources */,
+				A0A34953232442FC0076E4FD /* FormatSanitizer.swift in Sources */,
+				BE782DB570D96FB89BE04698122662F9 /* NSData+SHA.m in Sources */,
+				A0A34951232442FC0076E4FD /* RTLCaretStringIterator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04D9FB93E93FB12E9B5B9566ED2994F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = begateway;
+			target = 218E033E6015E89D2C684E196B15CBF0 /* begateway */;
+			targetProxy = CABB14C389D4136374DD0F03B6B7C6FC /* PBXContainerItemProxy */;
+		};
+		2895F67FCCD4F0D6C54AE4E39EBF4C97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-begateway_Example";
+			target = 573A6F813499EF0A0C9DD2D484F72F9A /* Pods-begateway_Example */;
+			targetProxy = D633021E3866FDD83EF35D51980E61A2 /* PBXContainerItemProxy */;
+		};
+		98DB7B6D0ADFC4950BA630D333CF6413 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "begateway-begateway";
+			target = 472E3246EE061399061E95A7DD305CE4 /* begateway-begateway */;
+			targetProxy = 872EBA51523263C53D1F483E4E6ECBC3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		196DFA3E4A09A28224918543529A1885 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		1D12BB3A95A0BDF73811136B639969DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9695F2B49EA25EFCAC27B07319280783 /* begateway.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/begateway";
+				INFOPLIST_FILE = "Target Support Files/begateway/ResourceBundle-begateway-begateway-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = begateway;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		28C2675F774E6F366F0BE7FBB7CC5222 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54B4150BE1258490235D7A4C48D384A4 /* Pods-begateway_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-begateway_Tests/Pods-begateway_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-begateway_Tests/Pods-begateway_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		36A0C348350D6137AE02172C04741D94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9695F2B49EA25EFCAC27B07319280783 /* begateway.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/begateway/begateway-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/begateway/begateway-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/begateway/begateway.modulemap";
+				PRODUCT_MODULE_NAME = begateway;
+				PRODUCT_NAME = begateway;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6D11E2772A2A93EC8D8E861716C69D5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FCE14E890038FE51870ED34CBFB264A /* Pods-begateway_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-begateway_Tests/Pods-begateway_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-begateway_Tests/Pods-begateway_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6FCDF7810E5220B5EFDF75373A52D02E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9695F2B49EA25EFCAC27B07319280783 /* begateway.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/begateway/begateway-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/begateway/begateway-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/begateway/begateway.modulemap";
+				PRODUCT_MODULE_NAME = begateway;
+				PRODUCT_NAME = begateway;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		BE6907C5D4B67FB70FD93A94FD22AD11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 168F476AE6E63CEE573C1312ABBD9183 /* Pods-begateway_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-begateway_Example/Pods-begateway_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-begateway_Example/Pods-begateway_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C51FCEFCCE653EC5EB1556778AC43E57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86EA3C166E22014BBE82E77B3AFA2B14 /* Pods-begateway_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-begateway_Example/Pods-begateway_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-begateway_Example/Pods-begateway_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CE769C47A881320F0716BA15DA4FFEB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9695F2B49EA25EFCAC27B07319280783 /* begateway.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/begateway";
+				INFOPLIST_FILE = "Target Support Files/begateway/ResourceBundle-begateway-begateway-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = begateway;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2044FC36FD791BD8BC55FBF4C7864CF5 /* Build configuration list for PBXNativeTarget "begateway" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FCDF7810E5220B5EFDF75373A52D02E /* Debug */,
+				36A0C348350D6137AE02172C04741D94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				196DFA3E4A09A28224918543529A1885 /* Debug */,
+				B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55F6D06EC4D83B7CF9A579AE6FFB32A3 /* Build configuration list for PBXNativeTarget "Pods-begateway_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D11E2772A2A93EC8D8E861716C69D5D /* Debug */,
+				28C2675F774E6F366F0BE7FBB7CC5222 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89BECE28A284B4A5B6A537E95A4345FB /* Build configuration list for PBXNativeTarget "begateway-begateway" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D12BB3A95A0BDF73811136B639969DE /* Debug */,
+				CE769C47A881320F0716BA15DA4FFEB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0540F779FA7409961433E0B15AC578D /* Build configuration list for PBXNativeTarget "Pods-begateway_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE6907C5D4B67FB70FD93A94FD22AD11 /* Debug */,
+				C51FCEFCCE653EC5EB1556778AC43E57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

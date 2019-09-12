@@ -9,33 +9,33 @@ import Foundation
 import UIKit
 
 public struct BGCardViewColorsSettings {
-    let holderNameTextColor: UIColor
-    let holderNameBackgroundColor: UIColor
-    let holderNamePlaceholderColor: UIColor
+    public var holderNameTextColor: UIColor
+    public var holderNameBackgroundColor: UIColor
+    public var holderNamePlaceholderColor: UIColor
     
-    let cardNumberTextColor: UIColor
-    let cardNumberBackgroundColor: UIColor
-    let cardNumberInvalidColor: UIColor
-    let cardNumberPlaceholderColor: UIColor
+    public var cardNumberTextColor: UIColor
+    public var cardNumberBackgroundColor: UIColor
+    public var cardNumberInvalidColor: UIColor
+    public var cardNumberPlaceholderColor: UIColor
     
-    let cvvTextColor: UIColor
-    let cvvBackgroundColor: UIColor
-    let cvvTextPlaceholderColor: UIColor
+    public var cvvTextColor: UIColor
+    public var cvvBackgroundColor: UIColor
+    public var cvvTextPlaceholderColor: UIColor
     
-    let expirationDateTextColor: UIColor
-    let expirationDateBackgroundColor: UIColor
-    let expirationDatePlaceholderColor: UIColor
+    public var expirationDateTextColor: UIColor
+    public var expirationDateBackgroundColor: UIColor
+    public var expirationDatePlaceholderColor: UIColor
     
-    let cancelTextColor: UIColor
+    public var cancelTextColor: UIColor
     
-    let payButtonBackgroundColor: UIColor
-    let payButtonTextColor: UIColor
+    public var payButtonBackgroundColor: UIColor
+    public var payButtonTextColor: UIColor
     
-    let secureInfoTextColor: UIColor
+    public var secureInfoTextColor: UIColor
     
-    let saveCardSwitchTextColor: UIColor
-    let saveCardSwitchTintOnColor: UIColor
-    let saveCardSwitchTintOffColor: UIColor
+    public var saveCardSwitchTextColor: UIColor
+    public var saveCardSwitchTintOnColor: UIColor
+    public var saveCardSwitchTintOffColor: UIColor
     
     static var standart: BGCardViewColorsSettings {
         let settings = BGCardViewColorsSettings(

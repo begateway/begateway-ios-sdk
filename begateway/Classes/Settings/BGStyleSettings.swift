@@ -12,12 +12,7 @@ public struct BGStyleSettings {
     public var isRequiredCardNumber: Bool
     public var isRequiredCVV: Bool
     public var isRequiredExpDate: Bool
-    public var isMaskCVV: Bool
-    public var isMaskCardNumber: Bool
-    public var saveCardCheckboxDefaultState: Bool
     public var isSaveCardCheckBoxVisible: Bool
-    public var isScanCardVisible: Bool
-    public var isSecuredLabelVisible: Bool
     public var customPayButtonLabel: String?
     
     public static var standart: BGStyleSettings {
@@ -26,12 +21,7 @@ public struct BGStyleSettings {
             isRequiredCardNumber: true,
             isRequiredCVV: true,
             isRequiredExpDate: true,
-            isMaskCVV: true,
-            isMaskCardNumber: true,
-            saveCardCheckboxDefaultState: true,
             isSaveCardCheckBoxVisible: true,
-            isScanCardVisible: true,
-            isSecuredLabelVisible: true,
             customPayButtonLabel: nil)
     }
 }

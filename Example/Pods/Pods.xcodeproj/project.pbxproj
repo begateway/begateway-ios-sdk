@@ -7,86 +7,86 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05CBA2FC7DC0F50A5AA395461D8CE36E /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5E3C143233B5D7CF177C0819AC0B8 /* UITextField.swift */; };
+		05D79C2A6E0052EB484A077186C351A9 /* BGOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56040E15A12467A5BDE583AAC184213F /* BGOrder.swift */; };
+		09DE22EB6CBAF270F6A053E7988B1BFF /* BGCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77C308E083B1E7DE0FE28AAD579A870 /* BGCardViewController.swift */; };
 		0D1C65D1996033428DFA33534971CE2B /* Pods-begateway_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0730DF5227F88441FE347699820A1C08 /* Pods-begateway_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		13EE63D7E19EADF52909CCD89105E4C2 /* BGEncryptedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCFEF310468BA34EA48761F003F7A9E /* BGEncryptedMessage.swift */; };
-		19470441A05B8FCB225E90BDD39ABBC8 /* BGMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31047CC8B6DE7DC23CAF1D98A586FCF8 /* BGMessage.swift */; };
+		0F00A0D796A6C61B7C29AADE20D11F99 /* BGCheckoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673A47B6288840DE763F4756D1E3E888 /* BGCheckoutResponse.swift */; };
+		10C1CF840EE49CAEB4C4A4AAF6C1802F /* BGPaymentSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7805365B165BE8E44F043C000FEE6BFA /* BGPaymentSettings.swift */; };
+		12A0BA399AD31B2B409621341F0024BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0537674118F909E1B2AFD9940729FD /* Foundation.framework */; };
+		165A230FC84FACAEFCF5952B3AC7A69D /* BGPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901F81835E86426ECB2BBEBE446885CC /* BGPayment.swift */; };
+		172ED0E4B8D06AF98F1013C8408539F3 /* CaretString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCE0FF1140734613C9DD3A16374EBC8 /* CaretString.swift */; };
 		2017D588B6EA3388E3312BD5E7908595 /* Pods-begateway_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7177BDB7CE6749457A631BFE466052ED /* Pods-begateway_Tests-dummy.m */; };
-		2C1AAD47FCC7425DA4A99CF0F6AF4C82 /* BGCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD025EF47D2F497FB9919460094E1BD1 /* BGCardType.swift */; };
-		2CF696CF104E04B84E435E550042164A /* BGPublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02050CD3A74350866AD31AA96A75CDB /* BGPublicKey.swift */; };
-		5AE6B8B10848268EB1FE106A62B41C91 /* BGPaymentSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A37A8EC4F9CC89DFB463CBFCF45133B /* BGPaymentSettings.swift */; };
-		6209E9E7DFF86C6548693F216BA415C2 /* BGStyleSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C01290336FCEC0945EF56270CB398C /* BGStyleSettings.swift */; };
+		209DDE8344C7529B4EE077BEB6FCCA49 /* BGPrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD7F0F79D4916AEB1785F3BE91AF9D8 /* BGPrivateKey.swift */; };
+		23745C7179EEA00113AA6B1C3FB7561A /* BGAsn1Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4106CFE02D67E446175C6CC1F6451D6 /* BGAsn1Parser.swift */; };
+		23BF98BAB54CEFF7C32D754BD6DE77AF /* BGCardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC03D6C2662C4F76D6AEF59F99B930E /* BGCardInfo.swift */; };
+		296414923B11D93385FD7EE8062D36C4 /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A7C416C4BD3D87951865165A4380 /* Compiler.swift */; };
+		29CCF65D403EB2148BD53D3370159C6D /* BGCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C99EBB64B7FDB7C4B8896038E17B8DE /* BGCustomer.swift */; };
+		3B0B3E9F1091E2AB19C7B646AFF848A1 /* BGPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071CE8652423AB927939C2F9479348C2 /* BGPaymentRequest.swift */; };
+		407D25B43DDECB2FC8F6FAE79F4FC40B /* BGKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF4616E7045D6CBCFCF995E3E9BBA1 /* BGKey.swift */; };
+		42578DBBBF5DEBAA15B29B671CFD1B38 /* AffinityCalculationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C756F067E0280157876957AF2712A0B7 /* AffinityCalculationStrategy.swift */; };
+		43397403BD5205AED82B7619F5963D8B /* BGCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93BACAAC1B1AB15895FC737745D514 /* BGCardType.swift */; };
+		4ACE282CDA19362F0C08601F20E6E161 /* RTLMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343C001E4B0A7176957455DECC4DD0E6 /* RTLMask.swift */; };
+		4B9B97F4FBF7FA7458301CFFCD6D974A /* MaskedTextInputListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = C543C4CBAD2D457BE36D608D9E6EAB43 /* MaskedTextInputListener.swift */; };
+		4C3CBF60B439009070F176E328A8C9D0 /* BGTokenizedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074A10B835AC81D6B1C53016A79BA4C /* BGTokenizedCard.swift */; };
+		4EF6E0DAFE9FB520078D558215AE0568 /* FixedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458424BFB8D9719C3450BE19758D6DA /* FixedState.swift */; };
+		51102CC01B2D3C1E519BC07A601DB408 /* BGStatusListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AC1C6AEC7F62AFF9318511B211DB5 /* BGStatusListener.swift */; };
+		528DB6AA8B3520D591393BA3D8B24100 /* FormatSanitizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DB183F3B35FDB157CCBABBD5034725 /* FormatSanitizer.swift */; };
+		55A0D6BDE3C4FC67EB587EC26E5AF48C /* BGTokenizedCardPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFECCA7E241850DF12A1FB3042731FD3 /* BGTokenizedCardPayment.swift */; };
+		5656FB65CC07C1E045417D419BB15EAC /* BGMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0006038F29BE7662FE1D6792A840446 /* BGMessage.swift */; };
+		5E4B0825D9D45EF004653057105F9E7D /* Notation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E989751CDAF2BDE05EB4EE2D2C99FA /* Notation.swift */; };
+		5F9F084A7B8A0148AED843D8A565C184 /* BG3dSecVerificationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF990302054557060A905513D56AA5 /* BG3dSecVerificationObject.swift */; };
+		646BADA5EBEEB7F088F5EE235B3A44FF /* BGClearMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418D2CA01EFDB5A8C4ABE89D1BF2EF06 /* BGClearMessage.swift */; };
 		656373720EF4EF8E94BAA47F53E0FD73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0537674118F909E1B2AFD9940729FD /* Foundation.framework */; };
-		67BAB2F334C0433E3A69BA3CCCB2DDD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0537674118F909E1B2AFD9940729FD /* Foundation.framework */; };
-		6BB1A6994843554EA549AFCEF18B62D3 /* BGAsn1Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361CE95546842E3D648A5E6847C88DF5 /* BGAsn1Parser.swift */; };
-		774A2BE746EFFF18EF21303214A09537 /* begateway.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2C90EC31B20060BCA74F6E3ED26C5D4 /* begateway.bundle */; };
+		6BC4302755EE60C5B371EA6675CE71D5 /* begateway.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E387CA7113922C4F9672B7C86640601 /* begateway.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C229CC20C5E15C704D676EF8561C483 /* BGCheckoutSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD58EA636C4C2749AC5F85AE07E74CB /* BGCheckoutSettings.swift */; };
+		6C2F00562E3C988A913934B9FB2A6C3C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40C6FBEEEFA5DEBF6E6E83512D4F03EE /* Security.framework */; };
+		75AD6FE96831981E483B7AD79AE59F32 /* BGErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B09C7648D8E836A45F6606C273E10 /* BGErrors.swift */; };
+		79572BADC816E4A06ACDD95852AAA4F9 /* ValueState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBD1A99C2D959B95560BF54B18A5DD7 /* ValueState.swift */; };
+		7A3D49B5D9C7E4EE131C0E1634DBD1C4 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57781C91906C70F1D964057910441B2E /* State.swift */; };
 		7C8F22B95B11420C840CF5C01C8FA387 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0537674118F909E1B2AFD9940729FD /* Foundation.framework */; };
-		8873CB44F40E4970E85DD54444D95957 /* BGKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD23258F392EF340DF8BA03CABEBAC /* BGKey.swift */; };
-		8914FE39489D45AAF6448215193A4C59 /* BGSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF4FFF238796C69E52FBFD80B9D5F1 /* BGSignature.swift */; };
-		8D1936C3B54D89A279ED06F895C0E821 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40C6FBEEEFA5DEBF6E6E83512D4F03EE /* Security.framework */; };
+		7E3BF8E3FFBAB6062915DAD0BD7B337C /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A827F9B9B555274B0907F2FE2ED948 /* UITextView.swift */; };
+		875FC1E6C0A0D556FEFE15DF4F0D3DCD /* NSData+SHA.m in Sources */ = {isa = PBXBuildFile; fileRef = 843D3540C812A05D0B5815D52E6D900D /* NSData+SHA.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8EDB4401BBDA3990A410AB0AA3163CEA /* Pods-begateway_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C445A48076D8D17CA62DEBBB263AF2 /* Pods-begateway_Example-dummy.m */; };
-		946B862F8D0623B9211C8BFA3EF5B8E9 /* NSData+SHA.h in Headers */ = {isa = PBXBuildFile; fileRef = 42673A90FAEF97C3DB63E9E2F594FD87 /* NSData+SHA.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A02C09D42323FE560062B71B /* BGEncyption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C09D32323FE560062B71B /* BGEncyption.swift */; };
-		A02C09DE2324032C0062B71B /* BGPaymentModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C09DD2324032B0062B71B /* BGPaymentModule.swift */; };
-		A02C09E02324033E0062B71B /* BGCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C09DF2324033E0062B71B /* BGCardViewController.swift */; };
-		A02C09E2232422830062B71B /* BGCardViewColorsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C09E1232422830062B71B /* BGCardViewColorsSettings.swift */; };
-		A0A34945232442FC0076E4FD /* RTLMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34928232442FB0076E4FD /* RTLMask.swift */; };
-		A0A34946232442FC0076E4FD /* MaskedTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3492A232442FC0076E4FD /* MaskedTextViewDelegate.swift */; };
-		A0A34947232442FC0076E4FD /* MaskedTextInputListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3492B232442FC0076E4FD /* MaskedTextInputListener.swift */; };
-		A0A34948232442FC0076E4FD /* UITextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3492C232442FC0076E4FD /* UITextInput.swift */; };
-		A0A34949232442FC0076E4FD /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3492D232442FC0076E4FD /* UITextField.swift */; };
-		A0A3494A232442FC0076E4FD /* MaskedTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3492E232442FC0076E4FD /* MaskedTextFieldDelegate.swift */; };
-		A0A3494B232442FC0076E4FD /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3492F232442FC0076E4FD /* UITextView.swift */; };
-		A0A3494C232442FC0076E4FD /* Mask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34930232442FC0076E4FD /* Mask.swift */; };
-		A0A3494E232442FC0076E4FD /* CharacterSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34933232442FC0076E4FD /* CharacterSet.swift */; };
-		A0A3494F232442FC0076E4FD /* CaretStringIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34934232442FC0076E4FD /* CaretStringIterator.swift */; };
-		A0A34950232442FC0076E4FD /* AffinityCalculationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34935232442FC0076E4FD /* AffinityCalculationStrategy.swift */; };
-		A0A34951232442FC0076E4FD /* RTLCaretStringIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34936232442FC0076E4FD /* RTLCaretStringIterator.swift */; };
-		A0A34952232442FC0076E4FD /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34937232442FC0076E4FD /* Compiler.swift */; };
-		A0A34953232442FC0076E4FD /* FormatSanitizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34938232442FC0076E4FD /* FormatSanitizer.swift */; };
-		A0A34954232442FC0076E4FD /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34939232442FC0076E4FD /* String.swift */; };
-		A0A34955232442FC0076E4FD /* Next.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3493B232442FC0076E4FD /* Next.swift */; };
-		A0A34956232442FC0076E4FD /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3493C232442FC0076E4FD /* State.swift */; };
-		A0A34957232442FC0076E4FD /* Notation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3493D232442FC0076E4FD /* Notation.swift */; };
-		A0A34958232442FC0076E4FD /* ValueState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3493F232442FC0076E4FD /* ValueState.swift */; };
-		A0A34959232442FC0076E4FD /* EOLState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34940232442FC0076E4FD /* EOLState.swift */; };
-		A0A3495A232442FC0076E4FD /* FixedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34941232442FC0076E4FD /* FixedState.swift */; };
-		A0A3495B232442FC0076E4FD /* OptionalValueState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34942232442FC0076E4FD /* OptionalValueState.swift */; };
-		A0A3495C232442FC0076E4FD /* FreeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34943232442FC0076E4FD /* FreeState.swift */; };
-		A0A3495D232442FC0076E4FD /* CaretString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34944232442FC0076E4FD /* CaretString.swift */; };
-		A0A3495E2325282C0076E4FD /* bgresources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11D9E5F2CA2B0E9741715407E98C524D /* bgresources.xcassets */; };
-		A0A349602325473C0076E4FD /* MonthYearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3495F2325473C0076E4FD /* MonthYearPickerView.swift */; };
-		A0A34965232559790076E4FD /* BGCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34964232559790076E4FD /* BGCard.swift */; };
-		A0A3496B2325BE560076E4FD /* BGOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3496A2325BE560076E4FD /* BGOrder.swift */; };
-		A0A3496E2325C3180076E4FD /* BGErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3496D2325C3180076E4FD /* BGErrors.swift */; };
-		A0A349702325C44F0076E4FD /* BGCheckoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3496F2325C44F0076E4FD /* BGCheckoutRequest.swift */; };
-		A0A349722325C5D60076E4FD /* BGPaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A349712325C5D60076E4FD /* BGPaymentMethod.swift */; };
-		A0A349742325C8F70076E4FD /* BGCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A349732325C8F70076E4FD /* BGCustomer.swift */; };
-		A0A349762325C9FF0076E4FD /* BGCheckoutSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A349752325C9FF0076E4FD /* BGCheckoutSettings.swift */; };
-		A0A349792325D0170076E4FD /* BGLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A349782325D0170076E4FD /* BGLoader.swift */; };
-		A0A3497B2325D5A70076E4FD /* BGCheckoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3497A2325D5A70076E4FD /* BGCheckoutResponse.swift */; };
-		A0A3497D2325E5040076E4FD /* BGPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3497C2325E5040076E4FD /* BGPaymentRequest.swift */; };
-		A0A3497F2325E50F0076E4FD /* BGPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3497E2325E50F0076E4FD /* BGPayment.swift */; };
-		A0A349812326743C0076E4FD /* BGPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A349802326743C0076E4FD /* BGPaymentResponse.swift */; };
-		A0A34983232674440076E4FD /* BGPaymentResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A34982232674440076E4FD /* BGPaymentResponseObject.swift */; };
-		A0A8D9742326B278004818A2 /* BG3dSecVerificationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A8D9732326B278004818A2 /* BG3dSecVerificationObject.swift */; };
-		A0A8D9762326CB9D004818A2 /* BGWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A8D9752326CB9D004818A2 /* BGWebViewController.swift */; };
-		A0A8D9782326DCEC004818A2 /* BGStatusListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A8D9772326DCEC004818A2 /* BGStatusListener.swift */; };
-		A0A8D99A232837A6004818A2 /* BGTokenizedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A8D999232837A6004818A2 /* BGTokenizedCard.swift */; };
-		A0A8D99C23283835004818A2 /* BGTokenizedCardPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A8D99B23283835004818A2 /* BGTokenizedCardPayment.swift */; };
-		A0A8D9A223285B20004818A2 /* BGCardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A8D9A123285B20004818A2 /* BGCardInfo.swift */; };
-		A75DDBF812A5FDEA8B7712965A3E913A /* BGClearMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53290C647E09C347D008AB3670498F90 /* BGClearMessage.swift */; };
-		B3D93A0629BA5564ED1D0E1D6C16895A /* BGRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2018ED2CBFFC93611E1F6E531E980 /* BGRSA.swift */; };
-		BE782DB570D96FB89BE04698122662F9 /* NSData+SHA.m in Sources */ = {isa = PBXBuildFile; fileRef = C12C6774C2DAA3620FE4A95A91F5FD3A /* NSData+SHA.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		DB56EAC5FB00B7E4781276BF6DE1A5CF /* BGRSAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEA02225F7A627B3F35F8EC55FB44C9 /* BGRSAError.swift */; };
-		E609226BB642B4F23CCAC312725D9FFD /* BGPrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6FE3E389B2F5C7597E54BDEC96B4B /* BGPrivateKey.swift */; };
-		EC31012E111D7C4C94E9D28C7C0F4DE3 /* begateway-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 99314838E6F32CE015A6DEC7179E77DA /* begateway-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		90C4777F260129863D9BBE2298ED0DE6 /* CharacterSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883D55FD07D8D769126FDF2ABC259F3C /* CharacterSet.swift */; };
+		92E01DAAB066B322AF75525054830F1C /* BGSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0EE6012336FA1F78845085CF7AD7A1 /* BGSignature.swift */; };
+		94FCC64012BD2A13B79F75678ABB5146 /* BGWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385EE0CD0BD9B78406A9C0D6E7A5A928 /* BGWebViewController.swift */; };
+		9577E16FB3C5DC5E48828CD203FFAB48 /* EOLState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A009C56EA8299DE2834BD87D6A8B98A9 /* EOLState.swift */; };
+		9DDC52175D46B63FFEE29485C918522B /* begateway.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2C90EC31B20060BCA74F6E3ED26C5D4 /* begateway.bundle */; };
+		9FC88E8D6564A048E78B5AEFC7F5DBDC /* begateway-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 55956ADD9C1ECB11719490817CDF517C /* begateway-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A349C1002DFEA80DEE7232AA953BB0EF /* UITextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C882AD4EE08B15C619FB7428C618200 /* UITextInput.swift */; };
+		A592F055FBB1039BBAFB1456D82D75D7 /* FreeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E43CA42D0D6210A5D3AB7ACF15955B /* FreeState.swift */; };
+		AEBAD36E66CD9DD40C5B959EE5938AEB /* BGCardViewColorsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5078CB69B60FE270508C46FBDC115F1 /* BGCardViewColorsSettings.swift */; };
+		B0F22F5B3C74E699A208E0F0A68F57F3 /* OptionalValueState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1364E8586B7D6805C84C2E152861F2AE /* OptionalValueState.swift */; };
+		B36774F7FE4C134B271D6FABD85D2A9C /* MonthYearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC03D0F65565536426A46B697811F2 /* MonthYearPickerView.swift */; };
+		B3C9B73D97A88C8D65F56603BB224212 /* bgresources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD07D37FF9C77CD10758D4CB5E4298E7 /* bgresources.xcassets */; };
+		B461BA9DB60FF7831DE3BAAA35309A70 /* BGLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A6ECF1F7BE178F85A4CC1989E9690 /* BGLoader.swift */; };
+		BAB6CAE723E62BE594E07D3CFA77F22D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF89A49BBC4EDFBEE640A404E1D654D /* String.swift */; };
+		BCB0B6116BE80362BD4E50507318201B /* begateway-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CEF7B8BE7B8C5A4FE66D4E73EEBC11 /* begateway-dummy.m */; };
+		BDABD21F2842773B832200112119AD6C /* BGPaymentResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718177096D1F51923F0774F8A9ECF9E2 /* BGPaymentResponseObject.swift */; };
+		CF5B3B61DA5883A35FA7011967D847F0 /* MaskedTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE525544442D4E77D183C9895C796B4 /* MaskedTextViewDelegate.swift */; };
+		D0410005F8F134AAC897331A90540457 /* BGRSAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE82957E9DDBCFDD1B5B1E7E3F61DE7 /* BGRSAError.swift */; };
+		D0D2B988FC20746555C77D6C2E3548B0 /* BGPaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB3BDCEFBADB6EA8B86A8A7CFC9B53F /* BGPaymentMethod.swift */; };
+		D164D7C06D3EC73D0F227F309BCE5E31 /* BGStyleSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95165EBBFB233D4A74894879CE70CE22 /* BGStyleSettings.swift */; };
+		D25906FB334376FF74A74E1011B79C9D /* BGCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F78577BDFC47BE63CF7E60ADEEA00A /* BGCard.swift */; };
+		D6EF31B86A8AEFB77A0F8FE4D0BDDED5 /* Mask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592912C1E0B2F6517662DF6774F1733B /* Mask.swift */; };
+		D8E95AEC030FA2377EDC7E00B305EF78 /* BGEncyption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2DE302056A468A3B2D116C6E6FF35 /* BGEncyption.swift */; };
+		D925D2FAD569CA59BCAB64AE84B33CF8 /* CaretStringIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B0C8AFED8D0D6779A1C9BBECB4A4C4 /* CaretStringIterator.swift */; };
+		E16704728C049764554677AE7C6E78F5 /* BGEncryptedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63819DB7715D39E14A21263B8A80E093 /* BGEncryptedMessage.swift */; };
+		E6C2489F31F12454FB4E522C8AD269DC /* MaskedTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E06639E8AE4BB280611D360F76E80 /* MaskedTextFieldDelegate.swift */; };
+		E97F6B6FA8AEC245C0304D640CE00BE7 /* BGPaymentModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F3421842F16FE7B533C34027F096B /* BGPaymentModule.swift */; };
+		F1E9E27E01C12433E5F016501CADE022 /* NSData+SHA.h in Headers */ = {isa = PBXBuildFile; fileRef = F13EA64E586440B8FA752FE2844635CE /* NSData+SHA.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F30A89CDD7DF26269B1DA3CFA1A20A41 /* BGPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596A89AA777D4000CAF62F5799059799 /* BGPaymentResponse.swift */; };
 		F34FADB8ACB833236640ADCB3DB4DC48 /* Pods-begateway_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EE6BEF33145B7E38991D8119B88A2522 /* Pods-begateway_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F5129B1DADF139E9A94B1340BD431439 /* begateway.h in Headers */ = {isa = PBXBuildFile; fileRef = 1565C08B4322B8679D9766E3A21A317D /* begateway.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FDA3F71FF2ACF4BCCA9196B35801FE0E /* begateway-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A2184003749CF935AB74CF139B6646 /* begateway-dummy.m */; };
+		F52DDA7A8BF3B6041D2E7CB7883E32E6 /* BGRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE28CDEBF09949AADB823CDEF682A07 /* BGRSA.swift */; };
+		F6EF7D06FD45B594F6687CF653193A4C /* BGCheckoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2484989EA4AD4937A818EE402BA254 /* BGCheckoutRequest.swift */; };
+		F97AB42B994637ED35048B07457539AB /* BGPublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDEA4E31884B9512B568E903C834484 /* BGPublicKey.swift */; };
+		FB2544B87D5E7C10CF8AAB37E034947C /* Next.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624C19353B01FA8F8014A076FD1E119C /* Next.swift */; };
+		FFA5D43E254A6BCB5D78BB9C4616BE68 /* RTLCaretStringIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030760B59C821C6615D269F67CDE0681 /* RTLCaretStringIterator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		872EBA51523263C53D1F483E4E6ECBC3 /* PBXContainerItemProxy */ = {
+		2A0D9DE7864E8FC62D72A61F0FFCA7C6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -110,105 +110,105 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		030760B59C821C6615D269F67CDE0681 /* RTLCaretStringIterator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RTLCaretStringIterator.swift; sourceTree = "<group>"; };
 		03C445A48076D8D17CA62DEBBB263AF2 /* Pods-begateway_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-begateway_Example-dummy.m"; sourceTree = "<group>"; };
+		071CE8652423AB927939C2F9479348C2 /* BGPaymentRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGPaymentRequest.swift; sourceTree = "<group>"; };
 		0730DF5227F88441FE347699820A1C08 /* Pods-begateway_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-begateway_Tests-umbrella.h"; sourceTree = "<group>"; };
 		07828B8E6DDCEE67ACA9F60C9B13CA0D /* Pods-begateway_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-begateway_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0BEA02225F7A627B3F35F8EC55FB44C9 /* BGRSAError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGRSAError.swift; sourceTree = "<group>"; };
-		0D8A3EC04110D2C1554ED5C9C74AEEBF /* begateway.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = begateway.modulemap; sourceTree = "<group>"; };
 		0FCE14E890038FE51870ED34CBFB264A /* Pods-begateway_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-begateway_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		11B8A553F2C9D26885D759D9D4D012C5 /* Pods_begateway_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_begateway_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		11D9E5F2CA2B0E9741715407E98C524D /* bgresources.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = bgresources.xcassets; path = begateway/Assets/bgresources.xcassets; sourceTree = "<group>"; };
-		14F2689CE38DDE3AEBBE868038E95C50 /* Pods_begateway_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_begateway_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1565C08B4322B8679D9766E3A21A317D /* begateway.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = begateway.h; sourceTree = "<group>"; };
-		16057CFA785BAB31DD50553D71376787 /* ResourceBundle-begateway-begateway-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-begateway-begateway-Info.plist"; sourceTree = "<group>"; };
+		11B8A553F2C9D26885D759D9D4D012C5 /* Pods_begateway_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_begateway_Tests.framework; path = "Pods-begateway_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1364E8586B7D6805C84C2E152861F2AE /* OptionalValueState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OptionalValueState.swift; sourceTree = "<group>"; };
+		14F2689CE38DDE3AEBBE868038E95C50 /* Pods_begateway_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_begateway_Example.framework; path = "Pods-begateway_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		168F476AE6E63CEE573C1312ABBD9183 /* Pods-begateway_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-begateway_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		174E727E044F6024C4A9DDDA2D68DAEF /* Pods-begateway_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-begateway_Example-frameworks.sh"; sourceTree = "<group>"; };
 		18AC5BA283FE6DA5FE9AB316EC89ADC2 /* Pods-begateway_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-begateway_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		19C01290336FCEC0945EF56270CB398C /* BGStyleSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGStyleSettings.swift; sourceTree = "<group>"; };
-		1FE87DFBD98E84BBC6B0CA11BCA8911E /* begateway-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "begateway-Info.plist"; sourceTree = "<group>"; };
-		31047CC8B6DE7DC23CAF1D98A586FCF8 /* BGMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGMessage.swift; sourceTree = "<group>"; };
-		32EDB046A629E11361DFD06E1DEE07AE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1B0EE6012336FA1F78845085CF7AD7A1 /* BGSignature.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGSignature.swift; sourceTree = "<group>"; };
+		1B2484989EA4AD4937A818EE402BA254 /* BGCheckoutRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGCheckoutRequest.swift; sourceTree = "<group>"; };
+		1B32C496AC17943194D540BDF589BB59 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		1CC03D6C2662C4F76D6AEF59F99B930E /* BGCardInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGCardInfo.swift; sourceTree = "<group>"; };
+		1E387CA7113922C4F9672B7C86640601 /* begateway.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = begateway.h; sourceTree = "<group>"; };
+		1FADCDDDB936C076A9FCFA93A4AC00BF /* begateway.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = begateway.xcconfig; sourceTree = "<group>"; };
+		2D8E79D7250DCDCE47EAB2FE8B8D513C /* begateway-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "begateway-prefix.pch"; sourceTree = "<group>"; };
+		31CEF7B8BE7B8C5A4FE66D4E73EEBC11 /* begateway-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "begateway-dummy.m"; sourceTree = "<group>"; };
+		31DB183F3B35FDB157CCBABBD5034725 /* FormatSanitizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FormatSanitizer.swift; sourceTree = "<group>"; };
 		338232C2E3B14502FE3BEB4DF038E1FF /* Pods-begateway_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-begateway_Tests.modulemap"; sourceTree = "<group>"; };
-		361CE95546842E3D648A5E6847C88DF5 /* BGAsn1Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGAsn1Parser.swift; sourceTree = "<group>"; };
+		33A7A7C416C4BD3D87951865165A4380 /* Compiler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Compiler.swift; sourceTree = "<group>"; };
+		343C001E4B0A7176957455DECC4DD0E6 /* RTLMask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RTLMask.swift; sourceTree = "<group>"; };
+		385EE0CD0BD9B78406A9C0D6E7A5A928 /* BGWebViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGWebViewController.swift; sourceTree = "<group>"; };
+		38CE3A9497650F13F98758E3B5E42E0F /* begateway.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = begateway.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		39E51689E3278316B210238C46F17962 /* begateway.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = begateway.modulemap; sourceTree = "<group>"; };
 		3A2EF2E5E33FACC7AC891FB1123CD851 /* Pods-begateway_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-begateway_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		3DCFEF310468BA34EA48761F003F7A9E /* BGEncryptedMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGEncryptedMessage.swift; sourceTree = "<group>"; };
-		3EE2018ED2CBFFC93611E1F6E531E980 /* BGRSA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGRSA.swift; sourceTree = "<group>"; };
+		3C99EBB64B7FDB7C4B8896038E17B8DE /* BGCustomer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGCustomer.swift; sourceTree = "<group>"; };
+		3CB3BDCEFBADB6EA8B86A8A7CFC9B53F /* BGPaymentMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGPaymentMethod.swift; sourceTree = "<group>"; };
+		3CF89A49BBC4EDFBEE640A404E1D654D /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		40C6FBEEEFA5DEBF6E6E83512D4F03EE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		42673A90FAEF97C3DB63E9E2F594FD87 /* NSData+SHA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSData+SHA.h"; sourceTree = "<group>"; };
-		44CD23258F392EF340DF8BA03CABEBAC /* BGKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGKey.swift; sourceTree = "<group>"; };
-		47AE2EE356269DB22D1EA07829CDF5BB /* begateway.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = begateway.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		53290C647E09C347D008AB3670498F90 /* BGClearMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGClearMessage.swift; sourceTree = "<group>"; };
+		418D2CA01EFDB5A8C4ABE89D1BF2EF06 /* BGClearMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGClearMessage.swift; sourceTree = "<group>"; };
+		5074A10B835AC81D6B1C53016A79BA4C /* BGTokenizedCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGTokenizedCard.swift; sourceTree = "<group>"; };
 		54B4150BE1258490235D7A4C48D384A4 /* Pods-begateway_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-begateway_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		55956ADD9C1ECB11719490817CDF517C /* begateway-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "begateway-umbrella.h"; sourceTree = "<group>"; };
+		56040E15A12467A5BDE583AAC184213F /* BGOrder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGOrder.swift; sourceTree = "<group>"; };
+		57781C91906C70F1D964057910441B2E /* State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		57BF4616E7045D6CBCFCF995E3E9BBA1 /* BGKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGKey.swift; sourceTree = "<group>"; };
+		592912C1E0B2F6517662DF6774F1733B /* Mask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Mask.swift; sourceTree = "<group>"; };
+		596A89AA777D4000CAF62F5799059799 /* BGPaymentResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGPaymentResponse.swift; sourceTree = "<group>"; };
+		5DE28CDEBF09949AADB823CDEF682A07 /* BGRSA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGRSA.swift; sourceTree = "<group>"; };
+		624C19353B01FA8F8014A076FD1E119C /* Next.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Next.swift; sourceTree = "<group>"; };
+		63819DB7715D39E14A21263B8A80E093 /* BGEncryptedMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGEncryptedMessage.swift; sourceTree = "<group>"; };
+		63C2DE302056A468A3B2D116C6E6FF35 /* BGEncyption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGEncyption.swift; sourceTree = "<group>"; };
+		673A47B6288840DE763F4756D1E3E888 /* BGCheckoutResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGCheckoutResponse.swift; sourceTree = "<group>"; };
 		6C8F00203A39BD4845434F7827F76F39 /* Pods-begateway_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-begateway_Example.modulemap"; sourceTree = "<group>"; };
 		7177BDB7CE6749457A631BFE466052ED /* Pods-begateway_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-begateway_Tests-dummy.m"; sourceTree = "<group>"; };
+		718177096D1F51923F0774F8A9ECF9E2 /* BGPaymentResponseObject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGPaymentResponseObject.swift; sourceTree = "<group>"; };
 		771EE9796225981AE3EF7D947BEA6C7D /* Pods-begateway_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-begateway_Tests-Info.plist"; sourceTree = "<group>"; };
+		7805365B165BE8E44F043C000FEE6BFA /* BGPaymentSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGPaymentSettings.swift; sourceTree = "<group>"; };
+		81A1DEE373160D9A8C95C36288250058 /* begateway-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "begateway-Info.plist"; sourceTree = "<group>"; };
+		843D3540C812A05D0B5815D52E6D900D /* NSData+SHA.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSData+SHA.m"; sourceTree = "<group>"; };
+		8458424BFB8D9719C3450BE19758D6DA /* FixedState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FixedState.swift; sourceTree = "<group>"; };
 		86EA3C166E22014BBE82E77B3AFA2B14 /* Pods-begateway_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-begateway_Example.release.xcconfig"; sourceTree = "<group>"; };
-		8CCF4FFF238796C69E52FBFD80B9D5F1 /* BGSignature.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGSignature.swift; sourceTree = "<group>"; };
+		87A5E3C143233B5D7CF177C0819AC0B8 /* UITextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		883D55FD07D8D769126FDF2ABC259F3C /* CharacterSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CharacterSet.swift; sourceTree = "<group>"; };
+		8BBD1A99C2D959B95560BF54B18A5DD7 /* ValueState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ValueState.swift; sourceTree = "<group>"; };
+		8C882AD4EE08B15C619FB7428C618200 /* UITextInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UITextInput.swift; sourceTree = "<group>"; };
+		8CD7F0F79D4916AEB1785F3BE91AF9D8 /* BGPrivateKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGPrivateKey.swift; sourceTree = "<group>"; };
+		8EAF990302054557060A905513D56AA5 /* BG3dSecVerificationObject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BG3dSecVerificationObject.swift; sourceTree = "<group>"; };
+		901F81835E86426ECB2BBEBE446885CC /* BGPayment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGPayment.swift; sourceTree = "<group>"; };
 		92518DED7E4EB7372D3FBFB3EB3B55B9 /* Pods-begateway_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-begateway_Example-Info.plist"; sourceTree = "<group>"; };
-		92F6FE3E389B2F5C7597E54BDEC96B4B /* BGPrivateKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGPrivateKey.swift; sourceTree = "<group>"; };
-		9695F2B49EA25EFCAC27B07319280783 /* begateway.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = begateway.xcconfig; sourceTree = "<group>"; };
-		99314838E6F32CE015A6DEC7179E77DA /* begateway-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "begateway-umbrella.h"; sourceTree = "<group>"; };
-		9A37A8EC4F9CC89DFB463CBFCF45133B /* BGPaymentSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGPaymentSettings.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A02C09D32323FE560062B71B /* BGEncyption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGEncyption.swift; sourceTree = "<group>"; };
-		A02C09DD2324032B0062B71B /* BGPaymentModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BGPaymentModule.swift; path = begateway/Classes/BGPaymentModule.swift; sourceTree = "<group>"; };
-		A02C09DF2324033E0062B71B /* BGCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGCardViewController.swift; sourceTree = "<group>"; };
-		A02C09E1232422830062B71B /* BGCardViewColorsSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGCardViewColorsSettings.swift; sourceTree = "<group>"; };
-		A0A34928232442FB0076E4FD /* RTLMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTLMask.swift; sourceTree = "<group>"; };
-		A0A3492A232442FC0076E4FD /* MaskedTextViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskedTextViewDelegate.swift; sourceTree = "<group>"; };
-		A0A3492B232442FC0076E4FD /* MaskedTextInputListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskedTextInputListener.swift; sourceTree = "<group>"; };
-		A0A3492C232442FC0076E4FD /* UITextInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextInput.swift; sourceTree = "<group>"; };
-		A0A3492D232442FC0076E4FD /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
-		A0A3492E232442FC0076E4FD /* MaskedTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskedTextFieldDelegate.swift; sourceTree = "<group>"; };
-		A0A3492F232442FC0076E4FD /* UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
-		A0A34930232442FC0076E4FD /* Mask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mask.swift; sourceTree = "<group>"; };
-		A0A34933232442FC0076E4FD /* CharacterSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSet.swift; sourceTree = "<group>"; };
-		A0A34934232442FC0076E4FD /* CaretStringIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaretStringIterator.swift; sourceTree = "<group>"; };
-		A0A34935232442FC0076E4FD /* AffinityCalculationStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AffinityCalculationStrategy.swift; sourceTree = "<group>"; };
-		A0A34936232442FC0076E4FD /* RTLCaretStringIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTLCaretStringIterator.swift; sourceTree = "<group>"; };
-		A0A34937232442FC0076E4FD /* Compiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compiler.swift; sourceTree = "<group>"; };
-		A0A34938232442FC0076E4FD /* FormatSanitizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatSanitizer.swift; sourceTree = "<group>"; };
-		A0A34939232442FC0076E4FD /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		A0A3493B232442FC0076E4FD /* Next.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Next.swift; sourceTree = "<group>"; };
-		A0A3493C232442FC0076E4FD /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
-		A0A3493D232442FC0076E4FD /* Notation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notation.swift; sourceTree = "<group>"; };
-		A0A3493F232442FC0076E4FD /* ValueState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueState.swift; sourceTree = "<group>"; };
-		A0A34940232442FC0076E4FD /* EOLState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EOLState.swift; sourceTree = "<group>"; };
-		A0A34941232442FC0076E4FD /* FixedState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedState.swift; sourceTree = "<group>"; };
-		A0A34942232442FC0076E4FD /* OptionalValueState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalValueState.swift; sourceTree = "<group>"; };
-		A0A34943232442FC0076E4FD /* FreeState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeState.swift; sourceTree = "<group>"; };
-		A0A34944232442FC0076E4FD /* CaretString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaretString.swift; sourceTree = "<group>"; };
-		A0A3495F2325473C0076E4FD /* MonthYearPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthYearPickerView.swift; sourceTree = "<group>"; };
-		A0A34964232559790076E4FD /* BGCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGCard.swift; sourceTree = "<group>"; };
-		A0A3496A2325BE560076E4FD /* BGOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGOrder.swift; sourceTree = "<group>"; };
-		A0A3496D2325C3180076E4FD /* BGErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGErrors.swift; sourceTree = "<group>"; };
-		A0A3496F2325C44F0076E4FD /* BGCheckoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGCheckoutRequest.swift; sourceTree = "<group>"; };
-		A0A349712325C5D60076E4FD /* BGPaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPaymentMethod.swift; sourceTree = "<group>"; };
-		A0A349732325C8F70076E4FD /* BGCustomer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGCustomer.swift; sourceTree = "<group>"; };
-		A0A349752325C9FF0076E4FD /* BGCheckoutSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGCheckoutSettings.swift; sourceTree = "<group>"; };
-		A0A349782325D0170076E4FD /* BGLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGLoader.swift; sourceTree = "<group>"; };
-		A0A3497A2325D5A70076E4FD /* BGCheckoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGCheckoutResponse.swift; sourceTree = "<group>"; };
-		A0A3497C2325E5040076E4FD /* BGPaymentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPaymentRequest.swift; sourceTree = "<group>"; };
-		A0A3497E2325E50F0076E4FD /* BGPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPayment.swift; sourceTree = "<group>"; };
-		A0A349802326743C0076E4FD /* BGPaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPaymentResponse.swift; sourceTree = "<group>"; };
-		A0A34982232674440076E4FD /* BGPaymentResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPaymentResponseObject.swift; sourceTree = "<group>"; };
-		A0A8D9732326B278004818A2 /* BG3dSecVerificationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BG3dSecVerificationObject.swift; sourceTree = "<group>"; };
-		A0A8D9752326CB9D004818A2 /* BGWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGWebViewController.swift; sourceTree = "<group>"; };
-		A0A8D9772326DCEC004818A2 /* BGStatusListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGStatusListener.swift; sourceTree = "<group>"; };
-		A0A8D999232837A6004818A2 /* BGTokenizedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGTokenizedCard.swift; sourceTree = "<group>"; };
-		A0A8D99B23283835004818A2 /* BGTokenizedCardPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGTokenizedCardPayment.swift; sourceTree = "<group>"; };
-		A0A8D9A123285B20004818A2 /* BGCardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGCardInfo.swift; sourceTree = "<group>"; };
-		A6E2BA47BBFE94D337387F3A0603E1F6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		AD025EF47D2F497FB9919460094E1BD1 /* BGCardType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGCardType.swift; sourceTree = "<group>"; };
+		95165EBBFB233D4A74894879CE70CE22 /* BGStyleSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGStyleSettings.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A009C56EA8299DE2834BD87D6A8B98A9 /* EOLState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EOLState.swift; sourceTree = "<group>"; };
+		A84AC1C6AEC7F62AFF9318511B211DB5 /* BGStatusListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGStatusListener.swift; sourceTree = "<group>"; };
+		A9B0C8AFED8D0D6779A1C9BBECB4A4C4 /* CaretStringIterator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CaretStringIterator.swift; sourceTree = "<group>"; };
 		B1DC437D02C8BA7482AF912010EAA022 /* Pods-begateway_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-begateway_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		BC075C2FE57AE8FFA8AF81450F049D52 /* begateway-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "begateway-prefix.pch"; sourceTree = "<group>"; };
-		C12C6774C2DAA3620FE4A95A91F5FD3A /* NSData+SHA.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSData+SHA.m"; sourceTree = "<group>"; };
-		C8D31663211938B9C52951EFB6857CFD /* begateway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = begateway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D02050CD3A74350866AD31AA96A75CDB /* BGPublicKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGPublicKey.swift; sourceTree = "<group>"; };
-		D2C90EC31B20060BCA74F6E3ED26C5D4 /* begateway.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = begateway.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7A2184003749CF935AB74CF139B6646 /* begateway-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "begateway-dummy.m"; sourceTree = "<group>"; };
+		B4106CFE02D67E446175C6CC1F6451D6 /* BGAsn1Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGAsn1Parser.swift; sourceTree = "<group>"; };
+		BD07D37FF9C77CD10758D4CB5E4298E7 /* bgresources.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = bgresources.xcassets; path = begateway/Assets/bgresources.xcassets; sourceTree = "<group>"; };
+		BE1F3421842F16FE7B533C34027F096B /* BGPaymentModule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BGPaymentModule.swift; path = begateway/Classes/BGPaymentModule.swift; sourceTree = "<group>"; };
+		C0E989751CDAF2BDE05EB4EE2D2C99FA /* Notation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Notation.swift; sourceTree = "<group>"; };
+		C543C4CBAD2D457BE36D608D9E6EAB43 /* MaskedTextInputListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MaskedTextInputListener.swift; sourceTree = "<group>"; };
+		C756F067E0280157876957AF2712A0B7 /* AffinityCalculationStrategy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AffinityCalculationStrategy.swift; sourceTree = "<group>"; };
+		C8D31663211938B9C52951EFB6857CFD /* begateway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = begateway.framework; path = begateway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEE82957E9DDBCFDD1B5B1E7E3F61DE7 /* BGRSAError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGRSAError.swift; sourceTree = "<group>"; };
+		CFECCA7E241850DF12A1FB3042731FD3 /* BGTokenizedCardPayment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGTokenizedCardPayment.swift; sourceTree = "<group>"; };
+		CFFC03D0F65565536426A46B697811F2 /* MonthYearPickerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MonthYearPickerView.swift; sourceTree = "<group>"; };
+		D2C90EC31B20060BCA74F6E3ED26C5D4 /* begateway.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = begateway.bundle; path = "begateway-begateway.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5E43CA42D0D6210A5D3AB7ACF15955B /* FreeState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FreeState.swift; sourceTree = "<group>"; };
+		D77C308E083B1E7DE0FE28AAD579A870 /* BGCardViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGCardViewController.swift; sourceTree = "<group>"; };
+		D86B09C7648D8E836A45F6606C273E10 /* BGErrors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGErrors.swift; sourceTree = "<group>"; };
+		D8C150481466600BC052F06989D25D13 /* ResourceBundle-begateway-begateway-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-begateway-begateway-Info.plist"; sourceTree = "<group>"; };
+		DC3E06639E8AE4BB280611D360F76E80 /* MaskedTextFieldDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MaskedTextFieldDelegate.swift; sourceTree = "<group>"; };
+		DCD58EA636C4C2749AC5F85AE07E74CB /* BGCheckoutSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGCheckoutSettings.swift; sourceTree = "<group>"; };
+		DDCE0FF1140734613C9DD3A16374EBC8 /* CaretString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CaretString.swift; sourceTree = "<group>"; };
+		DE93BACAAC1B1AB15895FC737745D514 /* BGCardType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGCardType.swift; sourceTree = "<group>"; };
+		DEDEA4E31884B9512B568E903C834484 /* BGPublicKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGPublicKey.swift; sourceTree = "<group>"; };
+		E5078CB69B60FE270508C46FBDC115F1 /* BGCardViewColorsSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGCardViewColorsSettings.swift; sourceTree = "<group>"; };
+		E6A827F9B9B555274B0907F2FE2ED948 /* UITextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		EE6BEF33145B7E38991D8119B88A2522 /* Pods-begateway_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-begateway_Example-umbrella.h"; sourceTree = "<group>"; };
 		EF0537674118F909E1B2AFD9940729FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EF4B0EAC98A8E561C91119E8DCFA06C6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		F0006038F29BE7662FE1D6792A840446 /* BGMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGMessage.swift; sourceTree = "<group>"; };
+		F13EA64E586440B8FA752FE2844635CE /* NSData+SHA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSData+SHA.h"; sourceTree = "<group>"; };
+		F6F78577BDFC47BE63CF7E60ADEEA00A /* BGCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGCard.swift; sourceTree = "<group>"; };
+		FD1A6ECF1F7BE178F85A4CC1989E9690 /* BGLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGLoader.swift; sourceTree = "<group>"; };
+		FDE525544442D4E77D183C9895C796B4 /* MaskedTextViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MaskedTextViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,19 +220,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		788F5E9F7218C1E13EBB79C1F942F252 /* Frameworks */ = {
+		6C7D1C00C1ECF0F40D9034300C137DB6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B53EDE5F7AB65B6F2C56A586BB1C0424 /* Frameworks */ = {
+		7E724B954BF792C9FBFF9560FD4A1F8A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67BAB2F334C0433E3A69BA3CCCB2DDD3 /* Foundation.framework in Frameworks */,
-				8D1936C3B54D89A279ED06F895C0E821 /* Security.framework in Frameworks */,
+				12A0BA399AD31B2B409621341F0024BE /* Foundation.framework in Frameworks */,
+				6C2F00562E3C988A913934B9FB2A6C3C /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +247,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08066CFF83972A94F2245F7BA5683F9E /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				1E387CA7113922C4F9672B7C86640601 /* begateway.h */,
+				B4106CFE02D67E446175C6CC1F6451D6 /* BGAsn1Parser.swift */,
+				418D2CA01EFDB5A8C4ABE89D1BF2EF06 /* BGClearMessage.swift */,
+				63819DB7715D39E14A21263B8A80E093 /* BGEncryptedMessage.swift */,
+				63C2DE302056A468A3B2D116C6E6FF35 /* BGEncyption.swift */,
+				57BF4616E7045D6CBCFCF995E3E9BBA1 /* BGKey.swift */,
+				F0006038F29BE7662FE1D6792A840446 /* BGMessage.swift */,
+				8CD7F0F79D4916AEB1785F3BE91AF9D8 /* BGPrivateKey.swift */,
+				DEDEA4E31884B9512B568E903C834484 /* BGPublicKey.swift */,
+				5DE28CDEBF09949AADB823CDEF682A07 /* BGRSA.swift */,
+				CEE82957E9DDBCFDD1B5B1E7E3F61DE7 /* BGRSAError.swift */,
+				1B0EE6012336FA1F78845085CF7AD7A1 /* BGSignature.swift */,
+				F13EA64E586440B8FA752FE2844635CE /* NSData+SHA.h */,
+				843D3540C812A05D0B5815D52E6D900D /* NSData+SHA.m */,
+			);
+			name = Encryption;
+			path = begateway/Classes/Encryption;
+			sourceTree = "<group>";
+		};
 		0F46768C48866410902DE0B67E54DFC8 /* Pods-begateway_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,16 +293,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2F67B43CEF35E689A9704CD036DC55FD /* Settings */ = {
+		174E5154971481E477DA8CFE9B9AC254 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				AD025EF47D2F497FB9919460094E1BD1 /* BGCardType.swift */,
-				9A37A8EC4F9CC89DFB463CBFCF45133B /* BGPaymentSettings.swift */,
-				19C01290336FCEC0945EF56270CB398C /* BGStyleSettings.swift */,
-				A02C09E1232422830062B71B /* BGCardViewColorsSettings.swift */,
+				38CE3A9497650F13F98758E3B5E42E0F /* begateway.podspec */,
+				1B32C496AC17943194D540BDF589BB59 /* LICENSE */,
+				EF4B0EAC98A8E561C91119E8DCFA06C6 /* README.md */,
 			);
-			name = Settings;
-			path = begateway/Classes/Settings;
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		2F95C12FBA69A25E0B1B746A37A57BF9 /* begateway */ = {
+			isa = PBXGroup;
+			children = (
+				BE1F3421842F16FE7B533C34027F096B /* BGPaymentModule.swift */,
+				08066CFF83972A94F2245F7BA5683F9E /* Encryption */,
+				63FA34FBB11725D10DBC86A13DBD6F57 /* Flow */,
+				60107EEDCD51F7F8D79AC33DF5202AB6 /* InputMask */,
+				174E5154971481E477DA8CFE9B9AC254 /* Pod */,
+				AD26726083039AC4081E7DE2A882A78F /* Resources */,
+				4FBD5FF268FC2ADA9F0CA83AB0368C9A /* Settings */,
+				5EEF00DC13E6D0EF3F39C32FA437751E /* Support Files */,
+				505F656004944DBE23E49C55407F8B8A /* Views */,
+			);
+			name = begateway;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		32EA5C701821A49C41E055CFE006D576 /* Products */ = {
@@ -294,51 +331,25 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		34794F9545CA4F05ECEB7EFA050165A7 /* Encryption */ = {
+		4FBD5FF268FC2ADA9F0CA83AB0368C9A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				361CE95546842E3D648A5E6847C88DF5 /* BGAsn1Parser.swift */,
-				A02C09D32323FE560062B71B /* BGEncyption.swift */,
-				53290C647E09C347D008AB3670498F90 /* BGClearMessage.swift */,
-				3DCFEF310468BA34EA48761F003F7A9E /* BGEncryptedMessage.swift */,
-				44CD23258F392EF340DF8BA03CABEBAC /* BGKey.swift */,
-				31047CC8B6DE7DC23CAF1D98A586FCF8 /* BGMessage.swift */,
-				92F6FE3E389B2F5C7597E54BDEC96B4B /* BGPrivateKey.swift */,
-				D02050CD3A74350866AD31AA96A75CDB /* BGPublicKey.swift */,
-				3EE2018ED2CBFFC93611E1F6E531E980 /* BGRSA.swift */,
-				0BEA02225F7A627B3F35F8EC55FB44C9 /* BGRSAError.swift */,
-				8CCF4FFF238796C69E52FBFD80B9D5F1 /* BGSignature.swift */,
-				1565C08B4322B8679D9766E3A21A317D /* begateway.h */,
-				42673A90FAEF97C3DB63E9E2F594FD87 /* NSData+SHA.h */,
-				C12C6774C2DAA3620FE4A95A91F5FD3A /* NSData+SHA.m */,
+				DE93BACAAC1B1AB15895FC737745D514 /* BGCardType.swift */,
+				E5078CB69B60FE270508C46FBDC115F1 /* BGCardViewColorsSettings.swift */,
+				7805365B165BE8E44F043C000FEE6BFA /* BGPaymentSettings.swift */,
+				95165EBBFB233D4A74894879CE70CE22 /* BGStyleSettings.swift */,
 			);
-			name = Encryption;
-			path = begateway/Classes/Encryption;
+			name = Settings;
+			path = begateway/Classes/Settings;
 			sourceTree = "<group>";
 		};
-		4B68937DA383A876608A0CC63F13F263 /* Pod */ = {
+		505F656004944DBE23E49C55407F8B8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				47AE2EE356269DB22D1EA07829CDF5BB /* begateway.podspec */,
-				A6E2BA47BBFE94D337387F3A0603E1F6 /* LICENSE */,
-				32EDB046A629E11361DFD06E1DEE07AE /* README.md */,
+				9529BDB231ABD8CB027DCE404A8D3117 /* CardView */,
 			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		4C5D4A177CAA8A33044FC2F11B913E9E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				0D8A3EC04110D2C1554ED5C9C74AEEBF /* begateway.modulemap */,
-				9695F2B49EA25EFCAC27B07319280783 /* begateway.xcconfig */,
-				E7A2184003749CF935AB74CF139B6646 /* begateway-dummy.m */,
-				1FE87DFBD98E84BBC6B0CA11BCA8911E /* begateway-Info.plist */,
-				BC075C2FE57AE8FFA8AF81450F049D52 /* begateway-prefix.pch */,
-				99314838E6F32CE015A6DEC7179E77DA /* begateway-umbrella.h */,
-				16057CFA785BAB31DD50553D71376787 /* ResourceBundle-begateway-begateway-Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/begateway";
+			name = Views;
+			path = begateway/Classes/Views;
 			sourceTree = "<group>";
 		};
 		557499F881EE48DF2D13D36B3FF759D5 /* Pods-begateway_Example */ = {
@@ -356,6 +367,58 @@
 			);
 			name = "Pods-begateway_Example";
 			path = "Target Support Files/Pods-begateway_Example";
+			sourceTree = "<group>";
+		};
+		558D15D2004176FBE5A5EA27F3F59063 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				A009C56EA8299DE2834BD87D6A8B98A9 /* EOLState.swift */,
+				8458424BFB8D9719C3450BE19758D6DA /* FixedState.swift */,
+				D5E43CA42D0D6210A5D3AB7ACF15955B /* FreeState.swift */,
+				1364E8586B7D6805C84C2E152861F2AE /* OptionalValueState.swift */,
+				8BBD1A99C2D959B95560BF54B18A5DD7 /* ValueState.swift */,
+			);
+			name = State;
+			path = State;
+			sourceTree = "<group>";
+		};
+		5EEF00DC13E6D0EF3F39C32FA437751E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				39E51689E3278316B210238C46F17962 /* begateway.modulemap */,
+				1FADCDDDB936C076A9FCFA93A4AC00BF /* begateway.xcconfig */,
+				31CEF7B8BE7B8C5A4FE66D4E73EEBC11 /* begateway-dummy.m */,
+				81A1DEE373160D9A8C95C36288250058 /* begateway-Info.plist */,
+				2D8E79D7250DCDCE47EAB2FE8B8D513C /* begateway-prefix.pch */,
+				55956ADD9C1ECB11719490817CDF517C /* begateway-umbrella.h */,
+				D8C150481466600BC052F06989D25D13 /* ResourceBundle-begateway-begateway-Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/begateway";
+			sourceTree = "<group>";
+		};
+		60107EEDCD51F7F8D79AC33DF5202AB6 /* InputMask */ = {
+			isa = PBXGroup;
+			children = (
+				592912C1E0B2F6517662DF6774F1733B /* Mask.swift */,
+				343C001E4B0A7176957455DECC4DD0E6 /* RTLMask.swift */,
+				FF0ED6A4C5540E5CC29A8BC960BAC2FD /* Helper */,
+				9F24668BC68CB36A1010715E14016039 /* Model */,
+				DD00B782755069D7F085BEE42BA332DC /* View */,
+			);
+			name = InputMask;
+			path = begateway/Classes/InputMask;
+			sourceTree = "<group>";
+		};
+		63FA34FBB11725D10DBC86A13DBD6F57 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				9DE7A4A45391FAC04F1382BBC85766FC /* Entities */,
+				DD09AB4AED5460D8BB63818FD265B037 /* Errors */,
+				EC8FEAB167A6EE51B9D1C87F52B4BC60 /* ServerWork */,
+			);
+			name = Flow;
+			path = begateway/Classes/Flow;
 			sourceTree = "<group>";
 		};
 		6B475D44F9DE8B3EB70D1C14FDE147B9 /* iOS */ = {
@@ -376,201 +439,146 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		9525733A5737E407F1F2AEF2904EF45C /* Development Pods */ = {
+		9529BDB231ABD8CB027DCE404A8D3117 /* CardView */ = {
 			isa = PBXGroup;
 			children = (
-				A29C2525381866B07BBC0C09F9E62F3F /* begateway */,
+				D77C308E083B1E7DE0FE28AAD579A870 /* BGCardViewController.swift */,
+				385EE0CD0BD9B78406A9C0D6E7A5A928 /* BGWebViewController.swift */,
+				CFFC03D0F65565536426A46B697811F2 /* MonthYearPickerView.swift */,
 			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		A02C09DB2324031D0062B71B /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				A02C09DC2324031D0062B71B /* CardView */,
-			);
-			name = Views;
-			path = begateway/Classes/Views;
-			sourceTree = "<group>";
-		};
-		A02C09DC2324031D0062B71B /* CardView */ = {
-			isa = PBXGroup;
-			children = (
-				A0A8D9752326CB9D004818A2 /* BGWebViewController.swift */,
-				A02C09DF2324033E0062B71B /* BGCardViewController.swift */,
-				A0A3495F2325473C0076E4FD /* MonthYearPickerView.swift */,
-			);
+			name = CardView;
 			path = CardView;
 			sourceTree = "<group>";
 		};
-		A0A34927232442C80076E4FD /* InputMask */ = {
+		9DE7A4A45391FAC04F1382BBC85766FC /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				A0A34932232442FC0076E4FD /* Helper */,
-				A0A34930232442FC0076E4FD /* Mask.swift */,
-				A0A3493A232442FC0076E4FD /* Model */,
-				A0A34928232442FB0076E4FD /* RTLMask.swift */,
-				A0A34929232442FC0076E4FD /* View */,
+				8EAF990302054557060A905513D56AA5 /* BG3dSecVerificationObject.swift */,
+				F6F78577BDFC47BE63CF7E60ADEEA00A /* BGCard.swift */,
+				1CC03D6C2662C4F76D6AEF59F99B930E /* BGCardInfo.swift */,
+				1B2484989EA4AD4937A818EE402BA254 /* BGCheckoutRequest.swift */,
+				673A47B6288840DE763F4756D1E3E888 /* BGCheckoutResponse.swift */,
+				DCD58EA636C4C2749AC5F85AE07E74CB /* BGCheckoutSettings.swift */,
+				3C99EBB64B7FDB7C4B8896038E17B8DE /* BGCustomer.swift */,
+				56040E15A12467A5BDE583AAC184213F /* BGOrder.swift */,
+				901F81835E86426ECB2BBEBE446885CC /* BGPayment.swift */,
+				3CB3BDCEFBADB6EA8B86A8A7CFC9B53F /* BGPaymentMethod.swift */,
+				071CE8652423AB927939C2F9479348C2 /* BGPaymentRequest.swift */,
+				596A89AA777D4000CAF62F5799059799 /* BGPaymentResponse.swift */,
+				718177096D1F51923F0774F8A9ECF9E2 /* BGPaymentResponseObject.swift */,
+				A84AC1C6AEC7F62AFF9318511B211DB5 /* BGStatusListener.swift */,
+				5074A10B835AC81D6B1C53016A79BA4C /* BGTokenizedCard.swift */,
+				CFECCA7E241850DF12A1FB3042731FD3 /* BGTokenizedCardPayment.swift */,
 			);
-			name = InputMask;
-			path = begateway/Classes/InputMask;
-			sourceTree = "<group>";
-		};
-		A0A34929232442FC0076E4FD /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A0A3492A232442FC0076E4FD /* MaskedTextViewDelegate.swift */,
-				A0A3492B232442FC0076E4FD /* MaskedTextInputListener.swift */,
-				A0A3492C232442FC0076E4FD /* UITextInput.swift */,
-				A0A3492D232442FC0076E4FD /* UITextField.swift */,
-				A0A3492E232442FC0076E4FD /* MaskedTextFieldDelegate.swift */,
-				A0A3492F232442FC0076E4FD /* UITextView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		A0A34932232442FC0076E4FD /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				A0A34933232442FC0076E4FD /* CharacterSet.swift */,
-				A0A34934232442FC0076E4FD /* CaretStringIterator.swift */,
-				A0A34935232442FC0076E4FD /* AffinityCalculationStrategy.swift */,
-				A0A34936232442FC0076E4FD /* RTLCaretStringIterator.swift */,
-				A0A34937232442FC0076E4FD /* Compiler.swift */,
-				A0A34938232442FC0076E4FD /* FormatSanitizer.swift */,
-				A0A34939232442FC0076E4FD /* String.swift */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		A0A3493A232442FC0076E4FD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				A0A3493B232442FC0076E4FD /* Next.swift */,
-				A0A3493C232442FC0076E4FD /* State.swift */,
-				A0A3493D232442FC0076E4FD /* Notation.swift */,
-				A0A3493E232442FC0076E4FD /* State */,
-				A0A34944232442FC0076E4FD /* CaretString.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		A0A3493E232442FC0076E4FD /* State */ = {
-			isa = PBXGroup;
-			children = (
-				A0A3493F232442FC0076E4FD /* ValueState.swift */,
-				A0A34940232442FC0076E4FD /* EOLState.swift */,
-				A0A34941232442FC0076E4FD /* FixedState.swift */,
-				A0A34942232442FC0076E4FD /* OptionalValueState.swift */,
-				A0A34943232442FC0076E4FD /* FreeState.swift */,
-			);
-			path = State;
-			sourceTree = "<group>";
-		};
-		A0A34962232559640076E4FD /* Flow */ = {
-			isa = PBXGroup;
-			children = (
-				A0A349772325CFAA0076E4FD /* ServerWork */,
-				A0A3496C2325C30F0076E4FD /* Errors */,
-				A0A349632325596B0076E4FD /* Entities */,
-			);
-			name = Flow;
-			path = begateway/Classes/Flow;
-			sourceTree = "<group>";
-		};
-		A0A349632325596B0076E4FD /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				A0A3497C2325E5040076E4FD /* BGPaymentRequest.swift */,
-				A0A3497E2325E50F0076E4FD /* BGPayment.swift */,
-				A0A349802326743C0076E4FD /* BGPaymentResponse.swift */,
-				A0A34982232674440076E4FD /* BGPaymentResponseObject.swift */,
-				A0A8D9732326B278004818A2 /* BG3dSecVerificationObject.swift */,
-				A0A3496F2325C44F0076E4FD /* BGCheckoutRequest.swift */,
-				A0A349712325C5D60076E4FD /* BGPaymentMethod.swift */,
-				A0A34964232559790076E4FD /* BGCard.swift */,
-				A0A3496A2325BE560076E4FD /* BGOrder.swift */,
-				A0A349732325C8F70076E4FD /* BGCustomer.swift */,
-				A0A349752325C9FF0076E4FD /* BGCheckoutSettings.swift */,
-				A0A3497A2325D5A70076E4FD /* BGCheckoutResponse.swift */,
-				A0A8D9772326DCEC004818A2 /* BGStatusListener.swift */,
-				A0A8D999232837A6004818A2 /* BGTokenizedCard.swift */,
-				A0A8D99B23283835004818A2 /* BGTokenizedCardPayment.swift */,
-				A0A8D9A123285B20004818A2 /* BGCardInfo.swift */,
-			);
+			name = Entities;
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		A0A3496C2325C30F0076E4FD /* Errors */ = {
+		9F24668BC68CB36A1010715E14016039 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A0A3496D2325C3180076E4FD /* BGErrors.swift */,
+				DDCE0FF1140734613C9DD3A16374EBC8 /* CaretString.swift */,
+				624C19353B01FA8F8014A076FD1E119C /* Next.swift */,
+				C0E989751CDAF2BDE05EB4EE2D2C99FA /* Notation.swift */,
+				57781C91906C70F1D964057910441B2E /* State.swift */,
+				558D15D2004176FBE5A5EA27F3F59063 /* State */,
 			);
-			path = Errors;
+			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		A0A349772325CFAA0076E4FD /* ServerWork */ = {
+		AD26726083039AC4081E7DE2A882A78F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A0A349782325D0170076E4FD /* BGLoader.swift */,
+				BD07D37FF9C77CD10758D4CB5E4298E7 /* bgresources.xcassets */,
 			);
-			path = ServerWork;
-			sourceTree = "<group>";
-		};
-		A29C2525381866B07BBC0C09F9E62F3F /* begateway */ = {
-			isa = PBXGroup;
-			children = (
-				A0A34962232559640076E4FD /* Flow */,
-				A0A34927232442C80076E4FD /* InputMask */,
-				A02C09DB2324031D0062B71B /* Views */,
-				A02C09DD2324032B0062B71B /* BGPaymentModule.swift */,
-				34794F9545CA4F05ECEB7EFA050165A7 /* Encryption */,
-				2F67B43CEF35E689A9704CD036DC55FD /* Settings */,
-				4B68937DA383A876608A0CC63F13F263 /* Pod */,
-				D449A0E1822A9A2D454C39CE5182901B /* Resources */,
-				4C5D4A177CAA8A33044FC2F11B913E9E /* Support Files */,
-			);
-			name = begateway;
-			path = ../..;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				9525733A5737E407F1F2AEF2904EF45C /* Development Pods */,
+				D33296D5B7C78AB8519DDEDCCCCA7CF9 /* Development Pods */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
 				32EA5C701821A49C41E055CFE006D576 /* Products */,
 				940F4E93DD4BF715D4745BE8BCD7209D /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D449A0E1822A9A2D454C39CE5182901B /* Resources */ = {
+		D33296D5B7C78AB8519DDEDCCCCA7CF9 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				11D9E5F2CA2B0E9741715407E98C524D /* bgresources.xcassets */,
+				2F95C12FBA69A25E0B1B746A37A57BF9 /* begateway */,
 			);
-			name = Resources;
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		DD00B782755069D7F085BEE42BA332DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DC3E06639E8AE4BB280611D360F76E80 /* MaskedTextFieldDelegate.swift */,
+				C543C4CBAD2D457BE36D608D9E6EAB43 /* MaskedTextInputListener.swift */,
+				FDE525544442D4E77D183C9895C796B4 /* MaskedTextViewDelegate.swift */,
+				87A5E3C143233B5D7CF177C0819AC0B8 /* UITextField.swift */,
+				8C882AD4EE08B15C619FB7428C618200 /* UITextInput.swift */,
+				E6A827F9B9B555274B0907F2FE2ED948 /* UITextView.swift */,
+			);
+			name = View;
+			path = View;
+			sourceTree = "<group>";
+		};
+		DD09AB4AED5460D8BB63818FD265B037 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				D86B09C7648D8E836A45F6606C273E10 /* BGErrors.swift */,
+			);
+			name = Errors;
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		EC8FEAB167A6EE51B9D1C87F52B4BC60 /* ServerWork */ = {
+			isa = PBXGroup;
+			children = (
+				FD1A6ECF1F7BE178F85A4CC1989E9690 /* BGLoader.swift */,
+			);
+			name = ServerWork;
+			path = ServerWork;
+			sourceTree = "<group>";
+		};
+		FF0ED6A4C5540E5CC29A8BC960BAC2FD /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C756F067E0280157876957AF2712A0B7 /* AffinityCalculationStrategy.swift */,
+				A9B0C8AFED8D0D6779A1C9BBECB4A4C4 /* CaretStringIterator.swift */,
+				883D55FD07D8D769126FDF2ABC259F3C /* CharacterSet.swift */,
+				33A7A7C416C4BD3D87951865165A4380 /* Compiler.swift */,
+				31DB183F3B35FDB157CCBABBD5034725 /* FormatSanitizer.swift */,
+				030760B59C821C6615D269F67CDE0681 /* RTLCaretStringIterator.swift */,
+				3CF89A49BBC4EDFBEE640A404E1D654D /* String.swift */,
+			);
+			name = Helper;
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		063AF461264CCA395F713BAA46A5E8B7 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EC31012E111D7C4C94E9D28C7C0F4DE3 /* begateway-umbrella.h in Headers */,
-				F5129B1DADF139E9A94B1340BD431439 /* begateway.h in Headers */,
-				946B862F8D0623B9211C8BFA3EF5B8E9 /* NSData+SHA.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		37EC8D89F0AEC85126DDBB69A4FE0EB2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0D1C65D1996033428DFA33534971CE2B /* Pods-begateway_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9212C834BDC5BB9480F4171122773F15 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FC88E8D6564A048E78B5AEFC7F5DBDC /* begateway-umbrella.h in Headers */,
+				6BC4302755EE60C5B371EA6675CE71D5 /* begateway.h in Headers */,
+				F1E9E27E01C12433E5F016501CADE022 /* NSData+SHA.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,17 +595,17 @@
 /* Begin PBXNativeTarget section */
 		218E033E6015E89D2C684E196B15CBF0 /* begateway */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2044FC36FD791BD8BC55FBF4C7864CF5 /* Build configuration list for PBXNativeTarget "begateway" */;
+			buildConfigurationList = A71CDA9C0774D437037889BAEF1A42C0 /* Build configuration list for PBXNativeTarget "begateway" */;
 			buildPhases = (
-				063AF461264CCA395F713BAA46A5E8B7 /* Headers */,
-				E8436A230F689B9115F163623DE68D3E /* Sources */,
-				B53EDE5F7AB65B6F2C56A586BB1C0424 /* Frameworks */,
-				F3ECA6E72B6BBD70AF729F0476E0291F /* Resources */,
+				9212C834BDC5BB9480F4171122773F15 /* Headers */,
+				5149333024A2EE8DB16EC751EE71A046 /* Sources */,
+				7E724B954BF792C9FBFF9560FD4A1F8A /* Frameworks */,
+				1FB09803CD80CD603C6CB3BB5CB3A777 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				98DB7B6D0ADFC4950BA630D333CF6413 /* PBXTargetDependency */,
+				1C1D08BA30B0636B6C4C960A9485ABAE /* PBXTargetDependency */,
 			);
 			name = begateway;
 			productName = begateway;
@@ -606,11 +614,11 @@
 		};
 		472E3246EE061399061E95A7DD305CE4 /* begateway-begateway */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 89BECE28A284B4A5B6A537E95A4345FB /* Build configuration list for PBXNativeTarget "begateway-begateway" */;
+			buildConfigurationList = 2FCB6D9AEC4DB60A16FD701679A3AF1B /* Build configuration list for PBXNativeTarget "begateway-begateway" */;
 			buildPhases = (
-				8C58E83BC6E9618DB746CF30F2AA2B26 /* Sources */,
-				788F5E9F7218C1E13EBB79C1F942F252 /* Frameworks */,
-				371CB345489B78E1297C849634EEEB09 /* Resources */,
+				7C2810738DD94648C73E77F86A6AF39E /* Sources */,
+				6C7D1C00C1ECF0F40D9034300C137DB6 /* Frameworks */,
+				790C95801121E9F56BB5B71829D5296F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -689,6 +697,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1FB09803CD80CD603C6CB3BB5CB3A777 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DDC52175D46B63FFEE29485C918522B /* begateway.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		20D2C48AD55679584F1A9E2297DAF233 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -696,19 +712,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		371CB345489B78E1297C849634EEEB09 /* Resources */ = {
+		790C95801121E9F56BB5B71829D5296F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F3ECA6E72B6BBD70AF729F0476E0291F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0A3495E2325282C0076E4FD /* bgresources.xcassets in Resources */,
-				774A2BE746EFFF18EF21303214A09537 /* begateway.bundle in Resources */,
+				B3C9B73D97A88C8D65F56603BB224212 /* bgresources.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,80 +746,80 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C58E83BC6E9618DB746CF30F2AA2B26 /* Sources */ = {
+		5149333024A2EE8DB16EC751EE71A046 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42578DBBBF5DEBAA15B29B671CFD1B38 /* AffinityCalculationStrategy.swift in Sources */,
+				BCB0B6116BE80362BD4E50507318201B /* begateway-dummy.m in Sources */,
+				5F9F084A7B8A0148AED843D8A565C184 /* BG3dSecVerificationObject.swift in Sources */,
+				23745C7179EEA00113AA6B1C3FB7561A /* BGAsn1Parser.swift in Sources */,
+				D25906FB334376FF74A74E1011B79C9D /* BGCard.swift in Sources */,
+				23BF98BAB54CEFF7C32D754BD6DE77AF /* BGCardInfo.swift in Sources */,
+				43397403BD5205AED82B7619F5963D8B /* BGCardType.swift in Sources */,
+				AEBAD36E66CD9DD40C5B959EE5938AEB /* BGCardViewColorsSettings.swift in Sources */,
+				09DE22EB6CBAF270F6A053E7988B1BFF /* BGCardViewController.swift in Sources */,
+				F6EF7D06FD45B594F6687CF653193A4C /* BGCheckoutRequest.swift in Sources */,
+				0F00A0D796A6C61B7C29AADE20D11F99 /* BGCheckoutResponse.swift in Sources */,
+				6C229CC20C5E15C704D676EF8561C483 /* BGCheckoutSettings.swift in Sources */,
+				646BADA5EBEEB7F088F5EE235B3A44FF /* BGClearMessage.swift in Sources */,
+				29CCF65D403EB2148BD53D3370159C6D /* BGCustomer.swift in Sources */,
+				E16704728C049764554677AE7C6E78F5 /* BGEncryptedMessage.swift in Sources */,
+				D8E95AEC030FA2377EDC7E00B305EF78 /* BGEncyption.swift in Sources */,
+				75AD6FE96831981E483B7AD79AE59F32 /* BGErrors.swift in Sources */,
+				407D25B43DDECB2FC8F6FAE79F4FC40B /* BGKey.swift in Sources */,
+				B461BA9DB60FF7831DE3BAAA35309A70 /* BGLoader.swift in Sources */,
+				5656FB65CC07C1E045417D419BB15EAC /* BGMessage.swift in Sources */,
+				05D79C2A6E0052EB484A077186C351A9 /* BGOrder.swift in Sources */,
+				165A230FC84FACAEFCF5952B3AC7A69D /* BGPayment.swift in Sources */,
+				D0D2B988FC20746555C77D6C2E3548B0 /* BGPaymentMethod.swift in Sources */,
+				E97F6B6FA8AEC245C0304D640CE00BE7 /* BGPaymentModule.swift in Sources */,
+				3B0B3E9F1091E2AB19C7B646AFF848A1 /* BGPaymentRequest.swift in Sources */,
+				F30A89CDD7DF26269B1DA3CFA1A20A41 /* BGPaymentResponse.swift in Sources */,
+				BDABD21F2842773B832200112119AD6C /* BGPaymentResponseObject.swift in Sources */,
+				10C1CF840EE49CAEB4C4A4AAF6C1802F /* BGPaymentSettings.swift in Sources */,
+				209DDE8344C7529B4EE077BEB6FCCA49 /* BGPrivateKey.swift in Sources */,
+				F97AB42B994637ED35048B07457539AB /* BGPublicKey.swift in Sources */,
+				F52DDA7A8BF3B6041D2E7CB7883E32E6 /* BGRSA.swift in Sources */,
+				D0410005F8F134AAC897331A90540457 /* BGRSAError.swift in Sources */,
+				92E01DAAB066B322AF75525054830F1C /* BGSignature.swift in Sources */,
+				51102CC01B2D3C1E519BC07A601DB408 /* BGStatusListener.swift in Sources */,
+				D164D7C06D3EC73D0F227F309BCE5E31 /* BGStyleSettings.swift in Sources */,
+				4C3CBF60B439009070F176E328A8C9D0 /* BGTokenizedCard.swift in Sources */,
+				55A0D6BDE3C4FC67EB587EC26E5AF48C /* BGTokenizedCardPayment.swift in Sources */,
+				94FCC64012BD2A13B79F75678ABB5146 /* BGWebViewController.swift in Sources */,
+				172ED0E4B8D06AF98F1013C8408539F3 /* CaretString.swift in Sources */,
+				D925D2FAD569CA59BCAB64AE84B33CF8 /* CaretStringIterator.swift in Sources */,
+				90C4777F260129863D9BBE2298ED0DE6 /* CharacterSet.swift in Sources */,
+				296414923B11D93385FD7EE8062D36C4 /* Compiler.swift in Sources */,
+				9577E16FB3C5DC5E48828CD203FFAB48 /* EOLState.swift in Sources */,
+				4EF6E0DAFE9FB520078D558215AE0568 /* FixedState.swift in Sources */,
+				528DB6AA8B3520D591393BA3D8B24100 /* FormatSanitizer.swift in Sources */,
+				A592F055FBB1039BBAFB1456D82D75D7 /* FreeState.swift in Sources */,
+				D6EF31B86A8AEFB77A0F8FE4D0BDDED5 /* Mask.swift in Sources */,
+				E6C2489F31F12454FB4E522C8AD269DC /* MaskedTextFieldDelegate.swift in Sources */,
+				4B9B97F4FBF7FA7458301CFFCD6D974A /* MaskedTextInputListener.swift in Sources */,
+				CF5B3B61DA5883A35FA7011967D847F0 /* MaskedTextViewDelegate.swift in Sources */,
+				B36774F7FE4C134B271D6FABD85D2A9C /* MonthYearPickerView.swift in Sources */,
+				FB2544B87D5E7C10CF8AAB37E034947C /* Next.swift in Sources */,
+				5E4B0825D9D45EF004653057105F9E7D /* Notation.swift in Sources */,
+				875FC1E6C0A0D556FEFE15DF4F0D3DCD /* NSData+SHA.m in Sources */,
+				B0F22F5B3C74E699A208E0F0A68F57F3 /* OptionalValueState.swift in Sources */,
+				FFA5D43E254A6BCB5D78BB9C4616BE68 /* RTLCaretStringIterator.swift in Sources */,
+				4ACE282CDA19362F0C08601F20E6E161 /* RTLMask.swift in Sources */,
+				7A3D49B5D9C7E4EE131C0E1634DBD1C4 /* State.swift in Sources */,
+				BAB6CAE723E62BE594E07D3CFA77F22D /* String.swift in Sources */,
+				05CBA2FC7DC0F50A5AA395461D8CE36E /* UITextField.swift in Sources */,
+				A349C1002DFEA80DEE7232AA953BB0EF /* UITextInput.swift in Sources */,
+				7E3BF8E3FFBAB6062915DAD0BD7B337C /* UITextView.swift in Sources */,
+				79572BADC816E4A06ACDD95852AAA4F9 /* ValueState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E8436A230F689B9115F163623DE68D3E /* Sources */ = {
+		7C2810738DD94648C73E77F86A6AF39E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0A8D9782326DCEC004818A2 /* BGStatusListener.swift in Sources */,
-				A0A3495B232442FC0076E4FD /* OptionalValueState.swift in Sources */,
-				A0A34957232442FC0076E4FD /* Notation.swift in Sources */,
-				A0A3495D232442FC0076E4FD /* CaretString.swift in Sources */,
-				A0A34958232442FC0076E4FD /* ValueState.swift in Sources */,
-				A0A34950232442FC0076E4FD /* AffinityCalculationStrategy.swift in Sources */,
-				A0A349792325D0170076E4FD /* BGLoader.swift in Sources */,
-				A0A3494F232442FC0076E4FD /* CaretStringIterator.swift in Sources */,
-				A0A34948232442FC0076E4FD /* UITextInput.swift in Sources */,
-				A0A3497B2325D5A70076E4FD /* BGCheckoutResponse.swift in Sources */,
-				A0A349762325C9FF0076E4FD /* BGCheckoutSettings.swift in Sources */,
-				A0A3494A232442FC0076E4FD /* MaskedTextFieldDelegate.swift in Sources */,
-				A0A34952232442FC0076E4FD /* Compiler.swift in Sources */,
-				FDA3F71FF2ACF4BCCA9196B35801FE0E /* begateway-dummy.m in Sources */,
-				A0A8D9A223285B20004818A2 /* BGCardInfo.swift in Sources */,
-				A0A34983232674440076E4FD /* BGPaymentResponseObject.swift in Sources */,
-				A0A34965232559790076E4FD /* BGCard.swift in Sources */,
-				A02C09DE2324032C0062B71B /* BGPaymentModule.swift in Sources */,
-				6BB1A6994843554EA549AFCEF18B62D3 /* BGAsn1Parser.swift in Sources */,
-				A0A349722325C5D60076E4FD /* BGPaymentMethod.swift in Sources */,
-				A0A3495C232442FC0076E4FD /* FreeState.swift in Sources */,
-				2C1AAD47FCC7425DA4A99CF0F6AF4C82 /* BGCardType.swift in Sources */,
-				A0A3497F2325E50F0076E4FD /* BGPayment.swift in Sources */,
-				A0A34946232442FC0076E4FD /* MaskedTextViewDelegate.swift in Sources */,
-				A0A3495A232442FC0076E4FD /* FixedState.swift in Sources */,
-				A0A3497D2325E5040076E4FD /* BGPaymentRequest.swift in Sources */,
-				A75DDBF812A5FDEA8B7712965A3E913A /* BGClearMessage.swift in Sources */,
-				13EE63D7E19EADF52909CCD89105E4C2 /* BGEncryptedMessage.swift in Sources */,
-				8873CB44F40E4970E85DD54444D95957 /* BGKey.swift in Sources */,
-				A0A34947232442FC0076E4FD /* MaskedTextInputListener.swift in Sources */,
-				A0A3496B2325BE560076E4FD /* BGOrder.swift in Sources */,
-				A0A34954232442FC0076E4FD /* String.swift in Sources */,
-				A0A3494C232442FC0076E4FD /* Mask.swift in Sources */,
-				19470441A05B8FCB225E90BDD39ABBC8 /* BGMessage.swift in Sources */,
-				A0A8D9762326CB9D004818A2 /* BGWebViewController.swift in Sources */,
-				A0A34949232442FC0076E4FD /* UITextField.swift in Sources */,
-				A0A349702325C44F0076E4FD /* BGCheckoutRequest.swift in Sources */,
-				A02C09D42323FE560062B71B /* BGEncyption.swift in Sources */,
-				A02C09E02324033E0062B71B /* BGCardViewController.swift in Sources */,
-				A0A34945232442FC0076E4FD /* RTLMask.swift in Sources */,
-				A02C09E2232422830062B71B /* BGCardViewColorsSettings.swift in Sources */,
-				A0A3494E232442FC0076E4FD /* CharacterSet.swift in Sources */,
-				A0A34956232442FC0076E4FD /* State.swift in Sources */,
-				A0A349742325C8F70076E4FD /* BGCustomer.swift in Sources */,
-				A0A349812326743C0076E4FD /* BGPaymentResponse.swift in Sources */,
-				A0A3496E2325C3180076E4FD /* BGErrors.swift in Sources */,
-				5AE6B8B10848268EB1FE106A62B41C91 /* BGPaymentSettings.swift in Sources */,
-				E609226BB642B4F23CCAC312725D9FFD /* BGPrivateKey.swift in Sources */,
-				A0A3494B232442FC0076E4FD /* UITextView.swift in Sources */,
-				2CF696CF104E04B84E435E550042164A /* BGPublicKey.swift in Sources */,
-				B3D93A0629BA5564ED1D0E1D6C16895A /* BGRSA.swift in Sources */,
-				A0A34955232442FC0076E4FD /* Next.swift in Sources */,
-				A0A34959232442FC0076E4FD /* EOLState.swift in Sources */,
-				A0A8D99A232837A6004818A2 /* BGTokenizedCard.swift in Sources */,
-				A0A8D99C23283835004818A2 /* BGTokenizedCardPayment.swift in Sources */,
-				DB56EAC5FB00B7E4781276BF6DE1A5CF /* BGRSAError.swift in Sources */,
-				8914FE39489D45AAF6448215193A4C59 /* BGSignature.swift in Sources */,
-				6209E9E7DFF86C6548693F216BA415C2 /* BGStyleSettings.swift in Sources */,
-				A0A8D9742326B278004818A2 /* BG3dSecVerificationObject.swift in Sources */,
-				A0A349602325473C0076E4FD /* MonthYearPickerView.swift in Sources */,
-				A0A34953232442FC0076E4FD /* FormatSanitizer.swift in Sources */,
-				BE782DB570D96FB89BE04698122662F9 /* NSData+SHA.m in Sources */,
-				A0A34951232442FC0076E4FD /* RTLCaretStringIterator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -824,17 +832,17 @@
 			target = 218E033E6015E89D2C684E196B15CBF0 /* begateway */;
 			targetProxy = CABB14C389D4136374DD0F03B6B7C6FC /* PBXContainerItemProxy */;
 		};
+		1C1D08BA30B0636B6C4C960A9485ABAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "begateway-begateway";
+			target = 472E3246EE061399061E95A7DD305CE4 /* begateway-begateway */;
+			targetProxy = 2A0D9DE7864E8FC62D72A61F0FFCA7C6 /* PBXContainerItemProxy */;
+		};
 		2895F67FCCD4F0D6C54AE4E39EBF4C97 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-begateway_Example";
 			target = 573A6F813499EF0A0C9DD2D484F72F9A /* Pods-begateway_Example */;
 			targetProxy = D633021E3866FDD83EF35D51980E61A2 /* PBXContainerItemProxy */;
-		};
-		98DB7B6D0ADFC4950BA630D333CF6413 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "begateway-begateway";
-			target = 472E3246EE061399061E95A7DD305CE4 /* begateway-begateway */;
-			targetProxy = 872EBA51523263C53D1F483E4E6ECBC3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -903,22 +911,6 @@
 			};
 			name = Debug;
 		};
-		1D12BB3A95A0BDF73811136B639969DE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9695F2B49EA25EFCAC27B07319280783 /* begateway.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/begateway";
-				INFOPLIST_FILE = "Target Support Files/begateway/ResourceBundle-begateway-begateway-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				PRODUCT_NAME = begateway;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 		28C2675F774E6F366F0BE7FBB7CC5222 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 54B4150BE1258490235D7A4C48D384A4 /* Pods-begateway_Tests.release.xcconfig */;
@@ -947,39 +939,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		36A0C348350D6137AE02172C04741D94 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9695F2B49EA25EFCAC27B07319280783 /* begateway.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/begateway/begateway-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/begateway/begateway-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/begateway/begateway.modulemap";
-				PRODUCT_MODULE_NAME = begateway;
-				PRODUCT_NAME = begateway;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1021,9 +980,9 @@
 			};
 			name = Debug;
 		};
-		6FCDF7810E5220B5EFDF75373A52D02E /* Debug */ = {
+		A3499436CC2150A0F3DA5D9F3CEDD46B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9695F2B49EA25EFCAC27B07319280783 /* begateway.xcconfig */;
+			baseConfigurationReference = 1FADCDDDB936C076A9FCFA93A4AC00BF /* begateway.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1048,10 +1007,27 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
+		};
+		A7A0E51FBA4B3AE37EBB1984A120447A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FADCDDDB936C076A9FCFA93A4AC00BF /* begateway.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/begateway";
+				INFOPLIST_FILE = "Target Support Files/begateway/ResourceBundle-begateway-begateway-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = begateway;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
 		};
 		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1106,11 +1082,28 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
+		};
+		B6FCC6295E370697A1207FF5B6760999 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FADCDDDB936C076A9FCFA93A4AC00BF /* begateway.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/begateway";
+				INFOPLIST_FILE = "Target Support Files/begateway/ResourceBundle-begateway-begateway-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = begateway;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
 		};
 		BE6907C5D4B67FB70FD93A94FD22AD11 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1181,30 +1174,46 @@
 			};
 			name = Release;
 		};
-		CE769C47A881320F0716BA15DA4FFEB9 /* Release */ = {
+		D9EE3D5F57355607A28494F9310FC6E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9695F2B49EA25EFCAC27B07319280783 /* begateway.xcconfig */;
+			baseConfigurationReference = 1FADCDDDB936C076A9FCFA93A4AC00BF /* begateway.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/begateway";
-				INFOPLIST_FILE = "Target Support Files/begateway/ResourceBundle-begateway-begateway-Info.plist";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/begateway/begateway-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/begateway/begateway-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/begateway/begateway.modulemap";
+				PRODUCT_MODULE_NAME = begateway;
 				PRODUCT_NAME = begateway;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2044FC36FD791BD8BC55FBF4C7864CF5 /* Build configuration list for PBXNativeTarget "begateway" */ = {
+		2FCB6D9AEC4DB60A16FD701679A3AF1B /* Build configuration list for PBXNativeTarget "begateway-begateway" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6FCDF7810E5220B5EFDF75373A52D02E /* Debug */,
-				36A0C348350D6137AE02172C04741D94 /* Release */,
+				B6FCC6295E370697A1207FF5B6760999 /* Debug */,
+				A7A0E51FBA4B3AE37EBB1984A120447A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1227,11 +1236,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		89BECE28A284B4A5B6A537E95A4345FB /* Build configuration list for PBXNativeTarget "begateway-begateway" */ = {
+		A71CDA9C0774D437037889BAEF1A42C0 /* Build configuration list for PBXNativeTarget "begateway" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D12BB3A95A0BDF73811136B639969DE /* Debug */,
-				CE769C47A881320F0716BA15DA4FFEB9 /* Release */,
+				D9EE3D5F57355607A28494F9310FC6E3 /* Debug */,
+				A3499436CC2150A0F3DA5D9F3CEDD46B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -199,10 +199,9 @@ extension BGPaymentModule {
 }
 
 public class BGPaymentModule {
-    private init() {}
+    public init() {}
     
     public weak var delegate: BGPaymentModuleDelegate?
-    public static let shared = BGPaymentModule()
     public var settings = BGPaymentSettings.standart
     
     public internal(set) var currentPublicKey: String?
@@ -215,8 +214,8 @@ public class BGPaymentModule {
     
     private var window: UIWindow?
     
-    public func pay(publicKey: String, checkout: BGCheckoutResponseObject) {
-        self.currentPublicKey = publicKey
+    public func pay(checkout: BGCheckoutResponseObject) {
+        self.currentPublicKey = checkout.token
         self.currentPaymentToken = checkout.token
         self.brands = checkout.brands ?? []
         showCardView()
@@ -226,6 +225,8 @@ public class BGPaymentModule {
         self.cardVC = BGCardViewController()
         cardVC?.brands = self.brands
         cardVC?.delegate = self
+        cardVC?.colors = self.settings.cardViewColorsSettings
+        cardVC?.style = self.settings.styleSettings
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowLevel = (UIApplication.shared.keyWindow?.windowLevel ?? .normal) + 1
         window?.rootViewController = cardVC
@@ -293,13 +294,13 @@ public class BGPaymentModule {
                 case .success(let data):
                     self.brands = data.brands
                     self.currentPaymentToken = data.token
-                    self.pay(publicKey: self.currentPublicKey ?? "", paymentToken: data.token, card: tokenizedCard)
+                    self.pay(paymentToken: data.token, card: tokenizedCard)
                 }
         }
     }
     
-    public func pay(publicKey: String, paymentToken: String, card: BGTokenizedCard) {
-        self.currentPublicKey = publicKey
+    public func pay(paymentToken: String, card: BGTokenizedCard) {
+        self.currentPublicKey = paymentToken
         self.currentPaymentToken = paymentToken
         guard let url = URL(string: settings.endpoint + "/payments") else {
             self.dissapearMe(with: .error(BGErrors.endpointNotValid))

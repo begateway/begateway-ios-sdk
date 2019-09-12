@@ -11,7 +11,7 @@ import begateway
 import Foundation
 
 class ViewController: UIViewController {
-    let module = BGPaymentModule.shared
+    let module = BGPaymentModule()
     let order = BGOrder(amount: 200, currency: "USD", description: "test", trackingId: "my_custom_variable")
     var cardToken: String?
     var lastPayCardInfo: BGCardInfo?
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
             // make sure, that you set valid payment token in 'testCheckoutJSON3DSecure'
             // you can become it with making post request to your payment provider base url with prefix /checkouts
             let checkoutObject = try JSONDecoder().decode(BGCheckoutResponseObject.self, from: checkoutData)
-            module.pay(publicKey: Constants.publicKeyWith3DSecure, checkout: checkoutObject)
+            module.pay(checkout: checkoutObject)
         } catch let error {
             self.showSimpleAlert(title: "Error", message: error.localizedDescription)
         }
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
             // make sure, that you set valid payment token in 'testCheckoutJSON3DSecure'
             // you can become it with making post request to your payment provider base url with prefix /checkouts
             let checkoutObject = try JSONDecoder().decode(BGCheckoutResponseObject.self, from: checkoutData)
-            module.pay(publicKey: Constants.publicKey, checkout: checkoutObject)
+            module.pay(checkout: checkoutObject)
         } catch let error {
             self.showSimpleAlert(title: "Error", message: error.localizedDescription)
         }

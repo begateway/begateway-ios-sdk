@@ -54,7 +54,7 @@
 		9577E16FB3C5DC5E48828CD203FFAB48 /* EOLState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A009C56EA8299DE2834BD87D6A8B98A9 /* EOLState.swift */; };
 		9DDC52175D46B63FFEE29485C918522B /* begateway.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2C90EC31B20060BCA74F6E3ED26C5D4 /* begateway.bundle */; };
 		9FC88E8D6564A048E78B5AEFC7F5DBDC /* begateway-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 55956ADD9C1ECB11719490817CDF517C /* begateway-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A0097832232D44E5001EC30C /* bgresources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0097831232D44E5001EC30C /* bgresources.xcassets */; };
+		A009783C232D590E001EC30C /* bgresources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A009783B232D590E001EC30C /* bgresources.xcassets */; };
 		A349C1002DFEA80DEE7232AA953BB0EF /* UITextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C882AD4EE08B15C619FB7428C618200 /* UITextInput.swift */; };
 		A592F055FBB1039BBAFB1456D82D75D7 /* FreeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E43CA42D0D6210A5D3AB7ACF15955B /* FreeState.swift */; };
 		AEBAD36E66CD9DD40C5B959EE5938AEB /* BGCardViewColorsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5078CB69B60FE270508C46FBDC115F1 /* BGCardViewColorsSettings.swift */; };
@@ -175,7 +175,7 @@
 		92518DED7E4EB7372D3FBFB3EB3B55B9 /* Pods-begateway_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-begateway_Example-Info.plist"; sourceTree = "<group>"; };
 		95165EBBFB233D4A74894879CE70CE22 /* BGStyleSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGStyleSettings.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A0097831232D44E5001EC30C /* bgresources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = bgresources.xcassets; path = begateway/Classes/bgresources.xcassets; sourceTree = "<group>"; };
+		A009783B232D590E001EC30C /* bgresources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = bgresources.xcassets; path = begateway/Assets/bgresources.xcassets; sourceTree = "<group>"; };
 		A009C56EA8299DE2834BD87D6A8B98A9 /* EOLState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EOLState.swift; sourceTree = "<group>"; };
 		A84AC1C6AEC7F62AFF9318511B211DB5 /* BGStatusListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGStatusListener.swift; sourceTree = "<group>"; };
 		A9B0C8AFED8D0D6779A1C9BBECB4A4C4 /* CaretStringIterator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CaretStringIterator.swift; sourceTree = "<group>"; };
@@ -306,7 +306,6 @@
 		2F95C12FBA69A25E0B1B746A37A57BF9 /* begateway */ = {
 			isa = PBXGroup;
 			children = (
-				A0097831232D44E5001EC30C /* bgresources.xcassets */,
 				BE1F3421842F16FE7B533C34027F096B /* BGPaymentModule.swift */,
 				08066CFF83972A94F2245F7BA5683F9E /* Encryption */,
 				63FA34FBB11725D10DBC86A13DBD6F57 /* Flow */,
@@ -487,6 +486,7 @@
 		AD26726083039AC4081E7DE2A882A78F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A009783B232D590E001EC30C /* bgresources.xcassets */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -693,7 +693,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0097832232D44E5001EC30C /* bgresources.xcassets in Resources */,
+				A009783C232D590E001EC30C /* bgresources.xcassets in Resources */,
 				9DDC52175D46B63FFEE29485C918522B /* begateway.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

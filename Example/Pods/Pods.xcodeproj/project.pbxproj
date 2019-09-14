@@ -54,12 +54,12 @@
 		9577E16FB3C5DC5E48828CD203FFAB48 /* EOLState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A009C56EA8299DE2834BD87D6A8B98A9 /* EOLState.swift */; };
 		9DDC52175D46B63FFEE29485C918522B /* begateway.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2C90EC31B20060BCA74F6E3ED26C5D4 /* begateway.bundle */; };
 		9FC88E8D6564A048E78B5AEFC7F5DBDC /* begateway-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 55956ADD9C1ECB11719490817CDF517C /* begateway-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0097832232D44E5001EC30C /* bgresources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0097831232D44E5001EC30C /* bgresources.xcassets */; };
 		A349C1002DFEA80DEE7232AA953BB0EF /* UITextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C882AD4EE08B15C619FB7428C618200 /* UITextInput.swift */; };
 		A592F055FBB1039BBAFB1456D82D75D7 /* FreeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E43CA42D0D6210A5D3AB7ACF15955B /* FreeState.swift */; };
 		AEBAD36E66CD9DD40C5B959EE5938AEB /* BGCardViewColorsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5078CB69B60FE270508C46FBDC115F1 /* BGCardViewColorsSettings.swift */; };
 		B0F22F5B3C74E699A208E0F0A68F57F3 /* OptionalValueState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1364E8586B7D6805C84C2E152861F2AE /* OptionalValueState.swift */; };
 		B36774F7FE4C134B271D6FABD85D2A9C /* MonthYearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC03D0F65565536426A46B697811F2 /* MonthYearPickerView.swift */; };
-		B3C9B73D97A88C8D65F56603BB224212 /* bgresources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD07D37FF9C77CD10758D4CB5E4298E7 /* bgresources.xcassets */; };
 		B461BA9DB60FF7831DE3BAAA35309A70 /* BGLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A6ECF1F7BE178F85A4CC1989E9690 /* BGLoader.swift */; };
 		BAB6CAE723E62BE594E07D3CFA77F22D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF89A49BBC4EDFBEE640A404E1D654D /* String.swift */; };
 		BCB0B6116BE80362BD4E50507318201B /* begateway-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CEF7B8BE7B8C5A4FE66D4E73EEBC11 /* begateway-dummy.m */; };
@@ -116,15 +116,15 @@
 		0730DF5227F88441FE347699820A1C08 /* Pods-begateway_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-begateway_Tests-umbrella.h"; sourceTree = "<group>"; };
 		07828B8E6DDCEE67ACA9F60C9B13CA0D /* Pods-begateway_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-begateway_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		0FCE14E890038FE51870ED34CBFB264A /* Pods-begateway_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-begateway_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		11B8A553F2C9D26885D759D9D4D012C5 /* Pods_begateway_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_begateway_Tests.framework; path = "Pods-begateway_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11B8A553F2C9D26885D759D9D4D012C5 /* Pods_begateway_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_begateway_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1364E8586B7D6805C84C2E152861F2AE /* OptionalValueState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OptionalValueState.swift; sourceTree = "<group>"; };
-		14F2689CE38DDE3AEBBE868038E95C50 /* Pods_begateway_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_begateway_Example.framework; path = "Pods-begateway_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14F2689CE38DDE3AEBBE868038E95C50 /* Pods_begateway_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_begateway_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		168F476AE6E63CEE573C1312ABBD9183 /* Pods-begateway_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-begateway_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		174E727E044F6024C4A9DDDA2D68DAEF /* Pods-begateway_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-begateway_Example-frameworks.sh"; sourceTree = "<group>"; };
 		18AC5BA283FE6DA5FE9AB316EC89ADC2 /* Pods-begateway_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-begateway_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1B0EE6012336FA1F78845085CF7AD7A1 /* BGSignature.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGSignature.swift; sourceTree = "<group>"; };
 		1B2484989EA4AD4937A818EE402BA254 /* BGCheckoutRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGCheckoutRequest.swift; sourceTree = "<group>"; };
-		1B32C496AC17943194D540BDF589BB59 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		1B32C496AC17943194D540BDF589BB59 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1CC03D6C2662C4F76D6AEF59F99B930E /* BGCardInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGCardInfo.swift; sourceTree = "<group>"; };
 		1E387CA7113922C4F9672B7C86640601 /* begateway.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = begateway.h; sourceTree = "<group>"; };
 		1FADCDDDB936C076A9FCFA93A4AC00BF /* begateway.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = begateway.xcconfig; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 		33A7A7C416C4BD3D87951865165A4380 /* Compiler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Compiler.swift; sourceTree = "<group>"; };
 		343C001E4B0A7176957455DECC4DD0E6 /* RTLMask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RTLMask.swift; sourceTree = "<group>"; };
 		385EE0CD0BD9B78406A9C0D6E7A5A928 /* BGWebViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGWebViewController.swift; sourceTree = "<group>"; };
-		38CE3A9497650F13F98758E3B5E42E0F /* begateway.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = begateway.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		38CE3A9497650F13F98758E3B5E42E0F /* begateway.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = begateway.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		39E51689E3278316B210238C46F17962 /* begateway.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = begateway.modulemap; sourceTree = "<group>"; };
 		3A2EF2E5E33FACC7AC891FB1123CD851 /* Pods-begateway_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-begateway_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		3C99EBB64B7FDB7C4B8896038E17B8DE /* BGCustomer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGCustomer.swift; sourceTree = "<group>"; };
@@ -174,22 +174,22 @@
 		901F81835E86426ECB2BBEBE446885CC /* BGPayment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGPayment.swift; sourceTree = "<group>"; };
 		92518DED7E4EB7372D3FBFB3EB3B55B9 /* Pods-begateway_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-begateway_Example-Info.plist"; sourceTree = "<group>"; };
 		95165EBBFB233D4A74894879CE70CE22 /* BGStyleSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGStyleSettings.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A0097831232D44E5001EC30C /* bgresources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = bgresources.xcassets; path = begateway/Classes/bgresources.xcassets; sourceTree = "<group>"; };
 		A009C56EA8299DE2834BD87D6A8B98A9 /* EOLState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EOLState.swift; sourceTree = "<group>"; };
 		A84AC1C6AEC7F62AFF9318511B211DB5 /* BGStatusListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGStatusListener.swift; sourceTree = "<group>"; };
 		A9B0C8AFED8D0D6779A1C9BBECB4A4C4 /* CaretStringIterator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CaretStringIterator.swift; sourceTree = "<group>"; };
 		B1DC437D02C8BA7482AF912010EAA022 /* Pods-begateway_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-begateway_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		B4106CFE02D67E446175C6CC1F6451D6 /* BGAsn1Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGAsn1Parser.swift; sourceTree = "<group>"; };
-		BD07D37FF9C77CD10758D4CB5E4298E7 /* bgresources.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = bgresources.xcassets; path = begateway/Assets/bgresources.xcassets; sourceTree = "<group>"; };
 		BE1F3421842F16FE7B533C34027F096B /* BGPaymentModule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BGPaymentModule.swift; path = begateway/Classes/BGPaymentModule.swift; sourceTree = "<group>"; };
 		C0E989751CDAF2BDE05EB4EE2D2C99FA /* Notation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Notation.swift; sourceTree = "<group>"; };
 		C543C4CBAD2D457BE36D608D9E6EAB43 /* MaskedTextInputListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MaskedTextInputListener.swift; sourceTree = "<group>"; };
 		C756F067E0280157876957AF2712A0B7 /* AffinityCalculationStrategy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AffinityCalculationStrategy.swift; sourceTree = "<group>"; };
-		C8D31663211938B9C52951EFB6857CFD /* begateway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = begateway.framework; path = begateway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8D31663211938B9C52951EFB6857CFD /* begateway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = begateway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE82957E9DDBCFDD1B5B1E7E3F61DE7 /* BGRSAError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGRSAError.swift; sourceTree = "<group>"; };
 		CFECCA7E241850DF12A1FB3042731FD3 /* BGTokenizedCardPayment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGTokenizedCardPayment.swift; sourceTree = "<group>"; };
 		CFFC03D0F65565536426A46B697811F2 /* MonthYearPickerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MonthYearPickerView.swift; sourceTree = "<group>"; };
-		D2C90EC31B20060BCA74F6E3ED26C5D4 /* begateway.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = begateway.bundle; path = "begateway-begateway.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2C90EC31B20060BCA74F6E3ED26C5D4 /* begateway.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = begateway.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E43CA42D0D6210A5D3AB7ACF15955B /* FreeState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FreeState.swift; sourceTree = "<group>"; };
 		D77C308E083B1E7DE0FE28AAD579A870 /* BGCardViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGCardViewController.swift; sourceTree = "<group>"; };
 		D86B09C7648D8E836A45F6606C273E10 /* BGErrors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGErrors.swift; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 		E6A827F9B9B555274B0907F2FE2ED948 /* UITextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		EE6BEF33145B7E38991D8119B88A2522 /* Pods-begateway_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-begateway_Example-umbrella.h"; sourceTree = "<group>"; };
 		EF0537674118F909E1B2AFD9940729FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		EF4B0EAC98A8E561C91119E8DCFA06C6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		EF4B0EAC98A8E561C91119E8DCFA06C6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F0006038F29BE7662FE1D6792A840446 /* BGMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGMessage.swift; sourceTree = "<group>"; };
 		F13EA64E586440B8FA752FE2844635CE /* NSData+SHA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSData+SHA.h"; sourceTree = "<group>"; };
 		F6F78577BDFC47BE63CF7E60ADEEA00A /* BGCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGCard.swift; sourceTree = "<group>"; };
@@ -306,6 +306,7 @@
 		2F95C12FBA69A25E0B1B746A37A57BF9 /* begateway */ = {
 			isa = PBXGroup;
 			children = (
+				A0097831232D44E5001EC30C /* bgresources.xcassets */,
 				BE1F3421842F16FE7B533C34027F096B /* BGPaymentModule.swift */,
 				08066CFF83972A94F2245F7BA5683F9E /* Encryption */,
 				63FA34FBB11725D10DBC86A13DBD6F57 /* Flow */,
@@ -378,7 +379,6 @@
 				1364E8586B7D6805C84C2E152861F2AE /* OptionalValueState.swift */,
 				8BBD1A99C2D959B95560BF54B18A5DD7 /* ValueState.swift */,
 			);
-			name = State;
 			path = State;
 			sourceTree = "<group>";
 		};
@@ -446,7 +446,6 @@
 				385EE0CD0BD9B78406A9C0D6E7A5A928 /* BGWebViewController.swift */,
 				CFFC03D0F65565536426A46B697811F2 /* MonthYearPickerView.swift */,
 			);
-			name = CardView;
 			path = CardView;
 			sourceTree = "<group>";
 		};
@@ -470,7 +469,6 @@
 				5074A10B835AC81D6B1C53016A79BA4C /* BGTokenizedCard.swift */,
 				CFECCA7E241850DF12A1FB3042731FD3 /* BGTokenizedCardPayment.swift */,
 			);
-			name = Entities;
 			path = Entities;
 			sourceTree = "<group>";
 		};
@@ -483,14 +481,12 @@
 				57781C91906C70F1D964057910441B2E /* State.swift */,
 				558D15D2004176FBE5A5EA27F3F59063 /* State */,
 			);
-			name = Model;
 			path = Model;
 			sourceTree = "<group>";
 		};
 		AD26726083039AC4081E7DE2A882A78F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BD07D37FF9C77CD10758D4CB5E4298E7 /* bgresources.xcassets */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -524,7 +520,6 @@
 				8C882AD4EE08B15C619FB7428C618200 /* UITextInput.swift */,
 				E6A827F9B9B555274B0907F2FE2ED948 /* UITextView.swift */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -533,7 +528,6 @@
 			children = (
 				D86B09C7648D8E836A45F6606C273E10 /* BGErrors.swift */,
 			);
-			name = Errors;
 			path = Errors;
 			sourceTree = "<group>";
 		};
@@ -542,7 +536,6 @@
 			children = (
 				FD1A6ECF1F7BE178F85A4CC1989E9690 /* BGLoader.swift */,
 			);
-			name = ServerWork;
 			path = ServerWork;
 			sourceTree = "<group>";
 		};
@@ -557,7 +550,6 @@
 				030760B59C821C6615D269F67CDE0681 /* RTLCaretStringIterator.swift */,
 				3CF89A49BBC4EDFBEE640A404E1D654D /* String.swift */,
 			);
-			name = Helper;
 			path = Helper;
 			sourceTree = "<group>";
 		};
@@ -701,6 +693,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0097832232D44E5001EC30C /* bgresources.xcassets in Resources */,
 				9DDC52175D46B63FFEE29485C918522B /* begateway.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -716,7 +709,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3C9B73D97A88C8D65F56603BB224212 /* bgresources.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1082,8 +1074,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name                    = 'begateway'
-  s.version                 = '1.0'
+  s.version                 = '1.01'
   s.summary                 = 'Little framework to easy implement https://begateway.com/ in yout application'
   s.swift_version           = '5.0'
   s.ios.deployment_target   = '10.0'
@@ -27,12 +27,12 @@ Pod::Spec.new do |s|
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Fedar Trukhan' => 'f.trukhan@gmail.com' }
-  s.source           = { :git => 'https://github.com/Alimath/begateway.git', :tag => s.version }
+  s.source           = { :git => 'https://github.com/begateway/begateway-ios-sdk.git', :tag => s.version }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   
   s.ios.deployment_target = '10.0'
   
-  s.source_files = 'begateway/Classes/**/*.{swift,h,m}'
+  s.source_files = 'begateway/Classes/**/*.{swift,h,m,xcassets}'
   s.requires_arc = true
   
   s.resource_bundles = {

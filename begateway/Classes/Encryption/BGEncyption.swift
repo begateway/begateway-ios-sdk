@@ -15,7 +15,6 @@ public class BGEncryption {
             let clear = try BGClearMessage(base64Encoded: Data(message.utf8).base64EncodedString())
             let encrypted = try clear.encrypted(with: key, padding: .PKCS1)
             
-            let data = encrypted.data
             let base64String = encrypted.base64String
             return (base64String, nil)
         } catch let error {

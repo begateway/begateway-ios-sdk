@@ -27,7 +27,7 @@ class BGLoader {
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let error = error {
+            if let _ = error {
                 callback(.error)
                 return
             }

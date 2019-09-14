@@ -241,9 +241,8 @@ class BGCardViewController: UIViewController, MaskedTextFieldDelegateListener {
         case CVVTF:
             tempCVV = value
             let type = BGCardType(cardNumber: value)
-            type.securityCodeLength
             var mask = "["
-            for i in 0 ..< type.securityCodeLength {
+            for _ in 0 ..< type.securityCodeLength {
                 mask += "0"
             }
             mask += "]"

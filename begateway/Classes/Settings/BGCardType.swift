@@ -175,7 +175,6 @@ public enum BGCardType: String, Codable {
         let type = BGCardType(cardNumber: cardNumber)
         if !(type.minCardLength...type.maxCardLength ~= cardNumber.count) { return false }
         let reversed = cardNumber.reversed()
-        let len = reversed.count
         var oddSum = 0
         var evenSum = 0
         for (index, item) in reversed.enumerated() {

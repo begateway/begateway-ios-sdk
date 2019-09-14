@@ -176,7 +176,7 @@ extension BGPaymentModule {
                 webView.delegate = self
                 self.cardVC?.isLoading = true
                 self.cardVC?.present(webView, animated: true, completion: nil)
-                webView.load3DSec(url: url, callbackURL: self.settings.returnURL ?? "")
+                webView.load3DSec(url: url, callbackURL: self.settings.returnURL)
             } else {
                 DispatchQueue.global().async(execute: {
                     DispatchQueue.main.sync { [weak self] in
@@ -285,7 +285,6 @@ public class BGPaymentModule {
             order: order) { [weak self] (tokenResult) in
                 guard let self = self else {
                     fatalError("payment module was dealloc from memory")
-                    return
                 }
                 self.cardVC?.isLoading = false
                 switch tokenResult {

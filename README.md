@@ -16,7 +16,7 @@ To easy find out how it works:
 [CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate beGateway into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'begateway', :git => 'https://github.com/begateway/begateway-ios-sdk.git'
+pod 'begateway'
 ```
 ## Requirements
 * iOS 10.0+

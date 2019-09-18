@@ -226,6 +226,7 @@ public class BGPaymentModule {
         cardVC?.brands = self.brands
         cardVC?.delegate = self
         cardVC?.colors = self.settings.cardViewColorsSettings
+        cardVC?.paymentSettings = self.settings
         cardVC?.style = self.settings.styleSettings
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowLevel = (UIApplication.shared.keyWindow?.windowLevel ?? .normal) + 1

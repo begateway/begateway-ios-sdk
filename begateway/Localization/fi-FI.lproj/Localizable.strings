@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  Pods
+
+  Created by FEDAR TRUKHAN on 9/19/19.
+  
+*/
+"begateway_form_hint_card_number"="Kortin numero";
+"begateway_form_hint_expiration"="Päättymispäivä";
+"begateway_form_hint_cardholder_name"="Kortinhaltijan nimi";
+"begateway_cvv"="CVV";
+"begateway_cvc"="CVC";
+"begateway_cid"="CID";
+"begateway_cvn"="CVN";
+"begateway_month"="Kuukausi";
+"begateway_year"="Vuosi";
+"begateway_card_number_required"="Kortin numero vaaditaan";
+"begateway_card_number_invalid"="Kortin numero ei kelpaa";
+"begateway_cvv_required"=" vaaditaan";
+"begateway_cvv_invalid"=" ei kelpaa";
+"begateway_expiration_required"="Päättymispäivä vaaditaan";
+"begateway_expiration_invalid"="Päättymispäivä ei kelpaa";
+"begateway_cardholder_name_required"="Nimi kortissa vaaditaan";
+"begateway_savecard"="Muista seuraavalla kerralla";
+"begateway_button_pay"="Maksa";
+"begateway_secure_info"="Turvallisen maksun tarjoaa ";

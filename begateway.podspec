@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name                    = 'begateway'
-    s.version                 = '1.02'
+    s.version                 = '1.03'
     s.summary                 = 'Little framework to easy implement https://begateway.com/ in yout application'
     s.swift_version           = '5.0'
     s.ios.deployment_target   = '10.0'
@@ -35,6 +35,6 @@ Pod::Spec.new do |s|
     
     s.frameworks = 'UIKit'
     s.frameworks = 'Security'
-    s.resources = 'begateway/Assets/**/*.*'
+    s.resources = '{begateway/Assets/**/*.*,begateway/Localization/**/*.*}'
     
 end

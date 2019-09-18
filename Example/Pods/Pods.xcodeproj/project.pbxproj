@@ -54,6 +54,8 @@
 		9577E16FB3C5DC5E48828CD203FFAB48 /* EOLState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A009C56EA8299DE2834BD87D6A8B98A9 /* EOLState.swift */; };
 		9DDC52175D46B63FFEE29485C918522B /* begateway.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2C90EC31B20060BCA74F6E3ED26C5D4 /* begateway.bundle */; };
 		9FC88E8D6564A048E78B5AEFC7F5DBDC /* begateway-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 55956ADD9C1ECB11719490817CDF517C /* begateway-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A007AB9E2332D32A00BDC250 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A007ABA02332D32A00BDC250 /* Localizable.strings */; };
+		A007ABB32332DE9F00BDC250 /* LocalizableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A007ABB22332DE9F00BDC250 /* LocalizableHelper.swift */; };
 		A009783C232D590E001EC30C /* bgresources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A009783B232D590E001EC30C /* bgresources.xcassets */; };
 		A349C1002DFEA80DEE7232AA953BB0EF /* UITextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C882AD4EE08B15C619FB7428C618200 /* UITextInput.swift */; };
 		A592F055FBB1039BBAFB1456D82D75D7 /* FreeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E43CA42D0D6210A5D3AB7ACF15955B /* FreeState.swift */; };
@@ -175,6 +177,23 @@
 		92518DED7E4EB7372D3FBFB3EB3B55B9 /* Pods-begateway_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-begateway_Example-Info.plist"; sourceTree = "<group>"; };
 		95165EBBFB233D4A74894879CE70CE22 /* BGStyleSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGStyleSettings.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A007AB9F2332D32A00BDC250 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A007ABA12332D69700BDC250 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A007ABA22332D6AF00BDC250 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A007ABA32332D6BC00BDC250 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A007ABA42332D6C600BDC250 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A007ABA52332D6CF00BDC250 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A007ABA62332D72400BDC250 /* fi-FI */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fi-FI"; path = "fi-FI.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A007ABA72332D73000BDC250 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A007ABA82332D73600BDC250 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A007ABA92332D74900BDC250 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A007ABAA2332D77D00BDC250 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A007ABAB2332D79300BDC250 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A007ABAC2332D7B900BDC250 /* sv-SE */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sv-SE"; path = "sv-SE.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A007ABAD2332D7D000BDC250 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A007ABAE2332D7E800BDC250 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A007ABAF2332D88300BDC250 /* ka */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ka; path = ka.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A007ABB22332DE9F00BDC250 /* LocalizableHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizableHelper.swift; path = begateway/Classes/LocalizableHelper.swift; sourceTree = "<group>"; };
 		A009783B232D590E001EC30C /* bgresources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = bgresources.xcassets; path = begateway/Assets/bgresources.xcassets; sourceTree = "<group>"; };
 		A009C56EA8299DE2834BD87D6A8B98A9 /* EOLState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EOLState.swift; sourceTree = "<group>"; };
 		A84AC1C6AEC7F62AFF9318511B211DB5 /* BGStatusListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BGStatusListener.swift; sourceTree = "<group>"; };
@@ -307,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				BE1F3421842F16FE7B533C34027F096B /* BGPaymentModule.swift */,
+				A007ABB22332DE9F00BDC250 /* LocalizableHelper.swift */,
 				08066CFF83972A94F2245F7BA5683F9E /* Encryption */,
 				63FA34FBB11725D10DBC86A13DBD6F57 /* Flow */,
 				60107EEDCD51F7F8D79AC33DF5202AB6 /* InputMask */,
@@ -487,6 +507,7 @@
 			isa = PBXGroup;
 			children = (
 				A009783B232D590E001EC30C /* bgresources.xcassets */,
+				A007ABA02332D32A00BDC250 /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -674,6 +695,21 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ru,
+				be,
+				da,
+				de,
+				es,
+				"fi-FI",
+				fr,
+				it,
+				ja,
+				nb,
+				pl,
+				"sv-SE",
+				tr,
+				"zh-Hans",
+				ka,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 32EA5C701821A49C41E055CFE006D576 /* Products */;
@@ -694,6 +730,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A009783C232D590E001EC30C /* bgresources.xcassets in Resources */,
+				A007AB9E2332D32A00BDC250 /* Localizable.strings in Resources */,
 				9DDC52175D46B63FFEE29485C918522B /* begateway.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -794,6 +831,7 @@
 				CF5B3B61DA5883A35FA7011967D847F0 /* MaskedTextViewDelegate.swift in Sources */,
 				B36774F7FE4C134B271D6FABD85D2A9C /* MonthYearPickerView.swift in Sources */,
 				FB2544B87D5E7C10CF8AAB37E034947C /* Next.swift in Sources */,
+				A007ABB32332DE9F00BDC250 /* LocalizableHelper.swift in Sources */,
 				5E4B0825D9D45EF004653057105F9E7D /* Notation.swift in Sources */,
 				875FC1E6C0A0D556FEFE15DF4F0D3DCD /* NSData+SHA.m in Sources */,
 				B0F22F5B3C74E699A208E0F0A68F57F3 /* OptionalValueState.swift in Sources */,
@@ -838,11 +876,39 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		A007ABA02332D32A00BDC250 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A007AB9F2332D32A00BDC250 /* en */,
+				A007ABA12332D69700BDC250 /* ru */,
+				A007ABA22332D6AF00BDC250 /* be */,
+				A007ABA32332D6BC00BDC250 /* da */,
+				A007ABA42332D6C600BDC250 /* de */,
+				A007ABA52332D6CF00BDC250 /* es */,
+				A007ABA62332D72400BDC250 /* fi-FI */,
+				A007ABA72332D73000BDC250 /* fr */,
+				A007ABA82332D73600BDC250 /* it */,
+				A007ABA92332D74900BDC250 /* ja */,
+				A007ABAA2332D77D00BDC250 /* nb */,
+				A007ABAB2332D79300BDC250 /* pl */,
+				A007ABAC2332D7B900BDC250 /* sv-SE */,
+				A007ABAD2332D7D000BDC250 /* tr */,
+				A007ABAE2332D7E800BDC250 /* zh-Hans */,
+				A007ABAF2332D88300BDC250 /* ka */,
+			);
+			name = Localizable.strings;
+			path = begateway/Localization;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		196DFA3E4A09A28224918543529A1885 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1025,6 +1091,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

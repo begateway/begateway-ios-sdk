@@ -84,13 +84,13 @@ extension BGCardType: CaseIterable {
     var securityCodeName: String {
         switch self {
         case .DISCOVER, .AMEX:
-            return "CID"
+            return BGLocalization.begatewayCID
         case .MIR, .BELKART, .VISA, .DINERSCLUB, .JCB, .UNKNOWN, .EMPTY:
-            return "CVV"
+            return BGLocalization.begatewayCVV
         case .MASTER, .MAESTRO:
-            return "CVC"
+            return BGLocalization.begatewayCVC
         case .UNIONPAY:
-            return "CVN"
+            return BGLocalization.begatewayCVN
         }
     }
 }

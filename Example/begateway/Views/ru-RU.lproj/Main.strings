@@ -1,0 +1,18 @@
+
+/* Class = "UIButton"; normalTitle = "Pay With Public Key Without 3D"; ObjectID = "9dN-Ek-L9U"; */
+"9dN-Ek-L9U.normalTitle" = "Pay With Public Key Without 3D";
+
+/* Class = "UIButton"; normalTitle = "Pay With Public Key 3D"; ObjectID = "R4m-zA-MUW"; */
+"R4m-zA-MUW.normalTitle" = "Pay With Public Key 3D";
+
+/* Class = "UIButton"; normalTitle = "Pay with Checkout Without 3D Secure"; ObjectID = "XzA-ZG-Zlf"; */
+"XzA-ZG-Zlf.normalTitle" = "Pay with Checkout Without 3D Secure";
+
+/* Class = "UIButton"; normalTitle = "Pay with Checkout With 3D Secure"; ObjectID = "hXp-aC-96l"; */
+"hXp-aC-96l.normalTitle" = "Pay with Checkout With 3D Secure";
+
+/* Class = "UIButton"; normalTitle = "Pay With Tokenized Card (Invalid Token)"; ObjectID = "tYb-84-QOe"; */
+"tYb-84-QOe.normalTitle" = "Pay With Tokenized Card (Invalid Token)";
+
+/* Class = "UIButton"; normalTitle = "Pay With Tokenized Card"; ObjectID = "wvW-5e-gXr"; */
+"wvW-5e-gXr.normalTitle" = "Pay With Tokenized Card";

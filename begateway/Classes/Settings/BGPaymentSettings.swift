@@ -9,7 +9,7 @@ public struct BGPaymentSettings {
     public var endpoint: String
     public var isTestMode: Bool
     public var locale: String
-    private let securedBy = "beGateway"
+    let securedBy = "beGateway"
     public var supportedCardTypes: [BGCardType]
     public var styleSettings: BGStyleSettings
     public var cardViewColorsSettings: BGCardViewColorsSettings

@@ -1,0 +1,26 @@
+/* 
+ Localizable.strings
+ Pods
+ 
+ Created by FEDAR TRUKHAN on 9/19/19.
+ 
+ */
+"begateway_form_hint_card_number"="Card number";
+"begateway_form_hint_expiration"="Expiration date";
+"begateway_form_hint_cardholder_name"="Name on card";
+"begateway_cvv"="CVV";
+"begateway_cvc"="CVC";
+"begateway_cid"="CID";
+"begateway_cvn"="CVN";
+"begateway_month"="Month";
+"begateway_year"="Year";
+"begateway_card_number_required"="Card number is required";
+"begateway_card_number_invalid"="Card number is invalid";
+"begateway_cvv_required"=" is required";
+"begateway_cvv_invalid"=" is invalid";
+"begateway_expiration_required"="Expiration date is required";
+"begateway_expiration_invalid"="Expiration date is invalid";
+"begateway_cardholder_name_required"="Name on card is required";
+"begateway_savecard"="Save card";
+"begateway_button_pay"="Pay";
+"begateway_secure_info"="Secure payment is provided by ";

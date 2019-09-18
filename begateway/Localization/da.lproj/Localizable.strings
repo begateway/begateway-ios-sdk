@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  Pods
+
+  Created by FEDAR TRUKHAN on 9/19/19.
+  
+*/
+"begateway_form_hint_card_number"="Kortnummer";
+"begateway_form_hint_expiration"="Udløbsdato";
+"begateway_form_hint_cardholder_name"="Kortholder navn";
+"begateway_cvv"="CVV";
+"begateway_cvc"="CVC";
+"begateway_cid"="CID";
+"begateway_cvn"="CVN";
+"begateway_month"="Måned";
+"begateway_year"="År";
+"begateway_card_number_required"="Kortnummeret er obligatorisk";
+"begateway_card_number_invalid"="Kortnummeret er ugyldigt";
+"begateway_cvv_required"=" er obligatorisk";
+"begateway_cvv_invalid"=" er ugyldig";
+"begateway_expiration_required"="Udløbsdatoen er obligatorisk";
+"begateway_expiration_invalid"="Udløbsdatoen er ugyldig";
+"begateway_cardholder_name_required"="Navnet på kortet er obligatorisk";
+"begateway_savecard"="Husk mig næste gang";
+"begateway_button_pay"="Betal";
+"begateway_secure_info"="Sikker betaling leveres af ";

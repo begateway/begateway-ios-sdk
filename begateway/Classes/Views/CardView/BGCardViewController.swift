@@ -100,6 +100,7 @@ class BGCardViewController: UIViewController, MaskedTextFieldDelegateListener {
             expYear: tempYear)
     }
     
+    var paymentSettings: BGPaymentSettings = BGPaymentSettings.standart
     var colors: BGCardViewColorsSettings = BGCardViewColorsSettings.standart {
         didSet {
             DispatchQueue.main.async {
@@ -323,8 +324,8 @@ class BGCardViewController: UIViewController, MaskedTextFieldDelegateListener {
         saveSwitchStack.axis = .horizontal
         saveSwitchStack.spacing = 10
         
-        dissmissButton.setTitle("Cancel", for: .normal)
-        payButton.setTitle("Pay", for: .normal)
+        dissmissButton.setTitle(BGLocalization.cancel, for: .normal)
+        payButton.setTitle(BGLocalization.begatewayButtonPay, for: .normal)
         payButton.clipsToBounds = true
         payButton.layer.cornerRadius = 10
         
@@ -332,7 +333,7 @@ class BGCardViewController: UIViewController, MaskedTextFieldDelegateListener {
         infoLabel.numberOfLines = 0
         infoLabel.lineBreakMode = .byWordWrapping
         
-        infoLabel.text = "Secure payment is provided by beGateway"
+        infoLabel.text = BGLocalization.begatewaySecureInfo(paymentSettings.securedBy)
         
         if #available(iOS 11.0, *) {
             mainScrollView.insetsLayoutMarginsFromSafeArea = true
@@ -340,10 +341,10 @@ class BGCardViewController: UIViewController, MaskedTextFieldDelegateListener {
         }
         mainScrollView.contentInset = .init(top: 50, left: 0, bottom: 0, right: 0)
         
-        cardHolderPlaceholder = "Holder Name"
-        cardNumberPlaceholder = "Card Number"
-        cvvPlaceholder = "CVV"
-        expirationDatePlaceholder = "Expiration date"
+        cardHolderPlaceholder = BGLocalization.begatewayFormHintCardholderName
+        cardNumberPlaceholder = BGLocalization.begatewayFormHintCardNumber
+        cvvPlaceholder = BGLocalization.begatewayCVV
+        expirationDatePlaceholder = BGLocalization.begatewayFormHintExpiration
         
         cardHolderTF.autocapitalizationType = .allCharacters
         
@@ -368,7 +369,7 @@ class BGCardViewController: UIViewController, MaskedTextFieldDelegateListener {
         cardIcon.contentMode = .scaleAspectFit
         cardIcon.isUserInteractionEnabled = false
         
-        saveCardLabel.text = "Save card"
+        saveCardLabel.text = BGLocalization.begatewaySavecard
         saveCardLabel.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         
         cardHolderTF.addTarget(self, action: #selector(self.nextButtonAction), for: .primaryActionTriggered)
@@ -447,9 +448,9 @@ class BGCardViewController: UIViewController, MaskedTextFieldDelegateListener {
         }
         NSLayoutConstraint.activate([
             dismissButtonTopConstraint,
-            dissmissButton.leftAnchor.constraint(equalTo: view.leftAnchor),
+            dissmissButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
             dissmissButton.heightAnchor.constraint(equalToConstant: 40),
-            dissmissButton.widthAnchor.constraint(equalToConstant: 70)
+            dissmissButton.rightAnchor.constraint(lessThanOrEqualTo: view.rightAnchor, constant: -20)
             ])
         
         NSLayoutConstraint.activate([
@@ -544,7 +545,7 @@ class BGCardViewController: UIViewController, MaskedTextFieldDelegateListener {
                 brandItem.cardType == BGCardType(cardNumber: card.number)
             }) {
                 let alert = UIAlertController(title: "Warning", message: "This merchant does not accept \(BGCardType.init(cardNumber: card.number)) cards", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: BGLocalization.close, style: .cancel, handler: nil))
                 return
             }
         }
@@ -587,7 +588,7 @@ class BGCardViewController: UIViewController, MaskedTextFieldDelegateListener {
         doneToolbar.barStyle = .default
         
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+        let done: UIBarButtonItem = UIBarButtonItem(title: BGLocalization.done, style: .done, target: self, action: #selector(self.doneButtonAction))
         
         let items = [flexSpace, done]
         doneToolbar.items = items
@@ -603,7 +604,7 @@ class BGCardViewController: UIViewController, MaskedTextFieldDelegateListener {
         nextToolbar.barStyle = .default
         
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let done: UIBarButtonItem = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(self.nextButtonAction))
+        let done: UIBarButtonItem = UIBarButtonItem(title: BGLocalization.next, style: .done, target: self, action: #selector(self.nextButtonAction))
         
         let items = [flexSpace, done]
         nextToolbar.items = items

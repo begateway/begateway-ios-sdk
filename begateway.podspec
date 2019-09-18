@@ -34,6 +34,6 @@ Pod::Spec.new do |s|
     s.requires_arc = true
     s.frameworks = 'UIKit'
     s.frameworks = 'Security'
-    s.resources = ['{begateway/Assets/**/*.*}', 'begateway/Localization/*.lproj/*.strings']
+    s.resources = ['begateway/Assets/**/*.*','begateway/Localization/*.lproj/*.strings']
     
 end

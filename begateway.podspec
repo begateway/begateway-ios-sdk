@@ -32,9 +32,9 @@ Pod::Spec.new do |s|
     
     s.source_files = 'begateway/Classes/**/*.{swift,h,m}'
     s.requires_arc = true
-    
+    s.resource_bundle = { "begatewaybundle" => ["begateway/Localization/*.lproj/*.strings"] }
     s.frameworks = 'UIKit'
     s.frameworks = 'Security'
-    s.resources = '{begateway/Assets/**/*.*,begateway/Localization/**/*.*}'
+    s.resources = '{begateway/Assets/**/*.*}'
     
 end

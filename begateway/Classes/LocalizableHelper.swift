@@ -6,10 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 class BGLocalization {
     static func localizable(_ key: String) -> String {
-        return NSLocalizedString(key, bundle: Bundle(for: BGPaymentModule.self), comment: "")
+        let path = Bundle(for: BGPaymentModule.self).path(forResource: "begatewaybundle", ofType: "bundle")!
+        let bundle = Bundle(path: path) ?? Bundle.main
+        return NSLocalizedString(key, bundle: bundle, comment: "")
     }
     static var begatewayFormHintCardNumber: String {
         return BGLocalization.localizable("begateway_form_hint_card_number")

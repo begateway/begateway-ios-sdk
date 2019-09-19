@@ -1,5 +1,5 @@
 # beGateway framework for iOS
-[![License](https://img.shields.io/github/license/begateway/begateway-ios-sdk?label=License)](https://github.com/begateway/begateway-ios-sdk/blob/master/LICENSE) [![Pod](https://img.shields.io/badge/pod-v1.0-blue)](https://github.com/begateway/begateway-ios-sdk) ![](https://img.shields.io/badge/platform-iOS-lightgrey) ![](https://img.shields.io/badge/Swift-5.0-green)
+[![License](https://img.shields.io/github/license/begateway/begateway-ios-sdk?label=License)](https://github.com/begateway/begateway-ios-sdk/blob/master/LICENSE) [![Pod](https://img.shields.io/badge/pod-v1.04-blue)](https://github.com/begateway/begateway-ios-sdk) ![](https://img.shields.io/badge/platform-iOS-lightgrey) ![](https://img.shields.io/badge/Swift-5.0-green)
 
 beGateway components for iOS allows you to accept in-app payments
 

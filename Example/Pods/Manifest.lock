@@ -1,5 +1,5 @@
 PODS:
-  - begateway (1.0)
+  - begateway (1.05)
 
 DEPENDENCIES:
   - begateway (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  begateway: a924e71100d54fe7a5e1dfcc1c89feeba761d556
+  begateway: 6aeae35bbbebf5ef2d9b8efd650ec6f957606697
 
-PODFILE CHECKSUM: 29f20983f919b01ca691cd33602621f17b8f6783
+PODFILE CHECKSUM: 88e3dd187b0f724307215aa60a2bcd966ed38a2a
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4

@@ -17,10 +17,10 @@ class ViewController: UIViewController {
     var lastPayCardInfo: BGCardInfo?
     
     @IBAction func payWithPublicKey3DSec(_ sender: Any) {
-        module.pay(publicKey: Constants.publicKeyWith3DSecure, order: order)
+        module.pay(publicKey: Constants.publicKeyWith3DSecure, transactionType: .authorization, order: order)
     }
     @IBAction func payWithPublicKeyWithout3DSec(_ sender: Any) {
-        module.pay(publicKey: Constants.publicKey, order: order)
+        module.pay(publicKey: Constants.publicKey, transactionType: .authorization, order: order)
     }
     @IBAction func payWithCheckoutObject3DSecure(_ sender: Any) {
         guard let checkoutData = Constants.testCheckoutJSON3DSecure.data(using: .utf8) else {
@@ -58,14 +58,14 @@ class ViewController: UIViewController {
         isLoading = true
         let card = BGTokenizedCard(token: cardToken)
         // please insert payment token. You can become it with making post request to your payment provider base url with prefix /checkouts
-        module.pay(publicKey: Constants.publicKey, order: order, tokenizedCard: card)
+        module.pay(publicKey: Constants.publicKey, transactionType: .payment, order: order, tokenizedCard: card)
     }
     @IBAction func payWithTokenizedCardFail() {
         isLoading = true
         let card = BGTokenizedCard(token: "invalid card token")
         let order = BGOrder(amount: 200, currency: "USD", description: "test", trackingId: "my_custom_variable")
         // please insert payment token, you can become it with making post request to your payment provider base url with prefix /checkouts
-        module.pay(publicKey: Constants.publicKey, order: order, tokenizedCard: card)
+        module.pay(publicKey: Constants.publicKey, transactionType: .payment, order: order, tokenizedCard: card)
     }
     
     private let loadingBack = UIView()
@@ -113,7 +113,7 @@ class ViewController: UIViewController {
             loadingBack.rightAnchor.constraint(equalTo: view.rightAnchor),
             loadingIndicator.centerXAnchor.constraint(equalTo: loadingBack.centerXAnchor),
             loadingIndicator.centerYAnchor.constraint(equalTo: loadingBack.centerYAnchor)
-            ])
+        ])
     }
 }
 

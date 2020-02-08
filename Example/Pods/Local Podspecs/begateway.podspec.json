@@ -1,6 +1,6 @@
 {
   "name": "begateway",
-  "version": "1.0",
+  "version": "1.05",
   "summary": "Little framework to easy implement https://begateway.com/ in yout application",
   "swift_versions": "5.0",
   "platforms": {
@@ -16,16 +16,15 @@
     "Fedar Trukhan": "f.trukhan@gmail.com"
   },
   "source": {
-    "git": "https://github.com/Alimath/begateway.git",
-    "tag": "1.0"
+    "git": "https://github.com/begateway/begateway-ios-sdk.git",
+    "tag": "1.05"
   },
   "source_files": "begateway/Classes/**/*.{swift,h,m}",
   "requires_arc": true,
-  "resource_bundles": {
-    "begateway": [
-      "begateway/Assets/*.xcassets"
-    ]
-  },
   "frameworks": "Security",
+  "resources": [
+    "begateway/Assets/**/*.*",
+    "begateway/Localization/*.lproj/*.strings"
+  ],
   "swift_version": "5.0"
 }

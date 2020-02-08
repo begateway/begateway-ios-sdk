@@ -48,21 +48,26 @@ extension BGPaymentModule: BGCardViewControllerDelegate {
         dissapearMe(with: .canceled)
     }
     private func dissapearMe(with status: BGPaymentModuleStatus) {
+        if self.window == nil {
+            self.delegate?.bgPaymentResult(status: status)
+            return
+        }
+        
         UIView.animate(withDuration: 0.3, animations: {
             if Thread.isMainThread {
                 self.window?.alpha = 0
             } else {
                 DispatchQueue.global().async(execute: {
-                    DispatchQueue.main.sync {
-                        self.window?.alpha = 0
+                    DispatchQueue.main.sync { [weak self] in
+                        self?.window?.alpha = 0
                     }
                 })
             }
         })
         DispatchQueue.global().async(execute: {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                self.window = nil
-                self.delegate?.bgPaymentResult(status: status)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
+                self?.window = nil
+                self?.delegate?.bgPaymentResult(status: status)
             }
         })
     }
@@ -240,7 +245,14 @@ public class BGPaymentModule {
     }
     
     private var brands: [BGBrand] = []
+    
+    @available(*, deprecated, message: "Please, use method pay, with \"transactionType\" parameter")
     public func pay(publicKey: String, order: BGOrder) {
+        self.pay(publicKey: publicKey, transactionType: .payment, order: order)
+    }
+    public func pay(publicKey: String,
+                    transactionType: BGTransactionType,
+                    order: BGOrder) {
         self.currentOrder = order
         self.currentPublicKey = publicKey
         guard let url = URL(string: settings.endpoint + "/checkouts") else {
@@ -255,6 +267,7 @@ public class BGPaymentModule {
         cardVC?.isLoading = true
         BGLoader.checkoutToken(
             settings: settings,
+            transactionType: transactionType,
             checkoutURL: url,
             publicKey: publicStoreKey,
             order: order) { [weak self] (tokenResult) in
@@ -269,7 +282,15 @@ public class BGPaymentModule {
         }
     }
     
+    @available(*, deprecated, message: "Please, use method pay, with \"transactionType\" parameter")
     public func pay(publicKey: String, order: BGOrder, tokenizedCard: BGTokenizedCard) {
+        self.pay(publicKey: publicKey, transactionType: .payment, order: order, tokenizedCard: tokenizedCard)
+    }
+    
+    public func pay(publicKey: String,
+                    transactionType: BGTransactionType,
+                    order: BGOrder,
+                    tokenizedCard: BGTokenizedCard) {
         self.currentPublicKey = publicKey
         guard let url = URL(string: settings.endpoint + "/checkouts") else {
             delegate?.bgPaymentResult(status: .error(BGErrors.endpointNotValid))
@@ -281,6 +302,7 @@ public class BGPaymentModule {
         }
         BGLoader.checkoutToken(
             settings: settings,
+            transactionType: transactionType,
             checkoutURL: url,
             publicKey: publicStoreKey,
             order: order) { [weak self] (tokenResult) in

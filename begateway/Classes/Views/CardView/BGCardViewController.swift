@@ -639,6 +639,7 @@ class BGCardViewController: UIViewController, MaskedTextFieldDelegateListener {
         }
     }
     private func updateScrollViewContraints() {
+        if view?.window == nil || mainScrollBottomConstraint == nil { return }
         mainScrollBottomConstraint.constant = -keyboardHeight
         self.view.setNeedsLayout()
         UIView.animate(withDuration: 0.2) {

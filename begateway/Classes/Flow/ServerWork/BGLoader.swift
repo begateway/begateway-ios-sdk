@@ -150,7 +150,12 @@ class BGLoader {
             callback(.error(error))
         }
     }
-    static func checkoutToken(settings: BGPaymentSettings, checkoutURL: URL, publicKey: String, order: BGOrder, _ callback: @escaping (_ result: BGCheckoutTokenResult)->Void) {
+    static func checkoutToken(settings: BGPaymentSettings,
+                              transactionType: BGTransactionType,
+                              checkoutURL: URL,
+                              publicKey: String,
+                              order: BGOrder,
+                              _ callback: @escaping (_ result: BGCheckoutTokenResult)->Void) {
         var request = URLRequest(url: checkoutURL)
         request.setValue(publicKey, forHTTPHeaderField: "Authorization")
         request.setValue("2", forHTTPHeaderField: "X-Api-Version")
@@ -168,7 +173,7 @@ class BGLoader {
             let checkout = BGCheckout(
                 iframe: nil,
                 test: settings.isTestMode,
-                transactionType: .payment,
+                transactionType: transactionType,
                 attempts: nil,
                 publicKey: nil,
                 order: order,

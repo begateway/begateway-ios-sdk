@@ -20,6 +20,8 @@ public struct BGCheckoutRequest: Codable {
 
 public enum BGTransactionType: String, Codable {
     case payment
+    case authorization
+    case verify
 }
 
 public struct BGCheckout: Codable {

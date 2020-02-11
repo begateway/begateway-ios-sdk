@@ -48,6 +48,7 @@ extension BGPaymentModule: BGCardViewControllerDelegate {
         dissapearMe(with: .canceled)
     }
     private func dissapearMe(with status: BGPaymentModuleStatus) {
+        self.window?.endEditing(true)
         if self.window == nil {
             self.delegate?.bgPaymentResult(status: status)
             return

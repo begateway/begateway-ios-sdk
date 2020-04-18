@@ -48,29 +48,32 @@ extension BGPaymentModule: BGCardViewControllerDelegate {
         dissapearMe(with: .canceled)
     }
     private func dissapearMe(with status: BGPaymentModuleStatus) {
-        self.window?.endEditing(true)
-        if self.window == nil {
-            self.delegate?.bgPaymentResult(status: status)
-            return
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.window?.endEditing(true)
+            if self.window == nil {
+                self.delegate?.bgPaymentResult(status: status)
+                return
+            }
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                if Thread.isMainThread {
+                    self.window?.alpha = 0
+                } else {
+                    DispatchQueue.global().async(execute: {
+                        DispatchQueue.main.sync { [weak self] in
+                            self?.window?.alpha = 0
+                        }
+                    })
+                }
+            })
+            DispatchQueue.global().async(execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
+                    self?.window = nil
+                    self?.delegate?.bgPaymentResult(status: status)
+                }
+            })
         }
-        
-        UIView.animate(withDuration: 0.3, animations: {
-            if Thread.isMainThread {
-                self.window?.alpha = 0
-            } else {
-                DispatchQueue.global().async(execute: {
-                    DispatchQueue.main.sync { [weak self] in
-                        self?.window?.alpha = 0
-                    }
-                })
-            }
-        })
-        DispatchQueue.global().async(execute: {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
-                self?.window = nil
-                self?.delegate?.bgPaymentResult(status: status)
-            }
-        })
     }
     func payTouch(card: BGCard) {
         self.payWithCard(card: card)
@@ -234,11 +237,20 @@ public class BGPaymentModule {
         cardVC?.colors = self.settings.cardViewColorsSettings
         cardVC?.paymentSettings = self.settings
         cardVC?.style = self.settings.styleSettings
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.windowLevel = (UIApplication.shared.keyWindow?.windowLevel ?? .normal) + 1
+        
+        
+        
+        if #available(iOS 13.0, *), let windowScene = UIApplication.shared.connectedScenes.filter({ $0.activationState == .foregroundActive }).first as? UIWindowScene {
+            window = UIWindow(windowScene: windowScene)
+            window?.frame = UIScreen.main.bounds
+        } else {
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.windowLevel = (UIApplication.shared.keyWindow?.windowLevel ?? .normal) + 1
+        }
+
         window?.rootViewController = cardVC
         window?.makeKeyAndVisible()
-        
+
         window?.alpha = 0
         UIView.animate(withDuration: 0.3) {
             self.window?.alpha = 1
@@ -276,9 +288,9 @@ public class BGPaymentModule {
                 switch tokenResult {
                 case .error(let error):
                     self?.dissapearMe(with: .error(error))
-                case .success(let data):
-                    self?.brands = data.brands
-                    self?.currentPaymentToken = data.token
+                case let .success(token, brands):
+                    self?.brands = brands
+                    self?.currentPaymentToken = token
                 }
         }
     }
@@ -314,10 +326,10 @@ public class BGPaymentModule {
                 switch tokenResult {
                 case .error(let error):
                     self.delegate?.bgPaymentResult(status: .error(error))
-                case .success(let data):
-                    self.brands = data.brands
-                    self.currentPaymentToken = data.token
-                    self.pay(paymentToken: data.token, card: tokenizedCard)
+                case let .success(token, brands):
+                    self.brands = brands
+                    self.currentPaymentToken = token
+                    self.pay(paymentToken: token, card: tokenizedCard)
                 }
         }
     }

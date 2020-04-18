@@ -18,7 +18,7 @@ class BGClearMessage: BGMessage {
     /// - Parameters:
     ///   - string: String value of the clear message
     ///   - encoding: Encoding to use to generate the clear data
-    /// - Throws: SwiftyRSAError
+    /// - Throws: BGRSAError
     convenience init(string: String, using encoding: String.Encoding) throws {
         guard let data = string.data(using: encoding) else {
             throw BGRSAError.stringToDataConversionFailed
@@ -31,7 +31,7 @@ class BGClearMessage: BGMessage {
     ///
     /// - Parameter encoding: Encoding to use during the string conversion
     /// - Returns: String representation of the clear message
-    /// - Throws: SwiftyRSAError
+    /// - Throws: BGRSAError
     func string(encoding: String.Encoding) throws -> String {
         guard let str = String(data: data, encoding: encoding) else {
             throw BGRSAError.dataToStringConversionFailed
@@ -45,7 +45,7 @@ class BGClearMessage: BGMessage {
     ///   - key: Public key to encrypt the clear message with
     ///   - padding: Padding to use during the encryption
     /// - Returns: Encrypted message
-    /// - Throws: SwiftyRSAError
+    /// - Throws: BGRSAError
     func encrypted(with key: BGPublicKey, padding: BGPadding) throws -> BGEncryptedMessage {
         
         let blockSize = SecKeyGetBlockSize(key.reference)
@@ -83,9 +83,13 @@ class BGClearMessage: BGMessage {
             
             idx += maxChunkSize
         }
-        
-        let encryptedData = Data(bytes: UnsafePointer<UInt8>(encryptedDataBytes), count: encryptedDataBytes.count)
-        return BGEncryptedMessage(data: encryptedData)
+        if let bytes = encryptedDataBytes.withUnsafeBufferPointer({ $0 }).baseAddress {
+            let encryptedData = Data(bytes: bytes, count: encryptedDataBytes.count)
+            return BGEncryptedMessage(data: encryptedData)
+        }
+        else {
+            throw BGRSAError.stringToDataConversionFailed
+        }
     }
     
     /// Signs a clear message using a private key.
@@ -96,7 +100,7 @@ class BGClearMessage: BGMessage {
     ///   - key: Private key to sign the clear message with
     ///   - digestType: Digest
     /// - Returns: Signature of the clear message after signing it with the specified digest type.
-    /// - Throws: SwiftyRSAError
+    /// - Throws: BGRSAError
     func signed(with key: BGPrivateKey, digestType: BGSignature.DigestType) throws -> BGSignature {
         
         let digest = self.digest(digestType: digestType)
@@ -119,8 +123,12 @@ class BGClearMessage: BGMessage {
             throw BGRSAError.signatureCreateFailed(status: status)
         }
         
-        let signatureData = Data(bytes: UnsafePointer<UInt8>(signatureBytes), count: signatureBytes.count)
-        return BGSignature(data: signatureData)
+        if let bytes = signatureBytes.withUnsafeBufferPointer({ $0 }).baseAddress {
+            let signatureData = Data(bytes: UnsafePointer<UInt8>(bytes), count: signatureBytes.count)
+            return BGSignature(data: signatureData)
+        } else {
+            throw BGRSAError.signatureCreateFailed(status: status)
+        }
     }
     
     /// Verifies the signature of a clear message.
@@ -130,7 +138,7 @@ class BGClearMessage: BGMessage {
     ///   - signature: Signature to verify
     ///   - digestType: Digest type used for the signature
     /// - Returns: Result of the verification
-    /// - Throws: SwiftyRSAError
+    /// - Throws: BGRSAError
     func verify(with key: BGPublicKey, signature: BGSignature, digestType: BGSignature.DigestType) throws -> Bool {
         
         let digest = self.digest(digestType: digestType)

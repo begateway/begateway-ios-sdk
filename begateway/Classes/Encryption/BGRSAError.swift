@@ -1,5 +1,5 @@
 //
-//  BGSwiftyRSAError.swift
+//  BGRSAError.swift
 //  begateway
 //
 //  Created by FEDAR TRUKHAN on 9/2/19.

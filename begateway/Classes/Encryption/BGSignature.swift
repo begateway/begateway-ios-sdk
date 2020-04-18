@@ -39,7 +39,7 @@ class BGSignature {
     /// Creates a signature with a base64-encoded string.
     ///
     /// - Parameter base64String: Base64-encoded representation of the signature data.
-    /// - Throws: SwiftyRSAError
+    /// - Throws: BGRSAError
     convenience init(base64Encoded base64String: String) throws {
         guard let data = Data(base64Encoded: base64String) else {
             throw BGRSAError.invalidBase64String

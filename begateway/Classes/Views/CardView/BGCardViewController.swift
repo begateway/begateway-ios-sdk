@@ -347,6 +347,7 @@ class BGCardViewController: UIViewController, MaskedTextFieldDelegateListener {
         expirationDatePlaceholder = BGLocalization.begatewayFormHintExpiration
         
         cardHolderTF.autocapitalizationType = .allCharacters
+        cardHolderTF.autocorrectionType = .no
         
         cardNumberTF.delegate = cardHolderTFMask
         cardHolderTFMask.delegate = self

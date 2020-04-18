@@ -23,7 +23,7 @@ class BGPublicKey: BGKey {
     /// Returns a PEM representation of the public key.
     ///
     /// - Returns: Data of the key, PEM-encoded
-    /// - Throws: SwiftyRSAError
+    /// - Throws: BGRSAError
     func pemString() throws -> String {
         let data = try self.data()
         let pem = BGRSA.format(keyData: data, withPemType: "RSA PUBLIC KEY")
@@ -34,7 +34,7 @@ class BGPublicKey: BGKey {
     /// This initializer will throw if the provided key reference is not a public RSA key.
     ///
     /// - Parameter reference: Reference to the key within the keychain.
-    /// - Throws: SwiftyRSAError
+    /// - Throws: BGRSAError
     required init(reference: SecKey) throws {
         
         guard BGRSA.isValidKeyReference(reference, forClass: kSecAttrKeyClassPublic) else {
@@ -50,7 +50,7 @@ class BGPublicKey: BGKey {
     /// This method throws if SwiftyRSA cannot extract data from the key.
     ///
     /// - Returns: Data of the public key as returned by the keychain.
-    /// - Throws: SwiftyRSAError
+    /// - Throws: BGRSAError
     required init(data: Data) throws {
         
         let tag = UUID().uuidString

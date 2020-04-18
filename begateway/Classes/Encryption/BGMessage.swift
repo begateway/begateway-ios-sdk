@@ -24,7 +24,7 @@ extension BGMessage {
     /// Creates an encrypted message with a base64-encoded string.
     ///
     /// - Parameter base64String: Base64-encoded data of the encrypted message
-    /// - Throws: SwiftyRSAError
+    /// - Throws: BGRSAError
     init(base64Encoded base64String: String) throws {
         guard let data = Data(base64Encoded: base64String) else {
             throw BGRSAError.invalidBase64String

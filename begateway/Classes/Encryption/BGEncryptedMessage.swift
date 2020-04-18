@@ -25,7 +25,7 @@ class BGEncryptedMessage: BGMessage {
     ///   - key: Private key to decrypt the mssage with
     ///   - padding: Padding to use during the decryption
     /// - Returns: Clear message
-    /// - Throws: SwiftyRSAError
+    /// - Throws: BGRSAError
     func decrypted(with key: BGPrivateKey, padding: BGPadding) throws -> BGClearMessage {
         let blockSize = SecKeyGetBlockSize(key.reference)
         
@@ -52,7 +52,11 @@ class BGEncryptedMessage: BGMessage {
             idx += blockSize
         }
         
-        let decryptedData = Data(bytes: UnsafePointer<UInt8>(decryptedDataBytes), count: decryptedDataBytes.count)
-        return BGClearMessage(data: decryptedData)
+        if let bytes = decryptedDataBytes.withUnsafeBufferPointer({ $0 }).baseAddress {
+            let decryptedData = Data(bytes: UnsafePointer<UInt8>(bytes), count: decryptedDataBytes.count)
+            return BGClearMessage(data: decryptedData)
+        } else {
+            throw BGRSAError.chunkDecryptFailed(index: idx)
+        }
     }
 }

@@ -223,11 +223,30 @@ public class BGPaymentModule {
     
     private var window: UIWindow?
     
+    public func makePayment(checkout: BGCheckoutResponseObject) -> BGCardView {
+        self.currentPublicKey = checkout.token
+        self.currentPaymentToken = checkout.token
+        self.brands = checkout.brands ?? []
+        return getCardView()
+    }
+    
+    @available(*, deprecated, renamed: "makePayment",
+    message: "Keep in mind that from version 1.07 most implementations of function `makePayment` return BGCardView that you need to present in your application yourself.")
     public func pay(checkout: BGCheckoutResponseObject) {
         self.currentPublicKey = checkout.token
         self.currentPaymentToken = checkout.token
         self.brands = checkout.brands ?? []
         showCardView()
+    }
+    
+    private func getCardView() -> BGCardView {
+        self.cardVC = BGCardViewController()
+        cardVC?.brands = self.brands
+        cardVC?.delegate = self
+        cardVC?.colors = self.settings.cardViewColorsSettings
+        cardVC?.paymentSettings = self.settings
+        cardVC?.style = self.settings.styleSettings
+        return cardVC!
     }
     
     private func showCardView() {
@@ -237,8 +256,6 @@ public class BGPaymentModule {
         cardVC?.colors = self.settings.cardViewColorsSettings
         cardVC?.paymentSettings = self.settings
         cardVC?.style = self.settings.styleSettings
-        
-        
         
         if #available(iOS 13.0, *), let windowScene = UIApplication.shared.connectedScenes.filter({ $0.activationState == .foregroundActive }).first as? UIWindowScene {
             window = UIWindow(windowScene: windowScene)
@@ -259,10 +276,41 @@ public class BGPaymentModule {
     
     private var brands: [BGBrand] = []
     
-    @available(*, deprecated, message: "Please, use method pay, with \"transactionType\" parameter")
-    public func pay(publicKey: String, order: BGOrder) {
-        self.pay(publicKey: publicKey, transactionType: .payment, order: order)
+    public func makePayment(publicKey: String,
+                    transactionType: BGTransactionType,
+                    order: BGOrder) -> BGCardView? {
+        self.currentOrder = order
+        self.currentPublicKey = publicKey
+        guard let url = URL(string: settings.endpoint + "/checkouts") else {
+            delegate?.bgPaymentResult(status: .error(BGErrors.endpointNotValid))
+            return nil
+        }
+        guard let publicStoreKey = self.currentPublicKey else {
+            self.delegate?.bgPaymentResult(status: .error(BGErrors.noStoreKeySet))
+            return nil
+        }
+        let vc = getCardView()
+        cardVC?.isLoading = true
+        BGLoader.checkoutToken(
+            settings: settings,
+            transactionType: transactionType,
+            checkoutURL: url,
+            publicKey: publicStoreKey,
+            order: order) { [weak self] (tokenResult) in
+                self?.cardVC?.isLoading = false
+                switch tokenResult {
+                case .error(let error):
+                    self?.dissapearMe(with: .error(error))
+                case let .success(token, brands):
+                    self?.brands = brands
+                    self?.currentPaymentToken = token
+                }
+        }
+        return vc
     }
+    
+    @available(*, deprecated, renamed: "makePayment",
+    message: "Keep in mind that from version 1.07 most implementations of function `makePayment` return BGCardView that you need to present in your application yourself.")
     public func pay(publicKey: String,
                     transactionType: BGTransactionType,
                     order: BGOrder) {
@@ -295,15 +343,10 @@ public class BGPaymentModule {
         }
     }
     
-    @available(*, deprecated, message: "Please, use method pay, with \"transactionType\" parameter")
-    public func pay(publicKey: String, order: BGOrder, tokenizedCard: BGTokenizedCard) {
-        self.pay(publicKey: publicKey, transactionType: .payment, order: order, tokenizedCard: tokenizedCard)
-    }
-    
-    public func pay(publicKey: String,
-                    transactionType: BGTransactionType,
-                    order: BGOrder,
-                    tokenizedCard: BGTokenizedCard) {
+    public func makePayment(publicKey: String,
+                            transactionType: BGTransactionType,
+                            order: BGOrder,
+                            tokenizedCard: BGTokenizedCard) {
         self.currentPublicKey = publicKey
         guard let url = URL(string: settings.endpoint + "/checkouts") else {
             delegate?.bgPaymentResult(status: .error(BGErrors.endpointNotValid))
@@ -329,12 +372,21 @@ public class BGPaymentModule {
                 case let .success(token, brands):
                     self.brands = brands
                     self.currentPaymentToken = token
-                    self.pay(paymentToken: token, card: tokenizedCard)
+                    self.makePayment(paymentToken: token, card: tokenizedCard)
                 }
         }
     }
     
-    public func pay(paymentToken: String, card: BGTokenizedCard) {
+    @available(*, deprecated, renamed: "makePayment",
+    message: "Keep in mind that from version 1.07 most implementations of function `makePayment` return BGCardView that you need to present in your application yourself.")
+    public func pay(publicKey: String,
+                    transactionType: BGTransactionType,
+                    order: BGOrder,
+                    tokenizedCard: BGTokenizedCard) {
+        self.makePayment(publicKey: publicKey, transactionType: transactionType, order: order, tokenizedCard: tokenizedCard)
+    }
+    
+    public func makePayment(paymentToken: String, card: BGTokenizedCard) {
         self.currentPublicKey = paymentToken
         self.currentPaymentToken = paymentToken
         guard let url = URL(string: settings.endpoint + "/payments") else {
@@ -354,5 +406,11 @@ public class BGPaymentModule {
             return
         }
         BGLoader.pay(paymentToken: paymentToken, url: url, publicKey: publicStoreKey, tokenizedCard: card, payCallback)
+    }
+    
+    @available(*, deprecated, renamed: "makePayment",
+    message: "Keep in mind that from version 1.07 most implementations of function `makePayment` return BGCardView that you need to present in your application yourself.")
+    public func pay(paymentToken: String, card: BGTokenizedCard) {
+        self.makePayment(paymentToken: paymentToken, card: card)
     }
 }

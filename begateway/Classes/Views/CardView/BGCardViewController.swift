@@ -72,7 +72,11 @@ extension UIView {
     }
 }
 
-class BGCardViewController: UIViewController, MaskedTextFieldDelegateListener {
+public protocol BGCardView: UIViewController {
+    
+}
+
+class BGCardViewController: UIViewController, MaskedTextFieldDelegateListener, BGCardView {
     var isLoading = false {
         didSet {
             if Thread.isMainThread {

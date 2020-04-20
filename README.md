@@ -73,7 +73,7 @@ let order = BGOrder(amount: 200, currency: "USD", description: "test", trackingI
 ```
 Use your <b>PUBLIC_STORE_KEY</b> to start payment
 ```swift
-paymentModule.pay(publicKey: "your_public_key", order: order)
+paymentModule.makePay(publicKey: "your_public_key", order: order)
 ```
 #### Start payment with `CHECKOUT`
 
@@ -146,7 +146,7 @@ do {
 ```
 make payment:
 ```swift
-paymentModule.pay(checkout: checkoutObject)
+paymentModule.makePay(checkout: checkoutObject)
 ```
 #### Start payment  with  `Card_Token`
 
@@ -158,11 +158,11 @@ let card = BGTokenizedCard(token: cardToken)
 ```
 Make payment with `PUBLIC_STORE_KEY`:
 ```swift
-paymentModule.pay(publicKey: "your_public_key", order: order, tokenizedCard: card)
+paymentModule.makePay(publicKey: "your_public_key", order: order, tokenizedCard: card)
 ```
 Make payment with payment token:
 ```swift
-module.pay(paymentToken: paymentToken_from_checkout, card: card)
+module.makePay(paymentToken: paymentToken_from_checkout, card: card)
 ```
 
 ### Encryption

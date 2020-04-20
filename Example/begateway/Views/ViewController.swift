@@ -15,12 +15,30 @@ class ViewController: UIViewController {
     let order = BGOrder(amount: 200, currency: "USD", description: "test", trackingId: "my_custom_variable")
     var cardToken: String?
     var lastPayCardInfo: BGCardInfo?
+    weak var paymentCardView: BGCardView?
+    
+    private func showCardView() {
+        guard let paymentView = paymentCardView else { return }
+        paymentView.modalPresentationStyle = .fullScreen
+        paymentView.isModalInPopover = true
+        self.present(paymentView, animated: true, completion: nil)
+    }
     
     @IBAction func payWithPublicKey3DSec(_ sender: Any) {
-        module.pay(publicKey: Constants.publicKeyWith3DSecure, transactionType: .authorization, order: order)
+        guard let paymentView = module.makePayment(publicKey: Constants.publicKeyWith3DSecure, transactionType: .authorization, order: order) else {
+            self.showSimpleAlert(title: "Error", message: "Error while payment start. For more information see to delegate method. (bgPaymentResult(status: BGPaymentModuleStatus)")
+            return
+        }
+        paymentCardView = paymentView
+        self.showCardView()
     }
     @IBAction func payWithPublicKeyWithout3DSec(_ sender: Any) {
-        module.pay(publicKey: Constants.publicKey, transactionType: .authorization, order: order)
+        guard let paymentView = module.makePayment(publicKey: Constants.publicKey, transactionType: .authorization, order: order) else {
+            self.showSimpleAlert(title: "Error", message: "Error while payment start. For more information see to delegate method. (bgPaymentResult(status: BGPaymentModuleStatus)")
+            return
+        }
+        paymentCardView = paymentView
+        self.showCardView()
     }
     @IBAction func payWithCheckoutObject3DSecure(_ sender: Any) {
         guard let checkoutData = Constants.testCheckoutJSON3DSecure.data(using: .utf8) else {
@@ -31,7 +49,8 @@ class ViewController: UIViewController {
             // make sure, that you set valid payment token in 'testCheckoutJSON3DSecure'
             // you can become it with making post request to your payment provider base url with prefix /checkouts
             let checkoutObject = try JSONDecoder().decode(BGCheckoutResponseObject.self, from: checkoutData)
-            module.pay(checkout: checkoutObject)
+            self.paymentCardView = module.makePayment(checkout: checkoutObject)
+            self.showCardView()
         } catch let error {
             self.showSimpleAlert(title: "Error", message: error.localizedDescription)
         }
@@ -45,7 +64,8 @@ class ViewController: UIViewController {
             // make sure, that you set valid payment token in 'testCheckoutJSON3DSecure'
             // you can become it with making post request to your payment provider base url with prefix /checkouts
             let checkoutObject = try JSONDecoder().decode(BGCheckoutResponseObject.self, from: checkoutData)
-            module.pay(checkout: checkoutObject)
+            self.paymentCardView = module.makePayment(checkout: checkoutObject)
+            self.showCardView()
         } catch let error {
             self.showSimpleAlert(title: "Error", message: error.localizedDescription)
         }
@@ -58,14 +78,14 @@ class ViewController: UIViewController {
         isLoading = true
         let card = BGTokenizedCard(token: cardToken)
         // please insert payment token. You can become it with making post request to your payment provider base url with prefix /checkouts
-        module.pay(publicKey: Constants.publicKey, transactionType: .payment, order: order, tokenizedCard: card)
+        module.makePayment(publicKey: Constants.publicKey, transactionType: .payment, order: order, tokenizedCard: card)
     }
     @IBAction func payWithTokenizedCardFail() {
         isLoading = true
         let card = BGTokenizedCard(token: "invalid card token")
         let order = BGOrder(amount: 200, currency: "USD", description: "test", trackingId: "my_custom_variable")
         // please insert payment token, you can become it with making post request to your payment provider base url with prefix /checkouts
-        module.pay(publicKey: Constants.publicKey, transactionType: .payment, order: order, tokenizedCard: card)
+        module.makePayment(publicKey: Constants.publicKey, transactionType: .payment, order: order, tokenizedCard: card)
     }
     
     private let loadingBack = UIView()
@@ -118,8 +138,10 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: BGPaymentModuleDelegate {
+    
     func bgPaymentResult(status: BGPaymentModuleStatus) {
         isLoading = false
+        self.paymentCardView?.dismiss(animated: true, completion: nil)
         var alertMessage = ""
         switch status {
         case .success(let cardInfo):

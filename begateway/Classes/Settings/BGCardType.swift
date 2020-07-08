@@ -108,7 +108,7 @@ public enum BGCardType: String, Codable {
     case UNKNOWN
     case EMPTY
     
-    internal var regexPre: String? {
+    public var regexPre: String? {
         switch self {
         case .MAESTRO:
             return "^6\\d*"
@@ -116,7 +116,7 @@ public enum BGCardType: String, Codable {
             return nil
         }
     }
-    internal var regex: String {
+    public var regex: String {
         switch self {
         case .MIR:
             return "^220[1-4]"

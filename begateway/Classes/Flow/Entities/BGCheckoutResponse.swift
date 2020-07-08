@@ -41,6 +41,12 @@ public struct BGBrand: Codable {
         case alternative = "alternative"
         case cardType = "name"
     }
+    
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        cardType = (try? values.decode(BGCardType.self, forKey: .cardType)) ?? BGCardType.UNKNOWN
+        alternative = (try? values.decode(Bool.self, forKey: .alternative)) ?? false
+    }
 }
 
 public struct BGCompany: Codable {

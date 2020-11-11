@@ -81,7 +81,7 @@ class BGLoader {
                     case .error, .failed:
                         callback(.failure(paymentResponse.message ?? ""))
                     case .incomplete:
-                        guard let threeDSecURL = URL(string: paymentResponse.threeDSecureVerification?.url ?? "") else {
+                        guard let threeDSecURL = URL(string: paymentResponse.threeDSecureVerification?.url ?? paymentResponse.url ?? "") else {
                             callback(.incomplete)
                             return
                         }
@@ -133,7 +133,7 @@ class BGLoader {
                     case .error, .failed:
                         callback(.failure(paymentResponse.message ?? ""))
                     case .incomplete:
-                        guard let threeDSecURL = URL(string: paymentResponse.threeDSecureVerification?.url ?? "") else {
+                        guard let threeDSecURL = URL(string: paymentResponse.threeDSecureVerification?.url ?? paymentResponse.url ?? "") else {
                             callback(.incomplete)
                             return
                         }

@@ -7,23 +7,20 @@
 
 import Foundation
 
-struct BGCheckoutResponse: Codable {
-    var checkout: BGCheckoutResponseObject
-    
-    init(checkout: BGCheckoutResponseObject) {
-        self.checkout = checkout
-    }
+public struct BGCheckoutResponse: Codable {
+    public var checkout: BGCheckoutResponseObject
+
     enum CodingKeys: String, CodingKey {
         case checkout = "checkout"
     }
 }
 
 public struct BGCheckoutResponseObject: Codable {
-    var token: String
-    var redirectUrl: String?
-    var brands: [BGBrand]?
-    var company: BGCompany?
-    var description: String?
+    public var token: String
+    public var redirectUrl: String?
+    public var brands: [BGBrand]?
+    public var company: BGCompany?
+    public var description: String?
     
     enum CodingKeys: String, CodingKey {
         case token = "token"

@@ -37,7 +37,7 @@ extension BGCardType: CaseIterable {
             return UIImage(named: "bgunknown", in: bundle, compatibleWith: nil)
         }
     }
-    var minCardLength: Int {
+    public var minCardLength: Int {
         switch self {
         case .MIR, .BELKART, .VISA, .MASTER, .DISCOVER:
             return 16
@@ -55,7 +55,7 @@ extension BGCardType: CaseIterable {
             return 12
         }
     }
-    var maxCardLength: Int {
+    public var maxCardLength: Int {
         switch self {
         case .MIR, .BELKART, .VISA, .MASTER, .DISCOVER:
             return 16
@@ -144,7 +144,7 @@ public enum BGCardType: String, Codable {
             return "^$"
         }
     }
-    init(cardNumber: String) {
+    public init(cardNumber: String) {
         for item in BGCardType.allCases {
             if let reg = try? NSRegularExpression(pattern: item.regex, options: .allowCommentsAndWhitespace) {
                 let nnn = reg.numberOfMatches(in: cardNumber, range: NSRange(cardNumber.startIndex..., in: cardNumber))
@@ -170,7 +170,7 @@ public enum BGCardType: String, Codable {
     internal static let AMEX_SPACE_INDICES = [4, 10]
     internal static let DEFAULT_SPACE_INDICES = [4, 8, 12]
     
-    func isLuhnValid(cardNumber: String) -> Bool {
+    public func isLuhnValid(cardNumber: String) -> Bool {
         if cardNumber.isEmpty { return false }
         let type = BGCardType(cardNumber: cardNumber)
         if !(type.minCardLength...type.maxCardLength ~= cardNumber.count) { return false }

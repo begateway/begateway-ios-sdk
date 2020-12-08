@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public struct BGCard: Codable {
+public struct BGCard: Codable, Equatable {
     public var number: String
     public var verificationValue: String
     public var holder: String

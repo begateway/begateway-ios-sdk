@@ -201,6 +201,8 @@ paymentModule.settings.styleSettings.isRequiredCVV = true
 paymentModule.settings.styleSettings.isRequiredExpDate = true
 // turn on/off switch for saving card (if it false, or if user deselect it, you become nil BGCard object in success)
 paymentModule.settings.styleSettings.isSaveCardCheckBoxVisible = true
+// update securedBy vaale
+paymentModule.settings.updateSecuredBy(with:  "YOUR_NEW_VALUE")
 ```
 #### Cusomize colors
 You can change color in Card form by assigning a color value to the corresponding value in cardViewColorsSettings of module

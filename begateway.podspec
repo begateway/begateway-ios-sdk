@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name                    = 'begateway'
-    s.version                 = '1.10'
+    s.version                 = '1.11'
     s.summary                 = 'Little framework to easy implement https://begateway.com/ in yout application'
     s.swift_version           = '5.0'
     s.ios.deployment_target   = '10.0'
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
 
     s.homepage         = 'https://begateway.com/'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
-    s.author           = { 'Fedar Trukhan' => 'f.trukhan@gmail.com' }
+    s.author           = { 'eComCharge LLC' => 'techsupport@ecomcharge.com' }
     s.source           = { :git => 'https://github.com/begateway/begateway-ios-sdk.git', :tag => s.version }
 
     s.ios.deployment_target = '10.0'

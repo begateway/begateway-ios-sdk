@@ -63,7 +63,7 @@ extension YOURCLASS: BGPaymentModuleDelegate {
     }
 }
 ```
-### Start payment 
+### Start payment
 #### Start payment with `PUBLIC_STORE_KEY`
 
 Create BGOrder object:
@@ -171,10 +171,10 @@ Use `encryptCardData` with your <b>PUBLIC_STORE_KEY</b> to get encrypted credit 
 For example:
 ```swift
 let card = BGCard(
-    number: "4200000000000000", 
-    verificationValue: "123", 
-    holder: "IVAN IVANOV", 
-    expMonth: "01", 
+    number: "4200000000000000",
+    verificationValue: "123",
+    holder: "IVAN IVANOV",
+    expMonth: "01",
     expYear: "2020")
 let encryptedCardInfo = BGCard.ecnrypted(card, with: "your_public_key")
 if let encryptionError = encryptedCardInfo.error {
@@ -185,6 +185,7 @@ if let encryptionError = encryptedCardInfo.error {
 ```
 
 ### Customization
+
 You can customize card form view with `StyleSettings`
 
 #### Update `StyleSettings`
@@ -192,7 +193,7 @@ You can customize card form view with `StyleSettings`
 // set pay button title
 paymentModule.settings.styleSettings.customPayButtonLabel = "your pay label text"
 // turn on/off card holder name field
-paymentModule.settings.styleSettings.isRequiredCardHolderName = true 
+paymentModule.settings.styleSettings.isRequiredCardHolderName = true
 // turn on/off card number field
 paymentModule.settings.styleSettings.isRequiredCardNumber = true
 // turn on/off card secret code field
@@ -204,11 +205,20 @@ paymentModule.settings.styleSettings.isSaveCardCheckBoxVisible = true
 // update securedBy vaale
 paymentModule.settings.updateSecuredBy(with:  "YOUR_NEW_VALUE")
 ```
-#### Cusomize colors
+#### Customize colors
+
 You can change color in Card form by assigning a color value to the corresponding value in cardViewColorsSettings of module
 ```swift
 paymentModule.settings.cardViewColorsSettings.cancelTextColor = UIColor
-``` 
+```
+
+#### Change provider name
+
+Use the code to update the default payment provider **beGateway** name in the default text **Secure payment is provided by beGateway** to your payment provider name:
+
+```swift
+paymentModule.settings.updateSecuredBy(with: "YOUR_NEW_VALUE")
+```
 
 ## License
 

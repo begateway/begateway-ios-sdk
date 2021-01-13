@@ -9,12 +9,16 @@ public struct BGPaymentSettings {
     public var endpoint: String
     public var isTestMode: Bool
     public var locale: String
-    let securedBy = "beGateway"
+    var securedBy = "beGateway"
     public var supportedCardTypes: [BGCardType]
     public var styleSettings: BGStyleSettings
     public var cardViewColorsSettings: BGCardViewColorsSettings
     public var returnURL: String
     public var notificationURL: String
+    
+    mutating func updateSecuredBy(with value: String) {
+        securedBy = value
+    }
     
     public static var standart: BGPaymentSettings {
         return BGPaymentSettings(

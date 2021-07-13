@@ -23,6 +23,7 @@ struct BGPaymentResponseObject: Codable {
     var uid: String?
     var bankCode: String?
     var authCode: String?
+    var redirectUrl: String?
     var threeDSecureVerification: BG3dSecVerificationObject?
     var card: BGCardInfo?
     
@@ -37,5 +38,8 @@ struct BGPaymentResponseObject: Codable {
         case authCode = "authCode"
         case threeDSecureVerification = "three_d_secure_verification"
         case card = "credit_card"
+        case redirectUrl = "redirect_url"
     }
 }
+
+

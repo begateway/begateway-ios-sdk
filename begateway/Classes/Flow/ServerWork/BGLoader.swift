@@ -82,7 +82,11 @@ class BGLoader {
                         callback(.failure(paymentResponse.message ?? ""))
                     case .incomplete:
                         guard let threeDSecURL = URL(string: paymentResponse.threeDSecureVerification?.url ?? paymentResponse.url ?? "") else {
-                            callback(.incomplete)
+                            if let threeDSecURL = URL(string: paymentResponse.redirectUrl ?? "") {
+                                callback(.need3dSec(threeDSecURL))
+                            } else {
+                                callback(.incomplete)
+                            }
                             return
                         }
                         callback(.need3dSec(threeDSecURL))

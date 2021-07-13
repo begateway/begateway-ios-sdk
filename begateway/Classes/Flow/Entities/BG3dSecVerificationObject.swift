@@ -20,3 +20,5 @@ struct BG3dSecVerificationObject: Codable {
         case url = "pa_res_url"
     }
 }
+
+

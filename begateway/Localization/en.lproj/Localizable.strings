@@ -5,22 +5,33 @@
  Created by FEDAR TRUKHAN on 9/19/19.
  
  */
-"begateway_form_hint_card_number"="Card number";
-"begateway_form_hint_expiration"="Expiration date";
-"begateway_form_hint_cardholder_name"="Name on card";
-"begateway_cvv"="CVV";
-"begateway_cvc"="CVC";
-"begateway_cid"="CID";
-"begateway_cvn"="CVN";
-"begateway_month"="Month";
-"begateway_year"="Year";
-"begateway_card_number_required"="Card number is required";
-"begateway_card_number_invalid"="Card number is invalid";
-"begateway_cvv_required"=" is required";
-"begateway_cvv_invalid"=" is invalid";
-"begateway_expiration_required"="Expiration date is required";
-"begateway_expiration_invalid"="Expiration date is invalid";
-"begateway_cardholder_name_required"="Name on card is required";
-"begateway_savecard"="Save card";
-"begateway_button_pay"="Pay";
-"begateway_secure_info"="Secure payment is provided by ";
+"dismissPresentation" = "Tap to Dismiss Presentation.";
+"changeSizeOfPresentation" = "Tap to switch between presentation sizes.";
+
+"Card number" = "Card number";
+"Expiration date" = "Expiration date";
+"Name on card" = "Name on card";
+"CVV" = "CVV";
+"CVC" = "CVC";
+"CID" = "CID";
+"CVN" = "CVN";
+"Month" = "Month";
+"Year" = "Year";
+"Card number is required" = "Card number is required";
+"Card number is invalid" = "Card number is invalid";
+"%s is required" = "%s is required";
+"%s is invalid" = "%s is invalid";
+"Expiration date is required" = "Expiration date is required";
+"Expiration date is invalid" = "Expiration date is invalid";
+"Name on card is required" = "Name on card is required";
+"Save card" = "Save card";
+"Secure payment is provided by %s" = "Secure payment is provided by %s";
+
+"Pay" = "Pay";
+"Delete" = "Delete";
+"Close" = "Close";
+"Change" = "Change";
+"From Photo" = "From Photo";
+"Sorry, incorrect data" = "Sorry, incorrect data";
+"Credit card" = "Credit card";
+"Checkout" = "Checkout";

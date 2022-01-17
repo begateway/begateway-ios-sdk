@@ -29,7 +29,7 @@ pod 'begateway'
 import begateway
 ```
 ### Setup
-Initilize payment payment module:
+Initilize payment module:
 ```swift
 let paymentModule = BGPaymentModule()
 ```
@@ -41,7 +41,7 @@ You must setup your return_url to process 3D SECURE:
 ```swift
 paymentModule.settings.returnURL = "https://your_server_url"
 ```
-You can setup your notification_url to become info about payment statys :
+You can setup your notification_url to become info about payment status :
 ```swift
 paymentModule.settings.notificationURL = "https://your_server_notifications_url"
 ```

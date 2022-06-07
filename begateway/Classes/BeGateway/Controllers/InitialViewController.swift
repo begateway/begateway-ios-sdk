@@ -131,7 +131,7 @@ class InitialViewController: PaymentBasicViewController, PaymentBasicProtocol {
     @IBAction func touchPay(_ sender: Any) {
         print("Touch")
         
-        self.pay(card: RequestPaymentV2CreditCard(number: nil, verificationValue: nil, expMonth: nil, expYear: nil, holder: nil, token: self.activeCard?.token))
+        self.pay(card: RequestPaymentV2CreditCard(number: nil, verificationValue: nil, expMonth: nil, expYear: nil, holder: nil, token: self.activeCard?.token, saveCard: nil))
     }
     
     

@@ -214,7 +214,8 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
             expMonth: self.expireDateTextField.text != nil ? self.expireDateTextField.text![0..<2] : nil,
             expYear: self.expireDateTextField.text != nil ? "20" + self.expireDateTextField.text![3..<5] : nil,
             holder: self.nameOnCardTextField.text,
-            token: nil
+            token: nil,
+            saveCard: self.isSaveCard
         ), isSaveCard: self.isSaveCard, tokenForRequest: self.tokenForRequest)
     }
     

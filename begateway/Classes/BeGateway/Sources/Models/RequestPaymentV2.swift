@@ -27,6 +27,7 @@ struct RequestPaymentV2CreditCard: Codable {
     let number, verificationValue, expMonth, expYear: String?
     let holder: String?
     let token: String?
+    let saveCard: Bool?
     
     enum CodingKeys: String, CodingKey {
         case number
@@ -35,6 +36,7 @@ struct RequestPaymentV2CreditCard: Codable {
         case expYear = "exp_year"
         case holder
         case token
+        case saveCard = "save_card"
     }
     
     public static func ecnrypted(_ card: RequestPaymentV2CreditCard, with publicKey: String) -> (card: RequestPaymentV2CreditCard?, error: Error?) {
@@ -44,14 +46,13 @@ struct RequestPaymentV2CreditCard: Codable {
         let eExpMonth = BGEncryption.encrypt(message: card.expMonth ?? "", with: publicKey)
         let eExpYear = BGEncryption.encrypt(message: card.expYear ?? "", with: publicKey)
         
-        
         if let error = eNumber.error ?? eVerificationValue.error ?? eHolder.error ?? eExpMonth.error ?? eExpYear.error {
             return (nil, error)
         }
         
         if let num = eNumber.message, let ver = eVerificationValue.message,
-           let hol = eHolder.message, let mon = eExpMonth.message, let year = eExpYear.message {
-            return (RequestPaymentV2CreditCard(number: num, verificationValue: ver, expMonth: mon, expYear: year, holder: hol, token: nil), nil)
+           let hol = eHolder.message, let mon = eExpMonth.message, let year = eExpYear.message, let save = card.saveCard {
+            return (RequestPaymentV2CreditCard(number: num, verificationValue: ver, expMonth: mon, expYear: year, holder: hol, token: nil,saveCard: save), nil)
         }
         
         return (nil, nil)

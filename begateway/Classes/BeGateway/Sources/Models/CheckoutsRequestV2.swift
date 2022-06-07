@@ -8,7 +8,6 @@ import Foundation
 // MARK: - CheckoutsRequestV2
 struct CheckoutsRequestV2: Codable {
     let checkout: CheckoutsRequestV2Checkout?
-    let customField: String?
 }
 
 // MARK: - Checkout
@@ -51,6 +50,7 @@ struct CheckoutsRequestV2Settings: Codable {
     let returnURL: String?
     let language: String?
     let notificationUrl: String?
+    let saveCardToggle: CheckoutsRequestV2SettingSaveCardToggle?
     
     
     enum CodingKeys: String, CodingKey {
@@ -58,5 +58,14 @@ struct CheckoutsRequestV2Settings: Codable {
         case returnURL = "return_url"
         case language
         case notificationUrl = "notification_url"
+        case saveCardToggle = "save_card_toggle"
+    }
+}
+
+struct CheckoutsRequestV2SettingSaveCardToggle : Codable {
+    let customerContract: Bool
+    
+    enum CodingKeys: String, CodingKey {
+        case customerContract = "customer_contract"
     }
 }

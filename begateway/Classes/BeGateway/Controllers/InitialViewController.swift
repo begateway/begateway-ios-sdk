@@ -22,6 +22,8 @@ class InitialViewController: PaymentBasicViewController, PaymentBasicProtocol {
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    weak var delegate: PaymentBasicProtocol?
+    
     var activeCard: StoreCard?
     
     override func viewDidLoad() {
@@ -40,10 +42,10 @@ class InitialViewController: PaymentBasicViewController, PaymentBasicProtocol {
     func initInterface() {
         //        self.title = "Payment"
         //        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTappedClose))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: LocalizeString.localizeString(value: "Close"), style: .plain, target: self, action: #selector(closeTapped))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: LocalizeString.localizeString(value: "Change"), style: .plain, target: self, action: #selector(changeTapped))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: LocalizedString.LocalizedString(value: "Cancel"), style: .plain, target: self, action: #selector(closeTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: LocalizedString.LocalizedString(value: "Change"), style: .plain, target: self, action: #selector(changeTapped))
         
-        self.titleLabel.text = LocalizeString.localizeString(value: "Checkout")
+        self.titleLabel.text = LocalizedString.LocalizedString(value: "")
         
         self.loaderView.isHidden = true
         self.errorLabel.isHidden = true
@@ -63,7 +65,7 @@ class InitialViewController: PaymentBasicViewController, PaymentBasicProtocol {
             if self.activeCard?.token == nil {
                 self.payButton.isHidden = true
                 self.errorLabel.isHidden = false
-                self.errorLabel.text = LocalizeString.localizeString(value: "Sorry, card without token")
+                self.errorLabel.text = LocalizedString.LocalizedString(value: "Sorry, card without token")
             }
         }
     }
@@ -81,12 +83,17 @@ class InitialViewController: PaymentBasicViewController, PaymentBasicProtocol {
     }
     
     func processPaymentSuccess() {
+        self.delegate?.processPaymentSuccess()
         self.payButton.isHidden = true
         self.loaderView.isHidden = true
         self.successView.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.dismiss(animated: true)
+        }
     }
     
     func outError(error: String) {
+        self.delegate?.outError(error: error)
         self.errorLabel.isHidden = false
         self.errorLabel.text = BeGateway.instance.options?.errorTitle ?? error
         

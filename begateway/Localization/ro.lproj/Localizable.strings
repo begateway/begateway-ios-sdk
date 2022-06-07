@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  Pods
+
+  Created by FEDAR TRUKHAN on 9/19/19.
+  
+*/
+"begateway_form_hint_card_number"="Număr card";
+"begateway_form_hint_expiration"="Data expirării";
+"begateway_form_hint_cardholder_name"="Numele de pe card";
+"begateway_cvv"="CVV";
+"begateway_cvc"="CVC";
+"begateway_cid"="CID";
+"begateway_cvn"="CVN";
+"begateway_month"="Lună";
+"begateway_year"="An";
+"begateway_card_number_required"="Numărul cardului este necesar";
+"begateway_card_number_invalid"="Numărul cardului este invalid";
+"begateway_cvv_required"="%s este necesar";
+"begateway_cvv_invalid"="%s este invalid";
+"begateway_expiration_required"="Data expirării este obligatorie";
+"begateway_expiration_invalid"="Data expirării este invalidă";
+"begateway_cardholder_name_required"="Numele de pe card este necesar";
+"begateway_savecard"="Salvați cardul";
+"begateway_button_pay"="Plătiți";
+"begateway_secure_info"="Plata securizată este oferită de %s";
+"Change"="Schimbare";
+"Sorry, incorrect data"="A apărut o eroare de plată. Încercați din nou sau utilizați un alt card.";
+"OK"="OK";
+"Cancel"="Anulare";
+"Turn on"="Pornire";
+"Error"="Eroare";
+"An error occurred during scanning"="A apărut o eroare în timpul scanării";
+"Please turn on NFC"="Activați NFC";
+"NFC not supported"="NFC nu este acceptat";
+"Please attach bank card to the phone"="Vă rugăm să atașați cardul bancar la telefon";
+"From Photo"="Scanați prin cameră";
+"Scan by NFC"="Scanați prin NFC";
+"Please wait"="Vă rugăm să așteptați";

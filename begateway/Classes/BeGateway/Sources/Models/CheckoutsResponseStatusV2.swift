@@ -6,7 +6,7 @@
 import Foundation
 
 // MARK: - CheckoutsResponseStatusV2
-struct CheckoutsResponseStatusV2: Codable {
+public struct CheckoutsResponseStatusV2: Codable {
     let checkout: CheckoutsResponseStatusV2Checkout?
 }
 
@@ -15,35 +15,52 @@ struct CheckoutsResponseStatusV2Checkout: Codable {
     let token: String?
     let shopID: Int?
     let transactionType: String?
-//    let order: CheckoutsResponseStatusV2Order?
+    let order: CheckoutsResponseStatusV2Order?
     let finished, expired, test: Bool?
     let status: String?
     let version, appleMerchantID: String?
+    let settings: CheckoutsResponceV2Settings?
     
     enum CodingKeys: String, CodingKey {
         case token
         case shopID = "shop_id"
         case transactionType = "transaction_type"
+        case order
 //        case order, finished, expired, test, status, message, version
         case finished, expired, test, status, version
         case appleMerchantID = "apple_merchant_id"
+        case settings
+    }
+}
+
+struct CheckoutsResponceV2Settings: Codable {
+    let saveCardToggle: CheckoutsResponceV2SettingSaveCardToggle?
+    let language: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case saveCardToggle = "save_card_toggle"
+        case language
+    }
+}
+struct CheckoutsResponceV2SettingSaveCardToggle : Codable {
+    let customerContract: Bool
+    
+    enum CodingKeys: String, CodingKey {
+        case customerContract = "customer_contract"
     }
 }
 
 // MARK: - Order
 struct CheckoutsResponseStatusV2Order: Codable {
-    let currency: String?
+    let additionalData: CheckoutsRequestV2AdditionalData?
     let amount: Int?
-    let orderDescription, trackingID: String?
-    let additionalData: CheckoutsResponseStatusV2AdditionalData?
-    let expiredAt: JSONNull?
+    let currency, orderDescription, trackingID: String?
     
     enum CodingKeys: String, CodingKey {
-        case currency, amount
+        case additionalData = "additional_data"
+        case amount, currency
         case orderDescription = "description"
         case trackingID = "tracking_id"
-        case additionalData = "additional_data"
-        case expiredAt = "expired_at"
     }
 }
 

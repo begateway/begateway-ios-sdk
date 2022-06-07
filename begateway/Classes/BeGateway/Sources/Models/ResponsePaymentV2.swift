@@ -23,6 +23,8 @@ struct ResponsePaymentV2Response: Codable {
     let gatewayID: Int?
     let actionStatus, method: String?
     let finished: Bool?
+    let resultUrl: String?
+    let returnUrl: String?
     
     enum CodingKeys: String, CodingKey {
         case message, errors, status, token
@@ -30,6 +32,8 @@ struct ResponsePaymentV2Response: Codable {
         case uid, url, iframe
         case authCode = "auth_code"
         case bankCode = "bank_code"
+        case resultUrl = "result_url"
+        case returnUrl = "return_url"
         case rrn
         case billingDescriptor = "billing_descriptor"
         case creditCard = "credit_card"

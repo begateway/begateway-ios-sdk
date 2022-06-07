@@ -7,6 +7,8 @@
 
 import Foundation
 
+let applePayString = "/apple_pay/payment"
+
 class BeGatewaySourceApi: ServiceApi {
     var pubKey: String
     var domain: String = "https://checkout.bepaid.by/ctp/api"
@@ -16,6 +18,10 @@ class BeGatewaySourceApi: ServiceApi {
         self.pubKey = options.clientPubKey
         self.domain = options.endpoint
         self.options = options
+    }
+    
+    func sendApplePayment(uploadDataModel: RequestPaymentAppleV2, completionHandler: ((ResponsePaymentV2?) -> Void)?, failureHandler:((String) -> Void)?) {
+        self.postMethod(with: self.domain + applePayString, uploadDataModel: uploadDataModel, completionHandler: completionHandler, failureHandler: failureHandler)
     }
     
     func sendPayment(uploadDataModel: RequestPaymentV2, completionHandler: ((ResponsePaymentV2?) -> Void)?, failureHandler:((String) -> Void)?) {
@@ -39,24 +45,24 @@ class BeGatewaySourceApi: ServiceApi {
                         "recurring",
                         "card_on_file"
                     ]),
-//                    amount: Int(request.amount * 100),
-                    amount: Int(request.amount),
+                    amount: Int(request.amount * CurrencyMultiplayerChecker.checkCurrencyCode(code: request.currency)),
                     currency: request.currency,
                     orderDescription: request.requestDescription,
                     trackingID: request.trackingID
                 ),
                 settings: CheckoutsRequestV2Settings(
                     autoReturn: 0,
-                    returnURL: options.returnURL,
-//                    language: options.language,
-                    language: "en",
-                    notificationUrl: options.notificationURL
+                    returnURL: options.resultUrl,
+                    language: options.language,
+                    notificationUrl: options.notificationURL,
+                    saveCardToggle: CheckoutsRequestV2SettingSaveCardToggle(
+                        customerContract: !options.isToogleSaveCard
+                    )
                 ),
                 test: options.test,
                 transactionType: "payment",
                 version: 2.1
-            ),
-            customField: "custom string"
+            )
         )
         
         self.postMethod(

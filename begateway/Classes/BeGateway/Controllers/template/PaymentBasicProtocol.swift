@@ -25,11 +25,14 @@ extension PaymentBasicProtocol {
     
     private func onError(_ error: String) {
         print("Error \(error)")
+        BeGateway.instance.paymentFinishedWith(error: error)
+        DispatchQueue.main.async {
+            self.processPayment(isActive: false)
+            self.outError(error: error)
+            
+            BeGateway.instance.failureHandler?(error)
+        }
         
-        self.processPayment(isActive: false)
-        self.outError(error: error)
-        
-        BeGateway.instance.failureHandler?(error)
     }
     
     func isFinishedCheckingInterval() -> Bool{
@@ -97,7 +100,7 @@ extension PaymentBasicProtocol {
                 self.getBasicSourceApi().sendPayment(uploadDataModel: uploadDataModel, completionHandler: {response in
                     
                     let status: String = response?.response?.status ?? "failed"
-                    print("Status: \(status)")
+                    print("Status: \(status) for token : \(token)")
                     
                     let storeCard = StoreCard(
                         createdAt: Date(),
@@ -112,6 +115,7 @@ extension PaymentBasicProtocol {
                     switch status {
                     case "successful":
                         self.processPaymentSuccess()
+                        BeGateway.instance.paymentWasSucceded()
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                             BeGateway.instance.completionHandler?(storeCard.to())
@@ -141,6 +145,8 @@ extension PaymentBasicProtocol {
             if let options = BeGateway.instance.options, let token = response?.response?.token {
                 let controller = WebViewController.loadFromNib(bundle)
                 controller.url = url
+                controller.resultUrl = response?.response?.resultUrl
+                
                 controller.onBack = {
                     self.onError("Return without 3D secure")
                 }
@@ -166,12 +172,15 @@ extension PaymentBasicProtocol {
         if iteration < maxSteps && !self.isFinishedCheckingInterval() {
             self.getBasicSourceApi()
                 .checkStatus(token: token, completionHandler: {response in
+                    if let language = response?.checkout?.settings?.language {
+                        BeGateway.instance.options?.language = language
+                    }
                     let status: String = response?.checkout?.status ?? "failed"
                     print("Status: \(status)")
-                    
                     switch status {
                     case "successful":
                         self.processPaymentSuccess()
+                        BeGateway.instance.paymentWasSucceded()
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                             BeGateway.instance.completionHandler?(storeCard.to())

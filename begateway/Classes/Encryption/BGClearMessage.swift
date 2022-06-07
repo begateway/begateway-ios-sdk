@@ -161,21 +161,22 @@ class BGClearMessage: BGMessage {
     
     func digest(digestType: BGSignature.DigestType) -> Data {
         
-        let digest: Data
-        
-        switch digestType {
-        case .sha1:
-            digest = (data as NSData).swiftyRSASHA1()
-        case .sha224:
-            digest = (data as NSData).swiftyRSASHA224()
-        case .sha256:
-            digest = (data as NSData).swiftyRSASHA256()
-        case .sha384:
-            digest = (data as NSData).swiftyRSASHA384()
-        case .sha512:
-            digest = (data as NSData).swiftyRSASHA512()
-        }
-        
-        return digest
+//        let digest: Data
+//
+//        switch digestType {
+//        case .sha1:
+//            digest = (data as NSData).swiftyRSASHA1()
+//        case .sha224:
+//            digest = (data as NSData).swiftyRSASHA224()
+//        case .sha256:
+//            digest = (data as NSData).swiftyRSASHA256()
+//        case .sha384:
+//            digest = (data as NSData).swiftyRSASHA384()
+//        case .sha512:
+//            digest = (data as NSData).swiftyRSASHA512()
+//        }
+//
+//        return digest
+        return Data()
     }
 }

@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import PassKit
 
 class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, PaymentBasicProtocol {
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var errorLabel: UILabel!
     
@@ -39,7 +41,9 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     @IBOutlet weak var viewSuccess: UIView!
     @IBOutlet weak var successImageView: UIImageView!
     
-    var isSaveCard: Bool = true
+    weak var delegate: PaymentBasicProtocol?
+    
+    var isSaveCard: Bool = false
     var currentTypeCard: CardTypePattern? = nil
     var tokenForRequest: String? = nil
     
@@ -48,16 +52,38 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
         
         self.initInterfaceByOptions()
         self.initInterface()
+        self.saveDetailsSwitch.isOn = false
+        self.localize()
+    }
+    
+    
+    private func localize() {
+        self.cardNumberLabel.text = BeGateway.instance.options?.titleCardNumber
+        self.expireDateLabel.text = BeGateway.instance.options?.titleExpiryDate
+        self.cvcLabel.text = BeGateway.instance.options?.titleCVC
+        self.nameOnCardLabel.text = BeGateway.instance.options?.cardHolderName
+        self.saveDetailsLabel.text = BeGateway.instance.options?.titleToggle
+        self.payButton.titleLabel?.text = BeGateway.instance.options?.titleButton
     }
     
     func initInterface() {
         if BeGateway.instance.options?.onDetachFromCamera != nil {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: LocalizeString.localizeString(value: "From Photo"), style: .plain, target: self, action: #selector(detachFromPhoto))
-        } else {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: LocalizeString.localizeString(value: "Close"), style: .plain, target: self, action: #selector(closeTapped))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: LocalizedString.LocalizedString(value: "Scan by camera"), style: .plain, target: self, action: #selector(detachFromPhoto))
         }
+//        else {
+//            navigationItem.rightBarButtonItem = UIBarButtonItem(title: LocalizedString.LocalizedString(value: "Close"), style: .plain, target: self, action: #selector(closeTapped))
+//        }
         
-        self.titleLabel.text = LocalizeString.localizeString(value: "Credit card")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: LocalizedString.LocalizedString(value: "Cancel"), style: .plain, target: self, action: #selector(closed))
+        
+        
+        let text = BeGateway.instance.options?.title
+        
+        if text != nil && text != "" {
+            self.titleLabel.text = text
+        } else {
+            self.titleLabel.text = LocalizedString.LocalizedString(value: "")
+        }
         
         //        hidden all items for other steps
         self.loaderView.isHidden = true
@@ -117,6 +143,8 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
         }
     }
     
+    
+    
     @IBAction func detachFromPhoto(_ sender: Any) {
         BeGateway.instance.options?.onDetachFromCamera?(){card in
             if let card = card {
@@ -139,7 +167,7 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     }
     
     @IBAction func detailsValueChanged(_ sender: Any) {
-        self.isSaveCard.toggle()
+        self.isSaveCard = self.saveDetailsSwitch.isOn
         print(self.isSaveCard)
     }
     
@@ -156,12 +184,18 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     }
     
     func processPaymentSuccess() {
+        self.delegate?.processPaymentSuccess()
         self.payButton.isHidden = true
         self.loaderView.isHidden = true
         self.viewSuccess.isHidden = false
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.dismiss(animated: true)
+        }
     }
     
     func outError(error: String) {
+        self.delegate?.outError(error: error)
         self.errorLabel.isHidden = false
         self.errorLabel.text = BeGateway.instance.options?.errorTitle ?? error
         
@@ -187,6 +221,10 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     // MARK:: UITextField Delegates
     @objc func textFieldDidChange(_ textField: UITextField) {
         self.validateRequiredFields()
+    }
+    
+    @objc func closed() {
+        dismiss(animated: true, completion: nil)
     }
     
     func validateRequiredFields() {

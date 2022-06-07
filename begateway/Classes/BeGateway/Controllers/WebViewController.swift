@@ -12,6 +12,7 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var mainWebView: WKWebView!
     
     var url: String?
+    var resultUrl: String?
     var onBack: (() -> Void)?
     var onSuccess: (() -> Void)?
     
@@ -47,7 +48,7 @@ class WebViewController: UIViewController, WKNavigationDelegate {
             if let url = mainWebView.url {
                 print("Current url is: \(url.absoluteURL)")
                 
-                if let returnUrl = BeGateway.instance.options?.returnURL {
+                if let returnUrl = self.resultUrl {
                     if url.absoluteString.contains(returnUrl) {
                         self.isSuccessed = true
                         

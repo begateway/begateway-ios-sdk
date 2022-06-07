@@ -12,22 +12,28 @@ public class BeGatewayOptions {
     public var clientPubKey: String
     
     var endpoint: String = "https://checkout.bepaid.by/ctp/api"
-    var returnURL: String = "https://default_return_url.com"
+    var resultUrl: String = "https://127.default_return_url.com"
+    var merchantID : String?
     var notificationURL: String?
     
     var maxCheckingAttempts: Int = 30           // count of max attempts for checking status
     var delayCheckingSec: Double = 5
     
-    private var language: String = "en"
+    public var language: String = "en" {
+        didSet {
+            UserDefaults.standard.set(language, forKey: staticKeyForLocalization)
+            self.localize()
+        }
+    }
     public var test: Bool = true
     
     public var title: String?
     public var fontTitle: UIFont?
     public var colorTitle: UIColor?
     
-    public var titleCardNumber: String = LocalizeString.localizeString(value:"Card number")
-    public var hintCardNumber: String = LocalizeString.localizeString(value:"Card number")
-    public var cardNumber: String = LocalizeString.localizeString(value:"Card number")
+    public var titleCardNumber: String = LocalizedString.LocalizedString(value:"begateway_form_hint_card_number")
+    public var hintCardNumber: String = LocalizedString.LocalizedString(value:"begateway_form_hint_card_number")
+    public var cardNumber: String = LocalizedString.LocalizedString(value:"begateway_form_hint_card_number")
     
     public var fontTitleCardNumber: UIFont?
     public var colorTitleCardNumber: UIColor?
@@ -35,9 +41,9 @@ public class BeGatewayOptions {
     public var colorHintCardNumber: UIColor?
     
     
-    public var titleExpiryDate: String = LocalizeString.localizeString(value:"Expiration date")
-    public var hintExpiryDate: String = LocalizeString.localizeString(value:"Expiration date")
-    public var expiryDate: String = LocalizeString.localizeString(value:"Expiration date")
+    public var titleExpiryDate: String = LocalizedString.LocalizedString(value:"begateway_form_hint_expiration")
+    public var hintExpiryDate: String = LocalizedString.LocalizedString(value:"begateway_form_hint_expiration")
+    public var expiryDate: String = LocalizedString.LocalizedString(value:"begateway_form_hint_expiration")
     
     public var fontTitleExpiryDate: UIFont?
     public var colorTitleExpiryDate: UIColor?
@@ -45,9 +51,9 @@ public class BeGatewayOptions {
     public var colorHintExpiryDate: UIColor?
     
     
-    public var titleCVC: String = LocalizeString.localizeString(value:"CVC")
-    public var hintCVC: String = LocalizeString.localizeString(value:"CVC")
-    public var cvc: String = LocalizeString.localizeString(value:"CVC")
+    public var titleCVC: String = LocalizedString.LocalizedString(value:"begateway_cvv")
+    public var hintCVC: String = LocalizedString.LocalizedString(value:"begateway_cvv")
+    public var cvc: String = LocalizedString.LocalizedString(value:"begateway_cvv")
     public var isSecureCVC: Bool = false
     
     public var fontTitleCVC: UIFont?
@@ -56,9 +62,9 @@ public class BeGatewayOptions {
     public var colorHintCVC: UIColor?
     
     
-    public var titleCardHolderName: String = LocalizeString.localizeString(value:"Name on card")
-    public var hintCardHolderName: String = LocalizeString.localizeString(value:"Name on card")
-    public var cardHolderName: String = LocalizeString.localizeString(value:"Name on card")
+    public var titleCardHolderName: String = LocalizedString.LocalizedString(value:"begateway_form_hint_cardholder_name")
+    public var hintCardHolderName: String = LocalizedString.LocalizedString(value:"begateway_form_hint_cardholder_name")
+    public var cardHolderName: String = LocalizedString.LocalizedString(value:"begateway_form_hint_cardholder_name")
     
     public var fontTitleCardHolderName: UIFont?
     public var colorTitleCardHolderName: UIColor?
@@ -66,14 +72,14 @@ public class BeGatewayOptions {
     public var colorHintCardHolderName: UIColor?
     
     
-    public var titleButton: String = LocalizeString.localizeString(value: "Pay")
+    public var titleButton: String = LocalizedString.LocalizedString(value: "begateway_button_pay")
     public var colorButton: UIColor?
     public var fontButton: UIFont?
     public var backgroundColorButton: UIColor?
     
     
-    public var titleToggle: String = LocalizeString.localizeString(value:"Save card")
-    public var errorTitle: String = LocalizeString.localizeString(value:"Sorry, incorrect data")
+    public var titleToggle: String = LocalizedString.LocalizedString(value:"begateway_savecard")
+    public var errorTitle: String = LocalizedString.LocalizedString(value:"Sorry, incorrect data")
     
     
     public var textFont: UIFont?
@@ -95,6 +101,24 @@ public class BeGatewayOptions {
     
     public init(clientPubKey: String) {
         self.clientPubKey = clientPubKey
+    }
+    
+    private func localize() {
+        self.titleCardNumber = LocalizedString.LocalizedString(value:"begateway_form_hint_card_number")
+        self.hintCardNumber = LocalizedString.LocalizedString(value:"begateway_form_hint_card_number")
+        self.cardNumber = LocalizedString.LocalizedString(value:"begateway_form_hint_card_number")
+        self.titleCVC = LocalizedString.LocalizedString(value:"begateway_cvv")
+        self.hintCVC  = LocalizedString.LocalizedString(value:"begateway_cvv")
+        self.cvc = LocalizedString.LocalizedString(value:"begateway_cvv")
+        self.titleCardHolderName = LocalizedString.LocalizedString(value:"begateway_form_hint_cardholder_name")
+        self.hintCardHolderName = LocalizedString.LocalizedString(value:"begateway_form_hint_cardholder_name")
+        self.cardHolderName = LocalizedString.LocalizedString(value:"begateway_form_hint_cardholder_name")
+        self.titleButton = LocalizedString.LocalizedString(value: "begateway_button_pay")
+        self.titleToggle = LocalizedString.LocalizedString(value:"begateway_savecard")
+        self.errorTitle = LocalizedString.LocalizedString(value:"Sorry, incorrect data")
+        self.titleExpiryDate = LocalizedString.LocalizedString(value:"begateway_form_hint_expiration")
+        self.hintExpiryDate = LocalizedString.LocalizedString(value:"begateway_form_hint_expiration")
+        self.expiryDate = LocalizedString.LocalizedString(value:"begateway_form_hint_expiration")
     }
 }
 

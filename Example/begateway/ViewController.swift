@@ -6,10 +6,23 @@
 //
 
 import UIKit
-import begateway
-//import FlexColorPicker
 
-class ViewController: UIViewController {
+import PassKit
+import begateway
+
+class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+    
+    func processPayment(isActive: Bool) {
+    }
+    
+    func processPaymentSuccess() {
+        self.showSuccessAlert()
+    }
+    
+    func outError(error: String) {
+        self.showFailureAlert(error: error)
+    }
+    
     @IBOutlet weak var valueTextField: UITextField!
     @IBOutlet weak var payButton: UIButton!
     @IBOutlet weak var currencyTextField: UITextField!
@@ -28,6 +41,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var tokenTextView: UITextView!
     @IBOutlet weak var payByTokenButton: UIButton!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var appleButton: UIButton!
+    
     var textColor: UIColor?
     var backgroundColor: UIColor?
     var currentColorView: UIView?
@@ -35,12 +51,43 @@ class ViewController: UIViewController {
     var currentPaymentToken: String?
     var card: BeGatewayRequestCard?
     
+    let applepaybutton = PKPaymentButton(paymentButtonType: .inStore, paymentButtonStyle: .whiteOutline)
+    var screenWidth = UIScreen.main.bounds.width
+    var spacing = 15
+    
+    
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.regeneratePubKey()
+    }
+    
+    private func regeneratePubKey() {
+        let options = BeGateway.instance.options ?? BeGatewayOptions(clientPubKey: "")
+        
+        options.clientPubKey = ""
+        options.isToogleSaveCard = !self.saveCardSwitch.isOn
+        options.isToogleCardNumber = !self.cardNumberSwitch.isOn
+        options.isToogleCardHolderName = !self.cardHolderSwitch.isOn
+        options.isToogleExpiryDate = !self.cardExpDateSwitch.isOn
+        options.isToogleCVC = !self.cardCvvSwitch.isOn
+        
+        let _ = BeGateway.instance.setup(with: options)
+        
+        self.changePubKey(is3DSecure: self.smsSwcureSwitch.isOn)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupToHideKeyboardOnTapOnView()
         
-//        default init
+        applepaybutton.frame = CGRect.init(x: 15, y: Int(valueTextField.frame.height) + 95, width: Int(screenWidth) - (spacing * 2), height: 34)
+        scrollView.addSubview(applepaybutton)
+        applepaybutton.addTarget(self, action: #selector(applePayAction), for: .touchUpInside)
+        
+        //        default init
         self.valueTextField.text = String(100)
+        
         self.currencyTextField.text = "USD"
         self.smsSwcureSwitch.isOn = false
         self.payByTokenButton.isHidden = true
@@ -48,6 +95,8 @@ class ViewController: UIViewController {
         self.tokenTextView.layer.cornerRadius = 5.0
         self.tokenTextView.layer.borderWidth = 1
         self.tokenTextView.layer.borderColor = UIColor.systemBlue.cgColor
+        //    self.appleButton.layer.cornerRadius = 5.0
+        
         
         self.backgroundColorView.layer.cornerRadius = 5.0
         self.backgroundColorView.layer.borderWidth = 1
@@ -58,11 +107,10 @@ class ViewController: UIViewController {
         self.textColorView.layer.borderColor = UIColor.systemBlue.cgColor
         
         self.titleTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        self.valueTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        self.currencyTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         
-        _ = BeGateway.instance.setup(with: BeGatewayOptions(clientPubKey: ""))
-        self.changePubKey(is3DSecure: self.smsSwcureSwitch.isOn)
-        
-//        for test photo
+        //        for test photo
         BeGateway.instance.options?.onDetachFromCamera = {onSelect in
             print("Open camera ........")
             
@@ -72,44 +120,73 @@ class ViewController: UIViewController {
                         number: "2201382000000013",
                         verificationValue: "123",
                         expMonth: "02",
-                        expYear: "23",
-                        holder: "WRR"
+                        expYear: "25",
+                        holder: "Ivan Ivanov"
                     )
                 )
             }
         }
         
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-//            self.testPayForm()
-//        }
+        self.titleTextField.delegate = self
+        self.tokenTextView.delegate = self
+        self.valueTextField.delegate = self
+        self.currencyTextField.delegate = self
+        
     }
+    
+    private func showSuccessAlert() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            let alert = UIAlertController(title: "Success from SDK", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default))
+            if #available(iOS 13.0, *) {
+                if var topController = UIApplication.shared.keyWindow?.rootViewController  {
+                    while let presentedViewController = topController.presentedViewController {
+                        topController = presentedViewController
+                    }
+                    topController.present(alert, animated: true, completion: nil)
+                }
+            } else {
+                alert.show()
+            }
+        }
+    }
+    
+    private func showFailureAlert(error : String) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            let alert = UIAlertController(title: "Failure from SDK", message: error, preferredStyle: .alert)
+            alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default))
+            if #available(iOS 13.0, *) {
+                if var topController = UIApplication.shared.keyWindow?.rootViewController  {
+                    while let presentedViewController = topController.presentedViewController {
+                        topController = presentedViewController
+                    }
+                    topController.present(alert, animated: true, completion: nil)
+                }
+            } else {
+                alert.show()
+            }
+        }
+        
+    }
+    
     
     // MARK:: UITextField Delegates
     @objc func textFieldDidChange(_ textField: UITextField) {
         if textField == self.titleTextField {
             BeGateway.instance.options?.title = textField.text
         }
+        if textField == self.currencyTextField || textField == self.valueTextField {
+            self.dropToken()
+        }
     }
     
     @IBAction func touchSelectBackgroundColor(_ sender: Any) {
-//        self.currentColorView = self.backgroundColorView
-//
-//        let colorPickerController = DefaultColorPickerViewController()
-//        colorPickerController.delegate = self
-//        self.present(colorPickerController, animated: true)
-        
         BeGateway.instance.options?.backgroundColor = BeGateway.instance.options?.backgroundColor == UIColor.blue ? UIColor.white: UIColor.blue
         
         self.backgroundColorView.backgroundColor = BeGateway.instance.options?.backgroundColor
     }
     
     @IBAction func touchSelectTextColor(_ sender: Any) {
-//        self.currentColorView = self.textColorView
-//
-//        let colorPickerController = DefaultColorPickerViewController()
-//        colorPickerController.delegate = self
-//        self.present(colorPickerController, animated: true)
-        
         BeGateway.instance.options?.textColor = BeGateway.instance.options?.textColor == UIColor.red ? UIColor.white : UIColor.red
         self.textColorView.backgroundColor = BeGateway.instance.options?.textColor
     }
@@ -119,14 +196,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func touchGetToken(_ sender: Any) {
+        self.regeneratePubKey()
         BeGateway.instance.getToken(request: BeGatewayRequest(
             amount: Double(self.valueTextField.text ?? "0.0") ?? 0.0,
             currency: self.currencyTextField.text ?? "USD",
             requestDescription: "Test request",
             trackingID: "1000000-1"
-
+            
         ), completionHandler: {token in
-            print(token)
             self.tokenTextView.text = token
             self.payByTokenButton.isHidden = false
         }, failureHandler:{error in
@@ -134,31 +211,106 @@ class ViewController: UIViewController {
         })
     }
     
+    @objc func applePayAction() {
+        let options = BeGateway.instance.options ?? BeGatewayOptions(clientPubKey: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw8XoKldxIqeAcP59p5oVJefQNKK8GIvWQBlnn08tA9KhK0NUe4LFvVfETXHDMKg/cmSpjTysVbOi+rOm5VQJdZU1GGVHJvkbGuuTXkZW9JBlzhmx4ikTYHhcSqtFNTgQlOSpQGI06NF7Iribapch+aLApilOlLoA9+IWQc79Q3/yYl5vV3b2Ub7O7AR5yCECOLa583uhA7NxnV+d2+f5pSKeDJRjML71LXKkS7q7Zj6ag45hzILdxMW8CElWliPKFesJZrXRHW/8E9pQ49bG3LZFkFnTyc6DDyydWB6y9jbYLS9pi5LSXAw+rvde23UnaReTRwaWbZgTL/I34IjHcwIDAQAB")
+        
+        setupApplePubkey()
+        options.merchantID = "merchant.org.cocoapods.demo.begateway-Example"
+        
+        let _ = BeGateway.instance.setup(with: options)
+        
+        let request = BeGatewayRequest(amount: Double(self.valueTextField.text ?? "0.0") ?? 0.0,
+                                       currency: self.currencyTextField.text?.uppercased() ?? "USD",
+                                       requestDescription: "Apple Pay test transaction",
+                                       trackingID: "1000000-1",
+                                       card: nil)
+        
+        if let token = self.tokenTextView.text, token.count >= 64 {
+            BeGateway.instance.payWithAppleByToken(token: token, rootController: self) {
+                self.showSuccessAlert()
+                print("payment success with token")
+            } failureHandler: { error in
+                self.showFailureAlert(error: error)
+                print("---> error \(error)")
+            }
+        } else {
+            BeGateway.instance.payWithApplePay(requestBE: request, rootController: self) {
+                self.showSuccessAlert()
+                print("payment success without token")
+            } failureHandler: { error in
+                self.showFailureAlert(error: error)
+                print("---> error \(error)")
+            }
+        }
+        self.setupApplePubkey()
+        
+    }
+    
+    //text view/field delegates
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        payByTokenButton.isHidden = self.tokenTextView.text.count < 64
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+    private func dropToken() {
+        self.tokenTextView.text = ""
+        self.payByTokenButton.isHidden = true
+    }
+    
+    private func setupApplePubkey() {
+        BeGateway.instance.options?.clientPubKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw8XoKldxIqeAcP59p5oVJefQNKK8GIvWQBlnn08tA9KhK0NUe4LFvVfETXHDMKg/cmSpjTysVbOi+rOm5VQJdZU1GGVHJvkbGuuTXkZW9JBlzhmx4ikTYHhcSqtFNTgQlOSpQGI06NF7Iribapch+aLApilOlLoA9+IWQc79Q3/yYl5vV3b2Ub7O7AR5yCECOLa583uhA7NxnV+d2+f5pSKeDJRjML71LXKkS7q7Zj6ag45hzILdxMW8CElWliPKFesJZrXRHW/8E9pQ49bG3LZFkFnTyc6DDyydWB6y9jbYLS9pi5LSXAw+rvde23UnaReTRwaWbZgTL/I34IjHcwIDAQAB"
+    }
+    
     @IBAction func touchPayWithToken(_ sender: Any) {
-        BeGateway.instance.payByToken(
-            token: self.tokenTextView.text,
-            rootController: self,
-            request: BeGatewayRequest(
-                amount: Double(self.valueTextField.text ?? "0.0") ?? 0.0,
-                currency: self.currencyTextField.text ?? "USD",
-                requestDescription: "Test request",
-                trackingID: "1000000-1",
-                card: self.card
-            ),
-            completionHandler: {
-                card in
-                print(card)
-                
-                self.tokenTextView.text = ""
-                self.payByTokenButton.isHidden = true
-                
-//                let alert = UIAlertController(title: "Success", message: card.first1+"********"+card.last4, preferredStyle: .alert)
-//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//                self.present(alert, animated: true, completion: nil)
-                
-            }, failureHandler: {error in
-                print(error)
-            })
+        self.regeneratePubKey()
+        BeGateway.instance.getStatus(token: self.tokenTextView.text, completionHandler: { token in
+            
+            if let language = token?.checkout?.settings?.language {
+                BeGateway.instance.options?.language = language
+            }
+            
+            
+            let toggle = token?.checkout?.settings?.saveCardToggle?.customerContract ?? false
+            BeGateway.instance.options?.isToogleSaveCard = !toggle
+        
+            
+            BeGateway.instance.payByToken(
+                token: self.tokenTextView.text,
+                rootController: self,
+                request: BeGatewayRequest(
+                    amount: Double(self.valueTextField.text ?? "0.0") ?? 0.0,
+                    currency: self.currencyTextField.text ?? "USD",
+                    requestDescription: "Test request",
+                    trackingID: "1000000-1",
+                    card: self.card
+                ),
+                completionHandler: {
+                    card in
+                    print(card)
+                    self.showSuccessAlert()
+                    self.dropToken()
+                }, failureHandler: {error in
+                    self.showFailureAlert(error: error)
+                    self.dropToken()
+                    print(error)
+                })
+        }) { error in
+            self.showFailureAlert(error: error)
+            print(error)
+        }
+        
     }
     
     @IBAction func touchRemoveAll(_ sender: Any) {
@@ -166,26 +318,32 @@ class ViewController: UIViewController {
     }
     
     @IBAction func saveCardChanged(_ sender: Any) {
+        self.dropToken()
         BeGateway.instance.options?.isToogleSaveCard = !self.saveCardSwitch.isOn
     }
     
     @IBAction func cardNumberChanged(_ sender: Any) {
+        dropToken()
         BeGateway.instance.options?.isToogleCardNumber = !self.cardNumberSwitch.isOn
     }
     
     @IBAction func cardHolderCHanged(_ sender: Any) {
+        dropToken()
         BeGateway.instance.options?.isToogleCardHolderName = !self.cardHolderSwitch.isOn
     }
     
     @IBAction func cardExpDateChanged(_ sender: Any) {
+        dropToken()
         BeGateway.instance.options?.isToogleExpiryDate = !self.cardExpDateSwitch.isOn
     }
     
     @IBAction func cardCvvChanged(_ sender: Any) {
+        dropToken()
         BeGateway.instance.options?.isToogleCVC = !self.cardCvvSwitch.isOn
     }
     
     @IBAction func smsChanged(_ sender: Any) {
+        self.dropToken()
         self.changePubKey(is3DSecure: self.smsSwcureSwitch.isOn)
     }
     
@@ -197,19 +355,9 @@ class ViewController: UIViewController {
                 number: "2201382000000013",
                 verificationValue: "123",
                 expMonth: "02",
-                expYear: "23",
-                holder: "WRR"
+                expYear: "25",
+                holder: "Ivan Ivanov"
             )
-            
-            //        for test 3d secure with password: "1qwezxc"
-//            BeGateway.instance.request.card = BeGatewayRequestCard(
-//                number: "2201382000000047",
-//                verificationValue: "123",
-//                expMonth: "02",
-//                expYear: "2023",
-//                holder: "WRR"
-//            )
-            
         } else {
             BeGateway.instance.options?.clientPubKey =  "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvextn45qf3NiNzqBYXMvcaSFlgoYE/LDuDDHtNNM4iWJP7BvjBkPcZu9zAfo5IiMxl660r+1E4PYWwr0iKSQ8+7C/WcSYwP8WlQVZH+2KtPmJgkPcBovz3/aZrQpj6krcKLklihg3Vs++TtXAbpCCbhIq0DJ3T+khttBqTGD+2x2vOC68xPgMwvnwQinfhaHEQNbtEcWWXPw9LYuOTuCwKlqijAEds4LgKSisubqrkRw/HbAKVfa659l5DJ8QuXctjp3Ic+7P2TC+d+rcfylxKw9c61ykHS1ggI/N+/KmEDVJv1wHvdy7dnT0D/PhArnCB37ZDAYErv/NMADz2/LuQIDAQAB"
             
@@ -224,44 +372,7 @@ class ViewController: UIViewController {
     }
     
     func testPayForm() {
-//        examples
-        
-//        let options = BeGateway.instance.options
-        
-//        options.title = "Test title for label"
-//        options.titleCardNumber = "titleCardNumber test"
-//        options.hintCardNumber = "hintCardNumber test"
-//        options.titleExpiryDate = "titleExpiryDate"
-//        options.hintExpiryDate = "hintExpiryDate"
-//        options.titleCVC = "titleCVC"
-//        options.hintCVC = "hintCVC"
-//        options.titleCardHolderName = "titleCardHolderName"
-//        options.hintCardHolderName = "hintCardHolderName"
-//        options.titleToggle = "titleToggle"
-//
-//        options.textFont = UIFont.italicSystemFont(ofSize: 20.0)
-//        options.hintFont = UIFont.italicSystemFont(ofSize: 20.0)
-//        options.textColor = UIColor.red
-//        options.hintColor = UIColor.orange
-//        options.backgroundColor = UIColor.gray
-//
-//        options.colorTitle = UIColor.black
-//        options.fontTitle = UIFont.systemFont(ofSize: 34.0)
-//        options.fontTitleCardNumber = UIFont.systemFont(ofSize: 14.0)
-//        options.colorTitleCardNumber = UIColor.green
-//        options.fontHintCardNumber = UIFont.italicSystemFont(ofSize: 12.0)
-//        options.colorHintCardNumber = UIColor.blue
-//
-//        options.colorButton = UIColor.green
-//        options.fontButton = UIFont.systemFont(ofSize: 10.0)
-//        options.backgroundColorButton = UIColor.red
-//
-//        options.isToggleCVC = true
-        
-        
-//        list of saved cards
-//        print(begateway.cards)
-        
+        self.regeneratePubKey()
         BeGateway.instance.pay(
             rootController: self,
             request: BeGatewayRequest(
@@ -273,35 +384,42 @@ class ViewController: UIViewController {
             ),
             completionHandler: {
                 card in
+                self.showSuccessAlert()
                 print(card)
             }, failureHandler: {error in
+                self.showFailureAlert(error: error)
                 print(error)
             })
     }
     
 }
 
+public extension UIAlertController {
+    func show() {
+        let win = UIWindow(frame: UIScreen.main.bounds)
+        let vc = UIViewController()
+        vc.view.backgroundColor = .clear
+        win.rootViewController = vc
+        win.windowLevel = UIWindow.Level.alert + 1  // Swift 3-4: UIWindowLevelAlert + 1
+        win.makeKeyAndVisible()
+        vc.present(self, animated: true, completion: nil)
+    }
+}
 
-//extension ViewController: ColorPickerDelegate {
-//
-//    func colorPicker(_ colorPicker: ColorPickerController, selectedColor: UIColor, usingControl: ColorControl) {
-//        // code to handle that user selected a color without confirmed it yet (may change selected color)
-////        print("Selected color: \(selectedColor)")
-//    }
-//
-//    func colorPicker(_ colorPicker: ColorPickerController, confirmedColor: UIColor, usingControl: ColorControl) {
-//        // code to handle that user has confirmed selected color
-//        print("Confirmed color: \(confirmedColor)")
-//        self.dismiss(animated: true, completion: nil)
-//
-//        if let view = self.currentColorView {
-//            view.backgroundColor = confirmedColor
-//
-//            if self.currentColorView == self.backgroundColorView {
-//                BeGateway.instance.options?.backgroundColor = confirmedColor
-//            } else if self.currentColorView == self.textColorView {
-//                BeGateway.instance.options?.textColor = confirmedColor
-//            }
-//        }
-//    }
-//}
+extension ViewController
+{
+    func setupToHideKeyboardOnTapOnView()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(ViewController.dismissKeyboard))
+        
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
+}

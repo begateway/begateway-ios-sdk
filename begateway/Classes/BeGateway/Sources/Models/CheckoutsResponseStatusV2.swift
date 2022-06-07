@@ -7,11 +7,11 @@ import Foundation
 
 // MARK: - CheckoutsResponseStatusV2
 public struct CheckoutsResponseStatusV2: Codable {
-    let checkout: CheckoutsResponseStatusV2Checkout?
+    public let checkout: CheckoutsResponseStatusV2Checkout?
 }
 
 // MARK: - Checkout
-struct CheckoutsResponseStatusV2Checkout: Codable {
+public struct CheckoutsResponseStatusV2Checkout: Codable {
     let token: String?
     let shopID: Int?
     let transactionType: String?
@@ -19,7 +19,7 @@ struct CheckoutsResponseStatusV2Checkout: Codable {
     let finished, expired, test: Bool?
     let status: String?
     let version, appleMerchantID: String?
-    let settings: CheckoutsResponceV2Settings?
+    public let settings: CheckoutsResponceV2Settings?
     
     enum CodingKeys: String, CodingKey {
         case token
@@ -33,17 +33,17 @@ struct CheckoutsResponseStatusV2Checkout: Codable {
     }
 }
 
-struct CheckoutsResponceV2Settings: Codable {
-    let saveCardToggle: CheckoutsResponceV2SettingSaveCardToggle?
-    let language: String?
+public struct CheckoutsResponceV2Settings: Codable {
+    public let saveCardToggle: CheckoutsResponceV2SettingSaveCardToggle?
+    public let language: String?
     
     enum CodingKeys: String, CodingKey {
         case saveCardToggle = "save_card_toggle"
         case language
     }
 }
-struct CheckoutsResponceV2SettingSaveCardToggle : Codable {
-    let customerContract: Bool
+public struct CheckoutsResponceV2SettingSaveCardToggle : Codable {
+    public let customerContract: Bool
     
     enum CodingKeys: String, CodingKey {
         case customerContract = "customer_contract"
@@ -51,7 +51,7 @@ struct CheckoutsResponceV2SettingSaveCardToggle : Codable {
 }
 
 // MARK: - Order
-struct CheckoutsResponseStatusV2Order: Codable {
+public struct CheckoutsResponseStatusV2Order: Codable {
     let additionalData: CheckoutsRequestV2AdditionalData?
     let amount: Int?
     let currency, orderDescription, trackingID: String?
@@ -65,7 +65,7 @@ struct CheckoutsResponseStatusV2Order: Codable {
 }
 
 // MARK: - AdditionalData
-struct CheckoutsResponseStatusV2AdditionalData: Codable {
+public struct CheckoutsResponseStatusV2AdditionalData: Codable {
     let contract: [String]?
     let requestID: String?
     let browser: JSONNull?
@@ -79,6 +79,6 @@ struct CheckoutsResponseStatusV2AdditionalData: Codable {
 }
 
 // MARK: - Vendor
-struct CheckoutsResponseStatusV2Vendor: Codable {
+public struct CheckoutsResponseStatusV2Vendor: Codable {
     let name, token: String?
 }

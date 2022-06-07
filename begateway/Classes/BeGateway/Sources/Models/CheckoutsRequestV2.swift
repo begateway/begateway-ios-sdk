@@ -6,12 +6,12 @@
 import Foundation
 
 // MARK: - CheckoutsRequestV2
-struct CheckoutsRequestV2: Codable {
+public struct CheckoutsRequestV2: Codable {
     let checkout: CheckoutsRequestV2Checkout?
 }
 
 // MARK: - Checkout
-struct CheckoutsRequestV2Checkout: Codable {
+public struct CheckoutsRequestV2Checkout: Codable {
     let order: CheckoutsRequestV2Order?
     let settings: CheckoutsRequestV2Settings?
     let test: Bool?
@@ -26,7 +26,7 @@ struct CheckoutsRequestV2Checkout: Codable {
 }
 
 // MARK: - Order
-struct CheckoutsRequestV2Order: Codable {
+public struct CheckoutsRequestV2Order: Codable {
     let additionalData: CheckoutsRequestV2AdditionalData?
     let amount: Int?
     let currency, orderDescription, trackingID: String?
@@ -40,12 +40,12 @@ struct CheckoutsRequestV2Order: Codable {
 }
 
 // MARK: - AdditionalData
-struct CheckoutsRequestV2AdditionalData: Codable {
+public struct CheckoutsRequestV2AdditionalData: Codable {
     let contract: [String]?
 }
 
 // MARK: - Settings
-struct CheckoutsRequestV2Settings: Codable {
+public struct CheckoutsRequestV2Settings: Codable {
     let autoReturn: Int?
     let returnURL: String?
     let language: String?
@@ -62,7 +62,7 @@ struct CheckoutsRequestV2Settings: Codable {
     }
 }
 
-struct CheckoutsRequestV2SettingSaveCardToggle : Codable {
+public struct CheckoutsRequestV2SettingSaveCardToggle : Codable {
     let customerContract: Bool
     
     enum CodingKeys: String, CodingKey {

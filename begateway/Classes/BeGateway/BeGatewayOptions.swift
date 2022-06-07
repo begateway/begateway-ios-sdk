@@ -13,7 +13,7 @@ public class BeGatewayOptions {
     
     var endpoint: String = "https://checkout.bepaid.by/ctp/api"
     var resultUrl: String = "https://127.default_return_url.com"
-    var merchantID : String?
+    public var merchantID : String?
     var notificationURL: String?
     
     var maxCheckingAttempts: Int = 30           // count of max attempts for checking status

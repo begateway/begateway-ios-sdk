@@ -114,8 +114,40 @@ public let brand: String?
 }
 ```
 
+#### Apple pay
 
-
+First you need to setup your project with your merhchant ID.
+After it you should pass merchant id to BegatewayOptions.
+Default <b>Apple Pay</b> with input:
+```swift
+        options.merchantID = "merchant.org.cocoapods.demo.begateway-Example"
+        
+        let _ = BeGateway.instance.setup(with: options)
+        
+        let request = BeGatewayRequest(amount: Double(self.valueTextField.text ?? "0.0") ?? 0.0,
+                                       currency: self.currencyTextField.text?.uppercased() ?? "USD",
+                                       requestDescription: "Apple Pay test transaction",
+                                       trackingID: "1000000-1",
+                                       card: nil)
+                                       
+        BeGateway.instance.payWithApplePay(requestBE: request, rootController: self) {
+            self.showSuccessAlert()
+            print("payment success without token")
+        } failureHandler: { error in
+            self.showFailureAlert(error: error)
+            print("---> error \(error)")
+        }    
+```
+<b>Apple Pay</b>  with <b>TOKEN</b>:
+```swift
+            BeGateway.instance.payWithAppleByToken(token: token, rootController: self) {
+                self.showSuccessAlert()
+                print("payment success with token")
+            } failureHandler: { error in
+                self.showFailureAlert(error: error)
+                print("---> error \(error)")
+            }
+```
 You can pay with  <b>TOKEN</b>
 ```swift
 BeGateway.instance.payByToken(

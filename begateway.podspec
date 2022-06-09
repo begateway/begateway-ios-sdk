@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name                    = 'begateway'
-    s.version                 = '3.0'
+    s.version                 = '3.0.1'
     s.summary                 = 'Little framework to easy implement https://begateway.com/ in yout application'
     s.swift_version           = '5.0'
     s.ios.deployment_target   = '11.0'
@@ -28,10 +28,14 @@ Pod::Spec.new do |s|
     s.author           = { 'eComCharge LLC' => 'techsupport@ecomcharge.com' }
     s.source           = { :git => 'https://github.com/begateway/begateway-ios-sdk.git', :tag => s.version }
 
-    s.source_files = 'begateway/Classes/**/*.{swift,h,m}'
-    s.requires_arc = true
-    s.frameworks = 'UIKit'
-    s.frameworks = 'Security'
-    s.resources = ['begateway/Assets/**/*.*','begateway/Localization/*.lproj/*.strings']
+    
+    s.source_files     = 'begateway/**/**/*.{swift,h,m}'
+    s.requires_arc     = true
+    s.frameworks       = 'UIKit'
+    s.frameworks       = 'Security'
+    
+    s.resources        = ['begateway/Classes/**/*.*',
+                        'begateway/Localization/*.lproj/*.strings',
+                        'begateway/**/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}']
 
 end

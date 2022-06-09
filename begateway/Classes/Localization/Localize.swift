@@ -41,7 +41,15 @@ extension String {
             }
 
             let lang = UserDefaults.standard.string(forKey: staticKeyForLocalization)
-
+        
+        let bundleT = Bundle.init(for: FittedSheets.self)
+        let path = bundleT.path(forResource: lang, ofType:"lproj")
+        
+        if (path != nil) {
+            let bundle = Bundle(path: path!)
+            return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+        }
+        
         guard let path = Bundle.main.path(forResource: lang, ofType: "lproj") ?? Bundle.main.path(forResource: "en", ofType: "lproj") else { return self }
         let bundle = Bundle(path: path)
         
@@ -50,6 +58,6 @@ extension String {
 }
 class LocalizedString{
     static func LocalizedString(value: String, _ arguments: CVarArg...) -> String {
-        return String(format: NSLocalizedString(value.localized, tableName: nil, bundle: Bundle(for: FittedSheets.self), value: "", comment: ""), arguments: arguments)
+        return value.localized
     }
 }

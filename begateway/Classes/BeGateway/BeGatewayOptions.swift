@@ -22,6 +22,7 @@ public class BeGatewayOptions {
     public var language: String = "en" {
         didSet {
             UserDefaults.standard.set(language, forKey: staticKeyForLocalization)
+            UserDefaults.standard.synchronize()
             self.localize()
         }
     }

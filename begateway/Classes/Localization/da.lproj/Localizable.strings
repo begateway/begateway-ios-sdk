@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  Pods
+
+  Created by FEDAR TRUKHAN on 9/19/19.
+  
+*/
+"begateway_form_hint_card_number"="Kortnummer";
+"begateway_form_hint_expiration"="Udløbsdato";
+"begateway_form_hint_cardholder_name"="Kortholder navn";
+"begateway_cvv"="CVV";
+"begateway_cvc"="CVC";
+"begateway_cid"="CID";
+"begateway_cvn"="CVN";
+"begateway_month"="Måned";
+"begateway_year"="År";
+"begateway_card_number_required"="Kortnummeret er obligatorisk";
+"begateway_card_number_invalid"="Kortnummeret er ugyldigt";
+"begateway_cvv_required"="%s er obligatorisk";
+"begateway_cvv_invalid"="%s er ugyldig";
+"begateway_expiration_required"="Udløbsdatoen er obligatorisk";
+"begateway_expiration_invalid"="Udløbsdatoen er ugyldig";
+"begateway_cardholder_name_required"="Navnet på kortet er obligatorisk";
+"begateway_savecard"="Husk mig næste gang";
+"begateway_button_pay"="Betal";
+"begateway_secure_info"="Sikker betaling leveres af %s";
+"Change"="Ændring";
+"Sorry, incorrect data"="Der var en betalingsfejl. Prøv igen, eller brug et andet kort.";
+"OK"="OK";
+"Cancel"="Annuller";
+"Turn on"="Aktivér";
+"Error"="Fejl";
+"An error occurred during scanning"="Der opstod en fejl under scanning";
+"Please turn on NFC"="Aktivér NFC";
+"NFC not supported"="NFC er ikke understøttet";
+"Please attach bank card to the phone"="Vedhæft bankkortet til telefonen";
+"From Photo"="Scan med kamera";
+"Scan by NFC"="Scan med NFC";
+"Please wait"="Vent venligst";

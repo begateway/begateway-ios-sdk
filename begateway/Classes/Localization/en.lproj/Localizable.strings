@@ -1,0 +1,47 @@
+/* 
+ Localizable.strings
+ Pods
+ 
+ Created by FEDAR TRUKHAN on 9/19/19.
+ 
+ */
+"dismissPresentation" = "Tap to Dismiss Presentation.";
+"changeSizeOfPresentation" = "Tap to switch between presentation sizes.";
+
+"begateway_form_hint_card_number" = "Card number";
+"begateway_form_hint_expiration" = "Expiration date";
+"begateway_form_hint_cardholder_name" = "Name on card";
+"begateway_cvv" = "CVV";
+"begateway_cvc" = "CVC";
+"begateway_cid" = "CID";
+"begateway_cvn" = "CVN";
+"begateway_month" = "Month";
+"begateway_year" = "Year";
+"begateway_card_number_required" = "Card number is required";
+"begateway_card_number_invalid" = "Card number is invalid";
+"begateway_cvv_required" = "%s is required";
+"begateway_cvv_invalid" = "%s is invalid";
+"begateway_expiration_required" = "Expiration date is required";
+"begateway_expiration_invalid" = "Expiration date is invalid";
+"begateway_cardholder_name_required" = "Name on card is required";
+"begateway_savecard" = "Save card";
+"Secure payment is provided by %s" = "Secure payment is provided by %s";
+
+"begateway_button_pay" = "Pay";
+"Cancel" = "Cancel";
+"Change" = "Change";
+"Scan by camera" = "Scan by camera";
+"Sorry, incorrect data" = "There was a payment error. Try again or use another card.";
+"Change"="Change";
+"Sorry, incorrect data"="There was a payment error. Try again or use another card.";
+"OK"="OK";
+"Cancel"="Cancel";
+"Turn on"="Turn on";
+"Error"="Error";
+"An error occurred during scanning"="An error occurred during scanning";
+"Please turn on NFC"="Please turn on NFC";
+"NFC not supported"="NFC not supported";
+"Please attach bank card to the phone"="Please attach bank card to the phone";
+"From Photo"="Scan by camera";
+"Scan by NFC"="Scan by NFC";
+"Please wait"="Please wait";

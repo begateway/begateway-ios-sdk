@@ -19,9 +19,9 @@ To easy find out how it works:
 pod 'begateway'
 ```
 ## Requirements
-* iOS 10.0+
+* iOS 11.0+
 * Xcode 10.3+
-* Swift 5+
+* Swift 5.0+
 
 ## Usage
 ### Import sdk
@@ -31,193 +31,312 @@ import begateway
 ### Setup
 Initilize payment module:
 ```swift
-let paymentModule = BGPaymentModule()
+let paymentModule = BeGateway.instance.setup(with: BeGatewayOptions(clientPubKey: "PUBLIC_STORE_KEY"))
 ```
-Set your payment provider url:
+You can change public key:
 ```swift
-paymentModule.settings.endpoint = "https://checkout.begateway.com/ctp/api"
+BeGateway.instance.options?.clientPubKey = "PUBLIC_STORE_KEY"
 ```
-You must setup your return_url to process 3D SECURE:
+
+If you want to get current instance of object:
 ```swift
-paymentModule.settings.returnURL = "https://your_server_url"
+BeGateway.instance
 ```
-You can setup your notification_url to become info about payment status :
+
+### Get token
+
+Create BeGatewayRequest object:
+You can setup your notification_url to become info about payment status:
 ```swift
-paymentModule.settings.notificationURL = "https://your_server_notifications_url"
+let request BeGatewayRequest(
+// amount
+amount: 100.0,
+// currency
+currency: "USD",
+// description
+requestDescription: "Test request",
+// tracling id
+trackingID: "1000000-1"
+)
 ```
-### Implement BGPaymentModuleDelegate
+
+Execute response:
 ```swift
-extension YOURCLASS: BGPaymentModuleDelegate {
-    func bgPaymentResult(status: BGPaymentModuleStatus) {
-        switch status {
-            case .success(let cardInfo):
-                // Make some action for success state
-                // you can save cardInfo, and than use cardInfo.token to make payment by card token
-            case .canceled:
-                // this status saying, that user canceled payment operation
-            case .error(let error):
-                // in payment process an error occurred
-            case .failure(let message):
-                // payment was failed, you can become more info from message, but somethimes it can be empty
-        }
-    }
+BeGateway.instance.getToken(request: request, completionHandler: {token in
+// token for other operation
+}, failureHandler:{error in
+// out error
+print(error)
+})
+```
+
+### Payment
+
+#### Start payment with `CARD`
+
+Create BeGatewayRequestCard object:
+```swift
+let card =  BeGatewayRequestCard(
+number: "2201382000000013",
+verificationValue: "123",
+expMonth: "02",
+expYear: "23",
+holder: "WRR"
+)
+```
+
+Pay by card without token
+```swift
+BeGateway.instance.pay(
+rootController: self,
+request: BeGatewayRequest(
+amount: 100.0,
+currency: "USD",
+requestDescription: "Test request",
+trackingID: "1000000-1",
+card: card
+),
+completionHandler: {
+card in
+// BeGatewayCard
+print(card)
+}, failureHandler: {error in
+print(error)
+})
+```
+
+If gateway return success you can use object BeGatewayCard
+
+```swift
+public struct BeGatewayCard {
+public let createdAt: Date
+public let first1, last4: String
+public let brand: String?
 }
 ```
-### Start payment
-#### Start payment with `PUBLIC_STORE_KEY`
 
-Create BGOrder object:
-```swift
-// sample order
-let order = BGOrder(amount: 200, currency: "USD", description: "test", trackingId: "my_custom_variable")
-```
-Use your <b>PUBLIC_STORE_KEY</b> to start payment
-```swift
-paymentModule.makePay(publicKey: "your_public_key", order: order)
-```
-#### Start payment with `CHECKOUT`
+#### Apple pay
 
-Get <b>CHECKOUT</b> from <i>your_checkout_endpoint</i>/checkouts
-Example checkout <b>json</b>:
-```json
-{
-    "token": "efcbcdeb45cf6a625bbec66a92a55c1ad8d1872d53be8db881a39850b1333dcc",
-    "redirect_url": "https://checkout.bepaid.by/checkout?token=4e67bfe907e52c1392a417b5e50b00d3cf92683af4743c127ea27612bd1faa75",
-    "brands": [
-    {
-        "alternative": false,
-        "name": "visa"
-    },
-    {
-        "alternative": false,
-        "name": "master"
-    },
-    {
-        "alternative": false,
-        "name": "belkart"
-    },
-    {
-        "alternative": false,
-        "name": "visa"
-    },
-    {
-        "alternative": false,
-        "name": "master"
-    },
-    {
-        "alternative": false,
-        "name": "maestro"
-    }
-    ],
-    "company": {
-        "name": "beGateway",
-        "site": "https://begateway.com"
-    },
-    "description": "Payment description"
-}
-```
-Convert json to BGCheckoutResponseObject, it support Codable protocol
+First you need to setup your project with your merhchant ID.
+After it you should pass merchant id to BegatewayOptions.
+Default <b>Apple Pay</b> with input:
 ```swift
-public struct BGCheckoutResponseObject: Codable {
-    var token: String
-    var redirectUrl: String?
-    var brands: [BGBrand]?
-    var company: BGCompany?
-    var description: String?
-
-    enum CodingKeys: String, CodingKey {
-    case token = "token"
-    case redirectUrl = "redirect_url"
-    case brands = "brands"
-    case company = "company"
-    case description = "description"
-}
+        options.merchantID = "merchant.org.cocoapods.demo.begateway-Example"
+        
+        let _ = BeGateway.instance.setup(with: options)
+        
+        let request = BeGatewayRequest(amount: Double(self.valueTextField.text ?? "0.0") ?? 0.0,
+                                       currency: self.currencyTextField.text?.uppercased() ?? "USD",
+                                       requestDescription: "Apple Pay test transaction",
+                                       trackingID: "1000000-1",
+                                       card: nil)
+                                       
+        BeGateway.instance.payWithApplePay(requestBE: request, rootController: self) {
+            self.showSuccessAlert()
+            print("payment success without token")
+        } failureHandler: { error in
+            self.showFailureAlert(error: error)
+            print("---> error \(error)")
+        }    
 ```
+<b>Apple Pay</b>  with <b>TOKEN</b>:
 ```swift
-guard let checkoutData = your_checkout_json_string.data(using: .utf8) else {
-    // Cannot convert checkout string to data
-    return
-}
-do {
-    let checkoutObject = try JSONDecoder().decode(BGCheckoutResponseObject.self, from: checkoutData)
-} catch let error {
-    //error while decoding
-}
+            BeGateway.instance.payWithAppleByToken(token: token, rootController: self) {
+                self.showSuccessAlert()
+                print("payment success with token")
+            } failureHandler: { error in
+                self.showFailureAlert(error: error)
+                print("---> error \(error)")
+            }
 ```
-make payment:
+You can pay with  <b>TOKEN</b>
 ```swift
-paymentModule.makePay(checkout: checkoutObject)
-```
-#### Start payment  with  `Card_Token`
-
-You can get card token from any success pay request, from BGCardInfo object, when user check "Save card" on card form.
-
-Create BGTokenizedCard object
-```swift
-let card = BGTokenizedCard(token: cardToken)
-```
-Make payment with `PUBLIC_STORE_KEY`:
-```swift
-paymentModule.makePay(publicKey: "your_public_key", order: order, tokenizedCard: card)
-```
-Make payment with payment token:
-```swift
-module.makePay(paymentToken: paymentToken_from_checkout, card: card)
+BeGateway.instance.payByToken(
+token: TOKEN,
+rootController: self,
+request: BeGatewayRequest(
+amount: 100.0,
+currency: "USD",
+requestDescription: "Test request",
+trackingID: "1000000-1",
+card: card
+),
+completionHandler: {
+card in
+print(card)
+}, failureHandler: {error in
+print(error)
+})
 ```
 
-### Encryption
-Use `encryptCardData` with your <b>PUBLIC_STORE_KEY</b> to get encrypted credit card data
+### Other functions
 
-For example:
+#### Clear all saved `CARDS`
+
 ```swift
-let card = BGCard(
-    number: "4200000000000000",
-    verificationValue: "123",
-    holder: "IVAN IVANOV",
-    expMonth: "01",
-    expYear: "2020")
-let encryptedCardInfo = BGCard.ecnrypted(card, with: "your_public_key")
-if let encryptionError = encryptedCardInfo.error {
-    // an error occurred while encrypting
-} else if let encryptedCard = encryptedCardInfo.card {
-    // now you have encrypted card, congratulation
-}
+BeGateway.instance.removeAllCards()
 ```
 
 ### Customization
 
-You can customize card form view with `StyleSettings`
+You can customize card form view with `BeGatewayOptions` in instance or create new object for BeGatewayOptions and set
 
-#### Update `StyleSettings`
 ```swift
-// set pay button title
-paymentModule.settings.styleSettings.customPayButtonLabel = "your pay label text"
-// turn on/off card holder name field
-paymentModule.settings.styleSettings.isRequiredCardHolderName = true
+let options = BeGatewayOptions();
+BeGateway.instance.options = options
+```
+
+#### Update `BeGatewayOptions`
+```swift
+// title 
+BeGateway.instance.options?.title: String?
+// font title
+BeGateway.instance.options?.fontTitle: UIFont?
+// color title
+BeGateway.instance.options?.colorTitle: UIColor?
+
+// title card number field
+BeGateway.instance.options?.titleCardNumber: String = LocalizeString.localizeString(value:"Card number")
+// hint card number field
+BeGateway.instance.options?.hintCardNumber: String = LocalizeString.localizeString(value:"Card number")
+// title card number field
+BeGateway.instance.options?.cardNumber: String = LocalizeString.localizeString(value:"Card number")
+
+// font for title card number
+BeGateway.instance.options?.fontTitleCardNumber: UIFont?
+// color for title card number
+BeGateway.instance.options?.colorTitleCardNumber: UIColor?
+// font for hint card number
+BeGateway.instance.options?.fontHintCardNumber: UIFont?
+// color for title card number
+BeGateway.instance.options?.colorHintCardNumber: UIColor?
+
+
+// label expire date
+BeGateway.instance.options?.titleExpiryDate: String = LocalizeString.localizeString(value:"Expiration date")
+// hint expire date
+BeGateway.instance.options?.hintExpiryDate: String = LocalizeString.localizeString(value:"Expiration date")
+// title expire date
+BeGateway.instance.options?.expiryDate: String = LocalizeString.localizeString(value:"Expiration date")
+
+// font for title expire date
+BeGateway.instance.options?.fontTitleExpiryDate: UIFont?
+// color for title expire date
+BeGateway.instance.options?.colorTitleExpiryDate: UIColor?
+// hint for hint expire date
+BeGateway.instance.options?.fontHintExpiryDate: UIFont?
+// color for hint of expire date
+BeGateway.instance.options?.colorHintExpiryDate: UIColor?
+
+
+// label CVC
+BeGateway.instance.options?.titleCVC: String = LocalizeString.localizeString(value:"CVC")
+// hint CVC
+BeGateway.instance.options?.hintCVC: String = LocalizeString.localizeString(value:"CVC")
+// title CVC
+BeGateway.instance.options?.cvc: String = LocalizeString.localizeString(value:"CVC")
+// is secure mode for CVC field
+BeGateway.instance.options?.isSecureCVC: Bool = false
+
+// font fot title CVC
+BeGateway.instance.options?.fontTitleCVC: UIFont?
+// color for title CVC
+BeGateway.instance.options?.colorTitleCVC: UIColor?
+// font fot hint CVC
+BeGateway.instance.options?.fontHintCVC: UIFont?
+// color for hint CVC
+BeGateway.instance.options?.colorHintCVC: UIColor?
+
+
+// label for Card Holder Name
+BeGateway.instance.options?.titleCardHolderName: String = LocalizeString.localizeString(value:"Name on card")
+// hint for Card Holder Name
+BeGateway.instance.options?.hintCardHolderName: String = LocalizeString.localizeString(value:"Name on card")
+// title for Card Holder Name
+BeGateway.instance.options?.cardHolderName: String = LocalizeString.localizeString(value:"Name on card")
+
+// font title for Card Holder Name
+BeGateway.instance.options?.fontTitleCardHolderName: UIFont?
+// color title for for Card Holder Name
+BeGateway.instance.options?.colorTitleCardHolderName: UIColor?
+// font hint for Card Holder Name
+BeGateway.instance.options?.fontHintCardHolderName: UIFont?
+// color hint for Card Holder Name
+BeGateway.instance.options?.colorHintCardHolderName: UIColor?
+
+
+// button title
+BeGateway.instance.options?.titleButton: String = LocalizeString.localizeString(value: "Pay")
+// button text color
+BeGateway.instance.options?.colorButton: UIColor?
+// button font
+BeGateway.instance.options?.fontButton: UIFont?
+// button background color
+BeGateway.instance.options?.backgroundColorButton: UIColor?
+
+// toggle title
+BeGateway.instance.options?.titleToggle: String = LocalizeString.localizeString(value:"Save card")
+// error title
+BeGateway.instance.options?.errorTitle: String = LocalizeString.localizeString(value:"Sorry, incorrect data")
+
+
+// common text font
+BeGateway.instance.options?.textFont: UIFont?
+// common hint font
+BeGateway.instance.options?.hintFont: UIFont?
+// common text color
+BeGateway.instance.options?.textColor: UIColor?
+// common hint color
+BeGateway.instance.options?.hintColor: UIColor?
+// common background color
+BeGateway.instance.options?.backgroundColor: UIColor = UIColor.clear
+
+
 // turn on/off card number field
-paymentModule.settings.styleSettings.isRequiredCardNumber = true
-// turn on/off card secret code field
-paymentModule.settings.styleSettings.isRequiredCVV = true
-// turn on/off card expired date field
-paymentModule.settings.styleSettings.isRequiredExpDate = true
-// turn on/off switch for saving card (if it false, or if user deselect it, you become nil BGCard object in success)
-paymentModule.settings.styleSettings.isSaveCardCheckBoxVisible = true
-// update securedBy vaale
-paymentModule.settings.updateSecuredBy(with:  "YOUR_NEW_VALUE")
+BeGateway.instance.options?.isToogleCardNumber: Bool = false
+// turn on/off card exprire date field
+BeGateway.instance.options?.isToogleExpiryDate: Bool = false
+// turn on/off card CVC field
+BeGateway.instance.options?.isToogleCVC: Bool = false
+// turn on/off card holder name field
+BeGateway.instance.options?.isToogleCardHolderName: Bool = false
+// turn on/off card saved field
+BeGateway.instance.options?.isToogleSaveCard: Bool = false
+
 ```
-#### Customize colors
+#### Customize main options
 
-You can change color in Card form by assigning a color value to the corresponding value in cardViewColorsSettings of module
+You can change mode from test to production
 ```swift
-paymentModule.settings.cardViewColorsSettings.cancelTextColor = UIColor
+BeGateway.instance.options?.test = true
 ```
 
-#### Change provider name
+You can change language
+```swift
+BeGateway.instance.options?.language = "en"
+```
 
-Use the code to update the default payment provider **beGateway** name in the default text **Secure payment is provided by beGateway** to your payment provider name:
+You can change delay between responses
+```swift
+BeGateway.instance.options?.delayCheckingSec = 5
+```
+
+You can change max attempths when wainting response payment gateway
+```swift
+BeGateway.instance.options?.maxCheckingAttempts = 30
+```
+
+If you want use Encrypted mode for card
+```swift
+BeGateway.instance.options?.isEncryptedCreditCard = false
+```
+
+#### Use Camera button
+
+If you want to implement image capture you need to override method
 
 ```swift
-paymentModule.settings.updateSecuredBy(with: "YOUR_NEW_VALUE")
+onDetachFromCamera: ((_ onSelected: ((BeGatewayRequestCard?) -> Void)?) -> Void)?
 ```
 
 ## License

@@ -29,7 +29,7 @@ pod 'begateway'
 import begateway
 ```
 ### Setup
-Initilize payment payment module:
+Initilize payment module:
 ```swift
 let paymentModule = BeGateway.instance.setup(with: BeGatewayOptions(clientPubKey: "PUBLIC_STORE_KEY"))
 ```
@@ -46,6 +46,7 @@ BeGateway.instance
 ### Get token
 
 Create BeGatewayRequest object:
+You can setup your notification_url to become info about payment status:
 ```swift
 let request BeGatewayRequest(
 // amount

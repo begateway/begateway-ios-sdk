@@ -13,7 +13,7 @@ public struct BeGatewayCard {
     public let brand: String?
 }
 
-public struct BeGatewayRequestCard{
+public struct BeGatewayRequestCard: Codable, Equatable {
     public let number, verificationValue, expMonth, expYear: String?
     public let holder: String?
     public let cardToken: String?

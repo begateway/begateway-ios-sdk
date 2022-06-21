@@ -6,13 +6,13 @@
 import Foundation
 
 // MARK: - CheckoutsResponseV2
-struct CheckoutsResponseV2: Codable {
-    let checkout: CheckoutsResponseV2Checkout?
+public struct CheckoutsResponseV2: Codable {
+    public let checkout: CheckoutsResponseV2Checkout?
 }
 
 // MARK: - Checkout
-struct CheckoutsResponseV2Checkout: Codable {
-    let token: String?
+public struct CheckoutsResponseV2Checkout: Codable {
+    public let token: String?
     let redirectURL: String?
     let brands: [CheckoutsResponseV2Brand]?
     let company: CheckoutsResponseV2Company?

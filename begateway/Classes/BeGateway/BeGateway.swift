@@ -258,6 +258,29 @@ public class BeGateway {
         }
     }
     
+    public func payWithAppleBy(appleToken : PKPayment, paymentToken : String, completionHandler: (() -> Void)?, failureHandler:((String) -> Void)?) {
+        
+        self.paymentToken = paymentToken
+        
+        if let requestApple = requestFromAppleToken(appleToken: appleToken) {
+            if let options = BeGateway.instance.options {
+                BeGatewaySourceApi.init(options: options).sendApplePayment(uploadDataModel: requestApple) { response in
+                    if let compl = completionHandler {
+                        compl()
+                    }
+                } failureHandler: { errorString in
+                    if let failure = failureHandler {
+                        failure(errorString)
+                    }
+                }
+            }
+        } else {
+            if let failure = failureHandler {
+                failure("error converting data")
+            }
+        }
+    }
+    
     private func applePayRequest(currencyCode : String, amount : String, rootController: UIViewController, completionHandler: (() -> Void)?, failureHandler:((String) -> Void)?) {
         
         let requestPK = PKPaymentRequest()

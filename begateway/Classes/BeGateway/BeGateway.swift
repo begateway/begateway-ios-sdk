@@ -265,8 +265,17 @@ public class BeGateway {
         if let requestApple = requestFromAppleToken(appleToken: appleToken) {
             if let options = BeGateway.instance.options {
                 BeGatewaySourceApi.init(options: options).sendApplePayment(uploadDataModel: requestApple) { response in
-                    if let compl = completionHandler {
-                        compl()
+                    let status: String = response?.response?.status ?? "failed"
+                    
+                    if status == "successful" {
+                        if let compl = completionHandler {
+                            compl()
+                        }
+                    } else {
+                        let message = response?.response?.message ?? "Error during payment"
+                        if let failure = failureHandler {
+                            failure(message)
+                        }
                     }
                 } failureHandler: { errorString in
                     if let failure = failureHandler {

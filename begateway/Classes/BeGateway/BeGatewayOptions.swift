@@ -11,7 +11,7 @@ import UIKit
 public class BeGatewayOptions {
     public var clientPubKey: String
     
-    var endpoint: String = "https://checkout.bepaid.by/ctp/api"
+    public var endpoint: String = "https://checkout.bepaid.by/ctp/api"
     var resultUrl: String = "https://127.default_return_url.com"
     public var merchantID : String?
     var notificationURL: String?

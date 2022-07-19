@@ -1,15 +1,24 @@
 PODS:
-  - begateway (3.0.1)
+  - begateway (3.0.3):
+    - SwiftyRSA
+  - SwiftyRSA (1.7.0):
+    - SwiftyRSA/ObjC (= 1.7.0)
+  - SwiftyRSA/ObjC (1.7.0)
 
 DEPENDENCIES:
   - begateway (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - SwiftyRSA
 
 EXTERNAL SOURCES:
   begateway:
     :path: "../"
 
 SPEC CHECKSUMS:
-  begateway: 4e91944e50490505f1acda7cd8a76884a87994c3
+  begateway: 99eeced109ac14110953092dbb2013c75da9794f
+  SwiftyRSA: 8c6dd1ea7db1b8dc4fb517a202f88bb1354bc2c6
 
 PODFILE CHECKSUM: cd84288959657b4a066f8c4ff389598f4e79136e
 

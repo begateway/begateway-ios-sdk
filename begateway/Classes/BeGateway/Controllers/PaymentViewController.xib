@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentViewController" customModule="begateway_Example" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentViewController" customModule="begateway" customModuleProvider="target">
             <connections>
                 <outlet property="cardNumberLabel" destination="oRT-ss-TXg" id="iHS-Sb-j5Q"/>
                 <outlet property="cardNumberTextField" destination="GbK-a2-6af" id="APE-b4-SQW"/>
@@ -170,7 +170,7 @@
                                                         <constraint firstAttribute="height" constant="34" id="o0j-a0-xRW"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>

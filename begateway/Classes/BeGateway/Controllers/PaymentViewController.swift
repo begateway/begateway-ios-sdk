@@ -49,13 +49,17 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.initInterfaceByOptions()
         self.initInterface()
         self.saveDetailsSwitch.isOn = false
         self.localize()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.shared.endIgnoringInteractionEvents()
+    }
     
     private func localize() {
         self.cardNumberLabel.text = BeGateway.instance.options?.titleCardNumber
@@ -184,6 +188,7 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     }
     
     func processPaymentSuccess() {
+        UIApplication.shared.endIgnoringInteractionEvents()
         self.delegate?.processPaymentSuccess()
         self.payButton.isHidden = true
         self.loaderView.isHidden = true
@@ -195,6 +200,7 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     }
     
     func outError(error: String) {
+        UIApplication.shared.endIgnoringInteractionEvents()
         self.delegate?.outError(error: error)
         self.errorLabel.isHidden = false
         self.errorLabel.text = BeGateway.instance.options?.errorTitle ?? error
@@ -207,6 +213,8 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     
     @IBAction func payTouch(_ sender: Any) {
         print("Touch")
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        self.view.isUserInteractionEnabled = false
         
         self.pay(card: RequestPaymentV2CreditCard(
             number: self.cardNumberTextField.text?.replacingOccurrences(of: " ", with: ""),
@@ -361,8 +369,6 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
                 
                 if Int(substring) ?? 0 < Int(yearLastDigital) ?? 0 {
                     newString = newString[0..<3] + yearLastDigital
-                } else if Int(substring) ?? 0 > (Int(yearLastDigital) ?? 9999 + 5) {
-                    newString = newString[0..<3] + String((Int(yearLastDigital) ?? 9999) + 5)
                 }
             }
             

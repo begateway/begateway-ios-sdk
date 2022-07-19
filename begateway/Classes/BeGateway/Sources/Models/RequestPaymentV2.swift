@@ -52,7 +52,7 @@ struct RequestPaymentV2CreditCard: Codable {
         
         if let num = eNumber.message, let ver = eVerificationValue.message,
            let hol = eHolder.message, let mon = eExpMonth.message, let year = eExpYear.message, let save = card.saveCard {
-            return (RequestPaymentV2CreditCard(number: num, verificationValue: ver, expMonth: mon, expYear: year, holder: hol, token: nil,saveCard: save), nil)
+            return (RequestPaymentV2CreditCard(number: num, verificationValue: ver, expMonth: mon, expYear: year, holder: hol, token: nil, saveCard: save), nil)
         }
         
         return (nil, nil)

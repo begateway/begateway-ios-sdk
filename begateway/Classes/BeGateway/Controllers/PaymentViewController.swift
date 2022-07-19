@@ -42,6 +42,7 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     @IBOutlet weak var successImageView: UIImageView!
     
     weak var delegate: PaymentBasicProtocol?
+    var cardToken: String?
     
     var isSaveCard: Bool = false
     var currentTypeCard: CardTypePattern? = nil
@@ -53,6 +54,10 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
         self.initInterface()
         self.saveDetailsSwitch.isOn = false
         self.localize()
+        
+        if self.cardToken != nil {
+            self.payTouch(self.payButton ?? self)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -134,10 +139,13 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
         }
         
         
+        
+        
 //        self.cardNumberTextField.becomeFirstResponder()
         
         //        for test
         if let card = BeGateway.instance.request?.card{
+            self.cardToken = card.cardToken
             self.cardNumberTextField.text = card.number
             self.expireDateTextField.text = card.date
             self.cvcTextField.text = card.verificationValue
@@ -216,15 +224,28 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
         UIApplication.shared.beginIgnoringInteractionEvents()
         self.view.isUserInteractionEnabled = false
         
-        self.pay(card: RequestPaymentV2CreditCard(
-            number: self.cardNumberTextField.text?.replacingOccurrences(of: " ", with: ""),
-            verificationValue: self.cvcTextField.text,
-            expMonth: self.expireDateTextField.text != nil ? self.expireDateTextField.text![0..<2] : nil,
-            expYear: self.expireDateTextField.text != nil ? "20" + self.expireDateTextField.text![3..<5] : nil,
-            holder: self.nameOnCardTextField.text,
-            token: nil,
-            saveCard: self.isSaveCard
-        ), isSaveCard: self.isSaveCard, tokenForRequest: self.tokenForRequest)
+        if self.cardToken != nil {
+            self.pay(card: RequestPaymentV2CreditCard(
+                number: nil,
+                verificationValue: nil,
+                expMonth: nil,
+                expYear: nil,
+                holder: nil,
+                token: self.cardToken,
+                saveCard: self.isSaveCard
+            ), isSaveCard: self.isSaveCard, tokenForRequest: self.tokenForRequest)
+        } else {
+            self.pay(card: RequestPaymentV2CreditCard(
+                number: self.cardNumberTextField.text?.replacingOccurrences(of: " ", with: ""),
+                verificationValue: self.cvcTextField.text,
+                expMonth: self.expireDateTextField.text != nil ? self.expireDateTextField.text![0..<2] : nil,
+                expYear: self.expireDateTextField.text != nil ? "20" + self.expireDateTextField.text![3..<5] : nil,
+                holder: self.nameOnCardTextField.text,
+                token: nil,
+                saveCard: self.isSaveCard
+            ), isSaveCard: self.isSaveCard, tokenForRequest: self.tokenForRequest)
+        }
+        
     }
     
     // MARK:: UITextField Delegates

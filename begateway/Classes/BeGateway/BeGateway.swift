@@ -338,6 +338,16 @@ public class BeGateway {
         }
     }
     
+    public func payByCardToken(token : String, rootController: UIViewController, request: BeGatewayRequest, completionHandler: ((BeGatewayCard) -> Void)?, failureHandler:((String) -> Void)?) {
+        
+        self.initRequest(request: request, completionHandler: completionHandler, failureHandler: failureHandler)
+        let bundle = Bundle(for: type(of: self))
+        
+        let controller = PayByCardTokenViewController.loadFromNib(bundle)
+        controller.cardToken = request.card?.cardToken
+        self.presentController(controller, rootController: rootController, sizes: [.fixed(250.0)])
+    }
+    
     public func payByToken(token: String, rootController: UIViewController, request: BeGatewayRequest, completionHandler: ((BeGatewayCard) -> Void)?, failureHandler:((String) -> Void)?) {
         
         self.initRequest(request: request, completionHandler: completionHandler, failureHandler: failureHandler)

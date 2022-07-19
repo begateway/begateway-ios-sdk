@@ -16,13 +16,15 @@ public struct BeGatewayCard {
 public struct BeGatewayRequestCard{
     public let number, verificationValue, expMonth, expYear: String?
     public let holder: String?
+    public let cardToken: String?
     
-    public init(number: String?, verificationValue: String?, expMonth: String?, expYear: String?, holder: String?) {
+    public init(number: String?, verificationValue: String?, expMonth: String?, expYear: String?, holder: String?, cardToken: String?) {
         self.number = number
         self.verificationValue = verificationValue
         self.expYear = expYear
         self.expMonth = expMonth
         self.holder = holder
+        self.cardToken = cardToken
     }
     
     public var date: String? {

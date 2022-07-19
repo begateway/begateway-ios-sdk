@@ -121,7 +121,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
                         verificationValue: "123",
                         expMonth: "02",
                         expYear: "25",
-                        holder: "Ivan Ivanov"
+                        holder: "Ivan Ivanov",
+                        cardToken: nil
                     )
                 )
             }
@@ -275,12 +276,29 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     
     @IBAction func touchPayWithToken(_ sender: Any) {
         self.regeneratePubKey()
+        if self.card?.cardToken != nil {
+            BeGateway.instance.payByCardToken(token: self.tokenTextView.text, rootController: self, request: BeGatewayRequest(
+                amount: Double(self.valueTextField.text ?? "0.0") ?? 0.0,
+                currency: self.currencyTextField.text ?? "USD",
+                requestDescription: "Test request",
+                trackingID: "1000000-1",
+                card: self.card
+            ), completionHandler: {
+                card in
+                print(card)
+                self.showSuccessAlert()
+                self.dropToken()
+            }, failureHandler: {error in
+                self.showFailureAlert(error: error)
+                self.dropToken()
+                print(error)
+            })
+        } else {
         BeGateway.instance.getStatus(token: self.tokenTextView.text, completionHandler: { token in
             
             if let language = token?.checkout?.settings?.language {
                 BeGateway.instance.options?.language = language
             }
-            
             
             let toggle = token?.checkout?.settings?.saveCardToggle?.customerContract ?? false
             BeGateway.instance.options?.isToogleSaveCard = !toggle
@@ -310,7 +328,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
             self.showFailureAlert(error: error)
             print(error)
         }
-        
+        }
     }
     
     @IBAction func touchRemoveAll(_ sender: Any) {
@@ -356,17 +374,27 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
                 verificationValue: "123",
                 expMonth: "02",
                 expYear: "25",
-                holder: "Ivan Ivanov"
+                holder: "Ivan Ivanov",
+                cardToken: nil
             )
         } else {
             BeGateway.instance.options?.clientPubKey =  "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvextn45qf3NiNzqBYXMvcaSFlgoYE/LDuDDHtNNM4iWJP7BvjBkPcZu9zAfo5IiMxl660r+1E4PYWwr0iKSQ8+7C/WcSYwP8WlQVZH+2KtPmJgkPcBovz3/aZrQpj6krcKLklihg3Vs++TtXAbpCCbhIq0DJ3T+khttBqTGD+2x2vOC68xPgMwvnwQinfhaHEQNbtEcWWXPw9LYuOTuCwKlqijAEds4LgKSisubqrkRw/HbAKVfa659l5DJ8QuXctjp3Ic+7P2TC+d+rcfylxKw9c61ykHS1ggI/N+/KmEDVJv1wHvdy7dnT0D/PhArnCB37ZDAYErv/NMADz2/LuQIDAQAB"
             
+//            self.card = BeGatewayRequestCard(
+//                number: "4200000000000000",
+//                verificationValue: "123",
+//                expMonth: "02",
+//                expYear: "23",
+//                holder: "WRR",
+//                cardToken: "513cb919-8229-4e2f-82de-b1e360d8b319"
+//            )
             self.card = BeGatewayRequestCard(
-                number: "4200000000000000",
-                verificationValue: "123",
-                expMonth: "02",
-                expYear: "23",
-                holder: "WRR"
+                number: nil,
+                verificationValue: nil,
+                expMonth: nil,
+                expYear: nil,
+                holder: nil,
+                cardToken: "513cb919-8229-4e2f-82de-b1e360d8b319"
             )
         }
     }

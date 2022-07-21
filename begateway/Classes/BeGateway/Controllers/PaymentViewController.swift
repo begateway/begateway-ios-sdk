@@ -214,7 +214,6 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     @IBAction func payTouch(_ sender: Any) {
         print("Touch")
         UIApplication.shared.beginIgnoringInteractionEvents()
-        self.view.isUserInteractionEnabled = false
         
         self.pay(card: RequestPaymentV2CreditCard(
             number: self.cardNumberTextField.text?.replacingOccurrences(of: " ", with: ""),

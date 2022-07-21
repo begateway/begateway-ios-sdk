@@ -67,7 +67,7 @@
 		7314EC016CF2B4F8C89BC734D349EA61 /* SheetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8D781CA9BA1A266FCEBE0AF765578F /* SheetSize.swift */; };
 		75676F1FB9D5CFA752086C646A671E97 /* BeGateway.swift in Resources */ = {isa = PBXBuildFile; fileRef = 6A1AC20D782B7D1C6AEC012607035B41 /* BeGateway.swift */; };
 		780212C96946078DDAA20526887CA237 /* MainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4708F6332B5DAC258568CAA6FEA51AB /* MainHelper.swift */; };
-		78E20CDD288736500021B679 /* BGEncyption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E20CDC288736500021B679 /* BGEncyption.swift */; };
+		78F5FC16288927E1002A9661 /* BGEncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F5FC15288927E1002A9661 /* BGEncryption.swift */; };
 		7C0DDFBD5FC7A601B6DBDA8F479435D1 /* ApplePayModuleConstants.swift in Resources */ = {isa = PBXBuildFile; fileRef = 948DEE8DA0C9839FAC9950DF516861B8 /* ApplePayModuleConstants.swift */; };
 		7CD9C8AC8CDEC8B09794E808B107CD41 /* SheetSize.swift in Resources */ = {isa = PBXBuildFile; fileRef = 3D8D781CA9BA1A266FCEBE0AF765578F /* SheetSize.swift */; };
 		7CEFAB923E0D671D38397C975E67261C /* BeGatewaySourceApi.swift in Resources */ = {isa = PBXBuildFile; fileRef = 94027D5370D698A5A856403928164374 /* BeGatewaySourceApi.swift */; };
@@ -250,6 +250,7 @@
 		771EE9796225981AE3EF7D947BEA6C7D /* Pods-begateway_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-begateway_Tests-Info.plist"; sourceTree = "<group>"; };
 		783605D98F8C17C061E15C8B2EEFE833 /* NSData+SHA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+SHA.h"; path = "Source/NSData+SHA.h"; sourceTree = "<group>"; };
 		78E20CDC288736500021B679 /* BGEncyption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BGEncyption.swift; path = ../../../Encryption/BGEncyption.swift; sourceTree = "<group>"; };
+		78F5FC15288927E1002A9661 /* BGEncryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGEncryption.swift; sourceTree = "<group>"; };
 		7A8FA7E86E27C5D1A23A78EBE06C29E9 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		7FA8F96AEFAC05B279BBAAE672840AC9 /* UIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		80FB9A671CE46CA48946C2D8DD065745 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -545,6 +546,14 @@
 			path = Encryption;
 			sourceTree = "<group>";
 		};
+		78F5FC14288927D2002A9661 /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				78F5FC15288927E1002A9661 /* BGEncryption.swift */,
+			);
+			path = Encryption;
+			sourceTree = "<group>";
+		};
 		79BD26A22CD893A7AAB10833B0AB3723 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -658,6 +667,7 @@
 		AFF55BBEC37CA2BB1EDBA7C2E2A0E58F /* BeGateway */ = {
 			isa = PBXGroup;
 			children = (
+				78F5FC14288927D2002A9661 /* Encryption */,
 				287BA4F64B2332EE249F1A8C4DDAB638 /* ApplePaymentModule.swift */,
 				6A1AC20D782B7D1C6AEC012607035B41 /* BeGateway.swift */,
 				9809E6F54329861E09D597BB372338BA /* BeGatewayOptions.swift */,
@@ -1066,6 +1076,7 @@
 				C1B6F5BBA6BE231F5A3FEEAE1C6AC868 /* CheckoutsResponseStatusV2.swift in Sources */,
 				FAD81FEB216AABE387FDF253D740196B /* CheckoutsResponseV2.swift in Sources */,
 				9AC05894240EB952B292CF36519D657D /* CurrencyJson.swift in Sources */,
+				78F5FC16288927E1002A9661 /* BGEncryption.swift in Sources */,
 				4A87D36EC27C16BC0C7D5944B6CEFAF6 /* CurrencyMultiplayerChecker.swift in Sources */,
 				C8B9529D543A76F8868C0F9099CEC129 /* DataHelper.swift in Sources */,
 				4E1409BFF437E70458265DB9C0ED0DD0 /* InitialTouchPanGestureRecognizer.swift in Sources */,
@@ -1093,7 +1104,6 @@
 				6EADEEF19756463953666AFEA7A2884B /* String.swift in Sources */,
 				283372425E876F1C68F01E80A2192C26 /* TransactionStruct.swift in Sources */,
 				B9CE417627B7C6275083445B0D5E01B6 /* UIColorExtension.swift in Sources */,
-				78E20CDD288736500021B679 /* BGEncyption.swift in Sources */,
 				0C441454156989FC62B07F057640BE09 /* UINibView.swift in Sources */,
 				1C00464D51390DAF49DD37FCD2DE0C4A /* UITableView.swift in Sources */,
 				4A0A2F917CBFF3C308911516D00D1B43 /* UITableViewCell.swift in Sources */,

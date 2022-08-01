@@ -252,8 +252,8 @@ extension PaymentBasicProtocol {
             payButton?.setTitleColor(UIColor.white, for: .normal)
             payButton?.layer.cornerRadius = 5.0
             
-            if options.colorTitle != nil {
-                payButton?.setTitleColor(options.colorTitle, for: .normal)
+            if options.colorButton != nil {
+                payButton?.setTitleColor(options.colorButton, for: .normal)
             }
             
             if options.fontButton != nil {

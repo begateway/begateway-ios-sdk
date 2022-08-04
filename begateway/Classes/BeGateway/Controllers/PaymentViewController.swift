@@ -43,6 +43,11 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     
     weak var delegate: PaymentBasicProtocol?
     
+    let cardError = "card_validation_failed"
+    let cvcError = "cvc_validation_failed"
+    let nameError = "name_validation_failed"
+    let dateError = "date_validatin_failed"
+    
     var isSaveCard: Bool = false
     var currentTypeCard: CardTypePattern? = nil
     var tokenForRequest: String? = nil
@@ -213,17 +218,20 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     
     @IBAction func payTouch(_ sender: Any) {
         print("Touch")
-        UIApplication.shared.beginIgnoringInteractionEvents()
         
-        self.pay(card: RequestPaymentV2CreditCard(
-            number: self.cardNumberTextField.text?.replacingOccurrences(of: " ", with: ""),
-            verificationValue: self.cvcTextField.text,
-            expMonth: self.expireDateTextField.text != nil ? self.expireDateTextField.text![0..<2] : nil,
-            expYear: self.expireDateTextField.text != nil ? "20" + self.expireDateTextField.text![3..<5] : nil,
-            holder: self.nameOnCardTextField.text,
-            token: nil,
-            saveCard: self.isSaveCard
-        ), isSaveCard: self.isSaveCard, tokenForRequest: self.tokenForRequest)
+        if self.validateFields() == false {
+            UIApplication.shared.beginIgnoringInteractionEvents()
+            
+            self.pay(card: RequestPaymentV2CreditCard(
+                number: self.cardNumberTextField.text?.replacingOccurrences(of: " ", with: ""),
+                verificationValue: self.cvcTextField.text,
+                expMonth: self.expireDateTextField.text != nil ? self.expireDateTextField.text![0..<2] : nil,
+                expYear: self.expireDateTextField.text != nil ? "20" + self.expireDateTextField.text![3..<5] : nil,
+                holder: self.nameOnCardTextField.text,
+                token: nil,
+                saveCard: self.isSaveCard
+            ), isSaveCard: self.isSaveCard, tokenForRequest: self.tokenForRequest)
+        }
     }
     
     // MARK:: UITextField Delegates
@@ -453,6 +461,58 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     
     func initStyleForCardNumber() {
         
+    }
+    
+    
+    private func validateFields() -> Bool {
+        
+        let isCardNumberValid = MainHelper.validateCardNumber(cardNumber: self.cardNumberTextField.text ?? "")
+        
+        let isCVCvalid = MainHelper.validateCVC(cvcCode: self.cvcTextField.text ?? "", cardNumber: self.cardNumberTextField.text ?? "")
+        
+        let isUserNameValid = MainHelper.validateName(name: self.nameOnCardTextField.text ?? "")
+        
+        let isDateValid = self.expireDateTextField.text?.count == 5
+        
+        self.updateErrorLabel(cardValid: isCardNumberValid, cvcValid: isCVCvalid, userNameValid: isUserNameValid, dateValid: isDateValid)
+        
+        
+        
+        let array = [isCardNumberValid, isCVCvalid, isUserNameValid, isDateValid]
+        
+        
+        return array.contains(false)
+    }
+    
+    private func updateErrorLabel(cardValid: Bool, cvcValid: Bool, userNameValid: Bool, dateValid: Bool) {
+        var resultString = ""
+        
+        if cardValid == false {
+            resultString.append(LocalizedString.LocalizedString(value:cardError))
+            resultString.append("\n")
+        }
+        
+        if cvcValid == false {
+            resultString.append(LocalizedString.LocalizedString(value:cvcError))
+            resultString.append("\n")
+        }
+        
+        if userNameValid == false {
+            resultString.append(LocalizedString.LocalizedString(value:nameError))
+            resultString.append("\n")
+        }
+        
+        if dateValid == false {
+            resultString.append(LocalizedString.LocalizedString(value:dateError))
+            resultString.append("\n")
+        }
+        
+        if resultString != "" {
+            self.errorLabel.text = resultString
+            self.errorLabel.isHidden = false
+        } else {
+            self.errorLabel.isHidden = true
+        }
     }
     
 }

@@ -45,3 +45,8 @@
 "From Photo"="Scan by camera";
 "Scan by NFC"="Scan by NFC";
 "Please wait"="Please wait";
+
+"card_validation_failed" = "Card validation failed";
+"cvc_validation_failed" = "CVC code validation failed";
+"name_validation_failed" = "Name validation failed";
+"date_validatin_failed" = "Date validation failed";

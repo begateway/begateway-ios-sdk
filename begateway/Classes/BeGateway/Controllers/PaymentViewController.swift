@@ -490,21 +490,37 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
         if cardValid == false {
             resultString.append(LocalizedString.LocalizedString(value:cardError))
             resultString.append("\n")
+            self.cardNumberTextField.layer.borderColor = UIColor.red.cgColor
+            self.cardNumberTextField.layer.borderWidth = 1.0
+        } else {
+            self.cardNumberTextField.layer.borderColor = UIColor.clear.cgColor
         }
         
         if cvcValid == false {
             resultString.append(LocalizedString.LocalizedString(value:cvcError))
             resultString.append("\n")
+            self.cvcTextField.layer.borderColor = UIColor.red.cgColor
+            self.cvcTextField.layer.borderWidth = 1.0
+        } else {
+            self.cvcTextField.layer.borderColor = UIColor.clear.cgColor
         }
         
         if userNameValid == false {
             resultString.append(LocalizedString.LocalizedString(value:nameError))
             resultString.append("\n")
+            self.nameOnCardTextField.layer.borderColor = UIColor.red.cgColor
+            self.nameOnCardTextField.layer.borderWidth = 1.0
+        } else {
+            self.nameOnCardTextField.layer.borderColor = UIColor.clear.cgColor
         }
         
         if dateValid == false {
             resultString.append(LocalizedString.LocalizedString(value:dateError))
             resultString.append("\n")
+            self.expireDateTextField.layer.borderColor = UIColor.red.cgColor
+            self.expireDateTextField.layer.borderWidth = 1.0
+        } else {
+            self.expireDateTextField.layer.borderColor = UIColor.clear.cgColor
         }
         
         if resultString != "" {

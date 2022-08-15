@@ -81,7 +81,8 @@ number: "2201382000000013",
 verificationValue: "123",
 expMonth: "02",
 expYear: "23",
-holder: "WRR"
+holder: "WRR",
+cardToken: nil,
 )
 ```
 
@@ -104,6 +105,35 @@ print(card)
 print(error)
 })
 ```
+
+Pay by <b>card token</b>
+```swift
+self.card = BeGatewayRequestCard(
+number: nil,
+verificationValue: nil,
+expMonth: nil,
+expYear: nil,
+holder: nil,
+cardToken: "YourCardToken"
+)
+```
+
+Payment by card token in <b>background</b>
+```swift
+        if self.card?.cardToken != nil { // "YourCardToken"
+            BeGateway.instance.payByCardTokenInBackground( rootController: self, request: BeGatewayRequest(
+                amount: Double(self.valueTextField.text ?? "0.0") ?? 0.0,
+                currency: self.currencyTextField.text ?? "USD",
+                requestDescription: "Test request",
+                trackingID: "1000000-1",
+                card: self.card
+            ), completionHandler: {
+               //Success handler
+            }, failureHandler: {error in
+                //Failure handler
+            })
+        }
+
 
 If gateway return success you can use object BeGatewayCard
 

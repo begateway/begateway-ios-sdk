@@ -8,6 +8,18 @@
 import Foundation
 
 class PayByCardTokenViewController: PaymentBasicViewController, PaymentBasicProtocol {
+    func processPayment(isActive: Bool) {
+        //Empty implementation for backgound processing
+    }
+    
+    func processPaymentSuccess() {
+        //Empty implementation for backgound processing
+    }
+    
+    func outError(error: String) {
+        //Empty implementation for backgound processing
+    }
+    
     
     weak var delegate: PaymentBasicProtocol?
     
@@ -21,41 +33,22 @@ class PayByCardTokenViewController: PaymentBasicViewController, PaymentBasicProt
     
     var cardToken: String?
     
-    func processPayment(isActive: Bool) {
-        if isActive {
-            loaderActiveIndicator.startAnimating()
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
-        self.pay()
+        self.payWithCardToken()
     }
     
     private func setupView() {
         errorLabel.isHidden = true
     }
-    private func pay() {
+    
+    public func payWithCardToken() {
         if self.cardToken != nil {
             self.pay(card: RequestPaymentV2CreditCard(number: nil, verificationValue: nil, expMonth: nil, expYear: nil, holder: nil, token: self.cardToken, saveCard: nil))
         } else {
             self.errorLabel.text = LocalizedString.LocalizedString(value: "Sorry, card without token")
             self.errorLabel.isHidden = false
         }
-    }
-    
-    func processPaymentSuccess() {
-        loaderActiveIndicator.stopAnimating()
-        loaderView.isHidden = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.dismiss(animated: true)
-        }
-    }
-    
-    func outError(error: String) {
-        loaderActiveIndicator.stopAnimating()
-        errorLabel.isHidden = false
-        errorLabel.text = error
     }
 }

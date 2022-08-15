@@ -276,24 +276,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     
     @IBAction func touchPayWithToken(_ sender: Any) {
         self.regeneratePubKey()
-        if self.card?.cardToken != nil {
-            BeGateway.instance.payByCardTokenInBackground( rootController: self, request: BeGatewayRequest(
-                amount: Double(self.valueTextField.text ?? "0.0") ?? 0.0,
-                currency: self.currencyTextField.text ?? "USD",
-                requestDescription: "Test request",
-                trackingID: "1000000-1",
-                card: self.card
-            ), completionHandler: {
-                card in
-                print(card)
-                self.showSuccessAlert()
-                self.dropToken()
-            }, failureHandler: {error in
-                self.showFailureAlert(error: error)
-                self.dropToken()
-                print(error)
-            })
-        } else {
         BeGateway.instance.getStatus(token: self.tokenTextView.text, completionHandler: { token in
             
             if let language = token?.checkout?.settings?.language {
@@ -327,7 +309,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         }) { error in
             self.showFailureAlert(error: error)
             print(error)
-        }
         }
     }
     
@@ -380,7 +361,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         } else {
             BeGateway.instance.options?.clientPubKey =  "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvextn45qf3NiNzqBYXMvcaSFlgoYE/LDuDDHtNNM4iWJP7BvjBkPcZu9zAfo5IiMxl660r+1E4PYWwr0iKSQ8+7C/WcSYwP8WlQVZH+2KtPmJgkPcBovz3/aZrQpj6krcKLklihg3Vs++TtXAbpCCbhIq0DJ3T+khttBqTGD+2x2vOC68xPgMwvnwQinfhaHEQNbtEcWWXPw9LYuOTuCwKlqijAEds4LgKSisubqrkRw/HbAKVfa659l5DJ8QuXctjp3Ic+7P2TC+d+rcfylxKw9c61ykHS1ggI/N+/KmEDVJv1wHvdy7dnT0D/PhArnCB37ZDAYErv/NMADz2/LuQIDAQAB"
             
-//            self.card = BeGatewayRequestCard(
+//            self.card = BeGatewayRequestCard( //Pay by card token
 //                number: nil,
 //                verificationValue: nil,
 //                expMonth: nil,
@@ -397,7 +378,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
                 holder: "WRR",
                 cardToken: nil
             )
-
         }
     }
     

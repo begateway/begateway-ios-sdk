@@ -182,21 +182,14 @@ Default <b>Apple Pay</b> with input:
 You can pay with  <b>TOKEN</b>
 ```swift
 BeGateway.instance.payByToken(
-token: TOKEN,
-rootController: self,
-request: BeGatewayRequest(
-amount: 100.0,
-currency: "USD",
-requestDescription: "Test request",
-trackingID: "1000000-1",
-card: card
-),
-completionHandler: {
-card in
-print(card)
-}, failureHandler: {error in
-print(error)
-})
+    token: PAYMENTTOKEN,
+    card : CARD , rootController: self,
+    completionHandler: {
+        card in
+        print(card)
+    }, failureHandler: { error in
+        print(error)
+    })
 ```
 
 ### Other functions

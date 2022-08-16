@@ -285,27 +285,22 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
             let toggle = token?.checkout?.settings?.saveCardToggle?.customerContract ?? false
             BeGateway.instance.options?.isToogleSaveCard = !toggle
         
+            if let currentCard = self.card {
+                BeGateway.instance.payByToken(
+                    token: self.tokenTextView.text,
+                    card : currentCard , rootController: self,
+                    completionHandler: {
+                        card in
+                        print(card)
+                        self.showSuccessAlert()
+                        self.dropToken()
+                    }, failureHandler: {error in
+                        self.showFailureAlert(error: error)
+                        self.dropToken()
+                        print(error)
+                    })
+            }
             
-            BeGateway.instance.payByToken(
-                token: self.tokenTextView.text,
-                rootController: self,
-                request: BeGatewayRequest(
-                    amount: Double(self.valueTextField.text ?? "0.0") ?? 0.0,
-                    currency: self.currencyTextField.text ?? "USD",
-                    requestDescription: "Test request",
-                    trackingID: "1000000-1",
-                    card: self.card
-                ),
-                completionHandler: {
-                    card in
-                    print(card)
-                    self.showSuccessAlert()
-                    self.dropToken()
-                }, failureHandler: {error in
-                    self.showFailureAlert(error: error)
-                    self.dropToken()
-                    print(error)
-                })
         }) { error in
             self.showFailureAlert(error: error)
             print(error)

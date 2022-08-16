@@ -347,9 +347,11 @@ public class BeGateway {
         controller.payWithCardToken()
     }
     
-    public func payByToken(token: String, rootController: UIViewController, request: BeGatewayRequest, completionHandler: ((BeGatewayCard) -> Void)?, failureHandler:((String) -> Void)?) {
+    public func payByToken(token: String, card : BeGatewayRequestCard, rootController: UIViewController, completionHandler: ((BeGatewayCard) -> Void)?, failureHandler:((String) -> Void)?) {
         
+        let request = BeGatewayRequest.init(amount: 1.0, currency: "U", requestDescription: "", trackingID: "", card: card) //Payment token validation
         self.initRequest(request: request, completionHandler: completionHandler, failureHandler: failureHandler)
+        
         let bundle = Bundle(for: type(of: self))
         
         let controller = PaymentViewController.loadFromNib(bundle)

@@ -44,7 +44,7 @@ extension PaymentBasicProtocol {
         print("Payment common")
         
         if let request = BeGateway.instance.request, !request.isEmpty {
-            //self.processPayment(isActive: true)
+            self.processPayment(isActive: true)
             
             if tokenForRequest == nil {
                 self.getBasicSourceApi().checkout(request: request, completionHandler: {result in

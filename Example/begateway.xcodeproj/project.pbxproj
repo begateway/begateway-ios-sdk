@@ -493,6 +493,7 @@
 				CODE_SIGN_ENTITLEMENTS = begateway_Example.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 6DCVYJ4AJZ;
 				INFOPLIST_FILE = begateway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -513,6 +514,7 @@
 				CODE_SIGN_ENTITLEMENTS = begateway_Example.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 6DCVYJ4AJZ;
 				INFOPLIST_FILE = begateway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

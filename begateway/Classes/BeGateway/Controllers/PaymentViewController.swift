@@ -155,11 +155,11 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
             self.isSaveCard = false
         }
         
+        let textFieldArray: [UITextField] = [self.cvcTextField, self.nameOnCardTextField, self.expireDateTextField, self.cardNumberTextField]
         if let tfbgColor = BeGateway.instance.options?.textFieldBackgroundColor {
-            self.cvcTextField.backgroundColor = tfbgColor
-            self.nameOnCardTextField.backgroundColor = tfbgColor
-            self.expireDateTextField.backgroundColor = tfbgColor
-            self.cardNumberTextField.backgroundColor = tfbgColor
+            for textField in textFieldArray {
+                textField.backgroundColor = tfbgColor
+            }
         }
         
         
@@ -410,6 +410,16 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
             self.validateRequiredFields()
             return false
             
+        case self.cvcTextField:
+            guard let textFieldText = textField.text,
+                let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                    return false
+            }
+            let substringToReplace = textFieldText[rangeOfTextToReplace]
+            let count = textFieldText.count - substringToReplace.count + string.count
+            let maxCvcLength = self.maxCVCLength()
+            return count <= maxCvcLength
+            
         default:
             if textField != self.nameOnCardTextField {
                 let allowedCharacters = CharacterSet.decimalDigits
@@ -426,6 +436,18 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
         
         self.validateRequiredFields()
         return true;
+    }
+    
+    private func maxCVCLength() -> Int {
+        var maxLenght = 4
+        for pattern in cardPatterns {
+            for maxLen in pattern.cvcLength {
+                if maxLen > maxLenght {
+                    maxLenght = maxLen
+                }
+            }
+        }
+        return maxLenght
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

@@ -180,10 +180,10 @@ Default <b>Apple Pay</b> with input:
             }
 ```
 You can pay with  <b>TOKEN</b>
-```swift
+swift
 BeGateway.instance.payByToken(
-    token: PAYMENTTOKEN,  // String() - Your Payment Token here
-    card : CARD , rootController: self, //BeGatewayRequestCard() - your card here 
+    token: PAYMENTTOKEN,  
+    card : CARD , rootController: self, 
     completionHandler: {
         card in
         print(card)
@@ -191,6 +191,19 @@ BeGateway.instance.payByToken(
         print(error)
     })
 ```
+Where PAYMENTTOKEN is a string value.
+CARD - object of BeGatewayRequestCard instance.
+
+Could be initiated with:
+self.number = number - Card number
+self.verificationValue = verificationValue - CVC Code
+self.expYear = expYear - Year Expiration
+self.expMonth = expMonth - Month Expiration
+self.holder = holder - Card Holder Name
+OR
+self.cardToken = cardToken - For Card Token
+
+If no previously saved card - empty object BeGatewayRequestCard() could be used.
 
 ### Other functions
 

@@ -51,7 +51,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     var currentPaymentToken: String?
     var card: BeGatewayRequestCard?
     
-    let applepaybutton = PKPaymentButton(paymentButtonType: .inStore, paymentButtonStyle: .whiteOutline)
+    var applepaybutton = PKPaymentButton(paymentButtonType: .inStore, paymentButtonStyle: .whiteOutline)
     var screenWidth = UIScreen.main.bounds.width
     var spacing = 15
     
@@ -60,6 +60,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.regeneratePubKey()
+        self.setupApplePayButton()
     }
     
     private func regeneratePubKey() {
@@ -77,13 +78,22 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         self.changePubKey(is3DSecure: self.smsSwcureSwitch.isOn)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupToHideKeyboardOnTapOnView()
-        
+    private func setupApplePayButton() {
+        if #available(iOS 12.0, *) {
+            if self.traitCollection.userInterfaceStyle == .dark {
+                self.applepaybutton = PKPaymentButton(paymentButtonType: .inStore, paymentButtonStyle: .black)
+            } else {
+                self.applepaybutton = PKPaymentButton(paymentButtonType: .inStore, paymentButtonStyle: .whiteOutline)
+            }
+        }
         applepaybutton.frame = CGRect.init(x: 15, y: Int(valueTextField.frame.height) + 95, width: Int(screenWidth) - (spacing * 2), height: 34)
         scrollView.addSubview(applepaybutton)
         applepaybutton.addTarget(self, action: #selector(applePayAction), for: .touchUpInside)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupToHideKeyboardOnTapOnView()
         
         //        default init
         self.valueTextField.text = String(100)

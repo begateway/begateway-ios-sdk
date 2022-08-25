@@ -17,23 +17,28 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     @IBOutlet weak var cardNumberLabel: UILabel!
     @IBOutlet weak var cardNumberTextField: UITextField!
     @IBOutlet weak var creditCardImageView: UIImageView!
+    @IBOutlet weak var cardNumberErrorLabel: UILabel!
     
     @IBOutlet weak var dateView: UIView!
     @IBOutlet weak var expireDateLabel: UILabel!
     @IBOutlet weak var expireDateTextField: UITextField!
+    @IBOutlet weak var expireDateErrorLabel: UILabel!
     
     @IBOutlet weak var cvcLabel: UILabel!
     @IBOutlet weak var cvcTextField: UITextField!
+    @IBOutlet weak var cvcErrorLabel: UILabel!
     
     @IBOutlet weak var nameOnCardView: UIView!
     @IBOutlet weak var nameOnCardLabel: UILabel!
     @IBOutlet weak var nameOnCardTextField: UITextField!
+    @IBOutlet weak var nameOnCardErrorLabel: UILabel!
     
     @IBOutlet weak var saveDetailsView: UIView!
     @IBOutlet weak var saveDetailsLabel: UILabel!
     @IBOutlet weak var saveDetailsSwitch: UISwitch!
     
     @IBOutlet weak var payButton: UIButton!
+    @IBOutlet weak var cvcDateErrorView: UIView!
     
     @IBOutlet weak var loaderView: UIView!
     @IBOutlet weak var loaderActiveIndicator: UIActivityIndicatorView!
@@ -41,13 +46,19 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     @IBOutlet weak var viewSuccess: UIView!
     @IBOutlet weak var successImageView: UIImageView!
     
+    @IBOutlet weak var mainStackView: UIStackView!
+    
     weak var delegate: PaymentBasicProtocol?
     var cardToken: String?
     
-    let cardError = "card_validation_failed"
-    let cvcError = "cvc_validation_failed"
-    let nameError = "name_validation_failed"
-    let dateError = "date_validatin_failed"
+    let cardError = "begateway_card_number_invalid"
+    let cvcError = "begateway_cvv_invalid"
+    let nameError = "begateway_cardholder_name_required"
+    let dateError = "begateway_expiration_invalid"
+    let cvcString = "begateway_cvc"
+    
+    let defaultOffster = 20.0
+    let shortenOffset = 5.0
     
     var isSaveCard: Bool = false
     var currentTypeCard: CardTypePattern? = nil
@@ -63,6 +74,7 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
         if self.cardToken != nil {
             self.payTouch(self.payButton ?? self)
         }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -493,50 +505,57 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     }
     
     private func updateErrorLabel(cardValid: Bool, cvcValid: Bool, userNameValid: Bool, dateValid: Bool) {
-        var resultString = ""
         
         if cardValid == false {
-            resultString.append(LocalizedString.LocalizedString(value:cardError))
-            resultString.append("\n")
+            cardNumberErrorLabel.text = LocalizedString.LocalizedString(value:cardError)
+            cardNumberErrorLabel.isHidden = false
             self.cardNumberTextField.layer.borderColor = UIColor.red.cgColor
             self.cardNumberTextField.layer.borderWidth = 1.0
+            mainStackView.setCustomSpacing(shortenOffset, after: self.cardNumberView)
         } else {
+            mainStackView.setCustomSpacing(defaultOffster, after: self.cardNumberView)
             self.cardNumberTextField.layer.borderColor = UIColor.clear.cgColor
+            cardNumberErrorLabel.isHidden = true
         }
         
         if cvcValid == false {
-            resultString.append(LocalizedString.LocalizedString(value:cvcError))
-            resultString.append("\n")
+            let localizeString = LocalizedString.LocalizedString(value:cvcError)
+            let formattedString = String(format: localizeString.replacingOccurrences(of: "%s", with: "%@"), LocalizedString.LocalizedString(value:cvcString))
+            self.cvcErrorLabel.text = formattedString
             self.cvcTextField.layer.borderColor = UIColor.red.cgColor
             self.cvcTextField.layer.borderWidth = 1.0
         } else {
+            self.cvcErrorLabel.text = ""
             self.cvcTextField.layer.borderColor = UIColor.clear.cgColor
         }
         
         if userNameValid == false {
-            resultString.append(LocalizedString.LocalizedString(value:nameError))
-            resultString.append("\n")
+            nameOnCardErrorLabel.text = LocalizedString.LocalizedString(value:nameError)
+            nameOnCardErrorLabel.isHidden = false
             self.nameOnCardTextField.layer.borderColor = UIColor.red.cgColor
             self.nameOnCardTextField.layer.borderWidth = 1.0
+            mainStackView.setCustomSpacing(shortenOffset, after: self.nameOnCardView)
         } else {
+            mainStackView.setCustomSpacing(defaultOffster, after: self.nameOnCardView)
             self.nameOnCardTextField.layer.borderColor = UIColor.clear.cgColor
+            nameOnCardErrorLabel.isHidden = true
         }
         
         if dateValid == false {
-            resultString.append(LocalizedString.LocalizedString(value:dateError))
-            resultString.append("\n")
+            self.expireDateErrorLabel.text = LocalizedString.LocalizedString(value:dateError)
             self.expireDateTextField.layer.borderColor = UIColor.red.cgColor
             self.expireDateTextField.layer.borderWidth = 1.0
         } else {
+            self.expireDateErrorLabel.text = ""
             self.expireDateTextField.layer.borderColor = UIColor.clear.cgColor
         }
         
-        if resultString != "" {
-            self.errorLabel.text = resultString
-            self.errorLabel.isHidden = false
-        } else {
-            self.errorLabel.isHidden = true
-        }
+        let needToShowCVCDateView = dateValid == false || cvcValid == false
+        let offset = needToShowCVCDateView ? shortenOffset : defaultOffster
+        
+        mainStackView.setCustomSpacing(offset, after: self.dateView)
+        self.cvcDateErrorView.isHidden = !needToShowCVCDateView
+        
     }
     
 }

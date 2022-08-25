@@ -246,6 +246,9 @@ BeGateway.instance.options?.colorTitleCardNumber: UIColor?
 BeGateway.instance.options?.fontHintCardNumber: UIFont?
 // color for title card number
 BeGateway.instance.options?.colorHintCardNumber: UIColor?
+// font for text fields background color
+BeGateway.instance.options?.textFieldBackgroundColor: UIColor?
+
 
 
 // label expire date

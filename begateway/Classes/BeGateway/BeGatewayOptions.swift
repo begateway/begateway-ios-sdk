@@ -88,6 +88,7 @@ public class BeGatewayOptions {
     public var textColor: UIColor?
     public var hintColor: UIColor?
     public var backgroundColor: UIColor = UIColor.clear
+    public var textFieldBackgroundColor: UIColor?
     
     public var isToogleCardNumber: Bool = false
     public var isToogleExpiryDate: Bool = false

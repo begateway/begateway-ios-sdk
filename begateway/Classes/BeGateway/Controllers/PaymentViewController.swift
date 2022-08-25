@@ -155,6 +155,12 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
             self.isSaveCard = false
         }
         
+        if let tfbgColor = BeGateway.instance.options?.textFieldBackgroundColor {
+            self.cvcTextField.backgroundColor = tfbgColor
+            self.nameOnCardTextField.backgroundColor = tfbgColor
+            self.expireDateTextField.backgroundColor = tfbgColor
+            self.cardNumberTextField.backgroundColor = tfbgColor
+        }
         
         
         

@@ -192,7 +192,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     }
     
     @IBAction func touchSelectBackgroundColor(_ sender: Any) {
-        BeGateway.instance.options?.backgroundColor = BeGateway.instance.options?.backgroundColor == UIColor.blue ? UIColor.white: UIColor.blue
+        if #available(iOS 13.0, *) {
+            BeGateway.instance.options?.backgroundColor = BeGateway.instance.options?.backgroundColor == UIColor.blue ? UIColor.systemBackground: UIColor.blue
+        } else {
+            BeGateway.instance.options?.backgroundColor = BeGateway.instance.options?.backgroundColor == UIColor.blue ? UIColor.white : UIColor.blue
+        }
         
         self.backgroundColorView.backgroundColor = BeGateway.instance.options?.backgroundColor
     }

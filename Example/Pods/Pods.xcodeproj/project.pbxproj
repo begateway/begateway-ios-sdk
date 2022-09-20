@@ -67,6 +67,7 @@
 		7314EC016CF2B4F8C89BC734D349EA61 /* SheetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8D781CA9BA1A266FCEBE0AF765578F /* SheetSize.swift */; };
 		75676F1FB9D5CFA752086C646A671E97 /* BeGateway.swift in Resources */ = {isa = PBXBuildFile; fileRef = 6A1AC20D782B7D1C6AEC012607035B41 /* BeGateway.swift */; };
 		780212C96946078DDAA20526887CA237 /* MainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4708F6332B5DAC258568CAA6FEA51AB /* MainHelper.swift */; };
+		7837658A28D9A74700462D35 /* BrowserInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7837658928D9A74700462D35 /* BrowserInfoProvider.swift */; };
 		787BCA2228AAEBD500515F6D /* PayByCardTokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787BCA2028AAEBD500515F6D /* PayByCardTokenViewController.swift */; };
 		787BCA2328AAEBD500515F6D /* PayByCardTokenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787BCA2128AAEBD500515F6D /* PayByCardTokenViewController.xib */; };
 		78F5FC16288927E1002A9661 /* BGEncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F5FC15288927E1002A9661 /* BGEncryption.swift */; };
@@ -251,6 +252,7 @@
 		75D7C7346560AE77242D88C1B114FD95 /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		771EE9796225981AE3EF7D947BEA6C7D /* Pods-begateway_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-begateway_Tests-Info.plist"; sourceTree = "<group>"; };
 		783605D98F8C17C061E15C8B2EEFE833 /* NSData+SHA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+SHA.h"; path = "Source/NSData+SHA.h"; sourceTree = "<group>"; };
+		7837658928D9A74700462D35 /* BrowserInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserInfoProvider.swift; sourceTree = "<group>"; };
 		787BCA2028AAEBD500515F6D /* PayByCardTokenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayByCardTokenViewController.swift; sourceTree = "<group>"; };
 		787BCA2128AAEBD500515F6D /* PayByCardTokenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayByCardTokenViewController.xib; sourceTree = "<group>"; };
 		78E20CDC288736500021B679 /* BGEncyption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BGEncyption.swift; path = ../../../Encryption/BGEncyption.swift; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 				EA9EA21A7B29F8D15B08B3A5260C9FB0 /* CurrencyMultiplayerChecker.swift */,
 				544F22F029E6C1CB7734944BA4B195BA /* DataHelper.swift */,
 				F4708F6332B5DAC258568CAA6FEA51AB /* MainHelper.swift */,
+				7837658928D9A74700462D35 /* BrowserInfoProvider.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1089,6 +1092,7 @@
 				787BCA2228AAEBD500515F6D /* PayByCardTokenViewController.swift in Sources */,
 				4E1409BFF437E70458265DB9C0ED0DD0 /* InitialTouchPanGestureRecognizer.swift in Sources */,
 				5F65E9D5B802D6F932B90BAA07D4A7EE /* InitialViewController.swift in Sources */,
+				7837658A28D9A74700462D35 /* BrowserInfoProvider.swift in Sources */,
 				85331B29D131DEED499C5C8A6A730A83 /* Localize.swift in Sources */,
 				780212C96946078DDAA20526887CA237 /* MainHelper.swift in Sources */,
 				335068AADA5F509B4F74EABFB0EC7C80 /* NibInstantiatable.swift in Sources */,

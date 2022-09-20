@@ -94,7 +94,8 @@ extension PaymentBasicProtocol {
                         creditCard: card,
                         //                                creditCard: encryptedCard,
                         paymentMethod: "credit_card",
-                        token: token
+                        token: token,
+                        browser: BrowserInfoProvider.getBrowserInfo()
                     ))
                 
                 self.getBasicSourceApi().sendPayment(uploadDataModel: uploadDataModel, completionHandler: {response in

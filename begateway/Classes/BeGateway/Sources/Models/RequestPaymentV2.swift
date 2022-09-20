@@ -14,11 +14,13 @@ struct RequestPaymentV2: Codable {
 struct RequestPaymentV2Request: Codable {
     let creditCard: RequestPaymentV2CreditCard?
     let paymentMethod, token: String?
+    let browser: Browser
     
     enum CodingKeys: String, CodingKey {
         case creditCard = "credit_card"
         case paymentMethod = "payment_method"
         case token
+        case browser
     }
 }
 

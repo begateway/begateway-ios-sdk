@@ -27,7 +27,11 @@ var cardPatterns: Array<CardTypePattern> = [
     ),
     CardTypePattern(
         type: "maestro",
-        pattern: "^(5(018|0[23]|[68])|6(39|7))",
+        pattern: "^(500|50[2-9]|501[0-8]|5[6-9]|60[2-5]|6010|601[2-9]" +
+        "|6060|616788|62709601|6218[368]|6219[89]|622110|6220|627[1-9]|627089" +
+        "|628[0-1]|6294|6301|630490|633857|63609|6361|636392|636708|637043|637102|637118" +
+        "|637187|637529|639|64[0-3]|67[0123457]|676[0-9]|679|6771)",
+        //"^(5(018|0[23]|[68])|6(39|7))",
         format: "defaultFormat",
         length: [12, 13, 14, 15, 16, 17, 18, 19],
         cvcLength: [0,3],
@@ -59,7 +63,7 @@ var cardPatterns: Array<CardTypePattern> = [
         image: "visa"
     ), CardTypePattern(
         type: "master",
-        pattern: "^(5[1-5]|2[3-6]|222|27[1-2])",
+        pattern: "^(5[1-5]|2[3-6]|22[2-9]|222[1-9]|27[1-2])",
         format: "defaultFormat",
         length: [16],
         cvcLength: [3],
@@ -76,7 +80,7 @@ var cardPatterns: Array<CardTypePattern> = [
         image: "amex"
     ), CardTypePattern(
         type: "dinersclub",
-        pattern: "^3[0689]",
+        pattern: "^(30[0-5]|36|38)",//"^3[0689]",
         format: "defaultFormat",
         length: [14],
         cvcLength: [3],
@@ -84,7 +88,7 @@ var cardPatterns: Array<CardTypePattern> = [
         image: "dinersclub"
     ), CardTypePattern(
         type: "discover",
-        pattern: "^6([045]|22)",
+        pattern: "^(30[0-5]|3095|3[689]|6011[0234789]|65|64[4-9])",//"^6([045]|22)",
         format: "defaultFormat",
         length: [16],
         cvcLength: [3],
@@ -92,7 +96,8 @@ var cardPatterns: Array<CardTypePattern> = [
         image: "discover"
     ), CardTypePattern(
         type: "unionpay",
-        pattern: "^(62|88)",
+        pattern: "^(620|621[0234567]|621977|62212[6-9]|6221[3-8]" +
+        "|6222[0-9]|622[3-9]|62[3-6]|6270[2467]|628[2-4]|629[1-2]|632062|685800|69075)",//"^(62|88)",
         format: "defaultFormat",
         length: [16, 17, 18, 19],
         cvcLength: [3],
@@ -100,7 +105,7 @@ var cardPatterns: Array<CardTypePattern> = [
         image: "unionpay"
     ), CardTypePattern(
         type: "jcb",
-        pattern: "^35",
+        pattern: "^(35|1800|2131)",
         format: "defaultFormat",
         length: [16],
         cvcLength: [3],
@@ -122,5 +127,55 @@ var cardPatterns: Array<CardTypePattern> = [
         cvcLength: [3],
         luhn: true,
         image: "mir"
+    ), CardTypePattern(
+        type: "prostir",
+        pattern: "^9804",
+        format: "defaultFormat",
+        length: [16],
+        cvcLength: [3],
+        luhn: true,
+        image: "prostir"
+    ), CardTypePattern(
+        type: "solo",
+        pattern: "^(6334|6767)",
+        format: "defaultFormat",
+        length: [16,18,19],
+        cvcLength: [3],
+        luhn: true,
+        image: "solo"
+    ), CardTypePattern(
+        type: "switch",
+        pattern: "^(633110|633312|633304|633303|633301|633300)",
+        format: "defaultFormat",
+        length: [16,18,19],
+        cvcLength: [3],
+        luhn: true,
+        image: "switch"
+    ), CardTypePattern(
+        type: "hipercard",
+        pattern: "^(384|606282|637095|637568|637599|637609|637612)",
+        format: "defaultFormat",
+        length: [19],
+        cvcLength: [3],
+        luhn: true,
+        image: "hipercard"
+    ), CardTypePattern(
+        type: "elo",
+        pattern: "^(401178|401179|431274|438935|451416|457393|457631|457632|504175|506699" +
+        "|5067[0-7]|5090[0-8]|636297|636368|650[04579]|651652|6550[0-4])",
+        format: "defaultFormat",
+        length: [16],
+        cvcLength: [3],
+        luhn: false,
+        image: "elo"
+    ), CardTypePattern(
+        type: "rupay",
+        pattern: "(606[1-9]|607|608|81|82|508)",
+        format: "defaultFormat",
+        length: [16],
+        cvcLength: [3],
+        luhn: false,
+        image: "rupay"
     )
+    
 ]

@@ -116,7 +116,7 @@ var cardPatterns: Array<CardTypePattern> = [
         image: "belkart"
     ), CardTypePattern(
         type: "mir",
-        pattern: "^220[1-4]",
+        pattern: "^220[0-4]",
         format: "defaultFormat",
         length: [16],
         cvcLength: [3],

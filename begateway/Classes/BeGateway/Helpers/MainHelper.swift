@@ -49,7 +49,9 @@ class MainHelper {
     static func validateCardNumber(cardNumber: String) -> Bool {
         let currentTypeCard: CardTypePattern? = MainHelper.cardPatternFrom(cardNumber: cardNumber)
         let formattedString = cardNumber.replacingOccurrences(of: " ", with: "")
-        
+        if formattedString.count < 12 || formattedString.count > 19 {
+            return false
+        }
         if ((currentTypeCard?.length.contains(formattedString.count)) != nil) {
             if currentTypeCard?.luhn == true {
                 return isLuhnValid(cardNumber: formattedString)
@@ -87,7 +89,27 @@ class MainHelper {
     
     static func validateName(name : String) -> Bool {
         let formattedString = name.replacingOccurrences(of: " ", with: "")
+        let nameExp = "^((?:[A-Za-z]+ ?){1,3})$"
+        let result = name.range(
+            of: nameExp,
+            options: .regularExpression
+        )
+
+        let validName = (result != nil) && formattedString.count > 1 && name.count < 33
+        return validName
+    }
+    
+    static func validateExpDate(date : String) -> Bool {
+        let formattedString = date.replacingOccurrences(of: " ", with: "")
+        let dateExp = "^(?:0?[1-9]|1[0-2]) */ *[1-9][0-9]$"
         
-        return formattedString.count > 0
+        let result = formattedString.range(
+            of: dateExp,
+            options: .regularExpression
+        )
+        
+        let validDate = (result != nil)
+        
+        return validDate
     }
 }

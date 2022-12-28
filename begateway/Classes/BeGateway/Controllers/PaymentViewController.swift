@@ -309,6 +309,7 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         print("TextField did end editing method called\(textField.text!)")
+        validateFields()
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -317,12 +318,14 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        let _ = validateFields()
         print("TextField should clear method called")
         return true;
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         print("TextField should end editing method called")
+        validateFields()
         return true;
     }
     
@@ -520,8 +523,8 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
         
         let isUserNameValid = MainHelper.validateName(name: self.nameOnCardTextField.text ?? "")
         
-        let isDateValid = self.expireDateTextField.text?.count == 5
-        
+        //let isDateValid = self.expireDateTextField.text?.count == 5
+        let isDateValid = MainHelper.validateExpDate(date: self.expireDateTextField.text ?? "")
         self.updateErrorLabel(cardValid: isCardNumberValid, cvcValid: isCVCvalid, userNameValid: isUserNameValid, dateValid: isDateValid)
         
         

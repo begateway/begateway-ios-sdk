@@ -11,7 +11,7 @@ import UIKit
 public class BeGatewayOptions {
     public var clientPubKey: String
     
-    var endpoint: String = "https://checkout.bepaid.by/ctp/api"
+    public var endpoint: String = "https://checkout.bepaid.by/ctp/api"
     var resultUrl: String = "https://127.default_return_url.com"
     public var merchantID : String?
     var notificationURL: String?
@@ -88,6 +88,7 @@ public class BeGatewayOptions {
     public var textColor: UIColor?
     public var hintColor: UIColor?
     public var backgroundColor: UIColor = UIColor.clear
+    public var textFieldBackgroundColor: UIColor?
     
     public var isToogleCardNumber: Bool = false
     public var isToogleExpiryDate: Bool = false

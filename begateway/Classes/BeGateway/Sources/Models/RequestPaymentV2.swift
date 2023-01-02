@@ -14,11 +14,13 @@ struct RequestPaymentV2: Codable {
 struct RequestPaymentV2Request: Codable {
     let creditCard: RequestPaymentV2CreditCard?
     let paymentMethod, token: String?
+    let browser: Browser
     
     enum CodingKeys: String, CodingKey {
         case creditCard = "credit_card"
         case paymentMethod = "payment_method"
         case token
+        case browser
     }
 }
 
@@ -52,7 +54,7 @@ struct RequestPaymentV2CreditCard: Codable {
         
         if let num = eNumber.message, let ver = eVerificationValue.message,
            let hol = eHolder.message, let mon = eExpMonth.message, let year = eExpYear.message, let save = card.saveCard {
-            return (RequestPaymentV2CreditCard(number: num, verificationValue: ver, expMonth: mon, expYear: year, holder: hol, token: nil,saveCard: save), nil)
+            return (RequestPaymentV2CreditCard(number: num, verificationValue: ver, expMonth: mon, expYear: year, holder: hol, token: nil, saveCard: save), nil)
         }
         
         return (nil, nil)

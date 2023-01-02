@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InitialViewController" customModule="begateway_Example" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InitialViewController" customModule="begateway" customModuleProvider="target">
             <connections>
                 <outlet property="errorLabel" destination="HMr-l0-pIp" id="zbs-oL-akC"/>
                 <outlet property="loaderActiveIndicator" destination="ckm-5E-lL0" id="Vbm-zX-Svn"/>

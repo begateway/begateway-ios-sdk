@@ -10,8 +10,6 @@
 #endif
 #endif
 
-#import "begateway.h"
-#import "NSData+SHA.h"
 
 FOUNDATION_EXPORT double begatewayVersionNumber;
 FOUNDATION_EXPORT const unsigned char begatewayVersionString[];

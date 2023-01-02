@@ -51,7 +51,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     var currentPaymentToken: String?
     var card: BeGatewayRequestCard?
     
-    let applepaybutton = PKPaymentButton(paymentButtonType: .inStore, paymentButtonStyle: .whiteOutline)
+    var applepaybutton = PKPaymentButton(paymentButtonType: .inStore, paymentButtonStyle: .whiteOutline)
     var screenWidth = UIScreen.main.bounds.width
     var spacing = 15
     
@@ -60,6 +60,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.regeneratePubKey()
+        self.setupApplePayButton()
     }
     
     private func regeneratePubKey() {
@@ -77,13 +78,22 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         self.changePubKey(is3DSecure: self.smsSwcureSwitch.isOn)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupToHideKeyboardOnTapOnView()
-        
+    private func setupApplePayButton() {
+        if #available(iOS 12.0, *) {
+            if self.traitCollection.userInterfaceStyle == .dark {
+                self.applepaybutton = PKPaymentButton(paymentButtonType: .inStore, paymentButtonStyle: .black)
+            } else {
+                self.applepaybutton = PKPaymentButton(paymentButtonType: .inStore, paymentButtonStyle: .whiteOutline)
+            }
+        }
         applepaybutton.frame = CGRect.init(x: 15, y: Int(valueTextField.frame.height) + 95, width: Int(screenWidth) - (spacing * 2), height: 34)
         scrollView.addSubview(applepaybutton)
         applepaybutton.addTarget(self, action: #selector(applePayAction), for: .touchUpInside)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupToHideKeyboardOnTapOnView()
         
         //        default init
         self.valueTextField.text = String(100)
@@ -121,7 +131,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
                         verificationValue: "123",
                         expMonth: "02",
                         expYear: "25",
-                        holder: "Ivan Ivanov"
+                        holder: "Ivan Ivanov",
+                        cardToken: nil
                     )
                 )
             }
@@ -181,7 +192,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     }
     
     @IBAction func touchSelectBackgroundColor(_ sender: Any) {
-        BeGateway.instance.options?.backgroundColor = BeGateway.instance.options?.backgroundColor == UIColor.blue ? UIColor.white: UIColor.blue
+        if #available(iOS 13.0, *) {
+            BeGateway.instance.options?.backgroundColor = BeGateway.instance.options?.backgroundColor == UIColor.blue ? UIColor.systemBackground: UIColor.blue
+        } else {
+            BeGateway.instance.options?.backgroundColor = BeGateway.instance.options?.backgroundColor == UIColor.blue ? UIColor.white : UIColor.blue
+        }
         
         self.backgroundColorView.backgroundColor = BeGateway.instance.options?.backgroundColor
     }
@@ -281,36 +296,29 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
                 BeGateway.instance.options?.language = language
             }
             
-            
             let toggle = token?.checkout?.settings?.saveCardToggle?.customerContract ?? false
             BeGateway.instance.options?.isToogleSaveCard = !toggle
         
+            if let currentCard = self.card {
+                BeGateway.instance.payByToken(
+                    token: self.tokenTextView.text,
+                    card : currentCard , rootController: self,
+                    completionHandler: {
+                        card in
+                        print(card)
+                        self.showSuccessAlert()
+                        self.dropToken()
+                    }, failureHandler: {error in
+                        self.showFailureAlert(error: error)
+                        self.dropToken()
+                        print(error)
+                    })
+            }
             
-            BeGateway.instance.payByToken(
-                token: self.tokenTextView.text,
-                rootController: self,
-                request: BeGatewayRequest(
-                    amount: Double(self.valueTextField.text ?? "0.0") ?? 0.0,
-                    currency: self.currencyTextField.text ?? "USD",
-                    requestDescription: "Test request",
-                    trackingID: "1000000-1",
-                    card: self.card
-                ),
-                completionHandler: {
-                    card in
-                    print(card)
-                    self.showSuccessAlert()
-                    self.dropToken()
-                }, failureHandler: {error in
-                    self.showFailureAlert(error: error)
-                    self.dropToken()
-                    print(error)
-                })
         }) { error in
             self.showFailureAlert(error: error)
             print(error)
         }
-        
     }
     
     @IBAction func touchRemoveAll(_ sender: Any) {
@@ -356,17 +364,28 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
                 verificationValue: "123",
                 expMonth: "02",
                 expYear: "25",
-                holder: "Ivan Ivanov"
+                holder: "Ivan Ivanov",
+                cardToken: nil
             )
         } else {
             BeGateway.instance.options?.clientPubKey =  "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvextn45qf3NiNzqBYXMvcaSFlgoYE/LDuDDHtNNM4iWJP7BvjBkPcZu9zAfo5IiMxl660r+1E4PYWwr0iKSQ8+7C/WcSYwP8WlQVZH+2KtPmJgkPcBovz3/aZrQpj6krcKLklihg3Vs++TtXAbpCCbhIq0DJ3T+khttBqTGD+2x2vOC68xPgMwvnwQinfhaHEQNbtEcWWXPw9LYuOTuCwKlqijAEds4LgKSisubqrkRw/HbAKVfa659l5DJ8QuXctjp3Ic+7P2TC+d+rcfylxKw9c61ykHS1ggI/N+/KmEDVJv1wHvdy7dnT0D/PhArnCB37ZDAYErv/NMADz2/LuQIDAQAB"
+            
+//            self.card = BeGatewayRequestCard( //Pay by card token
+//                number: nil,
+//                verificationValue: nil,
+//                expMonth: nil,
+//                expYear: nil,
+//                holder: nil,
+//                cardToken: "YourCardToken"
+//            )
             
             self.card = BeGatewayRequestCard(
                 number: "4200000000000000",
                 verificationValue: "123",
                 expMonth: "02",
                 expYear: "23",
-                holder: "WRR"
+                holder: "WRR",
+                cardToken: nil
             )
         }
     }

@@ -258,6 +258,38 @@ public class BeGateway {
         }
     }
     
+    public func payWithAppleBy(appleToken : PKPayment, paymentToken : String, completionHandler: (() -> Void)?, failureHandler:((String) -> Void)?) {
+        
+        self.paymentToken = paymentToken
+        
+        if let requestApple = requestFromAppleToken(appleToken: appleToken) {
+            if let options = BeGateway.instance.options {
+                BeGatewaySourceApi.init(options: options).sendApplePayment(uploadDataModel: requestApple) { response in
+                    let status: String = response?.response?.status ?? "failed"
+                    
+                    if status == "successful" {
+                        if let compl = completionHandler {
+                            compl()
+                        }
+                    } else {
+                        let message = response?.response?.message ?? "Error during payment"
+                        if let failure = failureHandler {
+                            failure(message)
+                        }
+                    }
+                } failureHandler: { errorString in
+                    if let failure = failureHandler {
+                        failure(errorString)
+                    }
+                }
+            }
+        } else {
+            if let failure = failureHandler {
+                failure("error converting data")
+            }
+        }
+    }
+    
     private func applePayRequest(currencyCode : String, amount : String, rootController: UIViewController, completionHandler: (() -> Void)?, failureHandler:((String) -> Void)?) {
         
         let requestPK = PKPaymentRequest()
@@ -306,9 +338,20 @@ public class BeGateway {
         }
     }
     
-    public func payByToken(token: String, rootController: UIViewController, request: BeGatewayRequest, completionHandler: ((BeGatewayCard) -> Void)?, failureHandler:((String) -> Void)?) {
+    public func payByCardTokenInBackground(rootController: UIViewController, request: BeGatewayRequest, completionHandler: ((BeGatewayCard) -> Void)?, failureHandler:((String) -> Void)?) {
         
         self.initRequest(request: request, completionHandler: completionHandler, failureHandler: failureHandler)
+        
+        let controller = PayByCardTokenViewController()
+        controller.cardToken = request.card?.cardToken
+        controller.payWithCardToken()
+    }
+    
+    public func payByToken(token: String, card : BeGatewayRequestCard, rootController: UIViewController, completionHandler: ((BeGatewayCard) -> Void)?, failureHandler:((String) -> Void)?) {
+        
+        let request = BeGatewayRequest.init(amount: 1.0, currency: "U", requestDescription: "", trackingID: "", card: card) //Payment token validation
+        self.initRequest(request: request, completionHandler: completionHandler, failureHandler: failureHandler)
+        
         let bundle = Bundle(for: type(of: self))
         
         let controller = PaymentViewController.loadFromNib(bundle)

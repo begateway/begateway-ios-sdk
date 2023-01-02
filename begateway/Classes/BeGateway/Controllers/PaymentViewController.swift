@@ -17,23 +17,28 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     @IBOutlet weak var cardNumberLabel: UILabel!
     @IBOutlet weak var cardNumberTextField: UITextField!
     @IBOutlet weak var creditCardImageView: UIImageView!
+    @IBOutlet weak var cardNumberErrorLabel: UILabel!
     
     @IBOutlet weak var dateView: UIView!
     @IBOutlet weak var expireDateLabel: UILabel!
     @IBOutlet weak var expireDateTextField: UITextField!
+    @IBOutlet weak var expireDateErrorLabel: UILabel!
     
     @IBOutlet weak var cvcLabel: UILabel!
     @IBOutlet weak var cvcTextField: UITextField!
+    @IBOutlet weak var cvcErrorLabel: UILabel!
     
     @IBOutlet weak var nameOnCardView: UIView!
     @IBOutlet weak var nameOnCardLabel: UILabel!
     @IBOutlet weak var nameOnCardTextField: UITextField!
+    @IBOutlet weak var nameOnCardErrorLabel: UILabel!
     
     @IBOutlet weak var saveDetailsView: UIView!
     @IBOutlet weak var saveDetailsLabel: UILabel!
     @IBOutlet weak var saveDetailsSwitch: UISwitch!
     
     @IBOutlet weak var payButton: UIButton!
+    @IBOutlet weak var cvcDateErrorView: UIView!
     
     @IBOutlet weak var loaderView: UIView!
     @IBOutlet weak var loaderActiveIndicator: UIActivityIndicatorView!
@@ -41,7 +46,19 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     @IBOutlet weak var viewSuccess: UIView!
     @IBOutlet weak var successImageView: UIImageView!
     
+    @IBOutlet weak var mainStackView: UIStackView!
+    
     weak var delegate: PaymentBasicProtocol?
+    var cardToken: String?
+    
+    let cardError = "begateway_card_number_invalid"
+    let cvcError = "begateway_cvv_invalid"
+    let nameError = "begateway_cardholder_name_required"
+    let dateError = "begateway_expiration_invalid"
+    let cvcString = "begateway_cvc"
+    
+    let defaultOffster = 20.0
+    let shortenOffset = 5.0
     
     var isSaveCard: Bool = false
     var currentTypeCard: CardTypePattern? = nil
@@ -49,13 +66,22 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.initInterfaceByOptions()
         self.initInterface()
         self.saveDetailsSwitch.isOn = false
         self.localize()
+        
+        if self.cardToken != nil {
+            self.payTouch(self.payButton ?? self)
+        }
+        
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.shared.endIgnoringInteractionEvents()
+    }
     
     private func localize() {
         self.cardNumberLabel.text = BeGateway.instance.options?.titleCardNumber
@@ -129,11 +155,20 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
             self.isSaveCard = false
         }
         
+        let textFieldArray: [UITextField] = [self.cvcTextField, self.nameOnCardTextField, self.expireDateTextField, self.cardNumberTextField]
+        if let tfbgColor = BeGateway.instance.options?.textFieldBackgroundColor {
+            for textField in textFieldArray {
+                textField.backgroundColor = tfbgColor
+            }
+        }
+        
+        
         
 //        self.cardNumberTextField.becomeFirstResponder()
         
         //        for test
         if let card = BeGateway.instance.request?.card{
+            self.cardToken = card.cardToken
             self.cardNumberTextField.text = card.number
             self.expireDateTextField.text = card.date
             self.cvcTextField.text = card.verificationValue
@@ -184,6 +219,7 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     }
     
     func processPaymentSuccess() {
+        UIApplication.shared.endIgnoringInteractionEvents()
         self.delegate?.processPaymentSuccess()
         self.payButton.isHidden = true
         self.loaderView.isHidden = true
@@ -195,6 +231,7 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     }
     
     func outError(error: String) {
+        UIApplication.shared.endIgnoringInteractionEvents()
         self.delegate?.outError(error: error)
         self.errorLabel.isHidden = false
         self.errorLabel.text = BeGateway.instance.options?.errorTitle ?? error
@@ -208,15 +245,19 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     @IBAction func payTouch(_ sender: Any) {
         print("Touch")
         
-        self.pay(card: RequestPaymentV2CreditCard(
-            number: self.cardNumberTextField.text?.replacingOccurrences(of: " ", with: ""),
-            verificationValue: self.cvcTextField.text,
-            expMonth: self.expireDateTextField.text != nil ? self.expireDateTextField.text![0..<2] : nil,
-            expYear: self.expireDateTextField.text != nil ? "20" + self.expireDateTextField.text![3..<5] : nil,
-            holder: self.nameOnCardTextField.text,
-            token: nil,
-            saveCard: self.isSaveCard
-        ), isSaveCard: self.isSaveCard, tokenForRequest: self.tokenForRequest)
+        if self.validateFields() == false {
+            UIApplication.shared.beginIgnoringInteractionEvents()
+            
+            self.pay(card: RequestPaymentV2CreditCard(
+                number: self.cardNumberTextField.text?.replacingOccurrences(of: " ", with: ""),
+                verificationValue: self.cvcTextField.text,
+                expMonth: self.expireDateTextField.text != nil ? self.expireDateTextField.text![0..<2] : nil,
+                expYear: self.expireDateTextField.text != nil ? "20" + self.expireDateTextField.text![3..<5] : nil,
+                holder: self.nameOnCardTextField.text,
+                token: nil,
+                saveCard: self.isSaveCard
+            ), isSaveCard: self.isSaveCard, tokenForRequest: self.tokenForRequest)
+        }
     }
     
     // MARK:: UITextField Delegates
@@ -268,6 +309,7 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         print("TextField did end editing method called\(textField.text!)")
+        validateFields()
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -276,12 +318,14 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        let _ = validateFields()
         print("TextField should clear method called")
         return true;
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         print("TextField should end editing method called")
+        validateFields()
         return true;
     }
     
@@ -361,8 +405,6 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
                 
                 if Int(substring) ?? 0 < Int(yearLastDigital) ?? 0 {
                     newString = newString[0..<3] + yearLastDigital
-                } else if Int(substring) ?? 0 > (Int(yearLastDigital) ?? 9999 + 5) {
-                    newString = newString[0..<3] + String((Int(yearLastDigital) ?? 9999) + 5)
                 }
             }
             
@@ -370,6 +412,16 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
             self.expireDateTextField.text = formattedString
             self.validateRequiredFields()
             return false
+            
+        case self.cvcTextField:
+            guard let textFieldText = textField.text,
+                let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                    return false
+            }
+            let substringToReplace = textFieldText[rangeOfTextToReplace]
+            let count = textFieldText.count - substringToReplace.count + string.count
+            let maxCvcLength = self.maxCVCLength()
+            return count <= maxCvcLength
             
         default:
             if textField != self.nameOnCardTextField {
@@ -387,6 +439,18 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
         
         self.validateRequiredFields()
         return true;
+    }
+    
+    private func maxCVCLength() -> Int {
+        var maxLenght = 4
+        for pattern in cardPatterns {
+            for maxLen in pattern.cvcLength {
+                if maxLen > maxLenght {
+                    maxLenght = maxLen
+                }
+            }
+        }
+        return maxLenght
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -447,6 +511,81 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     }
     
     func initStyleForCardNumber() {
+        
+    }
+    
+    
+    private func validateFields() -> Bool {
+        
+        let isCardNumberValid = MainHelper.validateCardNumber(cardNumber: self.cardNumberTextField.text ?? "")
+        
+        let isCVCvalid = MainHelper.validateCVC(cvcCode: self.cvcTextField.text ?? "", cardNumber: self.cardNumberTextField.text ?? "")
+        
+        let isUserNameValid = MainHelper.validateName(name: self.nameOnCardTextField.text ?? "")
+        
+        //let isDateValid = self.expireDateTextField.text?.count == 5
+        let isDateValid = MainHelper.validateExpDate(date: self.expireDateTextField.text ?? "")
+        self.updateErrorLabel(cardValid: isCardNumberValid, cvcValid: isCVCvalid, userNameValid: isUserNameValid, dateValid: isDateValid)
+        
+        
+        
+        let array = [isCardNumberValid, isCVCvalid, isUserNameValid, isDateValid]
+        
+        
+        return array.contains(false)
+    }
+    
+    private func updateErrorLabel(cardValid: Bool, cvcValid: Bool, userNameValid: Bool, dateValid: Bool) {
+        
+        if cardValid == false {
+            cardNumberErrorLabel.text = LocalizedString.LocalizedString(value:cardError)
+            cardNumberErrorLabel.isHidden = false
+            self.cardNumberTextField.layer.borderColor = UIColor.red.cgColor
+            self.cardNumberTextField.layer.borderWidth = 1.0
+            mainStackView.setCustomSpacing(shortenOffset, after: self.cardNumberView)
+        } else {
+            mainStackView.setCustomSpacing(defaultOffster, after: self.cardNumberView)
+            self.cardNumberTextField.layer.borderColor = UIColor.clear.cgColor
+            cardNumberErrorLabel.isHidden = true
+        }
+        
+        if cvcValid == false {
+            let localizeString = LocalizedString.LocalizedString(value:cvcError)
+            let formattedString = String(format: localizeString.replacingOccurrences(of: "%s", with: "%@"), LocalizedString.LocalizedString(value:cvcString))
+            self.cvcErrorLabel.text = formattedString
+            self.cvcTextField.layer.borderColor = UIColor.red.cgColor
+            self.cvcTextField.layer.borderWidth = 1.0
+        } else {
+            self.cvcErrorLabel.text = ""
+            self.cvcTextField.layer.borderColor = UIColor.clear.cgColor
+        }
+        
+        if userNameValid == false {
+            nameOnCardErrorLabel.text = LocalizedString.LocalizedString(value:nameError)
+            nameOnCardErrorLabel.isHidden = false
+            self.nameOnCardTextField.layer.borderColor = UIColor.red.cgColor
+            self.nameOnCardTextField.layer.borderWidth = 1.0
+            mainStackView.setCustomSpacing(shortenOffset, after: self.nameOnCardView)
+        } else {
+            mainStackView.setCustomSpacing(defaultOffster, after: self.nameOnCardView)
+            self.nameOnCardTextField.layer.borderColor = UIColor.clear.cgColor
+            nameOnCardErrorLabel.isHidden = true
+        }
+        
+        if dateValid == false {
+            self.expireDateErrorLabel.text = LocalizedString.LocalizedString(value:dateError)
+            self.expireDateTextField.layer.borderColor = UIColor.red.cgColor
+            self.expireDateTextField.layer.borderWidth = 1.0
+        } else {
+            self.expireDateErrorLabel.text = ""
+            self.expireDateTextField.layer.borderColor = UIColor.clear.cgColor
+        }
+        
+        let needToShowCVCDateView = dateValid == false || cvcValid == false
+        let offset = needToShowCVCDateView ? shortenOffset : defaultOffster
+        
+        mainStackView.setCustomSpacing(offset, after: self.dateView)
+        self.cvcDateErrorView.isHidden = !needToShowCVCDateView
         
     }
     

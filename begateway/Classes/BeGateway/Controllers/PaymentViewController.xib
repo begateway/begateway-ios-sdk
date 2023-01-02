@@ -9,20 +9,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentViewController" customModule="begateway_Example" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentViewController" customModule="begateway" customModuleProvider="target">
             <connections>
+                <outlet property="cardNumberErrorLabel" destination="Pfz-Jh-hYe" id="W0C-Xi-YvI"/>
                 <outlet property="cardNumberLabel" destination="oRT-ss-TXg" id="iHS-Sb-j5Q"/>
                 <outlet property="cardNumberTextField" destination="GbK-a2-6af" id="APE-b4-SQW"/>
                 <outlet property="cardNumberView" destination="kVT-3f-xsa" id="jhB-7D-m1F"/>
                 <outlet property="creditCardImageView" destination="uDY-ar-NAO" id="6UK-ZH-jbY"/>
+                <outlet property="cvcDateErrorView" destination="8Ur-4n-Vkx" id="2Ag-E3-elq"/>
+                <outlet property="cvcErrorLabel" destination="kkW-Ff-c8S" id="V2m-cK-G89"/>
                 <outlet property="cvcLabel" destination="4b2-Uw-Ws8" id="oXX-dj-JDp"/>
                 <outlet property="cvcTextField" destination="N3B-5C-ihv" id="KTz-LN-3JK"/>
                 <outlet property="dateView" destination="S6n-Nd-6fY" id="cVW-a6-DES"/>
                 <outlet property="errorLabel" destination="tiF-4e-BR5" id="YSR-qL-SkT"/>
+                <outlet property="expireDateErrorLabel" destination="pye-DG-FYr" id="lw4-rG-ZZD"/>
                 <outlet property="expireDateLabel" destination="k0A-FU-JdM" id="hhu-ah-sCb"/>
                 <outlet property="expireDateTextField" destination="EOW-Tt-Eas" id="lnb-pN-AKL"/>
                 <outlet property="loaderActiveIndicator" destination="Cg9-3Q-Oa0" id="QQN-On-hGn"/>
                 <outlet property="loaderView" destination="n3n-zU-ZX5" id="mzz-pY-oUw"/>
+                <outlet property="mainStackView" destination="ZPU-Js-YdG" id="seO-T0-m94"/>
+                <outlet property="nameOnCardErrorLabel" destination="55D-wC-5Vg" id="FM2-0R-jcn"/>
                 <outlet property="nameOnCardLabel" destination="m61-39-NnL" id="SeW-c4-UrR"/>
                 <outlet property="nameOnCardTextField" destination="HAH-hC-N7N" id="mNR-R5-oz6"/>
                 <outlet property="nameOnCardView" destination="qmt-Ie-F5j" id="JXk-Gg-Z5f"/>
@@ -68,7 +74,7 @@
                                                         <constraint firstAttribute="height" constant="17" id="ZT6-uI-XqE"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Card number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GbK-a2-6af">
@@ -99,23 +105,32 @@
                                                 <constraint firstAttribute="trailing" secondItem="uDY-ar-NAO" secondAttribute="trailing" id="uQz-d9-Dc9"/>
                                             </constraints>
                                         </view>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfz-Jh-hYe">
+                                            <rect key="frame" x="0.0" y="69" width="374" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="rla-2B-JTD"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="1" green="0.036709969362763384" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S6n-Nd-6fY">
                                             <rect key="frame" x="0.0" y="79" width="374" height="59"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LXI-Hy-LYu">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="17"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="17"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expire date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k0A-FU-JdM">
-                                                            <rect key="frame" x="0.0" y="0.0" width="177" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="177.5" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CVC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4b2-Uw-Ws8">
-                                                            <rect key="frame" x="197" y="0.0" width="177" height="17"/>
+                                                            <rect key="frame" x="197.5" y="0.0" width="177.5" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -152,6 +167,36 @@
                                                 <constraint firstAttribute="trailing" secondItem="LXI-Hy-LYu" secondAttribute="trailing" id="rgk-C6-4Lh"/>
                                             </constraints>
                                         </view>
+                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ur-4n-Vkx">
+                                            <rect key="frame" x="0.0" y="148" width="374" height="17"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pye-DG-FYr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="186.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="1" green="0.036709969359999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkW-Ff-c8S">
+                                                    <rect key="frame" x="186.5" y="0.0" width="187.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="1" green="0.036709969359999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="7X9-KA-aRs"/>
+                                                <constraint firstItem="kkW-Ff-c8S" firstAttribute="top" secondItem="8Ur-4n-Vkx" secondAttribute="top" id="7yo-p3-0UR"/>
+                                                <constraint firstItem="pye-DG-FYr" firstAttribute="centerY" secondItem="kkW-Ff-c8S" secondAttribute="centerY" id="ALz-oL-Krf"/>
+                                                <constraint firstAttribute="bottom" secondItem="pye-DG-FYr" secondAttribute="bottom" id="Dbb-b5-lsv"/>
+                                                <constraint firstItem="pye-DG-FYr" firstAttribute="leading" secondItem="8Ur-4n-Vkx" secondAttribute="leading" id="MjS-CO-LuT"/>
+                                                <constraint firstItem="pye-DG-FYr" firstAttribute="width" secondItem="kkW-Ff-c8S" secondAttribute="width" multiplier="0.994286" id="Tr1-kg-2Oe"/>
+                                                <constraint firstItem="kkW-Ff-c8S" firstAttribute="leading" secondItem="pye-DG-FYr" secondAttribute="trailing" priority="999" id="apH-f7-Fa8"/>
+                                                <constraint firstAttribute="trailing" secondItem="kkW-Ff-c8S" secondAttribute="trailing" id="cMO-gU-Jyy"/>
+                                                <constraint firstAttribute="bottom" secondItem="kkW-Ff-c8S" secondAttribute="bottom" id="eU7-Ch-aBE"/>
+                                                <constraint firstItem="pye-DG-FYr" firstAttribute="top" secondItem="8Ur-4n-Vkx" secondAttribute="top" id="sET-n8-h4U"/>
+                                            </constraints>
+                                        </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmt-Ie-F5j">
                                             <rect key="frame" x="0.0" y="158" width="374" height="59"/>
                                             <subviews>
@@ -161,7 +206,7 @@
                                                         <constraint firstAttribute="height" constant="17" id="rda-BF-A7x"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name on card" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HAH-hC-N7N">
@@ -170,7 +215,7 @@
                                                         <constraint firstAttribute="height" constant="34" id="o0j-a0-xRW"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -183,13 +228,21 @@
                                                 <constraint firstItem="HAH-hC-N7N" firstAttribute="leading" secondItem="qmt-Ie-F5j" secondAttribute="leading" id="tDs-sG-1kc"/>
                                             </constraints>
                                         </view>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name on card" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55D-wC-5Vg">
+                                            <rect key="frame" x="0.0" y="227" width="374" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="foP-t6-0Kz"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="1" green="0.036709969359999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jer-8V-cf6">
                                             <rect key="frame" x="0.0" y="237" width="374" height="31"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save details for next time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnj-Lh-aOV">
                                                     <rect key="frame" x="0.0" y="0.0" width="317" height="31"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dny-by-bMz">
@@ -211,6 +264,8 @@
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sh9-NC-TuQ">
                                             <rect key="frame" x="0.0" y="288" width="374" height="38"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                             <state key="normal" title="Pay $123"/>
                                             <connections>
@@ -291,6 +346,9 @@
     <resources>
         <image name="Check" width="32" height="32"/>
         <image name="CreditCard" width="96" height="96"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

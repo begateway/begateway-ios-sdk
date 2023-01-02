@@ -81,7 +81,8 @@ number: "2201382000000013",
 verificationValue: "123",
 expMonth: "02",
 expYear: "23",
-holder: "WRR"
+holder: "WRR",
+cardToken: nil,
 )
 ```
 
@@ -104,6 +105,35 @@ print(card)
 print(error)
 })
 ```
+
+Pay by <b>card token</b>
+```swift
+self.card = BeGatewayRequestCard(
+number: nil,
+verificationValue: nil,
+expMonth: nil,
+expYear: nil,
+holder: nil,
+cardToken: "YourCardToken"
+)
+```
+
+Payment by card token in <b>background</b>
+```swift
+        if self.card?.cardToken != nil { // "YourCardToken"
+            BeGateway.instance.payByCardTokenInBackground( rootController: self, request: BeGatewayRequest(
+                amount: Double(self.valueTextField.text ?? "0.0") ?? 0.0,
+                currency: self.currencyTextField.text ?? "USD",
+                requestDescription: "Test request",
+                trackingID: "1000000-1",
+                card: self.card
+            ), completionHandler: {
+               //Success handler
+            }, failureHandler: {error in
+                //Failure handler
+            })
+        }
+
 
 If gateway return success you can use object BeGatewayCard
 
@@ -150,24 +180,30 @@ Default <b>Apple Pay</b> with input:
             }
 ```
 You can pay with  <b>TOKEN</b>
-```swift
+swift
 BeGateway.instance.payByToken(
-token: TOKEN,
-rootController: self,
-request: BeGatewayRequest(
-amount: 100.0,
-currency: "USD",
-requestDescription: "Test request",
-trackingID: "1000000-1",
-card: card
-),
-completionHandler: {
-card in
-print(card)
-}, failureHandler: {error in
-print(error)
-})
+    token: PAYMENTTOKEN,  
+    card : CARD , rootController: self, 
+    completionHandler: {
+        card in
+        print(card)
+    }, failureHandler: { error in
+        print(error)
+    })
 ```
+Where PAYMENTTOKEN is a string value.
+CARD - object of BeGatewayRequestCard instance.
+
+Could be initiated with:
+self.number = number - Card number
+self.verificationValue = verificationValue - CVC Code
+self.expYear = expYear - Year Expiration
+self.expMonth = expMonth - Month Expiration
+self.holder = holder - Card Holder Name
+OR
+self.cardToken = cardToken - For Card Token
+
+If no previously saved card - empty object BeGatewayRequestCard() could be used.
 
 ### Other functions
 
@@ -210,6 +246,9 @@ BeGateway.instance.options?.colorTitleCardNumber: UIColor?
 BeGateway.instance.options?.fontHintCardNumber: UIFont?
 // color for title card number
 BeGateway.instance.options?.colorHintCardNumber: UIColor?
+// font for text fields background color
+BeGateway.instance.options?.textFieldBackgroundColor: UIColor?
+
 
 
 // label expire date

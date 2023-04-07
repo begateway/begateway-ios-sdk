@@ -80,14 +80,27 @@ class MainHelper {
     }
     
     static func validateCVC(cvcCode: String, cardNumber: String) -> Bool {
-        let currentTypeCard: CardTypePattern? = MainHelper.cardPatternFrom(cardNumber: cardNumber)
-        let isValid = currentTypeCard?.cvcLength.contains(cvcCode.count) ?? false
-        return isValid
+        if BeGateway.instance.fieldsToValidate().contains(.cardCVC) {
+            let currentTypeCard: CardTypePattern? = MainHelper.cardPatternFrom(cardNumber: cardNumber)
+            let isValid = currentTypeCard?.cvcLength.contains(cvcCode.count) ?? false
+            return isValid
+        }
+        return true
     }
     
     static func validateName(name : String) -> Bool {
-        let formattedString = name.replacingOccurrences(of: " ", with: "")
-        
-        return formattedString.count > 0
+        if BeGateway.instance.fieldsToValidate().contains(.cardHolder) {
+            let formattedString = name.replacingOccurrences(of: " ", with: "")
+            
+            return formattedString.count > 0
+        }
+        return true
+    }
+    
+    static func validateDate(date: String) -> Bool {
+        if BeGateway.instance.fieldsToValidate().contains(.cardDate) {
+            return date.count == 5
+        }
+        return true
     }
 }

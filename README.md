@@ -352,7 +352,7 @@ BeGateway.instance.options?.test = true
 
 You can get a payment status notification by setting **notificationURL** property
 ```swift
-BeGateway.instance.options?.notificationURL
+BeGateway.instance.options?.notificationURL = "https://yourdomain.com/payment/notification"
 ```
 
 You can change language

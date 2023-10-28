@@ -350,6 +350,11 @@ You can change mode from test to production
 BeGateway.instance.options?.test = true
 ```
 
+You can get a payment status notification by setting **notificationURL** property
+```swift
+BeGateway.instance.options?.notificationURL = "https://yourdomain.com/payment/notification"
+```
+
 You can change language
 ```swift
 BeGateway.instance.options?.language = "en"

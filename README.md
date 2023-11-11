@@ -341,7 +341,23 @@ BeGateway.instance.options?.isToogleCVC: Bool = false
 BeGateway.instance.options?.isToogleCardHolderName: Bool = false
 // turn on/off card saved field
 BeGateway.instance.options?.isToogleSaveCard: Bool = false
+```
+```
+//You can track the click of the "Cancel" button on the payment screen
 
+BeGateway.instance.options?.cancelButtonHandler
+
+Example:
+    public override func viewWillAppear(_ animated: Bool) {
+        self.cancelButtonPressHandler()
+    }
+    private func cancelButtonPressHandler() {
+        let options = BeGateway.instance.options ?? BeGatewayOptions(clientPubKey: "")
+        options.cancelButtonHandler = {
+            // Your logic is here
+             print("The \"Cancel\" button was pressed")
+        }
+    }
 ```
 #### Customize main options
 

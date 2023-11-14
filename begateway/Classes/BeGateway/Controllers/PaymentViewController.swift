@@ -528,7 +528,7 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
         let isUserNameValid = MainHelper.validateName(name: self.nameOnCardTextField.text ?? "")
 
         //let isDateValid = self.expireDateTextField.text?.count == 5
-        let isDateValid = MainHelper.validateExpDate(date: self.expireDateTextField.text ?? "")
+        let isDateValid = MainHelper.validateDate(date: self.expireDateTextField.text ?? "")
         self.updateErrorLabel(cardValid: isCardNumberValid, cvcValid: isCVCvalid, userNameValid: isUserNameValid, dateValid: isDateValid)
 
 

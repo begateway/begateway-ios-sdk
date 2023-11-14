@@ -8,7 +8,9 @@
 import UIKit
 import PassKit
 
-
+public enum FieldsToValidate {
+    case cardNumber, cardHolder, cardDate, cardCVC
+}
 
 public class BeGateway {
     public static let instance = BeGateway()
@@ -357,6 +359,28 @@ public class BeGateway {
         let controller = PaymentViewController.loadFromNib(bundle)
         controller.tokenForRequest = token
         self.presentController(controller, rootController: rootController, sizes: [.fullscreen])
+    }
+    
+    public func fieldsToValidate() -> [FieldsToValidate] {
+        var array : [FieldsToValidate] = []
+        
+        if self.options?.isToogleCardNumber == false {
+            array.append(FieldsToValidate.cardNumber)
+        }
+        
+        if self.options?.isToogleCVC == false {
+            array.append(FieldsToValidate.cardCVC)
+        }
+        
+        if self.options?.isToogleExpiryDate == false {
+            array.append(FieldsToValidate.cardDate)
+        }
+        
+        if self.options?.isToogleCardHolderName == false {
+            array.append(FieldsToValidate.cardHolder)
+        }
+        
+        return array
     }
 }
 

@@ -12,7 +12,8 @@ struct StoreCard: Codable {
     let last4, first1: String
     let token: String
     var isActive: Bool
-    
+    var stamp: String
+
     enum CodingKeys: String, CodingKey {
         case createdAt = "created_at"
         case brand, icon
@@ -20,6 +21,7 @@ struct StoreCard: Codable {
         case first1 = "first_1"
         case token
         case isActive = "is_active"
+        case stamp
     }
 }
 
@@ -29,18 +31,18 @@ extension StoreCard {
     init(data: Data) throws {
         self = try newJSONDecoder().decode(StoreCard.self, from: data)
     }
-    
+
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {
         guard let data = json.data(using: encoding) else {
             throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
         }
         try self.init(data: data)
     }
-    
+
     init(fromURL url: URL) throws {
         try self.init(data: try Data(contentsOf: url))
     }
-    
+
     func with(
         createdAt: Date? = nil,
         brand: String? = nil,
@@ -48,7 +50,8 @@ extension StoreCard {
         last4: String? = nil,
         first1: String? = nil,
         token: String? = nil,
-        isActive: Bool? = nil
+        isActive: Bool? = nil,
+        stamp: String? = nil
     ) -> StoreCard {
         return StoreCard(
             createdAt: createdAt ?? self.createdAt,
@@ -57,14 +60,15 @@ extension StoreCard {
             last4: last4 ?? self.last4,
             first1: first1 ?? self.first1,
             token: token ?? self.token,
-            isActive: isActive ?? false
+            isActive: isActive ?? false,
+            stamp: stamp ?? self.stamp
         )
     }
-    
+
     func jsonData() throws -> Data {
         return try newJSONEncoder().encode(self)
     }
-    
+
     func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
         return String(data: try self.jsonData(), encoding: encoding)
     }
@@ -76,88 +80,100 @@ extension StoreCard {
     func to() -> BeGatewayCard {
         return BeGatewayCard(createdAt: self.createdAt, first1: self.first1, last4: self.last4, brand: self.brand)
     }
-    
+
     static func to(items: Array<StoreCard>) -> Array<BeGatewayCard> {
         var list: Array<BeGatewayCard> = []
-        
+
         for item in items {
             list.append(item.to())
         }
-        
+
         return list
     }
-    
+
     static var keyUserDefaults = "begateway_api_cards"
-    
+
+    static func checkingForTЕheSameCard(item: StoreCard)-> Bool {
+        if let storedItems = readFromUserDefaults() {
+            for storedItem in storedItems {
+                if storedItem.stamp == item.stamp {
+                    return false
+                }
+            }
+        }
+        return true
+    }
+
     static func writeToUserDefaults(items: Array<StoreCard>) -> Bool {
         do {
             // Create JSON Encoder
             let encoder = JSONEncoder()
-            
+
             // Encode Note
             let data = try encoder.encode(items)
-            
+
             // Write/Set Data
             UserDefaults.standard.set(data, forKey: keyUserDefaults)
-            
+
             return true
-            
+
         } catch {
             print("Unable to Encode Array of StoreCard (\(error))")
         }
-        
+
         return false
     }
-    
+
     static func readFromUserDefaults() -> Array<StoreCard>? {
         if let data = UserDefaults.standard.data(forKey: keyUserDefaults) {
             do {
                 // Create JSON Decoder
                 let decoder = JSONDecoder()
-                
+
                 // Decode Note
                 let items: Array<StoreCard> = try decoder.decode([StoreCard].self, from: data)
                 return items
-                
+
             } catch {
                 print("Unable to Decode Array (\(error))")
             }
         }
-        
+
         return nil
     }
-    
+
     static func addToUserDefaults(item: StoreCard) -> Bool {
+        let isCheck = checkingForTЕheSameCard(item: item)
         var items = self.readFromUserDefaults()
-        
+
         if items == nil {
             items = []
         }
-        
-        if item.isActive {
+
+        if isCheck && item.isActive {
             for (index, _) in (items ?? []).enumerated() {
                 items?[index].isActive = false
             }
         }
-        
-        items?.append(item)
-        
+        if (isCheck){
+            items?.append(item)
+        }
         return self.writeToUserDefaults(items: items!)
     }
-    
+
     static func clearUserDefaults() -> Bool {
         return self.writeToUserDefaults(items: [])
     }
-    
+
     static func getActiveCard() -> StoreCard? {
         if let data = UserDefaults.standard.data(forKey: keyUserDefaults) {
             do {
                 // Create JSON Decoder
                 let decoder = JSONDecoder()
-                
+
                 // Decode Note
                 let items: Array<StoreCard> = try decoder.decode([StoreCard].self, from: data)
-                
+
                 if items.count > 0 {
                     for item in items {
                         if item.isActive{
@@ -165,51 +181,50 @@ extension StoreCard {
                         }
                     }
                 }
-                    
-                
+
+
             } catch {
                 print("Unable to Decode Array (\(error))")
             }
         }
-        
+
         return nil
     }
-    
+
     static func setActiveState(_ index: Int, isActive: Bool) -> Bool {
         var items = self.readFromUserDefaults()
-        
+
         if items == nil {
             items = []
         }
-        
+
         if isActive {
             for (index_, _) in (items ?? []).enumerated() {
                 items?[index_].isActive = index == index_
-                
+
             }
         } else {
             items?[index].isActive = isActive
         }
-        
-        
+
         return self.writeToUserDefaults(items: items!)
     }
-    
+
     static func remove(_ index: Int) -> Bool {
         var items = self.readFromUserDefaults()
-        
+
         if items == nil {
             items = []
         }
-        
+
         let isActive = items?[index].isActive ?? false
         items?.remove(at: index)
-        
+
         if isActive && (items?.count ?? 0) > 0 {
             items![items?.count ?? 0].isActive = isActive
         }
-        
-        
+
+
         return self.writeToUserDefaults(items: items!)
     }
 }
@@ -236,24 +251,24 @@ func newJSONEncoder() -> JSONEncoder {
 // MARK: - Encode/decode helpers
 
 class JSONNull: Codable, Hashable {
-    
+
     public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
         return true
     }
-    
+
     public var hashValue: Int {
         return 0
     }
-    
+
     public init() {}
-    
+
     public required init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         if !container.decodeNil() {
             throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
         }
     }
-    
+
     public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encodeNil()

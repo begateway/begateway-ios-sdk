@@ -110,7 +110,8 @@ extension PaymentBasicProtocol {
                         last4: response?.response?.creditCard?.last4 ?? "",
                         first1: response?.response?.creditCard?.first1 ?? "",
                         token: response?.response?.creditCard?.token ?? "",
-                        isActive: isSaveCard
+                        isActive: isSaveCard,
+                        stamp: response?.response?.creditCard?.stamp ?? ""
                     )
                     
                     switch status {

@@ -44,19 +44,19 @@ public struct SheetOptions {
     /* These properties will be removed in an upcoming release, leaving them for now so people can transition slowly */
     
     @available(*, unavailable, message: "minimumSpaceAbovePullBar is now a property on SheetViewController")
-    public var minimumSpaceAbovePullBar: CGFloat = 0
+    public var minimumSpaceAbovePullBar: CGFloat { return 0 }
     
     @available(*, unavailable, message: "gripSize is now a property on SheetViewController")
-    public var gripSize: CGSize = .zero
+    public var gripSize: CGSize {return .zero }
     
     @available(*, unavailable, message: "gripColor is now a property on SheetViewController")
-    public var gripColor: UIColor = .white
+    public var gripColor: UIColor { return .white }
     
     @available(*, unavailable, message: "pullBarBackgroundColor is now a property on SheetViewController")
-    public var pullBarBackgroundColor: UIColor = UIColor.clear
+    public var pullBarBackgroundColor: UIColor { return UIColor.clear }
     
     @available(*, unavailable, message: "cornerRadius is now a property on SheetViewController")
-    public var cornerRadius: CGFloat = 0
+    public var cornerRadius: CGFloat { return 0 }
     
     public init() { }
     public init(pullBarHeight: CGFloat? = nil,

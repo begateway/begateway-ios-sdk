@@ -313,7 +313,7 @@ public class BeGateway {
         requestPK.merchantCapabilities = .capability3DS
         requestPK.countryCode = "BY"
         requestPK.currencyCode = currencyCode
-        requestPK.paymentSummaryItems = [PKPaymentSummaryItem(label: applePayConst.description, amount: NSDecimalNumber(string: amount))]
+        requestPK.paymentSummaryItems = [PKPaymentSummaryItem(label: self.options?.merchantName ?? applePayConst.description, amount: NSDecimalNumber(string: amount))]
         
         if self.delegatePK == nil {
             self.delegatePK = ApplePaymentModule(link: self)

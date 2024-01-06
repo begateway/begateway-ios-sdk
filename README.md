@@ -152,7 +152,8 @@ After it you should pass merchant id to BegatewayOptions.
 Default <b>Apple Pay</b> with input:
 ```swift
         options.merchantID = "merchant.org.cocoapods.demo.begateway-Example"
-        
+        options.merchantName = "Your Company, OOO" // A name of the company that will appear on the customer's billing statement
+
         let _ = BeGateway.instance.setup(with: options)
         
         let request = BeGatewayRequest(amount: Double(self.valueTextField.text ?? "0.0") ?? 0.0,

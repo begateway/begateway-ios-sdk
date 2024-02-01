@@ -23,7 +23,7 @@
 "begateway_cardholder_name_required"="Nom sur la carte obligatoire";
 "begateway_savecard"="Se souvenir de moi la prochaine fois";
 "begateway_button_pay"="Payer";
-"begateway_secure_info"="Le paiement sécurisé est fourni par %s";
+"begateway_secure_info"="Le paiement sécurisé est fourni par %@";
 "Change"="Changer";
 "Sorry, incorrect data"="Il y a eu une erreur de paiement. Réessayez ou utilisez une autre carte.";
 "OK"="OK";

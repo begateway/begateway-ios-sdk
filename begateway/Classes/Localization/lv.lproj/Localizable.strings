@@ -23,7 +23,7 @@
 "begateway_cardholder_name_required"="Vārds, uzvārds uz kartes jānorāda obligāti";
 "begateway_savecard"="Saglabāt karti";
 "begateway_button_pay"="Maksāt";
-"begateway_secure_info"="Drošo pakalpojumu nodrošina %s";
+"begateway_secure_info"="Drošo pakalpojumu nodrošina %@";
 "Change"="Mainīt";
 "Sorry, incorrect data"="Radās maksājuma kļūda. Mēģiniet vēlreiz vai izmantojiet citu karti.";
 "OK"="Labi";

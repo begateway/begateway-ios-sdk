@@ -1,6 +1,6 @@
 {
   "name": "begateway",
-  "version": "3.0.4",
+  "version": "3.1.0",
   "summary": "Little framework to easy implement https://begateway.com/ in yout application",
   "swift_versions": "5.0",
   "platforms": {
@@ -18,11 +18,11 @@
     "file": "LICENSE"
   },
   "authors": {
-    "eComCharge LLC": "techsupport@ecomcharge.com"
+    "eComCharge": "techsupport@ecomcharge.com"
   },
   "source": {
     "git": "https://github.com/begateway/begateway-ios-sdk.git",
-    "tag": "3.0.4"
+    "tag": "3.1.0"
   },
   "source_files": "begateway/**/**/*.{swift,h,m}",
   "requires_arc": true,

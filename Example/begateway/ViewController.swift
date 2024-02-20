@@ -387,11 +387,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
 //            )
 
             self.card = BeGatewayRequestCard(
-                number: "4200000000000000",
+                number: "4200 0000 0000 0000",
                 verificationValue: "123",
                 expMonth: "02",
-                expYear: "23",
-                holder: "WRR",
+                expYear: "30",
+                holder: "MR DOE",
                 cardToken: nil
             )
         }

@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
 
     s.homepage         = 'https://begateway.com/'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
-    s.author           = { 'eComCharge LLC' => 'techsupport@ecomcharge.com' }
+    s.author           = { 'eComCharge' => 'techsupport@ecomcharge.com' }
     s.source           = { :git => 'https://github.com/begateway/begateway-ios-sdk.git', :tag => s.version }
 
     

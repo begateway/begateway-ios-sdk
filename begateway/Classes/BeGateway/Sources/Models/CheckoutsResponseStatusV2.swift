@@ -9,13 +9,13 @@ import Foundation
 public struct CheckoutsResponseStatusV2: Codable {
     public let checkout: CheckoutsResponseStatusV2Checkout?
 }
-
 // MARK: - Checkout
 public struct CheckoutsResponseStatusV2Checkout: Codable {
     let token: String?
     let shopID: Int?
     let transactionType: String?
     let order: CheckoutsResponseStatusV2Order?
+    let company: CheckoutsResponseStatusV2Company?
     let finished, expired, test: Bool?
     let status: String?
     let version, appleMerchantID: String?
@@ -27,6 +27,7 @@ public struct CheckoutsResponseStatusV2Checkout: Codable {
         case transactionType = "transaction_type"
         case order
 //        case order, finished, expired, test, status, message, version
+        case company
         case finished, expired, test, status, version
         case appleMerchantID = "apple_merchant_id"
         case settings
@@ -81,4 +82,9 @@ public struct CheckoutsResponseStatusV2AdditionalData: Codable {
 // MARK: - Vendor
 public struct CheckoutsResponseStatusV2Vendor: Codable {
     let name, token: String?
+}
+
+// MARK: - Company
+public struct CheckoutsResponseStatusV2Company: Codable {
+    let name, site, smallLogoURL: String?
 }

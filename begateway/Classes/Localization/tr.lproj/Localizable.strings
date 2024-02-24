@@ -23,7 +23,7 @@
 "begateway_cardholder_name_required"="Kart üzerindeki isim gerekli";
 "begateway_savecard"="Sonraki sefere beni hatırla";
 "begateway_button_pay"="Öde";
-"begateway_secure_info"="Güvenli ödeme sağlayıcısı: %s";
+"begateway_secure_info"="Güvenli ödeme sağlayıcısı: %@";
 "Change"="Değiştir";
 "Sorry, incorrect data"="Ödeme hatası. Tekrar deneyin veya başka bir kart kullanın.";
 "OK"="Tamam";

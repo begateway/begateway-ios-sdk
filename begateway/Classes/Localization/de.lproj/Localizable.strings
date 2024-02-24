@@ -23,7 +23,7 @@
 "begateway_cardholder_name_required"="Name auf der Karte ist erforderlich";
 "begateway_savecard"="Meine Daten merken";
 "begateway_button_pay"="Bezahlen";
-"begateway_secure_info"="Sichere Zahlungsmethode wird angeboten von %s";
+"begateway_secure_info"="Sichere Zahlungsmethode wird angeboten von %@";
 "Change"="Ändern";
 "Sorry, incorrect data"="Es ist ein Zahlungsfehler aufgetreten. Versuchen Sie es erneut oder verwenden Sie eine andere Karte.";
 "OK"="OK";

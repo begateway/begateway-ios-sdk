@@ -23,7 +23,7 @@
 "begateway_cardholder_name_required"="Navn på kort er nødvendig";
 "begateway_savecard"="Lagre kortet";
 "begateway_button_pay"="Betal";
-"begateway_secure_info"="Sikker betaling tilbys av %s";
+"begateway_secure_info"="Sikker betaling tilbys av %@";
 "Change"="Endre";
 "Sorry, incorrect data"="En betalingsfeil oppsto. Prøv igjen eller prøv et annet kort.";
 "OK"="OK";

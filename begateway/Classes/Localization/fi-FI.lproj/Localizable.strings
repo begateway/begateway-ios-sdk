@@ -23,7 +23,7 @@
 "begateway_cardholder_name_required"="Nimi kortissa vaaditaan";
 "begateway_savecard"="Muista seuraavalla kerralla";
 "begateway_button_pay"="Maksa";
-"begateway_secure_info"="Turvallisen maksun tarjoaa %s";
+"begateway_secure_info"="Turvallisen maksun tarjoaa %@";
 "Change"="Vaihda";
 "Sorry, incorrect data"="Maksussa tapahtui virhe. Yritä uudelleen tai käytä toista korttia.";
 "OK"="OK";

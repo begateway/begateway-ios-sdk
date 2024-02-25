@@ -25,7 +25,7 @@
 "begateway_expiration_invalid" = "Expiration date is invalid";
 "begateway_cardholder_name_required" = "Name on card is required";
 "begateway_savecard" = "Save card";
-"Secure payment is provided by %s" = "Secure payment is provided by %s";
+"begateway_secure_info" = "Secure payment is provided by %@";
 
 "begateway_button_pay" = "Pay";
 "Cancel" = "Cancel";

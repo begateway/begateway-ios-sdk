@@ -23,7 +23,7 @@
 "begateway_cardholder_name_required"="Необходимо указать имя, написанное на карте";
 "begateway_savecard"="Запомнить карту";
 "begateway_button_pay"="Оплатить";
-"begateway_secure_info"="Безопасная оплата обеспечивается %s";
+"begateway_secure_info"="Безопасная оплата обеспечивается %@";
 "Change"="Изменить";
 "Sorry, incorrect data"="Ошибка в процессе оплаты. Попробуйте еще раз или используйте другую карту";
 "OK"="OK";

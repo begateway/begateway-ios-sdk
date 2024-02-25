@@ -498,6 +498,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_TEAM = GC7PP9X64G;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = begateway/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = beGateway;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
@@ -506,6 +507,7 @@
 				MARKETING_VERSION = 3.0.8;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.begateway.sdk;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.begateway.sdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -523,6 +525,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_TEAM = GC7PP9X64G;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = begateway/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = beGateway;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
@@ -531,6 +534,7 @@
 				MARKETING_VERSION = 3.0.8;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.begateway.sdk;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.begateway.sdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

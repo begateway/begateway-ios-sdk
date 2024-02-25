@@ -23,7 +23,7 @@
 "begateway_cardholder_name_required"="Numele de pe card este necesar";
 "begateway_savecard"="Salvați cardul";
 "begateway_button_pay"="Plătiți";
-"begateway_secure_info"="Plata securizată este oferită de %s";
+"begateway_secure_info"="Plata securizată este oferită de %@";
 "Change"="Schimbare";
 "Sorry, incorrect data"="A apărut o eroare de plată. Încercați din nou sau utilizați un alt card.";
 "OK"="OK";

@@ -214,7 +214,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     }
 
     @IBAction func payTouch(_ sender: Any) {
+        self.touchGetToken("")
         self.testPayForm()
+
     }
 
     @IBAction func touchGetToken(_ sender: Any) {

@@ -23,7 +23,7 @@
 "begateway_cardholder_name_required"="Потрібно вказати ім’я на картці";
 "begateway_savecard"="Зберегти картку";
 "begateway_button_pay"="Сплатити";
-"begateway_secure_info"="Захищений платіж забезпечує %s";
+"begateway_secure_info"="Захищений платіж забезпечує %@";
 "Change"="Змінити";
 "Sorry, incorrect data"="Під час оплати сталася помилка. Спробуйте ще раз або скористайтеся іншою карткою.";
 "OK"="OK";

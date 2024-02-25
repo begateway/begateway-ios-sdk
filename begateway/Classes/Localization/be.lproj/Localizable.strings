@@ -23,7 +23,7 @@
 "begateway_cardholder_name_required"="Неабходна ўказаць імя, напісанае на карце";
 "begateway_savecard"="Запомніць картку";
 "begateway_button_pay"="Аплаціць";
-"begateway_secure_info"="Абароненыя плацяжы на платформе %s";
+"begateway_secure_info"="Абароненыя плацяжы на платформе %@";
 "Change"="Змяніць";
 "Sorry, incorrect data"="Памылка аплаты. Паўтарыце спробу або выкарыстайце іншую картку";
 "OK"="OK";

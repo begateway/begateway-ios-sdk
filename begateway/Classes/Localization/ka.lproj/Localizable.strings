@@ -23,7 +23,7 @@
 "begateway_cardholder_name_required"="ბარათზე დატანილი სახელის მითითება აუცილებელია";
 "begateway_savecard"="ბარათის შენახვა";
 "begateway_button_pay"="გადახდა";
-"begateway_secure_info"="უსაფრთხო გადახდა გარანტირებულია %s";
+"begateway_secure_info"="უსაფრთხო გადახდა გარანტირებულია %@";
 "Change"="შეცვლა";
 "Sorry, incorrect data"="მოხდა გადახდის შეცდომა. გთხოვთ ცადეთ განმეორებით ან გამოიყენეთ სხვა ბარათი.";
 "OK"="კარგი";

@@ -23,7 +23,7 @@
 "begateway_cardholder_name_required"="卡片上的名字为必填项";
 "begateway_savecard"="下次记住我";
 "begateway_button_pay"="支付";
-"begateway_secure_info"="安全付款提供方：%s";
+"begateway_secure_info"="安全付款提供方：%@";
 "Change"="更改";
 "Sorry, incorrect data"="付款出错。重试或使用另一张卡。";
 "OK"="确定";

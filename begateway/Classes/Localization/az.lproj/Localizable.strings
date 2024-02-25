@@ -23,7 +23,7 @@
 "begateway_cardholder_name_required"="Kartdakı ad tələb olunur";
 "begateway_savecard"="Kartı saxla";
 "begateway_button_pay"="Ödəyin";
-"begateway_secure_info"="Təhlükəsiz ödəniş %s tərəfindən təmin edilir";
+"begateway_secure_info"="Təhlükəsiz ödəniş %@ tərəfindən təmin edilir";
 "Change"="Dəyişin";
 "Sorry, incorrect data"="Ödəniş xətası baş verdi. Yenidən cəhd edin və ya başqa kartdan istifadə edin.";
 "OK"="Oldu";

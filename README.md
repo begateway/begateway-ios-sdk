@@ -361,11 +361,16 @@ Example:
     }
 ```
 #### Customize main options
-
-You can change mode from test to production
+You can change mode from test to production (by default, true)
 ```swift
-BeGateway.instance.options?.test = true
+BeGateway.instance.options?.test = false
 ```
+
+You can change transaction type (by default, "payment")
+```swift
+BeGateway.instance.options?.transaction_type = "authorization"
+```
+
 
 You can get a payment status notification by setting **notificationURL** property
 ```swift

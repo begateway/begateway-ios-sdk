@@ -13,31 +13,31 @@ class BeGatewaySourceApi: ServiceApi {
     var pubKey: String
     var domain: String = "https://checkout.bepaid.by/ctp/api"
     var options: BeGatewayOptions?
-    
+
     init(options: BeGatewayOptions) {
         self.pubKey = options.clientPubKey
         self.domain = options.endpoint
         self.options = options
     }
-    
+
     func sendApplePayment(uploadDataModel: RequestPaymentAppleV2, completionHandler: ((ResponsePaymentV2?) -> Void)?, failureHandler:((String) -> Void)?) {
         self.postMethod(with: self.domain + applePayString, uploadDataModel: uploadDataModel, completionHandler: completionHandler, failureHandler: failureHandler)
     }
-    
+
     func sendPayment(uploadDataModel: RequestPaymentV2, completionHandler: ((ResponsePaymentV2?) -> Void)?, failureHandler:((String) -> Void)?) {
         self.postMethod(with: self.domain + "/payments", uploadDataModel: uploadDataModel, completionHandler: completionHandler, failureHandler: failureHandler)
     }
-    
+
     func checkStatus(token: String, completionHandler: ((CheckoutsResponseStatusV2?) -> Void)?, failureHandler:((String) -> Void)?) {
         self.getMethod(with: self.domain + "/checkouts/\(token)", completionHandler: completionHandler, failureHandler: failureHandler)
     }
-    
+
     func checkout(request: BeGatewayRequest, completionHandler: ((CheckoutsResponseV2?) -> Void)?, failureHandler:((String) -> Void)?) {
-        
+
         guard let options = self.options else {
             fatalError("Error - Options is nll")
         }
-        
+
         let uploadDataModel = CheckoutsRequestV2(
             checkout: CheckoutsRequestV2Checkout(
                 order: CheckoutsRequestV2Order(
@@ -60,11 +60,11 @@ class BeGatewaySourceApi: ServiceApi {
                     )
                 ),
                 test: options.test,
-                transactionType: "payment",
+                transactionType: options.transaction_type,
                 version: 2.1
             )
         )
-        
+
         self.postMethod(
             with: self.domain + "/checkouts",
             uploadDataModel: uploadDataModel,

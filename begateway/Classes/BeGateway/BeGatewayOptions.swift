@@ -28,6 +28,7 @@ public class BeGatewayOptions {
         }
     }
     public var test: Bool = true
+    public var transaction_type: String = "payment"
 
     public var title: String?
     public var fontTitle: UIFont?

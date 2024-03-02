@@ -69,20 +69,13 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-
-
-      
-        
         
         self.initInterfaceByOptions()
         self.initInterface()
         self.saveDetailsSwitch.isOn = false
         
-        
-        let companyName = UserDefaults.standard.string(forKey: "CompanyName") ?? "bePaid"
+        let companyName = UserDefaults.standard.string(forKey: "CompanyName") ?? "beGateway"
         self.securePayment.text = String(format: LocalizedString.LocalizedString(value: "begateway_secure_info"), companyName)
-        
         
         if self.cardToken != nil {
             self.payTouch(self.payButton ?? self)
@@ -141,7 +134,7 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
         self.cardNumberTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         self.expireDateTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         self.cvcTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
-        self.nameOnCardTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        self.nameOnCardTextField.addTarget(self, action: #selector(self.textFieldDidChangeToUpperCase(_:)), for: .editingChanged)
         
         // init visibility
         if BeGateway.instance.options?.isToogleCardNumber ?? false {
@@ -177,11 +170,7 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
                 textField.backgroundColor = tfbgColor
             }
         }
-        
-        
-        
-        //        self.cardNumberTextField.becomeFirstResponder()
-        
+                
         //        for test
         if let card = BeGateway.instance.request?.card{
             self.cardToken = card.cardToken
@@ -193,8 +182,6 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
             self.validateRequiredFields()
         }
     }
-    
-    
     
     @IBAction func detachFromPhoto(_ sender: Any) {
         BeGateway.instance.options?.onDetachFromCamera?(){card in
@@ -278,6 +265,12 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     
     // MARK:: UITextField Delegates
     @objc func textFieldDidChange(_ textField: UITextField) {
+        self.validateRequiredFields()
+    }
+    
+    // MARK:: UITextField Delegates
+    @objc func textFieldDidChangeToUpperCase(_ textField: UITextField) {
+        textField.text = textField.text?.uppercased()
         self.validateRequiredFields()
     }
     

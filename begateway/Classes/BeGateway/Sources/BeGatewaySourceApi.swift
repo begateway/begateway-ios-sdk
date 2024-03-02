@@ -11,7 +11,7 @@ let applePayString = "/apple_pay/payment"
 
 class BeGatewaySourceApi: ServiceApi {
     var pubKey: String
-    var domain: String = "https://checkout.bepaid.by/ctp/api"
+    var domain: String = "https://checkout.begateway.com/ctp/api"
     var options: BeGatewayOptions?
     
     init(options: BeGatewayOptions) {

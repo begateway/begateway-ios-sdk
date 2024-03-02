@@ -11,7 +11,7 @@ import UIKit
 public class BeGatewayOptions {
     public var clientPubKey: String
 
-    public var endpoint: String = "https://checkout.bepaid.by/ctp/api"
+    public var endpoint: String = "https://checkout.begateway.com/ctp/api"
     var resultUrl: String = "https://127.default_return_url.com"
     public var merchantID : String?
     public var merchantName: String?
@@ -180,10 +180,12 @@ extension BeGatewayOptions {
 
     func initStyleForCardNumber(label: UILabel, textField: UITextField) {
         self.initStyleForRow(label: label, textField: textField, colorLabel: self.colorTitleCardNumber, fontLabel: self.fontTitleCardNumber, colorTextField: self.colorHintCardNumber, fontTextField: self.fontHintCardNumber, title: self.titleCardNumber, hint: self.hintCardNumber)
+        textField.keyboardType = .numberPad
     }
 
     func initStyleForExpireDate(label: UILabel, textField: UITextField) {
         self.initStyleForRow(label: label, textField: textField, colorLabel: self.colorTitleExpiryDate, fontLabel: self.fontTitleExpiryDate, colorTextField: self.colorHintExpiryDate, fontTextField: self.fontHintExpiryDate, title: self.titleExpiryDate, hint: hintExpiryDate)
+        textField.keyboardType = .numberPad
     }
 
     func initStyleForCvc(label: UILabel, textField: UITextField) {
@@ -192,9 +194,11 @@ extension BeGatewayOptions {
         if self.isSecureCVC {
             textField.isSecureTextEntry = true
         }
+        textField.keyboardType = .numberPad
     }
 
     func initStyleForHolderName(label: UILabel, textField: UITextField) {
         self.initStyleForRow(label: label, textField: textField, colorLabel: self.colorTitleCardHolderName, fontLabel: self.fontTitleCardHolderName, colorTextField: self.colorHintCardHolderName, fontTextField: self.fontHintCardNumber, title: self.titleCardHolderName, hint: self.hintCardHolderName)
+        textField.keyboardType = .namePhonePad
     }
 }

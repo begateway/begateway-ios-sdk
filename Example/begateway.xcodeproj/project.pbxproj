@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3EC0D898327527ABC6EE16D0 /* Pods_begateway_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82ED7023F335C7EEB0FD9990 /* Pods_begateway_Example.framework */; };
+		4B1ED360765F9FE4198AC5BE /* Pods_begateway_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B179C9A6E3D5DBB270BFC6 /* Pods_begateway_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		C3F31ECCFAF13648D8E068BD /* Pods_begateway_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA27A862DEA0AAC793E18C8 /* Pods_begateway_Tests.framework */; };
+		C61759E454EDD3A8A744492C /* Pods_begateway_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC8CCB1A850ACA90F6230B51 /* Pods_begateway_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,8 +29,9 @@
 
 /* Begin PBXFileReference section */
 		0682B8DA464A715BE50738FC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		0A57F53DF21463FB263CD510 /* Pods-begateway_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-begateway_Tests.debug.xcconfig"; path = "Target Support Files/Pods-begateway_Tests/Pods-begateway_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		0D9D7686E31D999CC22E3048 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		21A44CB2B786D720B96D129C /* Pods-begateway_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-begateway_Example.release.xcconfig"; path = "Target Support Files/Pods-begateway_Example/Pods-begateway_Example.release.xcconfig"; sourceTree = "<group>"; };
+		4338D9DD162A2E343ECCA1F8 /* Pods-begateway_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-begateway_Example.release.xcconfig"; path = "Target Support Files/Pods-begateway_Example/Pods-begateway_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* begateway_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = begateway_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,12 +43,11 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		782ED5D5285153A80025FA44 /* begateway_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = begateway_Example.entitlements; sourceTree = "<group>"; };
-		82ED7023F335C7EEB0FD9990 /* Pods_begateway_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_begateway_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E5690F0FAC53F2782B30299 /* begateway.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = begateway.podspec; path = ../begateway.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		954FDA908852DFE2FBD49E74 /* Pods-begateway_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-begateway_Tests.release.xcconfig"; path = "Target Support Files/Pods-begateway_Tests/Pods-begateway_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		9DA27A862DEA0AAC793E18C8 /* Pods_begateway_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_begateway_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F4C4C4C29E162F2439A6DA3 /* Pods-begateway_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-begateway_Tests.debug.xcconfig"; path = "Target Support Files/Pods-begateway_Tests/Pods-begateway_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		E4BBC4CC5F79F6625D1DD8B1 /* Pods-begateway_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-begateway_Example.debug.xcconfig"; path = "Target Support Files/Pods-begateway_Example/Pods-begateway_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		9DAF321BFC251085652F8583 /* Pods-begateway_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-begateway_Tests.release.xcconfig"; path = "Target Support Files/Pods-begateway_Tests/Pods-begateway_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		A4B179C9A6E3D5DBB270BFC6 /* Pods_begateway_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_begateway_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC8CCB1A850ACA90F6230B51 /* Pods_begateway_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_begateway_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD24083A08DA144549C2C168 /* Pods-begateway_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-begateway_Example.debug.xcconfig"; path = "Target Support Files/Pods-begateway_Example/Pods-begateway_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EC0D898327527ABC6EE16D0 /* Pods_begateway_Example.framework in Frameworks */,
+				4B1ED360765F9FE4198AC5BE /* Pods_begateway_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3F31ECCFAF13648D8E068BD /* Pods_begateway_Tests.framework in Frameworks */,
+				C61759E454EDD3A8A744492C /* Pods_begateway_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,10 +73,10 @@
 		3B6B1B1B5FBD3F6426F943C6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E4BBC4CC5F79F6625D1DD8B1 /* Pods-begateway_Example.debug.xcconfig */,
-				21A44CB2B786D720B96D129C /* Pods-begateway_Example.release.xcconfig */,
-				9F4C4C4C29E162F2439A6DA3 /* Pods-begateway_Tests.debug.xcconfig */,
-				954FDA908852DFE2FBD49E74 /* Pods-begateway_Tests.release.xcconfig */,
+				CD24083A08DA144549C2C168 /* Pods-begateway_Example.debug.xcconfig */,
+				4338D9DD162A2E343ECCA1F8 /* Pods-begateway_Example.release.xcconfig */,
+				0A57F53DF21463FB263CD510 /* Pods-begateway_Tests.debug.xcconfig */,
+				9DAF321BFC251085652F8583 /* Pods-begateway_Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -90,7 +90,7 @@
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				3B6B1B1B5FBD3F6426F943C6 /* Pods */,
-				B5B79BD9235E229220DD712E /* Frameworks */,
+				70E51C27E84338AF741D6881 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,11 +152,11 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		B5B79BD9235E229220DD712E /* Frameworks */ = {
+		70E51C27E84338AF741D6881 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				82ED7023F335C7EEB0FD9990 /* Pods_begateway_Example.framework */,
-				9DA27A862DEA0AAC793E18C8 /* Pods_begateway_Tests.framework */,
+				A4B179C9A6E3D5DBB270BFC6 /* Pods_begateway_Example.framework */,
+				AC8CCB1A850ACA90F6230B51 /* Pods_begateway_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -168,11 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "begateway_Example" */;
 			buildPhases = (
-				4F5CBB818B081CFB072B7D7E /* [CP] Check Pods Manifest.lock */,
+				C8495A45A1A3D5EFC450E2F7 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				76A5175A118391D077F9614E /* [CP] Embed Pods Frameworks */,
+				5FAF0B23D48344473ABA5CBC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,7 +187,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "begateway_Tests" */;
 			buildPhases = (
-				9747F49BFC5BF454CA3E01A2 /* [CP] Check Pods Manifest.lock */,
+				CC5DEB1934E48D72275F40CB /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
@@ -220,7 +220,7 @@
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 6DCVYJ4AJZ;
+						DevelopmentTeam = GC7PP9X64G;
 						LastSwiftMigration = 1030;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -266,7 +266,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4F5CBB818B081CFB072B7D7E /* [CP] Check Pods Manifest.lock */ = {
+		5FAF0B23D48344473ABA5CBC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-begateway_Example/Pods-begateway_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyRSA/SwiftyRSA.framework",
+				"${BUILT_PRODUCTS_DIR}/begateway/begateway.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyRSA.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/begateway.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-begateway_Example/Pods-begateway_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8495A45A1A3D5EFC450E2F7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -288,27 +308,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		76A5175A118391D077F9614E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-begateway_Example/Pods-begateway_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftyRSA/SwiftyRSA.framework",
-				"${BUILT_PRODUCTS_DIR}/begateway/begateway.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyRSA.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/begateway.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-begateway_Example/Pods-begateway_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9747F49BFC5BF454CA3E01A2 /* [CP] Check Pods Manifest.lock */ = {
+		CC5DEB1934E48D72275F40CB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -403,7 +403,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -460,7 +459,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -489,20 +487,17 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4BBC4CC5F79F6625D1DD8B1 /* Pods-begateway_Example.debug.xcconfig */;
+			baseConfigurationReference = CD24083A08DA144549C2C168 /* Pods-begateway_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = begateway_Example.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 35;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = GC7PP9X64G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = begateway/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = beGateway;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.0.8;
 				MODULE_NAME = ExampleApp;
@@ -516,20 +511,17 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21A44CB2B786D720B96D129C /* Pods-begateway_Example.release.xcconfig */;
+			baseConfigurationReference = 4338D9DD162A2E343ECCA1F8 /* Pods-begateway_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = begateway_Example.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 35;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = GC7PP9X64G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = begateway/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = beGateway;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.0.8;
 				MODULE_NAME = ExampleApp;
@@ -543,9 +535,9 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F4C4C4C29E162F2439A6DA3 /* Pods-begateway_Tests.debug.xcconfig */;
+			baseConfigurationReference = 0A57F53DF21463FB263CD510 /* Pods-begateway_Tests.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 6DCVYJ4AJZ;
+				DEVELOPMENT_TEAM = GC7PP9X64G;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -556,7 +548,7 @@
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.begateway.sdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/begateway_Example.app/begateway_Example";
@@ -565,16 +557,16 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 954FDA908852DFE2FBD49E74 /* Pods-begateway_Tests.release.xcconfig */;
+			baseConfigurationReference = 9DAF321BFC251085652F8583 /* Pods-begateway_Tests.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 6DCVYJ4AJZ;
+				DEVELOPMENT_TEAM = GC7PP9X64G;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.begateway.sdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/begateway_Example.app/begateway_Example";

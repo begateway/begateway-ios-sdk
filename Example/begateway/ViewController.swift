@@ -236,10 +236,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     }
 
     @objc func applePayAction() {
-        let options = BeGateway.instance.options ?? BeGatewayOptions(clientPubKey: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw8XoKldxIqeAcP59p5oVJefQNKK8GIvWQBlnn08tA9KhK0NUe4LFvVfETXHDMKg/cmSpjTysVbOi+rOm5VQJdZU1GGVHJvkbGuuTXkZW9JBlzhmx4ikTYHhcSqtFNTgQlOSpQGI06NF7Iribapch+aLApilOlLoA9+IWQc79Q3/yYl5vV3b2Ub7O7AR5yCECOLa583uhA7NxnV+d2+f5pSKeDJRjML71LXKkS7q7Zj6ag45hzILdxMW8CElWliPKFesJZrXRHW/8E9pQ49bG3LZFkFnTyc6DDyydWB6y9jbYLS9pi5LSXAw+rvde23UnaReTRwaWbZgTL/I34IjHcwIDAQAB")
+        // Shop 99
+        let options = BeGateway.instance.options ?? BeGatewayOptions(clientPubKey: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmv2F2L5YQfdjAXCPQ7p1FB9FGq00NSCaAFq9cyRlOW8jEo9JZbOaCZ56Eg0kip3fsZNYEXiAWmtKPY1EYk36wsK2hGivDQzMQG0cLqT0WALrBfTboWeYUIj7dJytcJvrw1MQzvjlFppiDQqnA2jlt1ZGnCdgmTWhpOG1Sn+Q+wiLmtdIO1frx9bLjJLMjIEO+0PAeEqwd02ZRUkcTzWZeJhlapdI7OvDUsbuqAN107zI5myI7dW6f4NwcHFQYsLIpw6X50SnMV2HaAe5g1FGYgj8cynzmB5vgI6ogSBeXBwXtVWsyV+sF0y4yFcxtNN7aYNfQKYJ7Yt11LC2/V6okwIDAQAB")
 
         setupApplePubkey()
-        options.merchantID = "merchant.org.cocoapods.demo.begateway-Example"
+        options.merchantID = "merchant.com.begateway.sdk.demo"
 
         let _ = BeGateway.instance.setup(with: options)
 
@@ -294,7 +295,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     }
 
     private func setupApplePubkey() {
-        BeGateway.instance.options?.clientPubKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw8XoKldxIqeAcP59p5oVJefQNKK8GIvWQBlnn08tA9KhK0NUe4LFvVfETXHDMKg/cmSpjTysVbOi+rOm5VQJdZU1GGVHJvkbGuuTXkZW9JBlzhmx4ikTYHhcSqtFNTgQlOSpQGI06NF7Iribapch+aLApilOlLoA9+IWQc79Q3/yYl5vV3b2Ub7O7AR5yCECOLa583uhA7NxnV+d2+f5pSKeDJRjML71LXKkS7q7Zj6ag45hzILdxMW8CElWliPKFesJZrXRHW/8E9pQ49bG3LZFkFnTyc6DDyydWB6y9jbYLS9pi5LSXAw+rvde23UnaReTRwaWbZgTL/I34IjHcwIDAQAB"
+        // shop 99
+        BeGateway.instance.options?.clientPubKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0M//IG/wkyiIv7gUhPS8QScvz6AK0z1l4K1RspuAznVyeSil0WO0ZdhihvRKNw2QYf/92cvBMDCjntqsvx+BERzCqIl/g5MKjI7k2DPG7rtte6W7OkWv1x728pSxkV92oAkKjvqN5Obtmeb69A1m+C2HSYATV1e4smPwc1Fxf0NOoKxM4Ffi+49WjRoUdy3AYoxGbpRnKuI9Lh82116wiFTcM0oMubRLpV4FqnzBYHJqCvICFtm1WznqL3lKzJgF4yK8Gx+1JmCTU3P/58GBhwTyRTHouGZjpNY7tKUhNxlHz/imvKk4vSwgGqtqxNEn044sbgh1bQcuw5cc1/DNGwIDAQAB"
     }
 
     @IBAction func touchPayWithToken(_ sender: Any) {
@@ -366,18 +368,20 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
 
     func changePubKey(is3DSecure: Bool) {
         if is3DSecure {
-            BeGateway.instance.options?.clientPubKey =  "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxiq93sRjfWUiS/OE2ZPfMSAeRZFGpVVetqkwQveG0reIiGnCl4RPJGMH1ng3y3ekhTxO1Ze+ln3sCK0LJ/MPrR1lzKN9QbY4F3l/gmj/XLUseOPFtayxvQaC+lrYcnZbTFhqxB6I1MSF/3oeTqbjJvUE9KEDmGsZ57y0+ivbRo9QJs63zoKaUDpQSKexibSMu07nm78DOORvd0AJa/b5ZF+6zWFolVBmzuIgGDpCWG+Gt4+LSw9yiH0/43gieFr2rDKbb7e7JQpnyGEDT+IRP9uKCmlRoV1kHcVyHoNbC0Q9kV8jPW2K5rKuj80auV3I2dgjJEsvxMuHQOr4aoMAgQIDAQAB"
+            // shop 198
+            BeGateway.instance.options?.clientPubKey =  "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAors6xudtD30e4eCQNXwgRi7PsjNTfC7srjx1ej9HVnr1sZqsKlM0hUPlkvHGFu5IYHcxBisATE3PXOKLPu9YSiY7ffzg2FIEJbPKs8Jun15O+f5EEjt3RKtrLOz5Nb8r2j92RonWHwXhWTMlFT6SIvElkmd15GPbUiHAZ4firgLuswuzOgmz6v5i4FVWgbh2+E8Am+6+ptbZdcdu6uPKlb7jOY48H57cjDPrP2sycCVCfWQBZj7h6g9c89F8M0sUHCGWE6Xh79xclz3oHz/e/+H3Aj9HjqIE29WsLrJYrb30QLrnpQ0/lUnVbc8nfPfwoq5cESEV6UoP1hbtiBSoFQIDAQAB"
 
             self.card = BeGatewayRequestCard(
-                number: "2201382000000013",
+                number: "4012000000001097",
                 verificationValue: "123",
                 expMonth: "02",
-                expYear: "25",
-                holder: "Ivan Ivanov",
+                expYear: "30",
+                holder: "JOHN DOE",
                 cardToken: nil
             )
         } else {
-            BeGateway.instance.options?.clientPubKey =  "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvextn45qf3NiNzqBYXMvcaSFlgoYE/LDuDDHtNNM4iWJP7BvjBkPcZu9zAfo5IiMxl660r+1E4PYWwr0iKSQ8+7C/WcSYwP8WlQVZH+2KtPmJgkPcBovz3/aZrQpj6krcKLklihg3Vs++TtXAbpCCbhIq0DJ3T+khttBqTGD+2x2vOC68xPgMwvnwQinfhaHEQNbtEcWWXPw9LYuOTuCwKlqijAEds4LgKSisubqrkRw/HbAKVfa659l5DJ8QuXctjp3Ic+7P2TC+d+rcfylxKw9c61ykHS1ggI/N+/KmEDVJv1wHvdy7dnT0D/PhArnCB37ZDAYErv/NMADz2/LuQIDAQAB"
+            // shop 26129
+            BeGateway.instance.options?.clientPubKey =  "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0P67WdeRQcrl6K59pZ0g5Gr0wGc24NC+H+YK2AJgwTfMNOBZEw00TQqjR7R+rH9JtRvxRdLgqNGZSEpTcXE5bZbzuBHEua+3MFU/8OX+p3s2BjQ4HXxLLmtkLIfe9y2IrTzR18fYvxjGRwBOjcsMHS1J0r+UYCzRSWxY4ogIVHxDdzzFaacFJhKYOx+QQLzRHgDcGOh1f6tAHgSHa80iTxdW1rCnFd3/gssOFt5N6BayhLKgolZvoKKKtGQeIzVYw7Gg+aEKcJVFaJEsI+a8W23iqRJUrgOi6jwfS8S4tSNfd3eJBV0XengVF+yNhr0jwCKzzRH+oGDF/fHNSHOdYwIDAQAB"
 
 //            self.card = BeGatewayRequestCard( //Pay by card token
 //                number: nil,
@@ -389,11 +393,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
 //            )
 
             self.card = BeGatewayRequestCard(
-                number: "4200000000000000",
+                number: "4200 0000 0000 0000",
                 verificationValue: "123",
                 expMonth: "02",
-                expYear: "23",
-                holder: "WRR",
+                expYear: "30",
+                holder: "MR DOE",
                 cardToken: nil
             )
         }

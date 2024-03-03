@@ -18,7 +18,7 @@
     "file": "LICENSE"
   },
   "authors": {
-    "eComCharge LLC": "techsupport@ecomcharge.com"
+    "eComCharge": "techsupport@ecomcharge.com"
   },
   "source": {
     "git": "https://github.com/begateway/begateway-ios-sdk.git",

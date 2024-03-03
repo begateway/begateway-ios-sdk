@@ -493,7 +493,7 @@
 				CODE_SIGN_ENTITLEMENTS = begateway_Example.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 39;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = GC7PP9X64G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = begateway/Info.plist;
@@ -517,7 +517,7 @@
 				CODE_SIGN_ENTITLEMENTS = begateway_Example.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 39;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = GC7PP9X64G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = begateway/Info.plist;

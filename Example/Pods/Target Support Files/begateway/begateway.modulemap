@@ -1,6 +1,0 @@
-framework module begateway {
-  umbrella header "begateway-umbrella.h"
-
-  export *
-  module * { export * }
-}

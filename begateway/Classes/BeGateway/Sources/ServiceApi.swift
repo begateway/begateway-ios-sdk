@@ -119,10 +119,9 @@ extension ServiceApi {
             
             if let responseField = jsonObject["response"] as? [String: Any] {
                     if let status = responseField["status"] as? String {
-                        if status == "error" {
+                        if status != "successful" {
                             print("Error: Response status with error")
                             throw ServiceApiError.unexpected(code: 0, title: "Status indicates an error")
-                          
                         }
                     }
                 }

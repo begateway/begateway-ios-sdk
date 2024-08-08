@@ -163,20 +163,16 @@ Default <b>Apple Pay</b> with input:
                                        card: nil)
                                        
         BeGateway.instance.payWithApplePay(requestBE: request, rootController: self) {
-            self.showSuccessAlert()
             print("payment success without token")
         } failureHandler: { error in
-            self.showFailureAlert(error: error)
             print("---> error \(error)")
         }    
 ```
 <b>Apple Pay</b>  with <b>TOKEN</b>:
 ```swift
             BeGateway.instance.payWithAppleByToken(token: token, rootController: self) {
-                self.showSuccessAlert()
                 print("payment success with token")
             } failureHandler: { error in
-                self.showFailureAlert(error: error)
                 print("---> error \(error)")
             }
 ```

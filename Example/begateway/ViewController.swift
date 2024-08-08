@@ -15,13 +15,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     func processPayment(isActive: Bool) {
     }
 
-    func processPaymentSuccess() {
-        self.showSuccessAlert()
-    }
+//    func processPaymentSuccess() {
+//        self.showSuccessAlert()
+//    }
 
-    func outError(error: String) {
-        self.showFailureAlert(error: error)
-    }
+//    func outError(error: String) {
+//        self.showFailureAlert(error: error)
+//    }
 
     @IBOutlet weak var valueTextField: UITextField!
     @IBOutlet weak var payButton: UIButton!
@@ -152,40 +152,40 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
 
     }
 
-    private func showSuccessAlert() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            let alert = UIAlertController(title: "Success from SDK", message: "", preferredStyle: .alert)
-            alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default))
-            if #available(iOS 13.0, *) {
-                if var topController = UIApplication.shared.keyWindow?.rootViewController  {
-                    while let presentedViewController = topController.presentedViewController {
-                        topController = presentedViewController
-                    }
-                    topController.present(alert, animated: true, completion: nil)
-                }
-            } else {
-                alert.show()
-            }
-        }
-    }
+//    private func showSuccessAlert() {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+//            let alert = UIAlertController(title: "Success from SDK", message: "", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default))
+//            if #available(iOS 13.0, *) {
+//                if var topController = UIApplication.shared.keyWindow?.rootViewController  {
+//                    while let presentedViewController = topController.presentedViewController {
+//                        topController = presentedViewController
+//                    }
+//                    topController.present(alert, animated: true, completion: nil)
+//                }
+//            } else {
+//                alert.show()
+//            }
+//        }
+//    }
 
-    private func showFailureAlert(error : String) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            let alert = UIAlertController(title: "Failure from SDK", message: error, preferredStyle: .alert)
-            alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default))
-            if #available(iOS 13.0, *) {
-                if var topController = UIApplication.shared.keyWindow?.rootViewController  {
-                    while let presentedViewController = topController.presentedViewController {
-                        topController = presentedViewController
-                    }
-                    topController.present(alert, animated: true, completion: nil)
-                }
-            } else {
-                alert.show()
-            }
-        }
-
-    }
+//    private func showFailureAlert(error : String) {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+//            let alert = UIAlertController(title: "Failure from SDK", message: error, preferredStyle: .alert)
+//            alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default))
+//            if #available(iOS 13.0, *) {
+//                if var topController = UIApplication.shared.keyWindow?.rootViewController  {
+//                    while let presentedViewController = topController.presentedViewController {
+//                        topController = presentedViewController
+//                    }
+//                    topController.present(alert, animated: true, completion: nil)
+//                }
+//            } else {
+//                alert.show()
+//            }
+//        }
+//
+//    }
 
 
     // MARK:: UITextField Delegates
@@ -252,18 +252,18 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
 
         if let token = self.tokenTextView.text, token.count >= 64 {
             BeGateway.instance.payWithAppleByToken(token: token, rootController: self) {
-                self.showSuccessAlert()
+//                self.showSuccessAlert()
                 print("payment success with token")
             } failureHandler: { error in
-                self.showFailureAlert(error: error)
+//                self.showFailureAlert(error: error)
                 print("---> error \(error)")
             }
         } else {
             BeGateway.instance.payWithApplePay(requestBE: request, rootController: self) {
-                self.showSuccessAlert()
+//                self.showSuccessAlert()
                 print("payment success without token")
             } failureHandler: { error in
-                self.showFailureAlert(error: error)
+//                self.showFailureAlert(error: error)
                 print("---> error \(error)")
             }
         }
@@ -317,17 +317,17 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
                     completionHandler: {
                         card in
                         print(card)
-                        self.showSuccessAlert()
+//                        self.showSuccessAlert()
                         self.dropToken()
                     }, failureHandler: {error in
-                        self.showFailureAlert(error: error)
+//                        self.showFailureAlert(error: error)
                         self.dropToken()
                         print(error)
                     })
             }
 
         }) { error in
-            self.showFailureAlert(error: error)
+//            self.showFailureAlert(error: error)
             print(error)
         }
     }
@@ -416,10 +416,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
             ),
             completionHandler: {
                 card in
-                self.showSuccessAlert()
+//                self.showSuccessAlert()
                 print(card)
             }, failureHandler: {error in
-                self.showFailureAlert(error: error)
+//                self.showFailureAlert(error: error)
                 print(error)
             })
     }

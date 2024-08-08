@@ -29,66 +29,66 @@ extension UIViewController {
         }
     }
     
-    class func createAlertInfo(_ title: String?, message: String?)
-    {
-        let alert = UIAlertController(title: NSLocalizedString(DataHelper.getValue(value: title, defaultValue: ""), comment: ""), message: NSLocalizedString(DataHelper.getValue(value: message, defaultValue: ""), comment: ""), preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Okay", comment: ""), style: UIAlertAction.Style.default, handler: {(alertAction) in
-            //
-        }))
-        
-        UIApplication.shared.windows.last?.rootViewController?.present(alert, animated: true, completion: nil)
-    }
+//    class func createAlertInfo(_ title: String?, message: String?)
+//    {
+//        let alert = UIAlertController(title: NSLocalizedString(DataHelper.getValue(value: title, defaultValue: ""), comment: ""), message: NSLocalizedString(DataHelper.getValue(value: message, defaultValue: ""), comment: ""), preferredStyle: UIAlertController.Style.alert)
+//        alert.addAction(UIAlertAction(title: NSLocalizedString("Okay", comment: ""), style: UIAlertAction.Style.default, handler: {(alertAction) in
+//            //
+//        }))
+//        
+//        UIApplication.shared.windows.last?.rootViewController?.present(alert, animated: true, completion: nil)
+//    }
     
-    class func createAlertError(message: String?)
-    {
-        let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString(DataHelper.getValue(value: message, defaultValue: "Oops!"), comment: ""), preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Okay", comment: ""), style: UIAlertAction.Style.default, handler: {(alertAction) in
-            //
-        }))
-        
-        UIApplication.shared.windows.last?.rootViewController?.present(alert, animated: true, completion: nil)
-    }
+//    class func createAlertError(message: String?)
+//    {
+//        let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString(DataHelper.getValue(value: message, defaultValue: "Oops!"), comment: ""), preferredStyle: UIAlertController.Style.alert)
+//        alert.addAction(UIAlertAction(title: NSLocalizedString("Okay", comment: ""), style: UIAlertAction.Style.default, handler: {(alertAction) in
+//            //
+//        }))
+//        
+//        UIApplication.shared.windows.last?.rootViewController?.present(alert, animated: true, completion: nil)
+//    }
     
-    class func createAlertSuccess(message: String?, completion: (() -> Void)?)
-    {
-        let alert = UIAlertController(title: NSLocalizedString("Success", comment: ""), message: NSLocalizedString(DataHelper.getValue(value: message, defaultValue: "Success"), comment: ""), preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Okay", comment: ""), style: UIAlertAction.Style.default, handler: {(alertAction) in
-            completion?()
-        }))
-        
-        UIApplication.shared.windows.last?.rootViewController?.present(alert, animated: true, completion: nil)
-    }
+//    class func createAlertSuccess(message: String?, completion: (() -> Void)?)
+//    {
+//        let alert = UIAlertController(title: NSLocalizedString("Success", comment: ""), message: NSLocalizedString(DataHelper.getValue(value: message, defaultValue: "Success"), comment: ""), preferredStyle: UIAlertController.Style.alert)
+//        alert.addAction(UIAlertAction(title: NSLocalizedString("Okay", comment: ""), style: UIAlertAction.Style.default, handler: {(alertAction) in
+//            completion?()
+//        }))
+//        
+//        UIApplication.shared.windows.last?.rootViewController?.present(alert, animated: true, completion: nil)
+//    }
     
-    class func createAlert(_ title: String, message: String) {
-        let alert = UIAlertController(title: title, message: NSLocalizedString(DataHelper.getValue(value: message, defaultValue: ""), comment: ""), preferredStyle: .alert)
-        
-        let cancelAction = UIAlertAction(title: NSLocalizedString("Okay", comment: ""), style: .cancel, handler: nil)
-        alert.addAction(cancelAction)
-        
-        UIApplication.shared.windows.last?.rootViewController?.present(alert, animated: true, completion: nil)
-    }
+//    class func createAlert(_ title: String, message: String) {
+//        let alert = UIAlertController(title: title, message: NSLocalizedString(DataHelper.getValue(value: message, defaultValue: ""), comment: ""), preferredStyle: .alert)
+//        
+//        let cancelAction = UIAlertAction(title: NSLocalizedString("Okay", comment: ""), style: .cancel, handler: nil)
+//        alert.addAction(cancelAction)
+//        
+//        UIApplication.shared.windows.last?.rootViewController?.present(alert, animated: true, completion: nil)
+//    }
     
-    func outAlert(title: String?, message: String?, compliteHandler: (() -> Void)? = nil) {
-        let alertController = UIAlertController(title: NSLocalizedString(DataHelper.getValue(value: title, defaultValue: ""), comment: ""), message: NSLocalizedString(DataHelper.getValue(value: message, defaultValue: ""), comment: ""), preferredStyle: .alert)
-        
-        alertController.addAction(UIAlertAction(title: NSLocalizedString("Okay", comment: ""), style: .default) { (action:UIAlertAction) in
-            compliteHandler?()
-        })
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
+//    func outAlert(title: String?, message: String?, compliteHandler: (() -> Void)? = nil) {
+//        let alertController = UIAlertController(title: NSLocalizedString(DataHelper.getValue(value: title, defaultValue: ""), comment: ""), message: NSLocalizedString(DataHelper.getValue(value: message, defaultValue: ""), comment: ""), preferredStyle: .alert)
+//        
+//        alertController.addAction(UIAlertAction(title: NSLocalizedString("Okay", comment: ""), style: .default) { (action:UIAlertAction) in
+//            compliteHandler?()
+//        })
+//        
+//        self.present(alertController, animated: true, completion: nil)
+//    }
     
-    func outAlertError(message: String?, compliteHandler: (() -> Void)? = nil) {
-        self.outAlert(title: NSLocalizedString("Error", comment: ""), message: message != nil && !message!.isEmpty ? NSLocalizedString(DataHelper.getValue(value: message, defaultValue: "Oops!"), comment: "") : NSLocalizedString("Sorry, something went wrong", comment: ""), compliteHandler: compliteHandler)
-    }
+//    func outAlertError(message: String?, compliteHandler: (() -> Void)? = nil) {
+//        self.outAlert(title: NSLocalizedString("Error", comment: ""), message: message != nil && !message!.isEmpty ? NSLocalizedString(DataHelper.getValue(value: message, defaultValue: "Oops!"), comment: "") : NSLocalizedString("Sorry, something went wrong", comment: ""), compliteHandler: compliteHandler)
+//    }
     
-    func outAlertOops(message: String?, compliteHandler: (() -> Void)? = nil) {
-        self.outAlert(title: NSLocalizedString("Oops!", comment: ""), message: message != nil && !message!.isEmpty ? NSLocalizedString(message!, comment: "") : NSLocalizedString("Sorry, something went wrong", comment: ""), compliteHandler: compliteHandler)
-    }
+//    func outAlertOops(message: String?, compliteHandler: (() -> Void)? = nil) {
+//        self.outAlert(title: NSLocalizedString("Oops!", comment: ""), message: message != nil && !message!.isEmpty ? NSLocalizedString(message!, comment: "") : NSLocalizedString("Sorry, something went wrong", comment: ""), compliteHandler: compliteHandler)
+//    }
     
-    func outAlertSuccess(message: String?, compliteHandler: (() -> Void)?) {
-        self.outAlert(title: NSLocalizedString("Success", comment: ""), message: DataHelper.getLocalizeValue(value: message), compliteHandler: compliteHandler)
-    }
+//    func outAlertSuccess(message: String?, compliteHandler: (() -> Void)?) {
+//        self.outAlert(title: NSLocalizedString("Success", comment: ""), message: DataHelper.getLocalizeValue(value: message), compliteHandler: compliteHandler)
+//    }
     
     class func loadFromNib(_ bundle: Bundle? = nil) -> Self {
         func instanceFromNib<T: UIViewController>(_ bundle: Bundle? = nil) -> T {

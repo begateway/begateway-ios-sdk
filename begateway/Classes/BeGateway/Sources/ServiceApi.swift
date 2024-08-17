@@ -113,19 +113,6 @@ extension ServiceApi {
             
             print("----------------")
             print(prettyPrintedJson)
-       
-            
-            //Processing a payment error with the error status
-            
-            if let responseField = jsonObject["response"] as? [String: Any] {
-                    if let status = responseField["status"] as? String {
-                        if status != "successful" {
-                            print("Error: Response status with error")
-                            throw ServiceApiError.unexpected(code: 0, title: "Status indicates an error")
-                        }
-                    }
-                }
-            
 //            only for current server
             if (200 ..< 299) ~= response.statusCode {
                 //

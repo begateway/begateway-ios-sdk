@@ -20,9 +20,7 @@ class ApplePaymentModule  : NSObject, PKPaymentAuthorizationViewControllerDelega
     var failureCallback: (String) -> Void = {(string) in }
 
 func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment     payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
-    
-    
-    link.appleTokenReceived(payment: payment, completionHandler: { (Bool) in //success
+    link.appleTokenReceived(payment: payment, completionHandler: { answer in //success
         self.successCallback()
             completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
         }) { (stringDescription) in //failure

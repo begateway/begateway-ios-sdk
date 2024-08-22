@@ -27,6 +27,7 @@ func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationView
             self.didSucceed = true
             completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
         }) { (stringDescription) in //failure
+            self.didSucceed = false
             self.lastError = stringDescription
             completion(PKPaymentAuthorizationResult(status: .failure, errors: nil))
         }
@@ -41,8 +42,15 @@ func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationView
         if didSucceed {
             self.successCallback()
         } else {
-            self.failureCallback(lastError!)
-            print(lastError!)
+            
+            if let error = lastError {
+                self.failureCallback(error)
+                lastError = nil
+                print(error)
+            } else {
+                self.failureCallback("Apple Pay cancelled by user")
+                print("Apple Pay cancelled by user")
+            }
         }
         
     }

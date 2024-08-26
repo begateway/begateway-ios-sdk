@@ -26,10 +26,17 @@ func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationView
     link.appleTokenReceived(payment: payment, completionHandler: { answer in //success
             self.didSucceed = true
             completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
+            if controller.presentingViewController == nil {
+                // If we call completion() after dismissing, didFinishWithStatus is NOT called.
+                self._finish()
+            }
         }) { (stringDescription) in //failure
-            self.didSucceed = false
             self.lastError = stringDescription
             completion(PKPaymentAuthorizationResult(status: .failure, errors: nil))
+            if controller.presentingViewController == nil {
+                // If we call completion() after dismissing, didFinishWithStatus is NOT called.
+                self._finish()
+            }
         }
     }
 
@@ -52,6 +59,8 @@ func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationView
                 print("Apple Pay cancelled by user")
             }
         }
+        
+        didSucceed = false // reset status variable
         
     }
 }

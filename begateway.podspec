@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name                    = 'begateway'
-    s.version                 = '3.4.0'
+    s.version                 = '3.5.0'
     s.summary                 = 'Little framework to easy implement https://begateway.com/ in yout application'
     s.swift_version           = '5.0'
     s.ios.deployment_target   = '11.0'

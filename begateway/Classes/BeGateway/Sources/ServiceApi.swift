@@ -95,7 +95,6 @@ extension ServiceApi {
             print("Error: HTTP request failed")
             throw ServiceApiError.unexpected(code: 0, title: "HTTP request failed")
         }
-        
         print("Response code is : \(response.statusCode)")
         
         do {
@@ -114,8 +113,6 @@ extension ServiceApi {
             
             print("----------------")
             print(prettyPrintedJson)
-            
-            
 //            only for current server
             if (200 ..< 299) ~= response.statusCode {
                 //

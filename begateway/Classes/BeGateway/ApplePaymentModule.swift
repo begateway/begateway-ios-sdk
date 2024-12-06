@@ -18,22 +18,49 @@ class ApplePaymentModule  : NSObject, PKPaymentAuthorizationViewControllerDelega
     }
     var successCallback: () -> Void = {}
     var failureCallback: (String) -> Void = {(string) in }
+    
+    var didSucceed = false
+    var lastError: String?
 
 func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment     payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
-    
-    
-    link.appleTokenReceived(payment: payment, completionHandler: { (Bool) in //success
-        self.successCallback()
+    link.appleTokenReceived(payment: payment, completionHandler: { answer in //success
+            self.didSucceed = true
             completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
+            if controller.presentingViewController == nil {
+                // If we call completion() after dismissing, didFinishWithStatus is NOT called.
+                self._finish()
+            }
         }) { (stringDescription) in //failure
-            self.failureCallback(stringDescription)
-            print(stringDescription)
+            self.lastError = stringDescription
             completion(PKPaymentAuthorizationResult(status: .failure, errors: nil))
+            if controller.presentingViewController == nil {
+                // If we call completion() after dismissing, didFinishWithStatus is NOT called.
+                self._finish()
+            }
         }
     }
 
     func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
         controller.dismiss(animated: true, completion: nil)
+        _finish()
+    }
+    
+    func _finish() {
+        if didSucceed {
+            self.successCallback()
+        } else {
+            
+            if let error = lastError {
+                self.failureCallback(error)
+                lastError = nil
+                print(error)
+            } else {
+                self.failureCallback("Apple Pay cancelled by user")
+                print("Apple Pay cancelled by user")
+            }
+        }
+        
+        didSucceed = false // reset status variable
         
     }
 }

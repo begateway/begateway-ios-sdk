@@ -231,11 +231,20 @@ public class BeGateway {
     }
 
     public func appleTokenReceived(payment : PKPayment, completionHandler: @escaping((Bool) -> Void), failureHandler: @escaping((String) -> Void)) {
-
         if let requestApple = requestFromAppleToken(appleToken: payment) {
             if let options = BeGateway.instance.options {
                 BeGatewaySourceApi.init(options: options).sendApplePayment(uploadDataModel: requestApple) { response in
-                    completionHandler(true)
+                    if response != nil{
+                        let result: ResponsePaymentV2 = response!
+                        let status = result.response?.status
+                        if status == "successful" {
+                            completionHandler(true)
+                        }else{
+                            failureHandler("ApplePay payment error with status: \(String(describing: status))")
+                        }
+                    }else{
+                        failureHandler("ApplePay payment error")
+                    }
                 } failureHandler: { errorString in
                     failureHandler(errorString)
                 }
@@ -244,7 +253,6 @@ public class BeGateway {
     }
 
     public func payWithAppleByToken(token : String, rootController: UIViewController, completionHandler: (() -> Void)?, failureHandler:((String) -> Void)?) {
-
         self.getStatus(token: token) { info in
             self.paymentToken = info?.checkout?.token ?? ""
             guard let rAmount = info?.checkout?.order?.amount, let rCurrency = info?.checkout?.order?.currency else { return }
@@ -258,9 +266,8 @@ public class BeGateway {
             }
         }
     }
-
+    
     public func payWithApplePay(requestBE : BeGatewayRequest, rootController: UIViewController, completionHandler: (() -> Void)?, failureHandler:((String) -> Void)?) {
-
         self.getToken(request: requestBE) { token in
             self.payWithAppleByToken(token: token, rootController: rootController, completionHandler: completionHandler, failureHandler: failureHandler)
         } failureHandler: { error in
@@ -269,9 +276,8 @@ public class BeGateway {
             }
         }
     }
-
+ 
     public func payWithAppleBy(appleToken : PKPayment, paymentToken : String, completionHandler: (() -> Void)?, failureHandler:((String) -> Void)?) {
-
         self.paymentToken = paymentToken
 
         if let requestApple = requestFromAppleToken(appleToken: appleToken) {
@@ -303,10 +309,9 @@ public class BeGateway {
     }
 
     private func applePayRequest(checkoutResponse: CheckoutsResponseStatusV2, currencyCode : String, amount : String, rootController: UIViewController, completionHandler: (() -> Void)?, failureHandler:((String) -> Void)?) {
-
+      
         let requestPK = PKPaymentRequest()
         let description = checkoutResponse.checkout?.order?.orderDescription
-
         requestPK.merchantIdentifier = ""
         if self.options != nil {
             if self.options?.merchantID != nil {
@@ -336,6 +341,7 @@ public class BeGateway {
             rootController.present(controller, animated: true, completion: nil)
 
         }
+       
         guard let delegate = delegatePK else { return }
         delegate.failureCallback = { stringError in
             if (failureHandler != nil) {

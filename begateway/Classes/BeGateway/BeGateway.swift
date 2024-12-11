@@ -256,10 +256,9 @@ public class BeGateway {
         self.getStatus(token: token) { info in
             self.paymentToken = info?.checkout?.token ?? ""
             guard let rAmount = info?.checkout?.order?.amount, let rCurrency = info?.checkout?.order?.currency else { return }
-            let doubleAmount = Double(rAmount)
-            let calculatedAmount = doubleAmount / CurrencyMultiplayerChecker.checkCurrencyCode(code: rCurrency)
-            let stringAmount = String(format: "%.2f", calculatedAmount)
-            self.applePayRequest(checkoutResponse: info!, currencyCode: rCurrency, amount: stringAmount, rootController: rootController, completionHandler: completionHandler, failureHandler: failureHandler)
+            
+            let amount = CurrencyHelper.getAmount(amount: rAmount, currency: rCurrency)
+            self.applePayRequest(checkoutResponse: info!, currencyCode: rCurrency, amount: amount, rootController: rootController, completionHandler: completionHandler, failureHandler: failureHandler)
         } failureHandler: { stringError in
             if (failureHandler != nil) {
                 failureHandler!(stringError)
@@ -308,7 +307,7 @@ public class BeGateway {
         }
     }
 
-    private func applePayRequest(checkoutResponse: CheckoutsResponseStatusV2, currencyCode : String, amount : String, rootController: UIViewController, completionHandler: (() -> Void)?, failureHandler:((String) -> Void)?) {
+    private func applePayRequest(checkoutResponse: CheckoutsResponseStatusV2, currencyCode : String, amount : NSDecimalNumber, rootController: UIViewController, completionHandler: (() -> Void)?, failureHandler:((String) -> Void)?) {
       
         let requestPK = PKPaymentRequest()
         let description = checkoutResponse.checkout?.order?.orderDescription
@@ -330,7 +329,7 @@ public class BeGateway {
         requestPK.merchantCapabilities = .capability3DS
         requestPK.countryCode = "BY"
         requestPK.currencyCode = currencyCode
-        requestPK.paymentSummaryItems = [PKPaymentSummaryItem(label: description ?? "", amount: NSDecimalNumber(string: amount))]
+        requestPK.paymentSummaryItems = [PKPaymentSummaryItem(label: description ?? "", amount: amount)]
 
         if self.delegatePK == nil {
             self.delegatePK = ApplePaymentModule(link: self)

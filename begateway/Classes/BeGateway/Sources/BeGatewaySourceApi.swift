@@ -31,13 +31,13 @@ class BeGatewaySourceApi: ServiceApi {
     func checkStatus(token: String, completionHandler: ((CheckoutsResponseStatusV2?) -> Void)?, failureHandler:((String) -> Void)?) {
         self.getMethod(with: self.domain + "/checkouts/\(token)", completionHandler: completionHandler, failureHandler: failureHandler)
     }
-
+    
     func checkout(request: BeGatewayRequest, completionHandler: ((CheckoutsResponseV2?) -> Void)?, failureHandler:((String) -> Void)?) {
 
         guard let options = self.options else {
             fatalError("Error - Options is nll")
         }
-
+        
         let uploadDataModel = CheckoutsRequestV2(
             checkout: CheckoutsRequestV2Checkout(
                 order: CheckoutsRequestV2Order(
@@ -45,7 +45,7 @@ class BeGatewaySourceApi: ServiceApi {
                         "recurring",
                         "card_on_file"
                     ]),
-                    amount: Int(request.amount * CurrencyMultiplayerChecker.checkCurrencyCode(code: request.currency)),
+                    amount: CurrencyHelper.getCents(amount: request.amount, currency: request.currency),
                     currency: request.currency,
                     orderDescription: request.requestDescription,
                     trackingID: request.trackingID

@@ -206,9 +206,8 @@ public class BeGateway {
         let paymentMethodS = appleToken.token.paymentMethod
 
         let paymentMethod = PaymentMethod(displayName: paymentMethodS.displayName ?? "unknown", network: paymentMethodS.network?.rawValue ?? "unknown network", type: stringFromType(type: paymentMethodS.type))
-
-        if let paymentDataStruct = getPaymentFromData(data: paymentData
-        ) {
+        
+        if let paymentDataStruct = getPaymentFromData(data: paymentData) {
             let token = AppleTokenRequestV2(paymentData: paymentDataStruct, paymentMethod: paymentMethod, transactionIdentifier: appleToken.token.transactionIdentifier)
             return RequestPaymentAppleV2(request: RequestPaymentAppleV2Request(token: token), token: self.paymentToken, contract: false)
         }
@@ -230,19 +229,13 @@ public class BeGateway {
         return nil
     }
 
-    public func appleTokenReceived(payment : PKPayment, completionHandler: @escaping((Bool) -> Void), failureHandler: @escaping((String) -> Void)) {
+    func appleTokenReceived(payment: PKPayment, completionHandler: @escaping((ResponsePaymentV2Response) -> Void), failureHandler: @escaping((String) -> Void)) {
         if let requestApple = requestFromAppleToken(appleToken: payment) {
             if let options = BeGateway.instance.options {
-                BeGatewaySourceApi.init(options: options).sendApplePayment(uploadDataModel: requestApple) { response in
-                    if response != nil{
-                        let result: ResponsePaymentV2 = response!
-                        let status = result.response?.status
-                        if status == "successful" {
-                            completionHandler(true)
-                        }else{
-                            failureHandler("ApplePay payment error with status: \(String(describing: status))")
-                        }
-                    }else{
+                BeGatewaySourceApi.init(options: options).sendApplePayment(uploadDataModel: requestApple) { result in
+                    if let response = result?.response {
+                        completionHandler(response)
+                    } else {
                         failureHandler("ApplePay payment error")
                     }
                 } failureHandler: { errorString in

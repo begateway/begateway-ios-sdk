@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import  WebKit
+@preconcurrency import WebKit
 
 class WebViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var mainWebView: WKWebView!
@@ -33,6 +33,13 @@ class WebViewController: UIViewController, WKNavigationDelegate {
             self.mainWebView.load(request)
         }
         
+        if navigationController?.viewControllers.count ?? 0 == 1 {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissWebView))
+        }
+    }
+    
+    @objc private func dismissWebView() {
+        self.dismiss(animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

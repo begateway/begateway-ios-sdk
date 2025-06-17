@@ -237,10 +237,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
 
     @objc func applePayAction() {
         // Shop 99
+        // amount = 19 USD by Visa card will trigger 3DS action
         let options = BeGateway.instance.options ?? BeGatewayOptions(clientPubKey: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmv2F2L5YQfdjAXCPQ7p1FB9FGq00NSCaAFq9cyRlOW8jEo9JZbOaCZ56Eg0kip3fsZNYEXiAWmtKPY1EYk36wsK2hGivDQzMQG0cLqT0WALrBfTboWeYUIj7dJytcJvrw1MQzvjlFppiDQqnA2jlt1ZGnCdgmTWhpOG1Sn+Q+wiLmtdIO1frx9bLjJLMjIEO+0PAeEqwd02ZRUkcTzWZeJhlapdI7OvDUsbuqAN107zI5myI7dW6f4NwcHFQYsLIpw6X50SnMV2HaAe5g1FGYgj8cynzmB5vgI6ogSBeXBwXtVWsyV+sF0y4yFcxtNN7aYNfQKYJ7Yt11LC2/V6okwIDAQAB")
 
         setupApplePubkey()
         options.merchantID = "merchant.com.begateway.sdk.demo"
+        options.test = false // to hit Demo gateway
 
         let _ = BeGateway.instance.setup(with: options)
 
@@ -267,8 +269,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
                 print("---> error \(error)")
             }
         }
-        self.setupApplePubkey()
-
+        options.test = true
+        changePubKey(is3DSecure: self.smsSwcureSwitch.isOn)
     }
 
     //text view/field delegates
@@ -370,7 +372,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         if is3DSecure {
             // shop 198
             BeGateway.instance.options?.clientPubKey =  "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAors6xudtD30e4eCQNXwgRi7PsjNTfC7srjx1ej9HVnr1sZqsKlM0hUPlkvHGFu5IYHcxBisATE3PXOKLPu9YSiY7ffzg2FIEJbPKs8Jun15O+f5EEjt3RKtrLOz5Nb8r2j92RonWHwXhWTMlFT6SIvElkmd15GPbUiHAZ4firgLuswuzOgmz6v5i4FVWgbh2+E8Am+6+ptbZdcdu6uPKlb7jOY48H57cjDPrP2sycCVCfWQBZj7h6g9c89F8M0sUHCGWE6Xh79xclz3oHz/e/+H3Aj9HjqIE29WsLrJYrb30QLrnpQ0/lUnVbc8nfPfwoq5cESEV6UoP1hbtiBSoFQIDAQAB"
-
+            
             self.card = BeGatewayRequestCard(
                 number: "4012000000001097",
                 verificationValue: "123",

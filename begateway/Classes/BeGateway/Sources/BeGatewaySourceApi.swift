@@ -41,10 +41,12 @@ class BeGatewaySourceApi: ServiceApi {
         let uploadDataModel = CheckoutsRequestV2(
             checkout: CheckoutsRequestV2Checkout(
                 order: CheckoutsRequestV2Order(
-                    additionalData: CheckoutsRequestV2AdditionalData(contract: [
-                        "recurring",
-                        "card_on_file"
-                    ]),
+                        additionalData: CheckoutsRequestV2AdditionalData(contract: [
+                            "recurring",
+                            "card_on_file"
+                        ],
+                        recipient: CheckoutsRequestV2Receipient(accountNumber: request.recipient?.accountNumber, accountNumberType: request.recipient?.accountNumberType)
+                    ),
                     amount: CurrencyHelper.getCents(amount: request.amount, currency: request.currency),
                     currency: request.currency,
                     orderDescription: request.requestDescription,
@@ -61,7 +63,19 @@ class BeGatewaySourceApi: ServiceApi {
                 ),
                 test: options.test,
                 transactionType: options.transaction_type,
-                version: 2.1
+                version: 2.1,
+                customer: CheckoutsRequestV2Customer(
+                    address: request.customer?.address,
+                    country: request.customer?.country,
+                    city: request.customer?.city,
+                    email: request.customer?.email,
+                    firstName: request.customer?.firstName,
+                    lastName: request.customer?.lastName,
+                    state: request.customer?.state,
+                    zip: request.customer?.zip,
+                    phone: request.customer?.phone,
+                    birthDate: request.customer?.birthDate
+                )
             )
         )
 

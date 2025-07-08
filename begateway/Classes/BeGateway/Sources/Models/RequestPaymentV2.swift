@@ -15,12 +15,24 @@ struct RequestPaymentV2Request: Codable {
     let creditCard: RequestPaymentV2CreditCard?
     let paymentMethod, token: String?
     let browser: Browser
+    let customer: RequestPaymentV2Customer?
     
     enum CodingKeys: String, CodingKey {
         case creditCard = "credit_card"
         case paymentMethod = "payment_method"
         case token
         case browser
+        case customer
+    }
+}
+
+struct RequestPaymentV2Customer: Codable {
+    let ip: String?
+    let deviceId: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case ip
+        case deviceId = "device_id"
     }
 }
 

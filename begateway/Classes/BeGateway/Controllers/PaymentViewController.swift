@@ -66,6 +66,7 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     var isSaveCard: Bool = false
     var currentTypeCard: CardTypePattern? = nil
     var tokenForRequest: String? = nil
+    var customer: RequestPaymentV2Customer? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -259,7 +260,7 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
                 holder: self.nameOnCardTextField.text,
                 token: nil,
                 saveCard: self.isSaveCard
-            ), isSaveCard: self.isSaveCard, tokenForRequest: self.tokenForRequest)
+            ), isSaveCard: self.isSaveCard, tokenForRequest: self.tokenForRequest, customer: customer)
         }
     }
     

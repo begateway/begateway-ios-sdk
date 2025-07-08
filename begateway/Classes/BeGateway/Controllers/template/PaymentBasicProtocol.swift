@@ -39,7 +39,7 @@ extension PaymentBasicProtocol {
         return self.didDisappear
     }
     
-    public func pay(card: RequestPaymentV2CreditCard, isSaveCard: Bool = false, tokenForRequest: String? = nil)
+    public func pay(card: RequestPaymentV2CreditCard, isSaveCard: Bool = false, tokenForRequest: String? = nil, customer: RequestPaymentV2Customer?)
     {
         print("Payment common")
         
@@ -50,7 +50,7 @@ extension PaymentBasicProtocol {
                 self.getBasicSourceApi().checkout(request: request, completionHandler: {result in
                     if let token = result?.checkout?.token {
                         print("Token for operation is \"\(token)\"")
-                        self.processPayment(token: token, card: card, isSaveCard: isSaveCard)
+                        self.processPayment(token: token, card: card, customer: customer, isSaveCard: isSaveCard)
                     } else {
                         self.onError("token is null")
                     }
@@ -58,12 +58,12 @@ extension PaymentBasicProtocol {
                     self.onError(error)
                 })
             } else {
-                self.processPayment(token: tokenForRequest!, card: card, isSaveCard: isSaveCard)
+                self.processPayment(token: tokenForRequest!, card: card, customer: customer, isSaveCard: isSaveCard)
             }
         }
     }
     
-    public func processPayment(token: String, card: RequestPaymentV2CreditCard, isSaveCard: Bool = false)
+    public func processPayment(token: String, card: RequestPaymentV2CreditCard, customer: RequestPaymentV2Customer?, isSaveCard: Bool = false)
     {
         print("Payment process")
         
@@ -95,7 +95,8 @@ extension PaymentBasicProtocol {
                         //                                creditCard: encryptedCard,
                         paymentMethod: "credit_card",
                         token: token,
-                        browser: BrowserInfoProvider.getBrowserInfo()
+                        browser: BrowserInfoProvider.getBrowserInfo(),
+                        customer: customer
                     ))
                 
                 self.getBasicSourceApi().sendPayment(uploadDataModel: uploadDataModel, completionHandler: {response in

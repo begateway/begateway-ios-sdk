@@ -45,7 +45,7 @@ class PayByCardTokenViewController: PaymentBasicViewController, PaymentBasicProt
     
     public func payWithCardToken() {
         if self.cardToken != nil {
-            self.pay(card: RequestPaymentV2CreditCard(number: nil, verificationValue: nil, expMonth: nil, expYear: nil, holder: nil, token: self.cardToken, saveCard: nil))
+            self.pay(card: RequestPaymentV2CreditCard(number: nil, verificationValue: nil, expMonth: nil, expYear: nil, holder: nil, token: self.cardToken, saveCard: nil), customer: nil)
         } else {
             self.errorLabel.text = LocalizedString.LocalizedString(value: "Sorry, card without token")
             self.errorLabel.isHidden = false

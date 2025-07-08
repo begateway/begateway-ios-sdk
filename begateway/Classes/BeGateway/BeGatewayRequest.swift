@@ -11,13 +11,17 @@ public struct BeGatewayRequest {
     public let amount: Double
     public let currency, requestDescription, trackingID: String
     public var card: BeGatewayRequestCard?
+    public var recipient: BeGatewayRequestRecipient?
+    public var customer: BeGatewayRequestCustomer?
     
-    public init(amount: Double, currency: String, requestDescription: String, trackingID: String, card: BeGatewayRequestCard? = nil) {
+    public init(amount: Double, currency: String, requestDescription: String, trackingID: String, card: BeGatewayRequestCard? = nil, recepient: BeGatewayRequestRecipient? = nil, customer: BeGatewayRequestCustomer? = nil) {
         self.amount = amount
         self.currency = currency
         self.requestDescription = requestDescription
         self.trackingID = trackingID
         self.card = card
+        self.recipient = recepient
+        self.customer = customer
     }
     
     public var isEmpty: Bool {

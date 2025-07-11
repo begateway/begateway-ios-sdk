@@ -13,8 +13,9 @@ public struct BeGatewayRequest {
     public var card: BeGatewayRequestCard?
     public var recipient: BeGatewayRequestRecipient?
     public var customer: BeGatewayRequestCustomer?
+    public var paymentCustomer: BeGatewayPaymentCustomer?
     
-    public init(amount: Double, currency: String, requestDescription: String, trackingID: String, card: BeGatewayRequestCard? = nil, recepient: BeGatewayRequestRecipient? = nil, customer: BeGatewayRequestCustomer? = nil) {
+    public init(amount: Double, currency: String, requestDescription: String, trackingID: String, card: BeGatewayRequestCard? = nil, recepient: BeGatewayRequestRecipient? = nil, customer: BeGatewayRequestCustomer? = nil, paymentCustomer: BeGatewayPaymentCustomer? = nil) {
         self.amount = amount
         self.currency = currency
         self.requestDescription = requestDescription
@@ -22,6 +23,7 @@ public struct BeGatewayRequest {
         self.card = card
         self.recipient = recepient
         self.customer = customer
+        self.paymentCustomer = paymentCustomer
     }
     
     public var isEmpty: Bool {

@@ -122,9 +122,13 @@ public class BeGateway {
             print("Active card is \(card.first1)**********\(card.last4)")
 
             let controller = InitialViewController.loadFromNib(bundle)
+            controller.customer = RequestPaymentV2Customer(ip: request.paymentCustomer?.ip, deviceId: request.paymentCustomer?.deviceId)
+            
             self.presentController(controller, rootController: rootController, sizes: [.fixed(300.0)])
         } else {
             let controller = PaymentViewController.loadFromNib(bundle)
+            controller.customer = RequestPaymentV2Customer(ip: request.paymentCustomer?.ip, deviceId: request.paymentCustomer?.deviceId)
+            
             self.presentController(controller, rootController: rootController, sizes: [.fullscreen])
         }
     }

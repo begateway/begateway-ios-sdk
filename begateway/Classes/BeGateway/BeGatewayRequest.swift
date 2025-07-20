@@ -15,13 +15,13 @@ public struct BeGatewayRequest {
     public var customer: BeGatewayRequestCustomer?
     public var paymentCustomer: BeGatewayPaymentCustomer?
     
-    public init(amount: Double, currency: String, requestDescription: String, trackingID: String, card: BeGatewayRequestCard? = nil, recepient: BeGatewayRequestRecipient? = nil, customer: BeGatewayRequestCustomer? = nil, paymentCustomer: BeGatewayPaymentCustomer? = nil) {
+    public init(amount: Double, currency: String, requestDescription: String, trackingID: String, card: BeGatewayRequestCard? = nil, recipient: BeGatewayRequestRecipient? = nil, customer: BeGatewayRequestCustomer? = nil, paymentCustomer: BeGatewayPaymentCustomer? = nil) {
         self.amount = amount
         self.currency = currency
         self.requestDescription = requestDescription
         self.trackingID = trackingID
         self.card = card
-        self.recipient = recepient
+        self.recipient = recipient
         self.customer = customer
         self.paymentCustomer = paymentCustomer
     }

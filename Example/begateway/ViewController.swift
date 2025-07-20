@@ -50,6 +50,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     @IBOutlet weak var birthDateTextField: UITextField!
     @IBOutlet weak var ipDateTextField: UITextField!
     @IBOutlet weak var deviceIdTextField: UITextField!
+    @IBOutlet weak var accountNumberTextField: UITextField!
+    @IBOutlet weak var accountNumberTypeTextField: UITextField!
 
     @IBOutlet weak var tokenTextView: UITextView!
     @IBOutlet weak var payByTokenButton: UIButton!
@@ -238,7 +240,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
             amount: Double(self.valueTextField.text ?? "0.0") ?? 0.0,
             currency: self.currencyTextField.text ?? "USD",
             requestDescription: "Test request",
-            trackingID: "1000000-1"
+            trackingID: "1000000-1",
+            recipient: getRecipient(),
+            customer: getCustomer(),
+            paymentCustomer: getPaymentCustomer()
         ), completionHandler: {token in
             self.tokenTextView.text = token
             self.payByTokenButton.isHidden = false
@@ -252,6 +257,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
             return nil
         }
         return value
+    }
+    
+    private func getRecipient() -> BeGatewayRequestRecipient {
+        return BeGatewayRequestRecipient(
+            accountNumber: nonEmpty(accountNumberTextField.text),
+            accountNumberType: nonEmpty(accountNumberTypeTextField.text)
+        )
     }
 
     private func getCustomer() -> BeGatewayRequestCustomer {
@@ -293,6 +305,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
             requestDescription: "Apple Pay test transaction",
             trackingID: "1000000-1",
             card: nil,
+            recipient: getRecipient(),
             customer: getCustomer(),
             paymentCustomer: getPaymentCustomer()
         )
@@ -460,6 +473,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
                 requestDescription: "Test request",
                 trackingID: "1000000-1",
                 card: self.card,
+                recipient: getRecipient(),
                 customer: getCustomer(),
                 paymentCustomer: getPaymentCustomer()
             ),

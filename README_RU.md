@@ -90,7 +90,7 @@ let request = BeGatewayRequest(
     ),
     paymentCustomer: BeGatewayPaymentCustomer(
         ip: "192.168.1.1",
-        deviceId: "device-uuid-123"
+        deviceId: "device-abc-123"
     )
 )
 ```

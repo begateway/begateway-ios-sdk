@@ -77,6 +77,7 @@ let request = BeGatewayRequest(
     ),
     customer: BeGatewayRequestCustomer(
         address: "123 Main St",
+        // ISO 3166-1 alpha-2
         country: "US",
         city: "New York",
         email: "john.doe@example.com",
@@ -85,7 +86,7 @@ let request = BeGatewayRequest(
         state: "NY",
         zip: "10001",
         phone: "+1234567890",
-        //YYYY-MM-DD       
+        // YYYY-MM-DD       
         birthDate: "1990-01-01"
     ),
     paymentCustomer: BeGatewayPaymentCustomer(

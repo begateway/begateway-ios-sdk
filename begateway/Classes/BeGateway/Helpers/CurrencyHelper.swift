@@ -19,34 +19,31 @@ class CurrencyHelper {
         return 100
     }
     
-    static func formatAmount(amount: Int, currency: String) -> String {
-        
-        let multiplier = self.getMultiplier(code: currency)
-        let formatter = NumberFormatter()
-        let decimalAmount = Decimal(amount) / Decimal (multiplier)
-        
-        let countFraction = String(multiplier).filter{ $0 == "0" }.count
-        formatter.numberStyle = .decimal
-        formatter.minimumFractionDigits = countFraction
-        formatter.maximumFractionDigits = countFraction
-        
-        let strAmount = formatter.string(from: decimalAmount as NSDecimalNumber) ?? "0.00"
-        
-        return strAmount
-    }
-    
     static func getAmount(amount: Int, currency: String) -> NSDecimalNumber {
         let multiplier = self.getMultiplier(code: currency)
         let decimalAmount = Decimal(amount) / Decimal (multiplier)
         return decimalAmount as NSDecimalNumber
     }
-    
+
     static func getCents(amount: Double, currency: String) -> Int {
+        let fractionDigits: Int
+        if let localeId = Locale.availableIdentifiers.first(where: { Locale(identifier: $0).currencyCode == currency }) {
+            let locale = Locale(identifier: localeId)
+            if let currencyCode = locale.currencyCode {
+                let formatter = NumberFormatter()
+                formatter.numberStyle = .currency
+                formatter.currencyCode = currencyCode
+                fractionDigits = formatter.minimumFractionDigits
+            } else {
+                fractionDigits = 2
+            }
+        } else {
+            fractionDigits = 2
+        }
         
-        let currencyUnits : Decimal = Decimal(CurrencyHelper.getMultiplier(code: currency))
-        let decimalAmount : Decimal = Decimal(amount) * currencyUnits
+        let multiplier = pow(10.0, Double(fractionDigits))
+        let minorUnits = (amount * multiplier).rounded()
         
-        let intAmount : NSDecimalNumber = pow(decimalAmount,1) as NSDecimalNumber
-        return Int(truncating: intAmount)
+        return Int(minorUnits)
     }
 }

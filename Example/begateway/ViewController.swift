@@ -294,7 +294,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         let options = BeGateway.instance.options ?? BeGatewayOptions(clientPubKey: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmv2F2L5YQfdjAXCPQ7p1FB9FGq00NSCaAFq9cyRlOW8jEo9JZbOaCZ56Eg0kip3fsZNYEXiAWmtKPY1EYk36wsK2hGivDQzMQG0cLqT0WALrBfTboWeYUIj7dJytcJvrw1MQzvjlFppiDQqnA2jlt1ZGnCdgmTWhpOG1Sn+Q+wiLmtdIO1frx9bLjJLMjIEO+0PAeEqwd02ZRUkcTzWZeJhlapdI7OvDUsbuqAN107zI5myI7dW6f4NwcHFQYsLIpw6X50SnMV2HaAe5g1FGYgj8cynzmB5vgI6ogSBeXBwXtVWsyV+sF0y4yFcxtNN7aYNfQKYJ7Yt11LC2/V6okwIDAQAB")
 
         setupApplePubkey()
-        options.merchantID = "merchant.com.begateway.sdk.example.demo"
+        options.merchantID = "merchant.com.begateway.sdk.demo"
         options.test = false // to hit Demo gateway
 
         let _ = BeGateway.instance.setup(with: options)

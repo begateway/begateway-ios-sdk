@@ -1,5 +1,5 @@
 PODS:
-  - begateway (3.3.0):
+  - begateway (3.5.0):
     - SwiftyRSA
   - SwiftyRSA (1.7.0):
     - SwiftyRSA/ObjC (= 1.7.0)
@@ -17,9 +17,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  begateway: e46301b8d85547f3bc9a0c7bb2b4a2e116365bbe
+  begateway: 88a6bc5144d2039f1fbda11c3b698e0f12498f03
   SwiftyRSA: 8c6dd1ea7db1b8dc4fb517a202f88bb1354bc2c6
 
 PODFILE CHECKSUM: cd84288959657b4a066f8c4ff389598f4e79136e
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2

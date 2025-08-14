@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="29N-td-KsB">
-                                <rect key="frame" x="0.0" y="48" width="414.5" height="814"/>
+                                <rect key="frame" x="0.0" y="96" width="414.5" height="732"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="neU-ES-4W5">
-                                        <rect key="frame" x="0.0" y="0.0" width="414.5" height="976.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414.5" height="2152.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REt-bh-FkF">
                                                 <rect key="frame" x="20" y="8" width="374.5" height="27.5"/>
@@ -450,6 +450,83 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6DP-um-Nvh">
+                                                <rect key="frame" x="20" y="988.5" width="374.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OtL-m4-pSJ">
+                                                <rect key="frame" x="20" y="1042.5" width="374.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vdj-t4-MFt">
+                                                <rect key="frame" x="20" y="1096.5" width="374.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RHD-50-7Lz">
+                                                <rect key="frame" x="20" y="1150.5" width="374.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Czy-96-gST">
+                                                <rect key="frame" x="20" y="1204.5" width="374.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1Dz-Cd-EvF">
+                                                <rect key="frame" x="20" y="1258.5" width="374.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ORz-6t-5Or">
+                                                <rect key="frame" x="20" y="1312.5" width="374.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1HT-pa-eBR">
+                                                <rect key="frame" x="20" y="1366.5" width="374.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthdate" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fed-Fc-8aw">
+                                                <rect key="frame" x="20" y="1420.5" width="374.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QbF-Gx-0Zc">
+                                                <rect key="frame" x="20" y="1474.5" width="374.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="IP" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6j7-Kj-czn">
+                                                <rect key="frame" x="20" y="1528.5" width="374.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Device ID" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Fr2-VI-5WG">
+                                                <rect key="frame" x="20" y="1582.5" width="374.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Account number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hj3-xb-LcR">
+                                                <rect key="frame" x="20" y="1636.5" width="374.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Account number type" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JCy-bV-Os9">
+                                                <rect key="frame" x="20" y="1690.5" width="374.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f7z-Ef-Em3">
+                                                <rect key="frame" x="20" y="1744.5" width="374.5" height="400"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="400" id="QJ3-tb-JRs"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="20" bottom="8" trailing="20"/>
                                     </stackView>
@@ -475,21 +552,35 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="accountNumberTextField" destination="hj3-xb-LcR" id="PBq-Yn-bDw"/>
+                        <outlet property="accountNumberTypeTextField" destination="JCy-bV-Os9" id="Agq-4T-8b6"/>
+                        <outlet property="addressTextField" destination="6DP-um-Nvh" id="O4L-gJ-1wb"/>
                         <outlet property="backgroundColorView" destination="9Ye-9O-JEO" id="XAj-UN-GJe"/>
+                        <outlet property="birthDateTextField" destination="fed-Fc-8aw" id="ynd-Jm-gAM"/>
                         <outlet property="cardCvvSwitch" destination="ONX-KH-kkX" id="WrI-ch-0xB"/>
                         <outlet property="cardExpDateSwitch" destination="b5Y-cd-LYv" id="oxz-ur-pWX"/>
                         <outlet property="cardHolderSwitch" destination="H9b-6w-Rai" id="h5a-ZW-fZw"/>
                         <outlet property="cardNumberSwitch" destination="uia-K2-osp" id="XHT-ks-PNN"/>
+                        <outlet property="cityTextField" destination="vdj-t4-MFt" id="V5k-ah-OXR"/>
+                        <outlet property="countryTextField" destination="OtL-m4-pSJ" id="3Lq-Aa-eK0"/>
                         <outlet property="currencyTextField" destination="nH5-5h-yaS" id="P3o-Zz-jjI"/>
+                        <outlet property="deviceIdTextField" destination="Fr2-VI-5WG" id="Yfu-CY-J5d"/>
+                        <outlet property="emailTextField" destination="RHD-50-7Lz" id="DnL-4s-Ztd"/>
+                        <outlet property="firstNameTextField" destination="1Dz-Cd-EvF" id="62T-xw-1zy"/>
+                        <outlet property="ipDateTextField" destination="6j7-Kj-czn" id="rZX-zE-geL"/>
+                        <outlet property="lastNameTextField" destination="ORz-6t-5Or" id="IxE-IU-DQt"/>
                         <outlet property="payButton" destination="NRa-Ci-Nef" id="NCJ-0l-YUM"/>
                         <outlet property="payByTokenButton" destination="BaT-Ve-agV" id="29g-kk-umX"/>
+                        <outlet property="phoneTextField" destination="QbF-Gx-0Zc" id="u3S-FW-W6s"/>
                         <outlet property="saveCardSwitch" destination="0oK-NH-94c" id="crE-rv-lfJ"/>
                         <outlet property="scrollView" destination="29N-td-KsB" id="GGr-rg-vOD"/>
                         <outlet property="smsSwcureSwitch" destination="rLL-4z-3jd" id="5Jn-zj-TkJ"/>
+                        <outlet property="stateTextField" destination="Czy-96-gST" id="w5Z-yx-XJj"/>
                         <outlet property="textColorView" destination="UEa-pe-ZjB" id="q41-7S-eYa"/>
                         <outlet property="titleTextField" destination="eWN-2W-S3p" id="y7H-dr-tG4"/>
                         <outlet property="tokenTextView" destination="NMD-iX-aLe" id="lJ9-Lj-s5N"/>
                         <outlet property="valueTextField" destination="Yjg-Uk-Fp6" id="aGx-Zx-1Bg"/>
+                        <outlet property="zipTextField" destination="1HT-pa-eBR" id="bLm-X0-5T1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -508,7 +599,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

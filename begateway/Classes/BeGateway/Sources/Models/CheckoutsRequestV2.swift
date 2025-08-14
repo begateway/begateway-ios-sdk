@@ -17,11 +17,33 @@ public struct CheckoutsRequestV2Checkout: Codable {
     let test: Bool?
     let transactionType: String?
     let version: Double?
+    let customer: CheckoutsRequestV2Customer?
     
     enum CodingKeys: String, CodingKey {
         case order, settings, test
         case transactionType = "transaction_type"
         case version
+        case customer
+    }
+}
+
+public struct CheckoutsRequestV2Customer: Codable {
+    let address: String?
+    let country: String?
+    let city: String?
+    let email: String?
+    let firstName: String?
+    let lastName: String?
+    let state: String?
+    let zip: String?
+    let phone: String?
+    let birthDate: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case address, country, city, email, state, zip, phone
+        case firstName = "first_name"
+        case lastName = "last_name"
+        case birthDate = "birth_date"
     }
 }
 
@@ -42,6 +64,18 @@ public struct CheckoutsRequestV2Order: Codable {
 // MARK: - AdditionalData
 public struct CheckoutsRequestV2AdditionalData: Codable {
     let contract: [String]?
+    let recipient: CheckoutsRequestV2Receipient?
+}
+
+// MARK: - Recipient
+public struct CheckoutsRequestV2Receipient: Codable {
+    let accountNumber: String?
+    let accountNumberType: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case accountNumber = "account_number"
+        case accountNumberType = "account_number_type"
+    }
 }
 
 // MARK: - Settings

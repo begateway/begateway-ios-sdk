@@ -37,6 +37,21 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var backgroundColorView: UIView!
     @IBOutlet weak var textColorView: UIView!
+        
+    @IBOutlet weak var addressTextField: UITextField!
+    @IBOutlet weak var countryTextField: UITextField!
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var stateTextField: UITextField!
+    @IBOutlet weak var zipTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var birthDateTextField: UITextField!
+    @IBOutlet weak var ipDateTextField: UITextField!
+    @IBOutlet weak var deviceIdTextField: UITextField!
+    @IBOutlet weak var accountNumberTextField: UITextField!
+    @IBOutlet weak var accountNumberTypeTextField: UITextField!
 
     @IBOutlet weak var tokenTextView: UITextView!
     @IBOutlet weak var payByTokenButton: UIButton!
@@ -225,14 +240,52 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
             amount: Double(self.valueTextField.text ?? "0.0") ?? 0.0,
             currency: self.currencyTextField.text ?? "USD",
             requestDescription: "Test request",
-            trackingID: "1000000-1"
-
+            trackingID: "1000000-1",
+            recipient: getRecipient(),
+            customer: getCustomer(),
+            paymentCustomer: getPaymentCustomer()
         ), completionHandler: {token in
             self.tokenTextView.text = token
             self.payByTokenButton.isHidden = false
         }, failureHandler:{error in
             print(error)
         })
+    }
+    
+    private func nonEmpty(_ text: String?) -> String? {
+        guard let value = text, !value.trimmingCharacters(in: .whitespaces).isEmpty else {
+            return nil
+        }
+        return value
+    }
+    
+    private func getRecipient() -> BeGatewayRequestRecipient {
+        return BeGatewayRequestRecipient(
+            accountNumber: nonEmpty(accountNumberTextField.text),
+            accountNumberType: nonEmpty(accountNumberTypeTextField.text)
+        )
+    }
+
+    private func getCustomer() -> BeGatewayRequestCustomer {
+        return BeGatewayRequestCustomer(
+            address: nonEmpty(addressTextField.text),
+            country: nonEmpty(countryTextField.text),
+            city: nonEmpty(cityTextField.text),
+            email: nonEmpty(emailTextField.text),
+            firstName: nonEmpty(firstNameTextField.text),
+            lastName: nonEmpty(lastNameTextField.text),
+            state: nonEmpty(stateTextField.text),
+            zip: nonEmpty(zipTextField.text),
+            phone: nonEmpty(phoneTextField.text),
+            birthDate: nonEmpty(birthDateTextField.text)
+        )
+    }
+
+    private func getPaymentCustomer() -> BeGatewayPaymentCustomer {
+        return BeGatewayPaymentCustomer(
+            ip: nonEmpty(ipDateTextField.text),
+            deviceId: nonEmpty(deviceIdTextField.text)
+        )
     }
 
     @objc func applePayAction() {
@@ -246,11 +299,16 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
 
         let _ = BeGateway.instance.setup(with: options)
 
-        let request = BeGatewayRequest(amount: Double(self.valueTextField.text ?? "0.0") ?? 0.0,
-                                       currency: self.currencyTextField.text?.uppercased() ?? "USD",
-                                       requestDescription: "Apple Pay test transaction",
-                                       trackingID: "1000000-1",
-                                       card: nil)
+        let request = BeGatewayRequest(
+            amount: Double(self.valueTextField.text ?? "0.0") ?? 0.0,
+            currency: self.currencyTextField.text?.uppercased() ?? "USD",
+            requestDescription: "Apple Pay test transaction",
+            trackingID: "1000000-1",
+            card: nil,
+            recipient: getRecipient(),
+            customer: getCustomer(),
+            paymentCustomer: getPaymentCustomer()
+        )
 
         if let token = self.tokenTextView.text, token.count >= 64 {
             BeGateway.instance.payWithAppleByToken(token: token, rootController: self) {
@@ -414,7 +472,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
                 currency: self.currencyTextField.text ?? "USD",
                 requestDescription: "Test request",
                 trackingID: "1000000-1",
-                card: self.card
+                card: self.card,
+                recipient: getRecipient(),
+                customer: getCustomer(),
+                paymentCustomer: getPaymentCustomer()
             ),
             completionHandler: {
                 card in

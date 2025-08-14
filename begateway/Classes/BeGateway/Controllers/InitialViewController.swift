@@ -25,6 +25,7 @@ class InitialViewController: PaymentBasicViewController, PaymentBasicProtocol {
     weak var delegate: PaymentBasicProtocol?
     
     var activeCard: StoreCard?
+    var customer: RequestPaymentV2Customer? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -131,7 +132,7 @@ class InitialViewController: PaymentBasicViewController, PaymentBasicProtocol {
     @IBAction func touchPay(_ sender: Any) {
         print("Touch")
         
-        self.pay(card: RequestPaymentV2CreditCard(number: nil, verificationValue: nil, expMonth: nil, expYear: nil, holder: nil, token: self.activeCard?.token, saveCard: nil))
+        self.pay(card: RequestPaymentV2CreditCard(number: nil, verificationValue: nil, expMonth: nil, expYear: nil, holder: nil, token: self.activeCard?.token, saveCard: nil), customer: customer)
     }
     
     

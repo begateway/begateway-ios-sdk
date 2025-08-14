@@ -60,6 +60,42 @@ trackingID: "1000000-1"
 )
 ```
 
+#### Передача дополнительной информации о покупателе
+
+```swift
+let request = BeGatewayRequest(
+    amount: 100.0,
+    currency: "USD",
+    requestDescription: "Apple Pay test transaction",
+    trackingID: "1000000-1",
+    card: nil,
+    recipient: BeGatewayRequestRecipient(
+        // идентификатора счета получателя платежа
+        accountNumber: "123456789",
+        // enum: card, iban, bic, other
+        accountNumberType: "IBAN"
+    ),
+    customer: BeGatewayRequestCustomer(
+        address: "123 Main St",
+        // ISO 3166-1 alpha-2
+        country: "US",
+        city: "New York",
+        email: "john.doe@example.com",
+        firstName: "John",
+        lastName: "Doe",
+        state: "NY",
+        zip: "10001",
+        phone: "+1234567890",
+        // YYYY-MM-DD       
+        birthDate: "1990-01-01"
+    ),
+    paymentCustomer: BeGatewayPaymentCustomer(
+        ip: "192.168.1.1",
+        deviceId: "device-abc-123"
+    )
+)
+```
+
 Запустите обработку ответа:
 ```swift
 BeGateway.instance.getToken(request: request, completionHandler: {token in

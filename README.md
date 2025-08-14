@@ -43,10 +43,10 @@ If you want to get current instance of object:
 BeGateway.instance
 ```
 
-### Get token
+### Get payment token
 
 Create BeGatewayRequest object:
-You can setup your notification_url to become info about payment status:
+You can setup your notification_url to receive info about payment status:
 ```swift
 let request BeGatewayRequest(
 // amount
@@ -55,8 +55,44 @@ amount: 100.0,
 currency: "USD",
 // description
 requestDescription: "Test request",
-// tracling id
+// tracking id
 trackingID: "1000000-1"
+)
+```
+
+#### Submitting additional customer information 
+
+```swift
+let request = BeGatewayRequest(
+    amount: 100.0,
+    currency: "USD",
+    requestDescription: "Apple Pay test transaction",
+    trackingID: "1000000-1",
+    card: nil,
+    recipient: BeGatewayRequestRecipient(
+        // identifier of the payment recipient's account
+        accountNumber: "123456789",
+        // enum: card, iban, bic, other
+        accountNumberType: "IBAN"
+    ),
+    customer: BeGatewayRequestCustomer(
+        address: "123 Main St",
+        // ISO 3166-1 alpha-2
+        country: "US",
+        city: "New York",
+        email: "john.doe@example.com",
+        firstName: "John",
+        lastName: "Doe",
+        state: "NY",
+        zip: "10001",
+        phone: "+1234567890",
+        // YYYY-MM-DD       
+        birthDate: "1990-01-01"
+    ),
+    paymentCustomer: BeGatewayPaymentCustomer(
+        ip: "192.168.1.1",
+        deviceId: "device-abc-123"
+    )
 )
 ```
 
@@ -147,8 +183,7 @@ public let brand: String?
 
 #### Apple pay
 
-First you need to setup your project with your merhchant ID.
-After it you should pass merchant id to BegatewayOptions.
+First you need to setup your project with your merhchant ID. After it you should pass merchant id to BegatewayOptions.
 Default <b>Apple Pay</b> with input:
 ```swift
         options.merchantID = "merchant.org.cocoapods.demo.begateway-Example"

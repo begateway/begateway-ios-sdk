@@ -248,6 +248,8 @@ class PaymentViewController: PaymentBasicViewController, UITextFieldDelegate, Pa
     
     @IBAction func payTouch(_ sender: Any) {
         print("Touch")
+
+        self.view.endEditing(true)
         
         if self.validateFields() == false {
             UIApplication.shared.beginIgnoringInteractionEvents()

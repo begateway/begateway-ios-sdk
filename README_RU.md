@@ -43,6 +43,24 @@ BeGateway.instance.options?.clientPubKey = "PUBLIC_STORE_KEY"
 BeGateway.instance
 ```
 
+### Подключение к PSP на платформе beGateway
+
+Если ваш магазин подключён не напрямую к beGateway, а к **white-label PSP**, работающему на платформе beGateway, необходимо переопределить параметр `endpoint`, чтобы SDK направляла все API-запросы на checkout-бэкенд этого PSP. По умолчанию SDK использует:
+
+```
+https://checkout.begateway.com/ctp/api
+```
+
+Переопределите его при инициализации:
+
+```swift
+let options = BeGatewayOptions(clientPubKey: "PUBLIC_STORE_KEY") // ключ магазина из личного кабинета PSP
+options.endpoint = "https://checkout.<домен-PSP>/ctp/api"        // white-label checkout URL, предоставленный PSP
+BeGateway.instance.setup(with: options)
+```
+
+Оба значения должны быть получены из **одного PSP**: `clientPubKey` идентифицирует ваш магазин внутри инстанса PSP, а `endpoint` направляет API-запросы на checkout-бэкенд этого PSP.
+
 ### Получения токена платежа
 
 Создайте объект BeGatewayRequest.

@@ -43,6 +43,24 @@ If you want to get current instance of object:
 BeGateway.instance
 ```
 
+### Connecting to a PSP on the beGateway platform
+
+If you are a merchant connected to a **white-label PSP** built on the beGateway platform (rather than directly to beGateway), you must override the `endpoint` option so the SDK routes all API calls to that PSP's checkout backend. By default the SDK uses:
+
+```
+https://checkout.begateway.com/ctp/api
+```
+
+Override it during setup:
+
+```swift
+let options = BeGatewayOptions(clientPubKey: "PUBLIC_STORE_KEY") // store key from the PSP merchant dashboard
+options.endpoint = "https://checkout.<psp-domain>/ctp/api"       // white-label checkout URL provided by the PSP
+BeGateway.instance.setup(with: options)
+```
+
+Both values must come from the **same PSP**: `clientPubKey` identifies your store within that PSP instance, and `endpoint` directs API traffic to the PSP's checkout backend.
+
 ### Get payment token
 
 Create BeGatewayRequest object:
